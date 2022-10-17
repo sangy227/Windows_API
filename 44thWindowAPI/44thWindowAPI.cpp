@@ -112,6 +112,9 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 }
 
 //
+// //수정한 부분입니다
+// 
+// 
 //  함수: WndProc(HWND, UINT, WPARAM, LPARAM)
 //
 //  용도: 주 창의 메시지를 처리합니다.
