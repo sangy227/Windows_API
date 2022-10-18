@@ -17,6 +17,8 @@ BOOL                InitInstance(HINSTANCE, int);
 LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
 INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
 
+
+//int main() {}
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                      _In_opt_ HINSTANCE hPrevInstance,
                      _In_ LPWSTR    lpCmdLine,
@@ -26,6 +28,23 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     UNREFERENCED_PARAMETER(lpCmdLine);
 
     // TODO: 여기에 코드를 입력합니다.
+
+    //동작 원리
+
+    //1.wndcalss 정의 윈도의 기반(여러가지 속성)이 되는 클래스 정의해준다.
+    // 
+    //2.메모리상에 윈도우 할당 CreateWindow
+
+    //3. showwindow 함수를 통해서 윈도우가 화면에 보여진다.(update window)
+
+    //4. wndclass  정의할때 함수포인터에 넣어준 loop (wndproc)매 프레임마다 실행한다
+
+    // 윈도우즈는 크게 3가지 라이브러리 이루어져있는데.
+    // 메모리를 관리하고 실행시키는 KERNEL 커널
+    // 유저 인터페이스와 관리하는 USER
+    // 화면처리와 그래픽을 담당하는 GDI로 이루어져있다.
+
+
 
     // 전역 문자열을 초기화합니다.
     LoadStringW(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
@@ -66,6 +85,7 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
 {
     WNDCLASSEXW wcex;
 
+    //윈도우 기본 세팅
     wcex.cbSize = sizeof(WNDCLASSEX);
 
     wcex.style          = CS_HREDRAW | CS_VREDRAW;
@@ -77,7 +97,7 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
     wcex.hCursor        = LoadCursor(nullptr, IDC_ARROW);
     wcex.hbrBackground  = (HBRUSH)(COLOR_WINDOW+1);
     wcex.lpszMenuName   = MAKEINTRESOURCEW(IDC_MY44THWINDOWAPI);
-    wcex.lpszClassName  = szWindowClass;
+    wcex.lpszClassName =  szWindowClass;
     wcex.hIconSm        = LoadIcon(wcex.hInstance, MAKEINTRESOURCE(IDI_SMALL));
 
     return RegisterClassExW(&wcex);
@@ -105,6 +125,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
       return FALSE;
    }
 
+   SetWindowPos(hWnd, nullptr, 0, 0, 1920, 1080, 0);
    ShowWindow(hWnd, nCmdShow);
    UpdateWindow(hWnd);
 
@@ -128,6 +149,10 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
     switch (message)
     {
+    case WM_CREATE:
+    {
+        
+    }
     case WM_COMMAND:
         {
             int wmId = LOWORD(wParam);
@@ -149,8 +174,55 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         {
             PAINTSTRUCT ps;
             HDC hdc = BeginPaint(hWnd, &ps);
+
+
+
+            HBRUSH hClearBrush = (HBRUSH)GetStockObject(GRAY_BRUSH);
+            HBRUSH oldClearBrush = (HBRUSH)SelectObject(hdc, hClearBrush);
+
+            Rectangle(hdc, -1, -1, 1921, 1081);
+
+            HPEN hRedPen = CreatePen(PS_SOLID , 3 , RGB(255,0,0));
+
+            HBRUSH hGreenBrush = CreateSolidBrush(RGB(0, 100, 0));
+
+            HPEN oldPen = (HPEN)SelectObject(hdc,hRedPen);
+            HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, hGreenBrush);
+
+            Rectangle(hdc,100,100,200,200);
+            Ellipse(hdc, 200, 200, 300, 300);
+
+            //스톡 오브젝트
+           
+
+
+            SelectObject(hdc, oldPen);
+            SelectObject(hdc, oldBrush);
+
+            DeleteObject(hRedPen);
+            DeleteObject(hGreenBrush);
+
+
+
+
             // TODO: 여기에 hdc를 사용하는 그리기 코드를 추가합니다...
             EndPaint(hWnd, &ps);
+
+            //문자
+            //HFONT
+
+            //그리파일
+            //HBITMAP
+
+            //DC 정리
+            
+            // 1.PEN BRUSH 핸들을 선언한다.
+            // 2.GDI 오브젝트를 생성해준다.
+            // 3.생성된 오브젝트로 hdc 세팅해줘야 한다, selectobject
+            //사용하고 해제하는법
+           
+            //기존의 오브젝트로 되돌린다 (해제)
+            //핸들을 삭제한다.
         }
         break;
     case WM_DESTROY:
