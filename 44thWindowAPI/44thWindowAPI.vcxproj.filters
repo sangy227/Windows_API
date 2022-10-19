@@ -25,6 +25,15 @@
     <ClInclude Include="targetver.h">
       <Filter>main</Filter>
     </ClInclude>
+    <ClInclude Include="yaApplication.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Common.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Maths.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="44thWindowAPI.rc">
@@ -42,6 +51,9 @@
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="yaApplication.cpp">
+      <Filter>Engine</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
