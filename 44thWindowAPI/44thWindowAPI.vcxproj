@@ -146,11 +146,13 @@
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="yaApplication.h" />
+    <ClInclude Include="yaEntity.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="temp.cpp" />
     <ClCompile Include="yaApplication.cpp" />
+    <ClCompile Include="yaEntity.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="44thWindowAPI.rc" />

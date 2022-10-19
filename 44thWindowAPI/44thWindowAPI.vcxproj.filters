@@ -34,6 +34,7 @@
     <ClInclude Include="Maths.h">
       <Filter>Engine</Filter>
     </ClInclude>
+    <ClInclude Include="yaEntity.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="44thWindowAPI.rc">
@@ -58,5 +59,6 @@
     <ClCompile Include="temp.cpp">
       <Filter>main</Filter>
     </ClCompile>
+    <ClCompile Include="yaEntity.cpp" />
   </ItemGroup>
 </Project>
