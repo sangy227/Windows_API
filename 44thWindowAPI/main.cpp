@@ -1,8 +1,9 @@
-﻿// 44thWindowAPI.cpp : 애플리케이션에 대한 진입점을 정의합니다.
+﻿// WindowsAPI.cpp : 애플리케이션에 대한 진입점을 정의합니다.
 //
 
-#include "framework.h"
+#include "Common.h"
 #include "44thWindowAPI.h"
+#include "yaApplication.h"
 
 #define MAX_LOADSTRING 100
 
@@ -11,6 +12,7 @@ HINSTANCE hInst;                                // 현재 인스턴스입니다.
 WCHAR szTitle[MAX_LOADSTRING];                  // 제목 표시줄 텍스트입니다.
 WCHAR szWindowClass[MAX_LOADSTRING];            // 기본 창 클래스 이름입니다.
 
+
 // 이 코드 모듈에 포함된 함수의 선언을 전달합니다:
 ATOM                MyRegisterClass(HINSTANCE hInstance);
 BOOL                InitInstance(HINSTANCE, int);
@@ -18,41 +20,38 @@ LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
 INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
 
 
-//int main() {}
+// int main() {}
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
-                     _In_opt_ HINSTANCE hPrevInstance,
-                     _In_ LPWSTR    lpCmdLine,
-                     _In_ int       nCmdShow)
+    _In_opt_ HINSTANCE hPrevInstance,
+    _In_ LPWSTR    lpCmdLine,
+    _In_ int       nCmdShow)
 {
     UNREFERENCED_PARAMETER(hPrevInstance);
     UNREFERENCED_PARAMETER(lpCmdLine);
 
-    // TODO: 여기에 코드를 입력합니다.
+    // 1. wndclass 정의 윈도의 기반(여러가지 속성)이 되는 클래스 정의해준다.
 
-    //동작 원리
+    // 2. 메모리상에 윈도우를 할당해야죠. CreateWindow
 
-    //1.wndcalss 정의 윈도의 기반(여러가지 속성)이 되는 클래스 정의해준다.
+    // 3. showwindow 함수를 통해서 윈도우가 화면에 보여진다. (update window)
+
+    // 4. wndclass 정의할때 함수포인터에 넣어준 loop (wndproc) 메프레임마다 실행한다.
+
+    // 윈도우즈는 크게 3가지 라이브러리 이루어져 있는데.
+
+    // 메모리를 관리하고 실행시키는 KERNEL 커널 
+    // 유저 인터페이스와 과리하는 USER
+    // 화면처리와 그래픽을 담당하는 GDI 로 이루어져있다.
+
+
     // 
-    //2.메모리상에 윈도우 할당 CreateWindow
-
-    //3. showwindow 함수를 통해서 윈도우가 화면에 보여진다.(update window)
-
-    //4. wndclass  정의할때 함수포인터에 넣어준 loop (wndproc)매 프레임마다 실행한다
-
-    // 윈도우즈는 크게 3가지 라이브러리 이루어져있는데.
-    // 메모리를 관리하고 실행시키는 KERNEL 커널
-    // 유저 인터페이스와 관리하는 USER
-    // 화면처리와 그래픽을 담당하는 GDI로 이루어져있다.
-
-
-
     // 전역 문자열을 초기화합니다.
     LoadStringW(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
     LoadStringW(hInstance, IDC_MY44THWINDOWAPI, szWindowClass, MAX_LOADSTRING);
     MyRegisterClass(hInstance);
 
     // 애플리케이션 초기화를 수행합니다:
-    if (!InitInstance (hInstance, nCmdShow))
+    if (!InitInstance(hInstance, nCmdShow))
     {
         return FALSE;
     }
@@ -61,17 +60,51 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     MSG msg;
 
+    // GetMessage : 프로세스에 발생한 메시지를 메세지 큐에서 꺼내옴
+    // 메세지가 있을때만 메세지를 꺼내온다.
+    // 메세지 case 함수를 호출해준다.
+
+    // PeekMessage 
+    // 발생한 메세지를 가져 올때 메세지큐에서 따로 제거해줘야한다.
+    // 메세지큐에 메세지가 들어있는 유/무에 관계없이 함수가 리턴됩니다.
+
+
+
+    //while (true)
+    //{
+    //    update();
+    //    render();
+    //}
+
     // 기본 메시지 루프입니다:
-    while (GetMessage(&msg, nullptr, 0, 0))
+    while (true)
     {
-        if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
+        if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
         {
-            TranslateMessage(&msg);
-            DispatchMessage(&msg);
+            if (WM_QUIT == msg.message)
+                break;
+
+            if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
+            {
+                TranslateMessage(&msg);
+                DispatchMessage(&msg);
+            }
+        }
+        else
+        {
+            // 게임 실행
+            ya::Application().GetInstance().Tick();
         }
     }
 
-    return (int) msg.wParam;
+    // 종료가 되었을때
+    if (WM_QUIT == msg.message)
+    {
+        // 메모리 해제 작업
+    }
+
+
+    return (int)msg.wParam;
 }
 
 
@@ -85,20 +118,19 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
 {
     WNDCLASSEXW wcex;
 
-    //윈도우 기본 세팅
     wcex.cbSize = sizeof(WNDCLASSEX);
 
-    wcex.style          = CS_HREDRAW | CS_VREDRAW;
-    wcex.lpfnWndProc    = WndProc;
-    wcex.cbClsExtra     = 0;
-    wcex.cbWndExtra     = 0;
-    wcex.hInstance      = hInstance;
-    wcex.hIcon          = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_MY44THWINDOWAPI));
-    wcex.hCursor        = LoadCursor(nullptr, IDC_ARROW);
-    wcex.hbrBackground  = (HBRUSH)(COLOR_WINDOW+1);
-    wcex.lpszMenuName   = MAKEINTRESOURCEW(IDC_MY44THWINDOWAPI);
-    wcex.lpszClassName =  szWindowClass;
-    wcex.hIconSm        = LoadIcon(wcex.hInstance, MAKEINTRESOURCE(IDI_SMALL));
+    wcex.style = CS_HREDRAW | CS_VREDRAW;
+    wcex.lpfnWndProc = WndProc;
+    wcex.cbClsExtra = 0;
+    wcex.cbWndExtra = 0;
+    wcex.hInstance = hInstance;
+    wcex.hIcon = LoadIcon(hInstance, MAKEINTRESOURCE(IDC_MY44THWINDOWAPI));
+    wcex.hCursor = LoadCursor(nullptr, IDC_ARROW);
+    wcex.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
+    wcex.lpszMenuName = MAKEINTRESOURCEW(IDC_MY44THWINDOWAPI);
+    wcex.lpszClassName = szWindowClass;
+    wcex.hIconSm = LoadIcon(wcex.hInstance, MAKEINTRESOURCE(IDI_SMALL));
 
     return RegisterClassExW(&wcex);
 }
@@ -115,27 +147,32 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
 //
 BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
-   hInst = hInstance; // 인스턴스 핸들을 전역 변수에 저장합니다.
+    hInst = hInstance; // 인스턴스 핸들을 전역 변수에 저장합니다.
 
-   HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
-      CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
+    WindowData windowData;
+    windowData.width = 1920;
+    windowData.height = 1080;
 
-   if (!hWnd)
-   {
-      return FALSE;
-   }
+    HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
+        CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
 
-   SetWindowPos(hWnd, nullptr, 0, 0, 1920, 1080, 0);
-   ShowWindow(hWnd, nCmdShow);
-   UpdateWindow(hWnd);
+    windowData.hWnd = hWnd;
+    windowData.hdc = nullptr;
 
-   return TRUE;
+    if (!hWnd)
+    {
+        return FALSE;
+    }
+    SetWindowPos(hWnd, nullptr, 0, 0, windowData.width, windowData.height, 0);
+    ShowWindow(hWnd, nCmdShow);
+    UpdateWindow(hWnd);
+
+    ya::Application::GetInstance().Initialize(windowData);
+
+    return TRUE;
 }
 
 //
-// //수정한 부분입니다
-// 
-// 
 //  함수: WndProc(HWND, UINT, WPARAM, LPARAM)
 //
 //  용도: 주 창의 메시지를 처리합니다.
@@ -151,83 +188,78 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     {
     case WM_CREATE:
     {
-        
+
     }
+    break;
     case WM_COMMAND:
+    {
+        int wmId = LOWORD(wParam);
+        // 메뉴 선택을 구문 분석합니다:
+        switch (wmId)
         {
-            int wmId = LOWORD(wParam);
-            // 메뉴 선택을 구문 분석합니다:
-            switch (wmId)
-            {
-            case IDM_ABOUT:
-                DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
-                break;
-            case IDM_EXIT:
-                DestroyWindow(hWnd);
-                break;
-            default:
-                return DefWindowProc(hWnd, message, wParam, lParam);
-            }
+        case IDM_ABOUT:
+            DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
+            break;
+        case IDM_EXIT:
+            DestroyWindow(hWnd);
+            break;
+        default:
+            return DefWindowProc(hWnd, message, wParam, lParam);
         }
-        break;
+    }
+    break;
+
+    case WM_KEYDOWN:
+    {
+
+
+        // 무효화 영역 발생시키기 ( WM_PAINT 메시지를 호출해주겠따)
+        //InvalidateRect(hWnd, nullptr, false);
+    }
+    break;
+
+    case WM_TIMER:
+    {
+
+    }
+    break;
+
     case WM_PAINT:
-        {
-            PAINTSTRUCT ps;
-            HDC hdc = BeginPaint(hWnd, &ps);
+    {
+        PAINTSTRUCT ps;
+        HDC hdc = BeginPaint(hWnd, &ps);
+
+        //// 스톡 오브젝트
+        // 화면 지우기
+        HBRUSH hClearBrush = (HBRUSH)GetStockObject(DKGRAY_BRUSH);
+        HBRUSH oldClearBrush = (HBRUSH)SelectObject(hdc, hClearBrush);
+        Rectangle(hdc, -1, -1, 1921, 1081);
 
 
+        // TODO: 여기에 hdc를 사용하는 그리기 코드를 추가합니다...
+        EndPaint(hWnd, &ps);
+        //문자
+        //HFONT
 
-            HBRUSH hClearBrush = (HBRUSH)GetStockObject(GRAY_BRUSH);
-            HBRUSH oldClearBrush = (HBRUSH)SelectObject(hdc, hClearBrush);
+        //HBITMAP
+        //HBITMAP
+        //DC 정리
 
-            Rectangle(hdc, -1, -1, 1921, 1081);
+        // 1. PEN BRUSH 핸들을 선언한다.
+        // 2. GDI 오브젝트를 생성해준다.
+        // 3. 생성된 오브젝트로 hdc 세팅해줘야한다. selectobject
+        //사용하고
 
-            HPEN hRedPen = CreatePen(PS_SOLID , 3 , RGB(255,0,0));
-
-            HBRUSH hGreenBrush = CreateSolidBrush(RGB(0, 100, 0));
-
-            HPEN oldPen = (HPEN)SelectObject(hdc,hRedPen);
-            HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, hGreenBrush);
-
-            Rectangle(hdc,100,100,200,200);
-            Ellipse(hdc, 200, 200, 300, 300);
-
-            //스톡 오브젝트
-           
-
-
-            SelectObject(hdc, oldPen);
-            SelectObject(hdc, oldBrush);
-
-            DeleteObject(hRedPen);
-            DeleteObject(hGreenBrush);
-
-
-
-
-            // TODO: 여기에 hdc를 사용하는 그리기 코드를 추가합니다...
-            EndPaint(hWnd, &ps);
-
-            //문자
-            //HFONT
-
-            //그리파일
-            //HBITMAP
-
-            //DC 정리
-            
-            // 1.PEN BRUSH 핸들을 선언한다.
-            // 2.GDI 오브젝트를 생성해준다.
-            // 3.생성된 오브젝트로 hdc 세팅해줘야 한다, selectobject
-            //사용하고 해제하는법
-           
-            //기존의 오브젝트로 되돌린다 (해제)
-            //핸들을 삭제한다.
-        }
-        break;
+        // 기존의 오브젝트로 되돌린다 ( 해제 )
+        // 핸들을 삭제한다.
+    }
+    break;
     case WM_DESTROY:
+    {
         PostQuitMessage(0);
-        break;
+        //KillTimer(hWnd, 0);
+    }
+    break;
     default:
         return DefWindowProc(hWnd, message, wParam, lParam);
     }

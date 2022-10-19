@@ -149,6 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="temp.cpp" />
     <ClCompile Include="yaApplication.cpp" />
   </ItemGroup>
   <ItemGroup>
