@@ -1,8 +1,9 @@
 #include "yaApplication.h"
+#include "yaSceneManager.h"
 
 namespace ya {
 
-	//?이걸 왜하죠
+	
 	Application Application::mInstance;
 
 	ya::Application::Application()

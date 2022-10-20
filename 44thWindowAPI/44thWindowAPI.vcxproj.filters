@@ -11,6 +11,24 @@
     <Filter Include="Engine">
       <UniqueIdentifier>{58486ccd-d3e7-45ca-8954-e76bb193f8b8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\Manager">
+      <UniqueIdentifier>{f328dece-4375-4980-bb67-9bdd21232766}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Common">
+      <UniqueIdentifier>{8efab217-f5a7-4067-8642-5ebbe0a40516}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject">
+      <UniqueIdentifier>{717f3ed2-2713-40e1-8793-a8dadf9d91d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{2d46a331-cf5b-4c43-9760-cd05c2eb4c2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Base">
+      <UniqueIdentifier>{0914b1f5-2690-4415-b0b2-796768f136b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject\Base">
+      <UniqueIdentifier>{ad733301-7271-4db4-90f9-738884dd1a43}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="44thWindowAPI.h">
@@ -28,13 +46,33 @@
     <ClInclude Include="yaApplication.h">
       <Filter>Engine</Filter>
     </ClInclude>
+    <ClInclude Include="yaSceneManager.h">
+      <Filter>Engine\Manager</Filter>
+    </ClInclude>
     <ClInclude Include="Common.h">
-      <Filter>Engine</Filter>
+      <Filter>Engine\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="def.h">
+      <Filter>Engine\Common</Filter>
     </ClInclude>
     <ClInclude Include="Maths.h">
-      <Filter>Engine</Filter>
+      <Filter>Engine\Common</Filter>
     </ClInclude>
-    <ClInclude Include="yaEntity.h" />
+    <ClInclude Include="yaEntity.h">
+      <Filter>Engine\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="yaScene.h">
+      <Filter>Scene\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="yaLogoScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="yaPlayer.h">
+      <Filter>GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="yaGameObject.h">
+      <Filter>GameObject\Base</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="44thWindowAPI.rc">
@@ -59,6 +97,23 @@
     <ClCompile Include="temp.cpp">
       <Filter>main</Filter>
     </ClCompile>
-    <ClCompile Include="yaEntity.cpp" />
+    <ClCompile Include="yaSceneManager.cpp">
+      <Filter>Engine\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="yaEntity.cpp">
+      <Filter>Engine\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="yaScene.cpp">
+      <Filter>Scene\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="yaLogoScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="yaPlayer.cpp">
+      <Filter>GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="yaGameObject.cpp">
+      <Filter>GameObject\Base</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

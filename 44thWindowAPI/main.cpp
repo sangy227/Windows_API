@@ -93,7 +93,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         else
         {
             // 게임 실행
-            ya::Application().GetInstance().Tick();
+            ya::Application::GetInstance().Tick();
         }
     }
 
