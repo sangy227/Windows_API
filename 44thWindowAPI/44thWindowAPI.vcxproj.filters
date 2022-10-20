@@ -17,17 +17,20 @@
     <Filter Include="Engine\Common">
       <UniqueIdentifier>{8efab217-f5a7-4067-8642-5ebbe0a40516}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GameObject">
+    <Filter Include="Engine\GameObject">
       <UniqueIdentifier>{717f3ed2-2713-40e1-8793-a8dadf9d91d9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Scene">
+    <Filter Include="Engine\GameObject\Base">
+      <UniqueIdentifier>{ad733301-7271-4db4-90f9-738884dd1a43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Scene">
       <UniqueIdentifier>{2d46a331-cf5b-4c43-9760-cd05c2eb4c2c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Scene\Base">
+    <Filter Include="Engine\Scene\Base">
       <UniqueIdentifier>{0914b1f5-2690-4415-b0b2-796768f136b8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GameObject\Base">
-      <UniqueIdentifier>{ad733301-7271-4db4-90f9-738884dd1a43}</UniqueIdentifier>
+    <Filter Include="Engine\High Level Interface">
+      <UniqueIdentifier>{ae0f19ae-3e04-48f2-8c10-91e474931f38}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -42,9 +45,6 @@
     </ClInclude>
     <ClInclude Include="targetver.h">
       <Filter>main</Filter>
-    </ClInclude>
-    <ClInclude Include="yaApplication.h">
-      <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="yaSceneManager.h">
       <Filter>Engine\Manager</Filter>
@@ -62,16 +62,19 @@
       <Filter>Engine\Common</Filter>
     </ClInclude>
     <ClInclude Include="yaScene.h">
-      <Filter>Scene\Base</Filter>
+      <Filter>Engine\Scene\Base</Filter>
     </ClInclude>
     <ClInclude Include="yaLogoScene.h">
-      <Filter>Scene</Filter>
+      <Filter>Engine\Scene</Filter>
     </ClInclude>
     <ClInclude Include="yaPlayer.h">
-      <Filter>GameObject</Filter>
+      <Filter>Engine\GameObject</Filter>
     </ClInclude>
     <ClInclude Include="yaGameObject.h">
-      <Filter>GameObject\Base</Filter>
+      <Filter>Engine\GameObject\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="yaApplication.h">
+      <Filter>Engine\High Level Interface</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -91,9 +94,6 @@
     <ClCompile Include="main.cpp">
       <Filter>main</Filter>
     </ClCompile>
-    <ClCompile Include="yaApplication.cpp">
-      <Filter>Engine</Filter>
-    </ClCompile>
     <ClCompile Include="temp.cpp">
       <Filter>main</Filter>
     </ClCompile>
@@ -104,16 +104,19 @@
       <Filter>Engine\Common</Filter>
     </ClCompile>
     <ClCompile Include="yaScene.cpp">
-      <Filter>Scene\Base</Filter>
+      <Filter>Engine\Scene\Base</Filter>
     </ClCompile>
     <ClCompile Include="yaLogoScene.cpp">
-      <Filter>Scene</Filter>
+      <Filter>Engine\Scene</Filter>
     </ClCompile>
     <ClCompile Include="yaPlayer.cpp">
-      <Filter>GameObject</Filter>
+      <Filter>Engine\GameObject</Filter>
     </ClCompile>
     <ClCompile Include="yaGameObject.cpp">
-      <Filter>GameObject\Base</Filter>
+      <Filter>Engine\GameObject\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="yaApplication.cpp">
+      <Filter>Engine\High Level Interface</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

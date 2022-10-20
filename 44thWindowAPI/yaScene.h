@@ -12,7 +12,7 @@ namespace ya {
 		Scene();
 		virtual ~Scene();
 
-		virtual void Initialize() = 0;
+		virtual void Initialize();
 		virtual void Tick();
 		virtual void Render(HDC hdc);
 

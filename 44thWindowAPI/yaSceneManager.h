@@ -7,9 +7,15 @@ namespace ya {
 	class SceneManager
 	{
 	public:
-		
+
+		static void Initialize();
+		static void Tick();
+		static void Render(HDC hdc);
+		static void Release();
+
 	private:
-		Scene* mScenes[256];
+		static Scene* mScenes[(UINT)eSceneType::Max];
+		static Scene* mPlayScene;
 	};
 }
 

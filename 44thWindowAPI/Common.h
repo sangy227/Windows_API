@@ -7,6 +7,7 @@
 #include <list>
 #include <map>
 
+#include "def.h"
 #include "Maths.h"
 
 struct WindowData

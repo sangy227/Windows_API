@@ -2,28 +2,34 @@
 #include "yaSceneManager.h"
 
 namespace ya {
+	//Application Application::mInstance;
 
-	
-	Application Application::mInstance;
+	void Application::Initialize(WindowData data)
+	{
+		mWindowData = data;
+		mWindowData.hdc = GetDC(data.hWnd);
+		
+		SceneManager::Initialize();
+	}
 
-	ya::Application::Application()
+	void Application::Tick()
+	{
+		SceneManager::Tick();
+		SceneManager::Render(mWindowData.hdc);
+	}
+
+
+	Application::Application()
 	{
 		mWindowData.clear();
 	}
 
-	ya::Application::~Application()
+	Application::~Application()
 	{
+		SceneManager::Release();
+
 		ReleaseDC(mWindowData.hWnd, mWindowData.hdc);
 	}
 
-	void ya::Application::Initialize(WindowData data)
-	{
-		mWindowData = data;
-		mWindowData.hdc = GetDC(data.hWnd);
-	}
-
-	void ya::Application::Tick()
-	{
-	}
-
+	
 }

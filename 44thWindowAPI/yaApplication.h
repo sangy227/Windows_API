@@ -3,23 +3,24 @@
 
 namespace ya
 {
+	//메인 프로그램이 딜 녀석
 	class Application
 	{
 	public:
-		//?이걸 왜하죠
-		static Application& GetInstance() {
+		static Application& GetInstance() 
+		{
+			static Application mInstance;
 			return mInstance;
 		}
-
-		Application();
-		~Application();
 
 		void Initialize(WindowData data);
 		void Tick();
 
+	private:
+		Application();
+		~Application();
 
 	private:
-		static Application mInstance;
 		WindowData mWindowData;
 	};
 
