@@ -6,14 +6,13 @@ namespace ya {
 	{
 	public:
 		Missile();
-		virtual ~Missile();
+		~Missile();
 
-		virtual void Initialize();
-		virtual void Tick();
-		virtual void Render(HDC hdc);
-
+		virtual void Tick() override;
+		virtual void Render(HDC hdc) override;
+		//여기도 고쳐
 	private:
-
+		float mSpeed;
 	};
 
 }

@@ -1,6 +1,11 @@
 #include "yaPlayer.h"
 #include "yaTime.h"
+#include "yaSceneManager.h"
 #include "yaInput.h"
+#include "yaMissile.h"
+#include "yaScene.h"
+
+//여기도 추가
 namespace ya {
 	Player::Player()
 		: mSpeed(1.0f)
@@ -16,24 +21,42 @@ namespace ya {
 	{
 		//키보드 입력
 		Vector2 pos = GetPos();
-		if (Input::GetkeyState(eKeyCode::W) == eKeyState::PRESSED)
+		if (KEY_PREESE(eKeyCode::W))
 		{
 			pos.y -= 120.0f * Time::DeltaTime();
 		}
-		if (Input::GetkeyState(eKeyCode::S) == eKeyState::PRESSED)
+		if (KEY_PREESE(eKeyCode::S))
 		{
 			pos.y += 120.0f * Time::DeltaTime();
 		}
-		if (Input::GetkeyState(eKeyCode::A) == eKeyState::PRESSED)
+		if (KEY_PREESE(eKeyCode::A))
 		{
 			pos.x -= 120.0f * Time::DeltaTime();
 		}
-		if (Input::GetkeyState(eKeyCode::D) == eKeyState::PRESSED)
+		if (KEY_PREESE(eKeyCode::D))
 		{
 			pos.x += 120.0f * Time::DeltaTime();
 		}
+
+		if (KEY_DOWN(eKeyCode::SPACE)) {
+			Missile* missile = new Missile();
+
+			Scene* playScene = SceneManager::GetplayScene();
+			playScene->AddGameObject(missile);
+
+			Vector2 playerPos = GetPos();
+			Vector2 playerScale = GetScale() / 2.0f;
+
+			Vector2 missileScale = missile->GetScale();
+
+			missile->SetPos((playerPos + playerScale) - (missileScale / 2.0f));
+		}
 		//움직인 Pos값 다시 설정
 		SetPos(pos);
+
+		
+
+
 	}
 	void Player::Render(HDC hdc)
 	{
