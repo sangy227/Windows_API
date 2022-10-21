@@ -8,7 +8,7 @@ namespace ya {
 	{
 	public:
 		GameObject();
-		~GameObject();
+		virtual ~GameObject();
 
 		virtual void Initialize();
 		virtual void Tick();

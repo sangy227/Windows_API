@@ -149,12 +149,18 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="yaApplication.h" />
     <ClInclude Include="yaEntity.h" />
+    <ClInclude Include="yaInput.h" />
     <ClInclude Include="yaLogoScene.h" />
+    <ClInclude Include="yaMissile.h" />
     <ClInclude Include="yaPlayer.h" />
     <ClInclude Include="yaSceneManager.h" />
     <ClInclude Include="yaScene.h" />
+    <ClInclude Include="yaTime.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="yaInput.cpp" />
+    <ClCompile Include="yaMissile.cpp" />
+    <ClCompile Include="yaTime.cpp" />
     <ClCompile Include="yaGameObject.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="yaLogoScene.cpp" />

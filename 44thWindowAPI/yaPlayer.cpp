@@ -1,5 +1,6 @@
 #include "yaPlayer.h"
-
+#include "yaTime.h"
+#include "yaInput.h"
 namespace ya {
 	Player::Player()
 		: mSpeed(1.0f)
@@ -15,21 +16,21 @@ namespace ya {
 	{
 		//키보드 입력
 		Vector2 pos = GetPos();
-		if (GetAsyncKeyState('W') & 0x8000)
+		if (Input::GetkeyState(eKeyCode::W) == eKeyState::PRESSED)
 		{
-			pos.y -= 0.01f;
+			pos.y -= 120.0f * Time::DeltaTime();
 		}
-		if (GetAsyncKeyState('S') & 0x8000)
+		if (Input::GetkeyState(eKeyCode::S) == eKeyState::PRESSED)
 		{
-			pos.y += 0.01f;
+			pos.y += 120.0f * Time::DeltaTime();
 		}
-		if (GetAsyncKeyState('A') & 0x8000)
+		if (Input::GetkeyState(eKeyCode::A) == eKeyState::PRESSED)
 		{
-			pos.x -= 0.01f;
+			pos.x -= 120.0f * Time::DeltaTime();
 		}
-		if (GetAsyncKeyState('D') & 0x8000)
+		if (Input::GetkeyState(eKeyCode::D) == eKeyState::PRESSED)
 		{
-			pos.x += 0.01f;
+			pos.x += 120.0f * Time::DeltaTime();
 		}
 		//움직인 Pos값 다시 설정
 		SetPos(pos);
