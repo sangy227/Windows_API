@@ -4,6 +4,8 @@
 #include "yaInput.h"
 #include "yaMissile.h"
 #include "yaScene.h"
+#include "yaImage.h"
+#include "yaResources.h"
 
 //여기도 추가
 namespace ya {
@@ -13,6 +15,16 @@ namespace ya {
 		//예시 문제 기본값
 		SetPos({ 100.0f, 100.0f });
 		SetScale({ 100.0f, 100.0f });
+
+		if (mImage == nullptr)
+		{
+			mImage = Resources<Image>::Load(L"Player", L"..\\Resources\\Image\\Player.bmp");
+
+			//Resources<Sound>::Load(L"Player", L"..\\Resources\\Image\\Player.bmp");
+			//mImage->Load(L"..\\Resources\\Image\\Player.bmp");
+		}
+
+
 	}
 	Player::~Player()
 	{
@@ -78,7 +90,13 @@ namespace ya {
 		Vector2 pos = GetPos();
 		Vector2 scale = GetScale();
 
-		Rectangle(hdc, pos.x, pos.y, pos.x + scale.x, pos.y + scale.y);
+		//Rectangle(hdc, pos.x, pos.y, pos.x + scale.x, pos.y + scale.y);
 
+		//이미지고 사운드고 똑같이 로드할수있게
+
+
+
+		BitBlt(hdc, pos.x, pos.y, mImage->GetWidth(),mImage->GetHeight(),
+			mImage->GetDC(),0,0,SRCCOPY);
 	}
 }

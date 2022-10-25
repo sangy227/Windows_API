@@ -19,9 +19,15 @@ namespace ya {
 		void SetScale(Vector2 scale) { mScale = scale; }
 		Vector2 GetScale() { return mScale; }
 
+		/*void SetHdc(HDC hdc) { mHdc = hdc; }
+		HDC GetHdc() {
+			return mHdc;
+		}*/
+
 	private:
 		Vector2 mPos;
 		Vector2 mScale;
+		//HDC mHdc;
 
 	};
 }

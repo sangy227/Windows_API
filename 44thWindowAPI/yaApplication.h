@@ -16,6 +16,10 @@ namespace ya
 		void Initialize(WindowData data);
 		void Tick();
 
+		WindowData GetWindowData() {
+			return mWindowData;
+		}
+
 	private:
 		Application();
 		~Application();

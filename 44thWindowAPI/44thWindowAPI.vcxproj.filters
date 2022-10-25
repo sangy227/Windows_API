@@ -32,6 +32,12 @@
     <Filter Include="Engine\High Level Interface">
       <UniqueIdentifier>{ae0f19ae-3e04-48f2-8c10-91e474931f38}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\Resource">
+      <UniqueIdentifier>{cf17ba45-eebf-4eb5-99db-593a63c306a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Resource\Base">
+      <UniqueIdentifier>{5fcd861b-8359-4ed3-9664-65105addaf8a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="44thWindowAPI.h">
@@ -85,6 +91,15 @@
     <ClInclude Include="yaMissile.h">
       <Filter>Engine\GameObject</Filter>
     </ClInclude>
+    <ClInclude Include="yaResource.h">
+      <Filter>Engine\Resource\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="yaImage.h">
+      <Filter>Engine\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="yaResources.h">
+      <Filter>Engine\Manager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="44thWindowAPI.rc">
@@ -135,6 +150,15 @@
     </ClCompile>
     <ClCompile Include="yaMissile.cpp">
       <Filter>Engine\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="yaResource.cpp">
+      <Filter>Engine\Resource\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="yaImage.cpp">
+      <Filter>Engine\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="yaResources.cpp">
+      <Filter>Engine\Manager</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
