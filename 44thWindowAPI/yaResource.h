@@ -13,8 +13,8 @@ namespace ya {
 		const std::wstring& GetKey() { return mKey; }
 		const std::wstring& GetPath() { return mPath; }
 
-		void SetKey(std::wstring& key) { mKey = key; }
-		void SetPath(std::wstring& path) { mPath = path; }
+		void SetKey(const std::wstring& key) { mKey = key; }
+		void SetPath(const std::wstring& path) { mPath = path; }
 
 	private:
 		std::wstring mPath;

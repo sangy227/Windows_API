@@ -2,15 +2,14 @@
 #include "yaSceneManager.h"
 #include "yaTime.h"
 #include "yaInput.h"
+#include "yaResources.h"
+
 namespace ya {
 	//Application Application::mInstance;
 
 	void Application::Initialize(WindowData data)
 	{
 		InitializeWindow(data);
-		
-
-		
 
 		Time::Initialize();
 		Input::Initialize();
@@ -23,6 +22,9 @@ namespace ya {
 		Input::Tick();
 
 		//clear
+
+		Brush brush(mWindowData.backBuffer, mBrushs[(UINT)eBrushColor::Gray]);
+
 		Rectangle(mWindowData.backBuffer, -1, -1, 
 			mWindowData.width + 1, mWindowData.height + 1);
 
@@ -48,6 +50,7 @@ namespace ya {
 	Application::~Application()
 	{
 		SceneManager::Release();
+		Resources::Release();
 
 		ReleaseDC(mWindowData.hWnd, mWindowData.hdc);
 		ReleaseDC(mWindowData.hWnd, mWindowData.backBuffer);
@@ -83,6 +86,18 @@ namespace ya {
 			= (HBITMAP)SelectObject(mWindowData.backBuffer, mWindowData.backTexture);
 
 		DeleteObject(defaultBitmap);
+
+		//메모리 해제 해줘야한다
+		mPens[(UINT)ePenColor::Red] = CreatePen(PS_SOLID, 1, RGB(225, 0, 0));
+		mPens[(UINT)ePenColor::Green] = CreatePen(PS_SOLID, 1, RGB(0, 225, 0));
+		mPens[(UINT)ePenColor::Blue] = CreatePen(PS_SOLID, 1, RGB(0, 0, 225));
+
+		mBrushs[(UINT)eBrushColor::Transparent] = (HBRUSH)GetStockObject(HOLLOW_BRUSH);
+		mBrushs[(UINT)eBrushColor::Black] = (HBRUSH)GetStockObject(BLACK_BRUSH);
+		mBrushs[(UINT)eBrushColor::Gray] = (HBRUSH)GetStockObject(GRAY_BRUSH);
+		mBrushs[(UINT)eBrushColor::White] = (HBRUSH)GetStockObject(WHITE_BRUSH);
+
+
 	}
 
 	

@@ -15,6 +15,7 @@ namespace ya {
 	private:
 		float mSpeed;
 		Image* mImage;
+		
 	};
 }	
 

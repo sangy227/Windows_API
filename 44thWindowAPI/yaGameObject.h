@@ -2,6 +2,7 @@
 
 #include "Common.h"
 #include "yaEntity.h"
+#include "yaComponent.h"
 
 namespace ya {
 	class GameObject : public Entity
@@ -24,11 +25,14 @@ namespace ya {
 			return mHdc;
 		}*/
 
+		void AddComponent(Component* component);
+
 	private:
+		std::vector<Component*> mComponent;
 		Vector2 mPos;
 		Vector2 mScale;
 		//HDC mHdc;
-
+		
 	};
 }
 

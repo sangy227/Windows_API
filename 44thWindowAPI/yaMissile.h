@@ -10,7 +10,7 @@ namespace ya {
 
 		virtual void Tick() override;
 		virtual void Render(HDC hdc) override;
-		//여기도 고쳐
+		
 	private:
 		float mSpeed;
 	};

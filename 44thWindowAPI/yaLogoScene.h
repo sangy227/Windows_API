@@ -1,7 +1,9 @@
 #pragma once
 #include "yaScene.h"
+#include "yaImage.h"
 
 namespace ya {
+	
 	class LogoScene : public Scene
 	{
 	public:
@@ -15,8 +17,8 @@ namespace ya {
 
 
 	private:
-
-
+		Image* Logo;
+		
 	};
 }
 
