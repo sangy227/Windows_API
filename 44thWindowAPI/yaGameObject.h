@@ -28,7 +28,7 @@ namespace ya {
 		void AddComponent(Component* component);
 
 	private:
-		std::vector<Component*> mComponent;
+		std::vector<Component*> mComponents;
 		Vector2 mPos;
 		Vector2 mScale;
 		//HDC mHdc;

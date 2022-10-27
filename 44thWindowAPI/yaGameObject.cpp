@@ -9,7 +9,7 @@ namespace ya {
 	GameObject::~GameObject()
 	{
 
-		for (Component* component : mComponent)
+		for (Component* component : mComponents)
 		{
 			if (component == nullptr) {
 				continue;
@@ -27,7 +27,7 @@ namespace ya {
 	void GameObject::Tick()
 	{
 		//모든 컴포넌트를 Tick호출
-		for (Component* component : mComponent)
+		for (Component* component : mComponents)
 		{
 			if (component == nullptr) {
 				continue;
@@ -38,7 +38,7 @@ namespace ya {
 	void GameObject::Render(HDC hdc)
 	{
 		//모든 컴포넌트를 Render 호출
-		for (Component* component : mComponent)
+		for (Component* component : mComponents)
 		{
 			if (component == nullptr) {
 				continue;
@@ -48,6 +48,12 @@ namespace ya {
 	}
 	void GameObject::AddComponent(Component* component)
 	{
-		mComponent.push_back(component);
+		if (component == nullptr) {
+			//123
+		}
+			
+
+		mComponents.push_back(component);
+		component->mOwner = this;
 	}
 }

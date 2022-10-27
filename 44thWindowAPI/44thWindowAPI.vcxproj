@@ -144,8 +144,10 @@
     <ClInclude Include="def.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="yaAniMator.h" />
+    <ClInclude Include="yaBgImageObject.h" />
     <ClInclude Include="yaCollider.h" />
     <ClInclude Include="yaComponent.h" />
+    <ClInclude Include="yaEndScene.h" />
     <ClInclude Include="yaGameObject.h" />
     <ClInclude Include="Maths.h" />
     <ClInclude Include="Resource.h" />
@@ -157,20 +159,25 @@
     <ClInclude Include="yaLogoScene.h" />
     <ClInclude Include="yaMissile.h" />
     <ClInclude Include="yaPlayer.h" />
+    <ClInclude Include="yaPlayScene.h" />
     <ClInclude Include="yaResource.h" />
     <ClInclude Include="yaResources.h" />
     <ClInclude Include="yaSceneManager.h" />
     <ClInclude Include="yaScene.h" />
     <ClInclude Include="yaTime.h" />
+    <ClInclude Include="yaTitleScene.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Maths.cpp" />
     <ClCompile Include="yaAniMator.cpp" />
+    <ClCompile Include="yaBgImageObject.cpp" />
     <ClCompile Include="yaCollider.cpp" />
     <ClCompile Include="yaComponent.cpp" />
+    <ClCompile Include="yaEndScene.cpp" />
     <ClCompile Include="yaImage.cpp" />
     <ClCompile Include="yaInput.cpp" />
     <ClCompile Include="yaMissile.cpp" />
+    <ClCompile Include="yaPlayScene.cpp" />
     <ClCompile Include="yaResource.cpp" />
     <ClCompile Include="yaResources.cpp" />
     <ClCompile Include="yaTime.cpp" />
@@ -183,6 +190,7 @@
     <ClCompile Include="yaApplication.cpp" />
     <ClCompile Include="yaEntity.cpp" />
     <ClCompile Include="yaScene.cpp" />
+    <ClCompile Include="yaTitleScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="44thWindowAPI.rc" />

@@ -16,6 +16,9 @@ namespace ya {
 		virtual void Tick();
 		virtual void Render(HDC hdc);
 
+		virtual void Enter();
+		virtual void Exit();
+
 		void AddGameObject(GameObject* object);
 
 	private:

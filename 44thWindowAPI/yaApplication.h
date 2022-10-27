@@ -16,9 +16,9 @@ namespace ya
 		void Initialize(WindowData data);
 		void Tick();
 
-		WindowData GetWindowData() {
-			return mWindowData;
-		}
+		WindowData GetWindowData() {return mWindowData;}
+		HPEN GetPen(ePenColor color) { return mPens[(UINT)color]; }
+		HBRUSH GetBrush(eBrushColor color) { return mBrushes[(UINT)color]; }
 
 	private:
 		Application();
@@ -29,7 +29,7 @@ namespace ya
 	private:
 		WindowData mWindowData;
 		HPEN mPens[(UINT)ePenColor::End];
-		HBRUSH mBrushs[(UINT)eBrushColor::End];
+		HBRUSH mBrushes[(UINT)eBrushColor::End];
 	};
 
 }

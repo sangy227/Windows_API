@@ -13,6 +13,8 @@ namespace ya {
 		static void Render(HDC hdc);
 		static void Release();
 
+		static void ChangeScene(eSceneType type);
+
 		static Scene* GetplayScene() { return mPlayScene; } 
 	private:
 		static Scene* mScenes[(UINT)eSceneType::Max];

@@ -1,6 +1,9 @@
 #include "yaScene.h"
 #include "yaGameObject.h"
+
 namespace ya {
+
+
 	Scene::Scene()
 	{
 	}
@@ -36,6 +39,14 @@ namespace ya {
 		{
 			mObject[i]->Render(hdc);
 		}
+	}
+
+	void Scene::Enter()
+	{
+	}
+
+	void Scene::Exit()
+	{
 	}
 
 	void Scene::AddGameObject(GameObject* object)

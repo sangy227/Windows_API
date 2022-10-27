@@ -1,6 +1,5 @@
 #pragma once
 #include "yaScene.h"
-#include "yaImage.h"
 
 namespace ya {
 	
@@ -15,9 +14,11 @@ namespace ya {
 		 void Tick() override;
 		 void Render(HDC hdc) override;
 
+		 virtual void Enter();
+		 virtual void Exit();
+
 
 	private:
-		Image* Logo;
 		
 	};
 }

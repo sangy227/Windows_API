@@ -23,7 +23,7 @@ namespace ya {
 
 		//clear
 
-		Brush brush(mWindowData.backBuffer, mBrushs[(UINT)eBrushColor::Gray]);
+		Brush brush(mWindowData.backBuffer, mBrushes[(UINT)eBrushColor::Gray]);
 
 		Rectangle(mWindowData.backBuffer, -1, -1, 
 			mWindowData.width + 1, mWindowData.height + 1);
@@ -92,10 +92,10 @@ namespace ya {
 		mPens[(UINT)ePenColor::Green] = CreatePen(PS_SOLID, 1, RGB(0, 225, 0));
 		mPens[(UINT)ePenColor::Blue] = CreatePen(PS_SOLID, 1, RGB(0, 0, 225));
 
-		mBrushs[(UINT)eBrushColor::Transparent] = (HBRUSH)GetStockObject(HOLLOW_BRUSH);
-		mBrushs[(UINT)eBrushColor::Black] = (HBRUSH)GetStockObject(BLACK_BRUSH);
-		mBrushs[(UINT)eBrushColor::Gray] = (HBRUSH)GetStockObject(GRAY_BRUSH);
-		mBrushs[(UINT)eBrushColor::White] = (HBRUSH)GetStockObject(WHITE_BRUSH);
+		mBrushes[(UINT)eBrushColor::Transparent] = (HBRUSH)GetStockObject(HOLLOW_BRUSH);
+		mBrushes[(UINT)eBrushColor::Black] = (HBRUSH)GetStockObject(BLACK_BRUSH);
+		mBrushes[(UINT)eBrushColor::Gray] = (HBRUSH)GetStockObject(GRAY_BRUSH);
+		mBrushes[(UINT)eBrushColor::White] = (HBRUSH)GetStockObject(WHITE_BRUSH);
 
 
 	}
