@@ -3,6 +3,7 @@
 #include "yaTime.h"
 #include "yaInput.h"
 #include "yaResources.h"
+#include "yaCollisionManager.h"
 
 namespace ya {
 	//Application Application::mInstance;
@@ -21,14 +22,22 @@ namespace ya {
 		Time::Tick();
 		Input::Tick();
 
+
+		SceneManager::Tick();
+		CollisionManager::Tick();
+
+
+
 		//clear
 
 		Brush brush(mWindowData.backBuffer, mBrushes[(UINT)eBrushColor::Gray]);
 
+		HBRUSH hPrevBrush = (HBRUSH)SelectObject(mWindowData.backBuffer, mBrushes[(UINT)eBrushColor::Gray]);
+
+
 		Rectangle(mWindowData.backBuffer, -1, -1, 
 			mWindowData.width + 1, mWindowData.height + 1);
 
-		SceneManager::Tick();
 		SceneManager::Render(mWindowData.backBuffer);
 
 		Time::Render(mWindowData.backBuffer);

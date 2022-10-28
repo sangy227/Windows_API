@@ -39,5 +39,21 @@
 		Collider,
 		Sound,
 		End,
-		//여기에 추가
+		
+	};
+
+#define _COLLIDER_LAYER 16
+	enum class eColliderLayer
+	{
+		Default,
+		BackGround,
+		Tile,
+		Player,
+		player_ProjectTile,
+		Monster,
+		monster_ProjectTile,
+
+		UI = _COLLIDER_LAYER-1,
+		End = _COLLIDER_LAYER,
+
 	};

@@ -2,8 +2,9 @@
 #include "yaPlayer.h"
 #include "yaInput.h"
 #include "yaSceneManager.h"
-#include"yaBgImageObject.h"
-
+#include "yaBgImageObject.h"
+#include "yaMonster.h"
+#include "yaCollisionManager.h"
 
 
 namespace ya {
@@ -18,13 +19,16 @@ namespace ya {
 
 	void LogoScene::Initialize()
 	{
-		BgImageObject* bg = new BgImageObject();
+		/*BgImageObject* bg = new BgImageObject();
 		bg->SetImage(L"LogoBG", L"LogoBG.bmp");
 		bg->Initialize();
+		AddGameObject(bg, eColliderLayer::BackGround);*/
 
-		AddGameObject(bg);
+		AddGameObject(new Player(),eColliderLayer::Player);
+		AddGameObject(new Monster(), eColliderLayer::Monster);
 
-		//AddGameObject(new Player());
+
+		CollisionManager::SetLayer(eColliderLayer::Player, eColliderLayer::Monster, true);
 	}
 
 	void LogoScene::Tick()

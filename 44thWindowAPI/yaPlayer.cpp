@@ -10,7 +10,6 @@
 #include "yaCollider.h"
 
 
-//여기도 추가
 namespace ya 
 {
 	Player::Player()
@@ -63,7 +62,7 @@ namespace ya
 			Missile* missile = new Missile();
 
 			Scene* playScene = SceneManager::GetplayScene();
-			playScene->AddGameObject(missile);
+			playScene->AddGameObject(missile,eColliderLayer::player_ProjectTile);
 
 			Vector2 playerPos = GetPos();
 			Vector2 playerScale = GetScale() / 2.0f;
@@ -82,14 +81,16 @@ namespace ya
 	void Player::Render(HDC hdc)
 	{
 		//아래 주석 대체용 common파일에 추가함
-		HBRUSH blueBrush = CreateSolidBrush(RGB(153,204,255));
+		//HBRUSH blueBrush = CreateSolidBrush(RGB(153,204,255));
+		// 
 		//HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, blueBrush);
 		//(HBRUSH)SelectObject(hdc, oldBrush);
 		//DeleteObject(oldBrush);
-		Brush brush(hdc, blueBrush);
+		// 
+		//Brush brush(hdc, blueBrush);
 
-		HPEN redPen = CreatePen(PS_SOLID, 2, RGB(255, 0, 0));
-		Pen pen(hdc, redPen);
+		//HPEN redPen = CreatePen(PS_SOLID, 2, RGB(255, 0, 0));
+		//Pen pen(hdc, redPen);
 
 		Vector2 pos = GetPos();
 		Vector2 scale = GetScale();

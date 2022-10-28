@@ -25,11 +25,11 @@ namespace ya {
 	}
 	void Collider::Render(HDC hdc)
 	{
-		
-		HPEN green = Application::GetInstance().GetPen(ePenColor::Green);
-		Pen pen(hdc, green);
 		HBRUSH tr = Application::GetInstance().GetBrush(eBrushColor::Transparent);
 		Brush brush(hdc, tr);
+
+		HPEN greenPen = CreatePen(PS_SOLID, 2, RGB(0, 255, 0));
+		Pen pen(hdc, greenPen);
 
 		Rectangle(hdc, (mPos.x - mScale.x / 2.0f), (mPos.y - mScale.y / 2.0f)
 			, (mPos.x + mScale.x / 2.0f), (mPos.y + mScale.y / 2.0f));

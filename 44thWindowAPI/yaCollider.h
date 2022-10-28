@@ -16,6 +16,10 @@ namespace ya
 		void SetmPos(Vector2 Pos) { mPos = Pos; }
 		void SetmmOffset(Vector2 mPos) { mOffset = mPos; }
 
+		Vector2 GetPos() { return mPos; }
+		Vector2 GetOffset() { return mOffset; }
+		Vector2 GetScale() { return mScale; }
+
 	private:
 		Vector2 mOffset;
 		Vector2 mPos;
