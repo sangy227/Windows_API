@@ -23,6 +23,7 @@ namespace ya {
 	{
 		Vector2 pos = GetPos();
 		Vector2 scale = GetScale();
+
 		Vector2 finalPos = pos;
 
 		Vector2 rect;
