@@ -4,8 +4,8 @@
 namespace ya
 {
 	Entity::Entity()
-		: mName({})
-		, mID(0)
+		: mName(L"")
+		, mID((UINT32)this)
 
 	{
 	}

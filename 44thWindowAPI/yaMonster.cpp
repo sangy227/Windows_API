@@ -11,13 +11,16 @@
 
 namespace ya {
 	Monster::Monster()
+		: mTime(0.0f)
+
 	{
+		SetName(L"Monster");
 		SetPos({ 800.0f, 700.0f });
 		SetScale({ 3.0f, 3.0f });
 
 		if (mImage == nullptr)
 		{
-			mImage = Resources::Load<Image>(L"Monster", L"..\\Resources\\Image\\Player.bmp");
+			mImage = Resources::Load<Image>(L"Monster", L"..\\Resources\\Image\\Monster.bmp");
 		}
 
 		AddComponent(new AniMator());
@@ -33,6 +36,15 @@ namespace ya {
 		Vector2 pos = GetPos();
 
 		SetPos(pos);
+
+		mTime += Time::DeltaTime();
+
+		if (mTime > 5.0f)
+		{
+			pos.x -= 30;
+			SetPos(pos);
+			mTime = 0.0f;
+		}
 	}
 	void Monster::Render(HDC hdc)
 	{
@@ -52,5 +64,14 @@ namespace ya {
 			, RGB(255, 0, 255));
 
 		GameObject::Render(hdc);
+	}
+	void Monster::OnCollisionEnter(Collider* other)
+	{
+	}
+	void Monster::OnCollisionStay(Collider* other)
+	{
+	}
+	void Monster::OnCollisionExit(Collider* other)
+	{
 	}
 }

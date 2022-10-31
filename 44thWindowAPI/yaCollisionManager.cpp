@@ -3,15 +3,19 @@
 #include "yaSceneManager.h"
 #include "yaGameObject.h"
 #include "yaCollider.h"
+
 namespace ya {
 
     WORD CollisionManager::mMatrix[_COLLIDER_LAYER] = {};
+    std::map<UINT64, bool> CollisionManager::mCollisionInformation;
 
-    std::bitset<_COLLIDER_LAYER> CollisionManager::mMatrix2 = {};
+
+    //std::bitset<_COLLIDER_LAYER> CollisionManager::mMatrix2 = {};
 
     void CollisionManager::Tick()
     {
         Scene* playeScene = SceneManager::GetplayScene();
+
         for (size_t row = 0; row < _COLLIDER_LAYER; row++)
         {
             for (size_t col = 0; col < _COLLIDER_LAYER; col++)
@@ -32,6 +36,7 @@ namespace ya {
 
         UINT iLeft = (UINT)left;
         UINT iRight = (UINT)right;
+
         if (iLeft < iRight)
         {
             row = (UINT)left;
@@ -48,11 +53,6 @@ namespace ya {
         else
             mMatrix[row] &= ~(1 << col);
 
-
-        //if (value == true)
-        //    mMatrix2[row] != (1 << col);
-      
-
         
     }
 
@@ -63,38 +63,91 @@ namespace ya {
 
         for (auto leftObject : lefts)
         {
-            if (leftObject->GetComponent<Collider>() == nullptr)
+            Collider* leftCollider = leftObject->GetComponent<Collider>();
+            if (leftCollider == nullptr)
                 continue;
 
             for (auto rightObject : rights)
             {
-                if (rightObject->GetComponent<Collider>() == nullptr)
+                Collider* rightCollider = rightObject->GetComponent<Collider>();
+
+                if (rightCollider == nullptr)
                     continue;
 
-                if (leftObject = rightObject)
+                if (leftObject == rightObject)
                     continue;
 
-                if (Intersect(leftObject->GetComponent<Collider>(), rightObject->GetComponent<Collider>()))
-                {
-                    //충돌
-                }
-                else
-                {
-                    //충돌x
-                }
+                ColliderCollision(leftCollider, rightCollider);
             }
+        }
+    }
+    void CollisionManager::ColliderCollision(Collider* left, Collider* right)
+    {
+        //두 충돌체의 Layer 번호를 일단 확인해준다
+        ColliderID id;
+        id.left = left->GetID();
+        id.right = right->GetID();
+
+        std::map<UINT64, bool>::iterator iter
+            = mCollisionInformation.find(id.ID);
+
+        //충돌정보가 없다면 충돌정보를 생성해준다.
+        if (iter == mCollisionInformation.end())
+        {
+            mCollisionInformation.insert(std::make_pair(id.ID, false));
+            iter = mCollisionInformation.find(id.ID);
+        }
+
+
+        if (Intersect(left, right))
+        {
+            //충돌
+
+            if (iter->second == false)
+            {
+                //최초 한번 충돌
+                
+
+                //충돌함수를 호출해 주면 된다.
+                left->OnCollisionEnter(right);
+                right->OnCollisionEnter(left);
+
+                iter->second == true;
+            }
+            else
+            {
+                //충돌 중일때
+                left->OnCollisionStay(right);
+                right->OnCollisionStay(left);
+            }
+            
+        }
+        else
+        {
+            //충돌x
+            if (iter->second)
+            {
+                //충돌하고 빠져나올때
+                left->OnCollisionExit(right);
+                right->OnCollisionExit(left);
+
+                iter->second == false;
+            }
+
+            // if (iter->second == false)
+
         }
     }
     bool CollisionManager::Intersect(Collider* left, Collider* right)
     {
         Vector2 leftPos = left->GetPos();
-        Vector2 leftscale = left->GetScale();
+        Vector2 leftScale = left->GetScale();
 
         Vector2 rightPos = right->GetPos();
-        Vector2 rightscale = right->GetScale();
+        Vector2 rightScale = right->GetScale();
 
-        if (fabs(leftPos.x  - rightPos.x) < fabs(leftscale.x/2.0f + rightscale.x / 2.0f)
-            && fabs(leftPos.y - rightPos.y) < fabs(leftscale.y / 2.0f + rightscale.y / 2.0f))
+        if (fabs(leftPos.x  - rightPos.x) < fabs(leftScale.x/2.0f + rightScale.x / 2.0f)
+            && fabs(leftPos.y - rightPos.y) < fabs(leftScale.y / 2.0f + rightScale.y / 2.0f))
         {
             return true;
         }

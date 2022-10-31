@@ -21,10 +21,10 @@ namespace ya {
 
 		void AddGameObject(GameObject* object,eColliderLayer type);
 
-		std::vector<GameObject*>& GetGameObjects(eColliderLayer type) { return mObject[(UINT)type]; }
+		std::vector<GameObject*>& GetGameObjects(eColliderLayer type) { return mObjects[(UINT)type]; }
 	private:
 		//std::vector<GameObject*> mObject;
-		std::vector<std::vector<GameObject*>> mObject;
+		std::vector<std::vector<GameObject*>> mObjects;
 
 	
 	};

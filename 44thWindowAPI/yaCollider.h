@@ -12,6 +12,10 @@ namespace ya
 		virtual void Tick() override;
 		virtual void Render(HDC hdc) override;
 
+		virtual void OnCollisionEnter(Collider* other);
+		virtual void OnCollisionStay(Collider* other);
+		virtual void OnCollisionExit(Collider* other);
+
 		void SetScale(Vector2 scale) { mScale = scale; }
 		void SetmPos(Vector2 Pos) { mPos = Pos; }
 		void SetmmOffset(Vector2 mPos) { mOffset = mPos; }
@@ -25,5 +29,6 @@ namespace ya
 		Vector2 mPos;
 		Vector2 mScale;
 
+		UINT mCollisionCount;
 	};
 }

@@ -8,6 +8,7 @@
 #include <map>
 #include <bitset>
 
+#include <set>	
 #include "def.h"
 #include "Maths.h"
 
@@ -39,6 +40,14 @@ private:
 	HPEN mPen;
 
 public:
+	Pen(HDC hdc)
+		: mHdc(hdc)
+		, mOldPen(NULL)
+		, mPen(NULL)
+	{
+
+	}
+
 	Pen(HDC hdc, HPEN pen)
 		: mHdc(hdc)
 		, mOldPen(NULL)
@@ -52,6 +61,11 @@ public:
 		SelectObject(mHdc, mOldPen);
 		DeleteObject(mPen);
 	}
+	void SetPen(HPEN pen)
+	{
+		mOldPen = (HPEN)SelectObject(mHdc, pen);
+	}
+	
 };
 
 struct Brush

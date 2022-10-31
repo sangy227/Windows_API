@@ -26,9 +26,15 @@ namespace ya {
 
 		AddGameObject(new Player(),eColliderLayer::Player);
 		AddGameObject(new Monster(), eColliderLayer::Monster);
+		
+		Monster* pMonster = new Monster();
+		pMonster->SetPos({ 1600 / 2 + 130, 300 / 2 });
+
+		AddGameObject(pMonster, eColliderLayer::Monster);
 
 
 		CollisionManager::SetLayer(eColliderLayer::Player, eColliderLayer::Monster, true);
+		CollisionManager::SetLayer(eColliderLayer::Monster, eColliderLayer::player_ProjectTile, true);
 	}
 
 	void LogoScene::Tick()

@@ -5,6 +5,7 @@
 #include "yaComponent.h"
 
 namespace ya {
+	class Collider;
 	class GameObject : public Entity
 	{
 	public:
@@ -15,10 +16,17 @@ namespace ya {
 		virtual void Tick();
 		virtual void Render(HDC hdc);
 
+		virtual void OnCollisionEnter(Collider* other);
+		virtual void OnCollisionStay(Collider* other);
+		virtual void OnCollisionExit(Collider* other);
+
 		void SetPos(Vector2 pos) { mPos = pos; }
 		Vector2 GetPos() { return mPos; }
 		void SetScale(Vector2 scale) { mScale = scale; }
 		Vector2 GetScale() { return mScale; }
+
+		void Death() { mDead = true; }
+		bool IsDeath() { return mDead; }
 
 		/*void SetHdc(HDC hdc) { mHdc = hdc; }
 		HDC GetHdc() {
@@ -38,8 +46,9 @@ namespace ya {
 				if (component != nullptr)
 					return component;
 				
-				return nullptr;
 			}
+
+			return nullptr;
 		}
 
 	private:
@@ -47,6 +56,8 @@ namespace ya {
 		Vector2 mPos;
 		Vector2 mScale;
 		//HDC mHdc;
+		bool mDead;
+
 		
 	};
 }

@@ -6,17 +6,17 @@ namespace ya {
 
 	Scene::Scene()
 	{
-		mObject.resize(_COLLIDER_LAYER);
+		mObjects.resize(_COLLIDER_LAYER);
 	}
 
 	Scene::~Scene()
 	{
 		for (size_t y = 0; y < _COLLIDER_LAYER; y++)
 		{
-			for (size_t x = 0; x < mObject[y].size(); x++)
+			for (size_t x = 0; x < mObjects[y].size(); x++)
 			{
-				delete mObject[y][x];
-				mObject[y][x] = nullptr;
+				delete mObjects[y][x];
+				mObjects[y][x] = nullptr;
 			}
 		}
 		
@@ -27,12 +27,14 @@ namespace ya {
 	
 		for (size_t y = 0; y < _COLLIDER_LAYER; y++)
 		{
-			for (size_t x = 0; x < mObject[y].size(); x++)
+			for (size_t x = 0; x < mObjects[y].size(); x++)
 			{
-				if (mObject[y][x] != nullptr )
-				{
-					mObject[y][x]->Initialize();
-				}
+				if (mObjects[y][x] == nullptr)
+					continue;
+				if (mObjects[y][x]->IsDeath())
+					continue;
+
+				mObjects[y][x]->Initialize();
 				
 			}
 		}
@@ -43,12 +45,13 @@ namespace ya {
 		
 		for (size_t y = 0; y < _COLLIDER_LAYER; y++)
 		{
-			for (size_t x = 0; x < mObject[y].size(); x++)
+			for (size_t x = 0; x < mObjects[y].size(); x++)
 			{
-				if (mObject[y][x] != nullptr)
-				{
-					mObject[y][x]->Tick();
-				}
+				if (mObjects[y][x] == nullptr)
+					continue;
+				if (mObjects[y][x]->IsDeath())
+					continue;
+				mObjects[y][x]->Tick();
 
 			}
 		}
@@ -59,12 +62,14 @@ namespace ya {
 		
 		for (size_t y = 0; y < _COLLIDER_LAYER; y++)
 		{
-			for (size_t x = 0; x < mObject[y].size(); x++)
+			for (size_t x = 0; x < mObjects[y].size(); x++)
 			{
-				if (mObject[y][x] != nullptr)
-				{
-					mObject[y][x]->Render(hdc);
-				}
+				if (mObjects[y][x] == nullptr)
+					continue;
+				if (mObjects[y][x]->IsDeath())
+					continue;
+
+				mObjects[y][x]->Render(hdc);
 
 			}
 		}
@@ -83,7 +88,7 @@ namespace ya {
 		if (object == nullptr)
 			return;
 
-		mObject[(UINT)type].push_back(object);
+		mObjects[(UINT)type].push_back(object);
 	}
 
 }

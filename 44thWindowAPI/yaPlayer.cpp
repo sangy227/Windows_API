@@ -16,6 +16,7 @@ namespace ya
 		: mSpeed(1.0f)
 	{
 		//예시 문제 기본값
+		SetName(L"Player");
 		SetPos({ 350.0f, 700.0f });
 		SetScale({ 3.0f, 3.0f });
 
@@ -104,7 +105,7 @@ namespace ya
 			mImage->GetDC(),0,0,SRCCOPY);*/
 
 		
-		//여기 변경
+		
 		Vector2 finalPos;
 		finalPos.x = (pos.x - mImage->GetWidth() * (scale.x / 2.0f));
 		finalPos.y = (pos.y - mImage->GetHeight() * (scale.y / 2.0f));
@@ -120,5 +121,14 @@ namespace ya
 
 		GameObject::Render(hdc);
 		
+	}
+	void Player::OnCollisionEnter(Collider* other)
+	{
+	}
+	void Player::OnCollisionStay(Collider* other)
+	{
+	}
+	void Player::OnCollisionExit(Collider* other)
+	{
 	}
 }
