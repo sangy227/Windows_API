@@ -1,5 +1,5 @@
 #include "yaComponent.h"
-
+#include "yaGameObject.h"
 
 
 namespace ya {
@@ -15,6 +15,11 @@ namespace ya {
 
 	}
 	
+	void Component::Tick()
+	{
+		
+	}
+
 	void Component::Render(HDC hdc)
 	{
 	}

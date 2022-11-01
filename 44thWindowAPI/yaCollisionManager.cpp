@@ -14,7 +14,7 @@ namespace ya {
 
     void CollisionManager::Tick()
     {
-        Scene* playeScene = SceneManager::GetplayScene();
+        Scene* playeScene = SceneManager::GetPlayScene();
 
         for (size_t row = 0; row < _COLLIDER_LAYER; row++)
         {
@@ -140,6 +140,11 @@ namespace ya {
     }
     bool CollisionManager::Intersect(Collider* left, Collider* right)
     {
+        if (left->GetOwner()->IsDeath())
+            return false;
+        if (right->GetOwner()->IsDeath())
+            return false;
+
         Vector2 leftPos = left->GetPos();
         Vector2 leftScale = left->GetScale();
 

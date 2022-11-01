@@ -4,6 +4,7 @@
 #include "yaInput.h"
 #include "yaResources.h"
 #include "yaCollisionManager.h"
+#include "yaCamera.h"
 
 namespace ya {
 	//Application Application::mInstance;
@@ -15,14 +16,17 @@ namespace ya {
 		Time::Initialize();
 		Input::Initialize();
 		SceneManager::Initialize();
+		Camera::Initialize();
+
 	}
 
 	void Application::Tick()
 	{
 		Time::Tick();
 		Input::Tick();
+		
 
-
+		Camera::Tick();
 		SceneManager::Tick();
 		CollisionManager::Tick();
 

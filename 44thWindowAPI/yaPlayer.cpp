@@ -8,6 +8,8 @@
 #include "yaResources.h"
 #include "yaAniMator.h"
 #include "yaCollider.h"
+#include "yaCamera.h"
+#include "yaBackPack.h"
 
 
 namespace ya 
@@ -29,6 +31,7 @@ namespace ya
 		AddComponent(new AniMator());
 		AddComponent(new Collider());
 
+		
 	}
 	Player::~Player()
 	{
@@ -62,8 +65,8 @@ namespace ya
 		if (KEY_DOWN(eKeyCode::SPACE)) {
 			Missile* missile = new Missile();
 
-			Scene* playScene = SceneManager::GetplayScene();
-			playScene->AddGameObject(missile,eColliderLayer::player_ProjectTile);
+			Scene* playScene = SceneManager::GetPlayScene();
+			playScene->AddGameObject(missile,eColliderLayer::Player_Projecttile);
 
 			Vector2 playerPos = GetPos();
 			Vector2 playerScale = GetScale() / 2.0f;
@@ -71,6 +74,12 @@ namespace ya
 			Vector2 missileScale = missile->GetScale();
 
 			missile->SetPos((playerPos + playerScale) - (missileScale / 2.0f));
+		}
+		if (KEY_DOWN(eKeyCode::I))
+		{
+			BackPack* backPack = new BackPack();
+			Scene* playScene = SceneManager::GetPlayScene();
+			playScene->AddGameObject(backPack, eColliderLayer::Player_Projecttile);
 		}
 		//움직인 Pos값 다시 설정
 		SetPos(pos);
@@ -114,6 +123,8 @@ namespace ya
 		rect.x = mImage->GetWidth() * scale.x;
 		rect.y = mImage->GetHeight() * scale.y;
 
+		finalPos = Camera::CalculatePos(finalPos);
+
 		//그리기
 		TransparentBlt(hdc, finalPos.x, finalPos.y, rect.x, rect.y
 			, mImage->GetDC(), 0, 0, mImage->GetWidth(), mImage->GetHeight()
@@ -124,11 +135,14 @@ namespace ya
 	}
 	void Player::OnCollisionEnter(Collider* other)
 	{
+
 	}
 	void Player::OnCollisionStay(Collider* other)
 	{
+
 	}
 	void Player::OnCollisionExit(Collider* other)
 	{
+
 	}
 }

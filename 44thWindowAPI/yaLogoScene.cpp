@@ -34,7 +34,7 @@ namespace ya {
 
 
 		CollisionManager::SetLayer(eColliderLayer::Player, eColliderLayer::Monster, true);
-		CollisionManager::SetLayer(eColliderLayer::Monster, eColliderLayer::player_ProjectTile, true);
+		CollisionManager::SetLayer(eColliderLayer::Monster, eColliderLayer::Player_Projecttile, true);
 	}
 
 	void LogoScene::Tick()

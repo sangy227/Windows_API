@@ -1,9 +1,11 @@
 #include "yaTime.h"
+#include "yaApplication.h"
 namespace ya {
 	 LARGE_INTEGER Time::mCpuFrequency;
 	 LARGE_INTEGER Time::mPrevFrequency;
 	 LARGE_INTEGER Time::mCurFrequency;
 	 float Time::mDeltaTime = 0.0f;
+	 float Time::mTime = 0.0f;
 
 	void Time::Initialize()
 	{
@@ -27,17 +29,19 @@ namespace ya {
 	}
 	void Time::Render(HDC hdc)
 	{
-		wchar_t szFloat[50] = {};
-		//델타 타임
-		//한프레임 도는 동안 총 걸린시간
+		mTime += Time::DeltaTime();
+		if (mTime > 1.0f)
+		{
 
-		//30프레임 이하다 디버깅모드 작업을 할때
+			wchar_t szFloat[50] = {};
+			float fps = 1.0f / mDeltaTime;
+			swprintf_s(szFloat, 50, L"fps : %f", fps);
 
-		float fps = 1.0f / mDeltaTime;
+			HWND hwnd 
+				= Application::GetInstance().GetWindowData().hWnd;
 
-		swprintf_s(szFloat, 50, L"fps : %f", fps);
-		int strLen = wcsnlen_s(szFloat, 50);
-
-		TextOut(hdc, 10, 10, szFloat, strLen);
+			SetWindowText(hwnd, szFloat);
+			mTime = 0.0f;
+		}
 	}
 }

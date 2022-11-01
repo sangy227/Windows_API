@@ -8,6 +8,8 @@
 #include "yaResources.h"
 #include "yaAniMator.h"
 #include "yaCollider.h"
+#include "yaCamera.h"
+
 
 namespace ya {
 	Monster::Monster()
@@ -37,14 +39,14 @@ namespace ya {
 
 		SetPos(pos);
 
-		mTime += Time::DeltaTime();
+		/*mTime += Time::DeltaTime();
 
 		if (mTime > 5.0f)
 		{
 			pos.x -= 30;
 			SetPos(pos);
 			mTime = 0.0f;
-		}
+		}*/
 	}
 	void Monster::Render(HDC hdc)
 	{
@@ -58,6 +60,9 @@ namespace ya {
 		Vector2 rect;
 		rect.x = mImage->GetWidth() * scale.x;
 		rect.y = mImage->GetHeight() * scale.y;
+
+		finalPos = Camera::CalculatePos(finalPos);
+
 
 		TransparentBlt(hdc, finalPos.x, finalPos.y, rect.x, rect.y
 			, mImage->GetDC(), 0, 0, mImage->GetWidth(), mImage->GetHeight()

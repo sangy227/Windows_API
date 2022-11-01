@@ -1,6 +1,8 @@
 #include "yaMissile.h"
 #include "yaTime.h"
 #include "yaCollider.h"
+#include "yaCamera.h"
+
 
 namespace ya {
     Missile::Missile()
@@ -13,6 +15,8 @@ namespace ya {
         col->SetScale(Vector2(20.0f, 20.0f));
 
         AddComponent(col);
+        Camera::SetTarget(this);
+
     }
     Missile::~Missile()
     {
@@ -33,8 +37,12 @@ namespace ya {
     {
         Vector2 pos = GetPos();
         Vector2 scale = GetScale();
+
+        pos = Camera::CalculatePos(pos);
+
         Ellipse(hdc, pos.x-10, pos.y-10, pos.x + scale.x, pos.y + scale.y);
 
+        //Ãß°¡
         GameObject::Render(hdc);
 
 

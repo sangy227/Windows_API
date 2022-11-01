@@ -49,7 +49,7 @@
 		BackGround,
 		Tile,
 		Player,
-		player_ProjectTile,
+		Player_Projecttile,
 		Monster,
 		monster_ProjectTile,
 

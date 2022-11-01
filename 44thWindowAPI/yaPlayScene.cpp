@@ -16,7 +16,7 @@ namespace ya {
 	void PlayScene::Initialize()
 	{
 		//플레이어 그리기
-		AddGameObject(new Player(), eColliderLayer::Player);
+		//AddGameObject(new Player(), eColliderLayer::Player);
 	}
 
 
