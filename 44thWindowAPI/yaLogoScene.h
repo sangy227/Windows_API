@@ -1,8 +1,9 @@
 #pragma once
 #include "yaScene.h"
 
-namespace ya {
-	
+namespace ya 
+{
+	class Monster;
 	class LogoScene : public Scene
 	{
 	public:
@@ -19,7 +20,7 @@ namespace ya {
 
 
 	private:
-		
+		Monster* mons[2];
 	};
 }
 

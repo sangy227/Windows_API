@@ -10,6 +10,15 @@ namespace ya {
 		typedef std::map<std::wstring, Resource*>::iterator ResourceIter;
 
 		template <typename T>
+		static void Insert(const std::wstring& key, T* resource)
+		{
+			if (resource == nullptr
+				||key ==L"")
+				return;
+			mResources.insert(std::make_pair(key, resource));
+		}
+
+		template <typename T>
 		static T* Find(const std::wstring& key)
 		{
 			ResourceIter iter = mResources.find(key);

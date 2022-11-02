@@ -7,6 +7,7 @@
 namespace ya {
     Missile::Missile()
         : mSpeed(1.0f)
+        , mAliveTime(1.0f)
     {
         SetPos({ 100.0f , 100.0f });
         SetScale({ 20.0f , 20.0f });
@@ -15,15 +16,21 @@ namespace ya {
         col->SetScale(Vector2(20.0f, 20.0f));
 
         AddComponent(col);
-        Camera::SetTarget(this);
+        //Camera::SetTarget(this);
 
     }
     Missile::~Missile()
     {
     }
+
     void Missile::Tick()
     {
         GameObject::Tick();
+        mAliveTime -= Time::DeltaTime();
+        if (mAliveTime <=0.0f)
+        {
+            this->Death();
+        }
 
         Vector2 pos = GetPos();
 
@@ -42,7 +49,7 @@ namespace ya {
 
         Ellipse(hdc, pos.x-10, pos.y-10, pos.x + scale.x, pos.y + scale.y);
 
-        //Ãß°¡
+        
         GameObject::Render(hdc);
 
 

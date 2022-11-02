@@ -1,4 +1,5 @@
 #include "yaMonster.h"
+
 #include "yaTime.h"
 #include "yaSceneManager.h"
 #include "yaInput.h"
@@ -17,7 +18,7 @@ namespace ya {
 
 	{
 		SetName(L"Monster");
-		SetPos({ 800.0f, 700.0f });
+		SetPos({ 1600 / 2, 300 / 2 });
 		SetScale({ 3.0f, 3.0f });
 
 		if (mImage == nullptr)
@@ -28,9 +29,27 @@ namespace ya {
 		AddComponent(new AniMator());
 		AddComponent(new Collider());
 	}
+	Monster::Monster(Vector2 position)
+		: mTime(0.0f)
+
+	{
+		SetName(L"Monster");
+		SetPos(position);
+		SetScale({ 3.0f, 3.0f });
+
+		if (mImage == nullptr)
+		{
+			mImage = Resources::Load<Image>(L"Monster", L"..\\Resources\\Image\\Monster.bmp");
+		}
+
+		AddComponent(new AniMator());
+		AddComponent(new Collider());
+	}
+
 	Monster::~Monster()
 	{
 	}
+
 	void Monster::Tick()
 	{
 		GameObject::Tick();

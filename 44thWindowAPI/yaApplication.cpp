@@ -34,22 +34,26 @@ namespace ya {
 
 		//clear
 
-		Brush brush(mWindowData.backBuffer, mBrushes[(UINT)eBrushColor::Gray]);
+		//Brush brush(mWindowData.backBuffer, mBrushes[(UINT)eBrushColor::Gray]);
 
 		HBRUSH hPrevBrush = (HBRUSH)SelectObject(mWindowData.backBuffer, mBrushes[(UINT)eBrushColor::Gray]);
-
-
 		Rectangle(mWindowData.backBuffer, -1, -1, 
 			mWindowData.width + 1, mWindowData.height + 1);
+		SelectObject(mWindowData.backBuffer, hPrevBrush);
+
 
 		SceneManager::Render(mWindowData.backBuffer);
-
+		Camera::Render(mWindowData.backBuffer);
 		Time::Render(mWindowData.backBuffer);
 		Input::Render(mWindowData.backBuffer);
+
 
 		//bitbit 함수는 dc간에 이미지를 복사해주는 함수
 		BitBlt(mWindowData.hdc, 0, 0, mWindowData.width, mWindowData.height, 
 			mWindowData.backBuffer, 0, 0, SRCCOPY);
+
+		//DetroyGameObject 삭제
+		SceneManager::DetroyGameObject();
 	}
 
 

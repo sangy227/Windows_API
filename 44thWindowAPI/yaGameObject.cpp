@@ -7,6 +7,13 @@ namespace ya {
 		, mDead(false)
 	{
 	}
+	GameObject::GameObject(Vector2 position)
+		: mPos{ position }
+		, mScale{ 1.0f, 1.0f }
+		, mDead(false)
+	{
+
+	}
 	GameObject::~GameObject()
 	{
 

@@ -11,6 +11,7 @@ namespace ya {
 		static void Initialize();
 		static void Tick();
 		static void Render(HDC hdc);
+		static void DetroyGameObject();
 		static void Release();
 
 		static void ChangeScene(eSceneType type);

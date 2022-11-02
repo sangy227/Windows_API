@@ -24,9 +24,21 @@ namespace ya {
 		{
 			return nullptr;
 		}
-			
 
-		return nullptr;
+		HBITMAP defaultBitmap = (HBITMAP)SelectObject(image->mHdc, image->mBitmap);
+		DeleteObject(defaultBitmap);
+
+		//비트맵 정보 확인
+		BITMAP bitmap = {};
+		GetObject(image->mBitmap, sizeof(BITMAP), &bitmap);
+			
+		image->mWidth = bitmap.bmWidth;
+		image->mHeight = bitmap.bmHeight;
+
+		image->SetKey(key);
+
+		Resources::Insert<Image>(key, image);
+		return image;
 	}
 	Image::Image()
 		: mBitmap(NULL)

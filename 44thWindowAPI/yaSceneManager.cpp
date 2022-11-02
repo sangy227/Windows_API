@@ -3,6 +3,7 @@
 #include "yaTitleScene.h"
 #include "yaPlayScene.h"
 #include "yaEndScene.h"
+#include "yaObject.h"
 
 namespace ya {
 
@@ -11,8 +12,11 @@ namespace ya {
 
 	void SceneManager::Initialize()
 	{
+		
+
 		//¸ðµç¾ÀµéÀ» ÃÊ±âÈ­
 		mScenes[(UINT)eSceneType::Logo] = new LogoScene();
+		ChangeScene(eSceneType::Logo);
 		mScenes[(UINT)eSceneType::Logo]->Initialize();
 
 		mScenes[(UINT)eSceneType::Title] = new TitleScene();
@@ -24,7 +28,7 @@ namespace ya {
 		mScenes[(UINT)eSceneType::End] = new EndScene();
 		mScenes[(UINT)eSceneType::End]->Initialize();
 
-		ChangeScene(eSceneType::End);
+	
 
 		//mPlayScene = mScenes[(UINT)eSceneType::Logo];
 	}
@@ -39,6 +43,14 @@ namespace ya {
 	{
 		//ÇöÀç¾À ·»´õ¸µ
 		mPlayScene->Render(hdc);
+	}
+
+	void SceneManager::DetroyGameObject()
+	{
+
+		ya::object::Release();
+
+
 	}
 
 	void SceneManager::Release()

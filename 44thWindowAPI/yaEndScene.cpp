@@ -1,4 +1,7 @@
 #include "yaEndScene.h"
+#include "yaInput.h"
+#include "yaSceneManager.h"
+#include "yaBgImageObject.h"
 
 
 namespace ya {
@@ -17,6 +20,11 @@ namespace ya {
 	void EndScene::Tick()
 	{
 		Scene::Tick();
+
+		if (KEY_DOWN(eKeyCode::N))
+		{
+			SceneManager::ChangeScene(eSceneType::Logo);
+		}
 	}
 
 	void EndScene::Render(HDC hdc)

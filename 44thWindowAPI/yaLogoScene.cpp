@@ -5,6 +5,8 @@
 #include "yaBgImageObject.h"
 #include "yaMonster.h"
 #include "yaCollisionManager.h"
+#include "yaObject.h"
+
 
 
 namespace ya {
@@ -24,13 +26,13 @@ namespace ya {
 		bg->Initialize();
 		AddGameObject(bg, eColliderLayer::BackGround);*/
 
-		AddGameObject(new Player(),eColliderLayer::Player);
-		AddGameObject(new Monster(), eColliderLayer::Monster);
-		
-		Monster* pMonster = new Monster();
-		pMonster->SetPos({ 1600 / 2 + 130, 300 / 2 });
 
-		AddGameObject(pMonster, eColliderLayer::Monster);
+		ya::object::Instantiate<Player>(eColliderLayer::Player);
+
+	
+		
+		mons[0] = ya::object::Instantiate<Monster>(eColliderLayer::Monster);
+		mons[1] = ya::object::Instantiate<Monster>(Vector2{ 1600 / 2 + 130, 300 / 2 }, eColliderLayer::Monster);
 
 
 		CollisionManager::SetLayer(eColliderLayer::Player, eColliderLayer::Monster, true);
@@ -45,6 +47,12 @@ namespace ya {
 		if (KEY_DOWN(eKeyCode::N))
 		{
 			SceneManager::ChangeScene(eSceneType::Title);
+			
+		}
+		if (KEY_DOWN(eKeyCode::M))
+		{
+			ya::object::Destroy(mons[0]);
+			ya::object::Destroy(mons[1]);
 		}
 	}
 

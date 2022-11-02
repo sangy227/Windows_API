@@ -13,6 +13,7 @@ namespace ya {
 		static Vector2 CalculatePos(Vector2 pos) { return pos - mDistance; }
 		static void SetTarget(GameObject* target) { mTarget = target; }
 
+		static void SetCameraEffect(eCameraEffect effect) { mEffect = effect; }
 	private:
 		Camera()=default;
 		~Camera()=default;
@@ -20,7 +21,7 @@ namespace ya {
 	private:
 		static Vector2 mResolution; // 화면 해상도
 		static Vector2 mLookPosition;
-		static Vector2 mDistance;
+		static Vector2 mDistance; // 해상도 중심좌표와 현재 카메라의 간격
 		static GameObject* mTarget;
 
 
