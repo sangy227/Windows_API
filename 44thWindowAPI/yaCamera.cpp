@@ -3,12 +3,20 @@
 #include "yaGameObject.h"
 #include "yaInput.h"
 #include "yaTime.h"
+#include "yaImage.h"
 
 namespace ya {
 	Vector2 Camera::mResolution = Vector2::Zero;// 화면 해상도
 	 Vector2 Camera::mLookPosition = Vector2::Zero;;
 	 Vector2 Camera::mDistance = Vector2::Zero;;
 	 GameObject* Camera::mTarget = nullptr;
+
+	  eCameraEffect Camera::mEffect = eCameraEffect::None;
+	  Image* Camera::mCutton=nullptr; // 검정색 이미지
+	  float Camera::mAlphaTime=0.0f;
+
+	  float Camera::mCuttonAlpha=1.0f;
+	  float Camera::mEndTime=5.0f;
 
 	void Camera::Initialize()
 	{
@@ -18,6 +26,9 @@ namespace ya {
 
 		mLookPosition = mResolution / 2.0f;
 
+		mEffect = eCameraEffect::FadeIn;
+		mCutton = Image::Create(L"CamereCutton", 600, 500);
+		
 		
 	}
 	void Camera::Tick()
@@ -46,5 +57,8 @@ namespace ya {
 		}
 
 		mDistance = mLookPosition - (mResolution / 2.0f);
+	}
+	void Camera::Render(HDC hdc)
+	{
 	}
 }

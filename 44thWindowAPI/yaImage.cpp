@@ -1,7 +1,33 @@
 #include "yaImage.h"
 #include "yaApplication.h"
+#include "yaResources.h"
 
 namespace ya {
+	Image* Image::Create(const std::wstring& key, UINT width, UINT heihgt)
+	{
+		Image* image = Resources::Find<Image>(key);
+		if (image != nullptr)
+		{
+			MessageBox(nullptr, L"중복 키 이미지 생성", L"이미지 생성 실패!", MB_OK);
+			return nullptr;
+		}
+
+		//이미지를 생성해줘야한다.
+		image = new Image();
+		HDC mainHdc = Application::GetInstance().GetHdc();
+
+		image->mBitmap = CreateCompatibleBitmap(mainHdc, width, heihgt);
+		image->mHdc = CreateCompatibleDC(mainHdc);
+
+		if (image->mBitmap == NULL
+			|| image->mHdc == NULL)
+		{
+			return nullptr;
+		}
+			
+
+		return nullptr;
+	}
 	Image::Image()
 		: mBitmap(NULL)
 		, mHdc(NULL)

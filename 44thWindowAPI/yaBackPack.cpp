@@ -16,7 +16,7 @@ namespace ya {
 
 		SetPos({ 1600 / 2, 900 / 2 });
 		SetScale({ 3.0f, 3.0f });
-		alpha = 255;
+		alpha = 127;
 	}
 
 	BackPack::~BackPack()
@@ -26,7 +26,7 @@ namespace ya {
 	void BackPack::Tick()
 	{
 		GameObject::Tick();
-		alpha -= 10 * Time::DeltaTime();
+		//alpha -= 10 * Time::DeltaTime();
 	}
 
 	void BackPack::Render(HDC hdc)

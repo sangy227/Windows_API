@@ -1,12 +1,14 @@
 #pragma once
 #include "Common.h"
 namespace ya {
+	class Image;
 	class GameObject;
 	class Camera
 	{
 	public:
 		static void Initialize();
 		static void Tick();
+		static void Render(HDC hdc);
 
 		static Vector2 CalculatePos(Vector2 pos) { return pos - mDistance; }
 		static void SetTarget(GameObject* target) { mTarget = target; }
@@ -20,6 +22,14 @@ namespace ya {
 		static Vector2 mLookPosition;
 		static Vector2 mDistance;
 		static GameObject* mTarget;
+
+
+		static eCameraEffect mEffect;
+		static Image* mCutton; // 검정색 이미지
+		static float mAlphaTime;
+
+		static float mCuttonAlpha;
+		static float mEndTime;
 	};
 }
 

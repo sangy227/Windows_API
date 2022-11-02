@@ -4,6 +4,7 @@ namespace ya {
 	class Image : public Resource
 	{
 	public:
+		static Image* Create(const std::wstring& key, UINT width, UINT heihgt);
 		Image();
 		~Image();
 

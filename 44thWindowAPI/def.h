@@ -68,3 +68,10 @@
 		};
 		UINT64 ID;
 	};
+
+	enum class eCameraEffect
+	{
+		FadeIn,
+		FadeOut,
+		None,
+	};
