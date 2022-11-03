@@ -1,16 +1,22 @@
 #include "yaGameObject.h"
-
+#include "yaTime.h"
 namespace ya {
 	GameObject::GameObject()
 		: mPos{ 0.0f, 0.0f }
 		, mScale{ 1.0f, 1.0f }
 		, mDead(false)
+		, mDeathTime(-100.0f)
+		, mDeathTimeOn(false)
 	{
 	}
 	GameObject::GameObject(Vector2 position)
 		: mPos{ position }
 		, mScale{ 1.0f, 1.0f }
 		, mDead(false)
+		, mDeathTime(-100.0f)
+		, mDeathTimeOn(false)
+
+
 	{
 
 	}
@@ -34,6 +40,7 @@ namespace ya {
 
 	void GameObject::Tick()
 	{
+		DeathLoop();
 		//모든 컴포넌트를 Tick호출
 		for (Component* component : mComponents)
 		{
@@ -43,6 +50,8 @@ namespace ya {
 			
 			component->Tick();
 		}
+
+
 	}
 	void GameObject::Render(HDC hdc)
 	{
@@ -73,5 +82,14 @@ namespace ya {
 			
 		mComponents.push_back(component);
 		component->mOwner = this;
+	}
+	void GameObject::DeathLoop()
+	{
+		if (mDeathTimeOn == true)
+		{
+			mDeathTime -= Time::DeltaTime();
+			if (mDeathTime <= 0.0f)
+				Death();
+		}
 	}
 }

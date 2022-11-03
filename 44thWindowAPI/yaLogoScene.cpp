@@ -28,9 +28,6 @@ namespace ya {
 
 
 		ya::object::Instantiate<Player>(eColliderLayer::Player);
-
-	
-		
 		mons[0] = ya::object::Instantiate<Monster>(eColliderLayer::Monster);
 		mons[1] = ya::object::Instantiate<Monster>(Vector2{ 1600 / 2 + 130, 300 / 2 }, eColliderLayer::Monster);
 
@@ -43,6 +40,9 @@ namespace ya {
 	{
 		//오브젝트 Tick 을 호출
 		Scene::Tick();
+
+		//몇초후에 사라진다
+		//ya::object::Destroy(mons[0], 3.0f);
 
 		if (KEY_DOWN(eKeyCode::N))
 		{

@@ -7,6 +7,7 @@
 #include <list>
 #include <map>
 #include <bitset>
+#include <functional>
 
 #include <set>	
 #include "def.h"

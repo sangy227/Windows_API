@@ -31,7 +31,8 @@ namespace ya
 		AddComponent(new AniMator());
 		AddComponent(new Collider());
 
-		
+		//Camera::SetTarget(this);
+
 	}
 	Player::~Player()
 	{
@@ -102,33 +103,33 @@ namespace ya
 		//HPEN redPen = CreatePen(PS_SOLID, 2, RGB(255, 0, 0));
 		//Pen pen(hdc, redPen);
 
-		Vector2 pos = GetPos();
-		Vector2 scale = GetScale();
+		//Vector2 pos = GetPos();
+		//Vector2 scale = GetScale();
 
-		//Rectangle(hdc, pos.x, pos.y, pos.x + scale.x, pos.y + scale.y);
+		////Rectangle(hdc, pos.x, pos.y, pos.x + scale.x, pos.y + scale.y);
 
-		//이미지고 사운드고 똑같이 로드할수있게
-		
-		//크기변경이 안된다.
-		/*BitBlt(hdc, pos.x, pos.y, mImage->GetWidth(),mImage->GetHeight(),
-			mImage->GetDC(),0,0,SRCCOPY);*/
+		////이미지고 사운드고 똑같이 로드할수있게
+		//
+		////크기변경이 안된다.
+		///*BitBlt(hdc, pos.x, pos.y, mImage->GetWidth(),mImage->GetHeight(),
+		//	mImage->GetDC(),0,0,SRCCOPY);*/
 
-		
-		
-		Vector2 finalPos;
-		finalPos.x = (pos.x - mImage->GetWidth() * (scale.x / 2.0f));
-		finalPos.y = (pos.y - mImage->GetHeight() * (scale.y / 2.0f));
+		//
+		//
+		//Vector2 finalPos;
+		//finalPos.x = (pos.x - mImage->GetWidth() * (scale.x / 2.0f));
+		//finalPos.y = (pos.y - mImage->GetHeight() * (scale.y / 2.0f));
 
-		Vector2 rect;
-		rect.x = mImage->GetWidth() * scale.x;
-		rect.y = mImage->GetHeight() * scale.y;
+		//Vector2 rect;
+		//rect.x = mImage->GetWidth() * scale.x;
+		//rect.y = mImage->GetHeight() * scale.y;
 
-		finalPos = Camera::CalculatePos(finalPos);
+		//finalPos = Camera::CalculatePos(finalPos);
 
-		//그리기
-		TransparentBlt(hdc, finalPos.x, finalPos.y, rect.x, rect.y
-			, mImage->GetDC(), 0, 0, mImage->GetWidth(), mImage->GetHeight()
-			, RGB(255, 0, 255));
+		////그리기
+		//TransparentBlt(hdc, finalPos.x, finalPos.y, rect.x, rect.y
+		//	, mImage->GetDC(), 0, 0, mImage->GetWidth(), mImage->GetHeight()
+		//	, RGB(255, 0, 255));
 
 		GameObject::Render(hdc);
 		

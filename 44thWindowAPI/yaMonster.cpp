@@ -26,7 +26,7 @@ namespace ya {
 			mImage = Resources::Load<Image>(L"Monster", L"..\\Resources\\Image\\Monster.bmp");
 		}
 
-		AddComponent(new AniMator());
+		//AddComponent(new AniMator());
 		AddComponent(new Collider());
 	}
 	Monster::Monster(Vector2 position)
@@ -42,7 +42,7 @@ namespace ya {
 			mImage = Resources::Load<Image>(L"Monster", L"..\\Resources\\Image\\Monster.bmp");
 		}
 
-		AddComponent(new AniMator());
+		//AddComponent(new AniMator());
 		AddComponent(new Collider());
 	}
 

@@ -29,6 +29,12 @@ namespace ya {
 
 		void Death() { mDead = true; }
 		bool IsDeath() { return mDead; }
+		void SetDeathTime(float time) {
+			if (mDeathTime <= 0.0f)
+			{
+				mDeathTime = time , mDeathTimeOn = true; 
+			}
+		}
 
 		/*void SetHdc(HDC hdc) { mHdc = hdc; }
 		HDC GetHdc() {
@@ -53,12 +59,16 @@ namespace ya {
 			return nullptr;
 		}
 
+		void DeathLoop();
+
 	private:
 		std::vector<Component*> mComponents;
 		Vector2 mPos;
 		Vector2 mScale;
 		//HDC mHdc;
 		bool mDead;
+		float mDeathTime;
+		bool mDeathTimeOn;
 
 		
 	};

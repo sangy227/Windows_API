@@ -35,7 +35,7 @@ namespace ya {
 		//시간 측정해서 지우기
 		static __forceinline void Destroy(GameObject* dead,float deathTime)
 		{
-			dead->Death();
+			dead->SetDeathTime(deathTime);
 		}
 
 

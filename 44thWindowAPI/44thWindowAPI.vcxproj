@@ -145,6 +145,7 @@
     <ClInclude Include="Common.h" />
     <ClInclude Include="def.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="yaAnimation.h" />
     <ClInclude Include="yaAniMator.h" />
     <ClInclude Include="yaBackPack.h" />
     <ClInclude Include="yaBgImageObject.h" />
@@ -175,6 +176,7 @@
     <ClInclude Include="yaTitleScene.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="yaAnimation.cpp" />
     <ClCompile Include="yaBackPack.cpp" />
     <ClCompile Include="yaCamera.cpp" />
     <ClCompile Include="Maths.cpp" />
