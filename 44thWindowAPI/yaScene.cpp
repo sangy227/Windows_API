@@ -1,11 +1,13 @@
 #include "yaScene.h"
 #include "yaGameObject.h"
+#include "yaSceneManager.h"
 
 namespace ya {
 
 
 	Scene::Scene()
 	{
+		SceneManager::SetPlayScene(this);
 		mObjects.resize(_COLLIDER_LAYER);
 	}
 

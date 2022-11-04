@@ -17,18 +17,38 @@ namespace ya
 	Player::Player()
 		: mSpeed(1.0f)
 	{
-		//예시 문제 기본값
 		SetName(L"Player");
 		SetPos({ 350.0f, 700.0f });
 		SetScale({ 3.0f, 3.0f });
 
 		if (mImage == nullptr)
 		{
-			mImage = Resources::Load<Image>(L"Player", L"..\\Resources\\Image\\Player.bmp");
-
+			mImage = Resources::Load<Image>(L"Player", L"..\\Resources\\Image\\link.bmp");
 		}
 
-		AddComponent(new AniMator());
+		mAnimator = new AniMator();
+		mAnimator->CreateAnimation(L"Idle", mImage
+			, Vector2(0.0f, 0.0f), Vector2(120.0f, 130.0f)
+			, Vector2(5.0f, -20.0f), 3, 0.1f);
+
+		mAnimator->CreateAnimation(L"MoveDown", mImage
+			, Vector2(0.0f, 520.0f), Vector2(120.0f, 130.0f)
+			, Vector2(5.0f, -20.0f), 10, 0.1f);
+		mAnimator->CreateAnimation(L"MoveLeft", mImage
+			, Vector2(0.0f, 650.0f), Vector2(120.0f, 130.0f)
+			, Vector2(5.0f, -20.0f), 10, 0.1f);
+		mAnimator->CreateAnimation(L"MoveUp", mImage
+			, Vector2(0.0f, 780.0f), Vector2(120.0f, 130.0f)
+			, Vector2(5.0f, -20.0f), 10, 0.1f);
+		mAnimator->CreateAnimation(L"MoveRight", mImage
+			, Vector2(0.0f, 910.0f), Vector2(120.0f, 130.0f)
+			, Vector2(5.0f, -20.0f), 10, 0.1f);
+
+		mAnimator->Play(L"MoveDown", true);
+
+		//mAnimator->mCompleteEvent = std::bind(&Player::WalkComplete, this);
+
+		AddComponent(mAnimator);
 		AddComponent(new Collider());
 
 		//Camera::SetTarget(this);
@@ -63,15 +83,49 @@ namespace ya
 			pos.x += 120.0f * Time::DeltaTime();
 		}
 
+		if (KEY_DOWN(eKeyCode::W))
+		{
+			mAnimator->Play(L"MoveUp", true);
+		}
+		if (KEY_DOWN(eKeyCode::S))
+		{
+			mAnimator->Play(L"MoveDown", true);
+		}
+		if (KEY_DOWN(eKeyCode::A))
+		{
+			mAnimator->Play(L"MoveLeft", true);
+		}
+		if (KEY_DOWN(eKeyCode::D))
+		{
+			mAnimator->Play(L"MoveRight", true);
+		}
+
+		/*if (KEY_UP(eKeyCode::W))
+		{
+			mAnimator->Play(L"Idle", true);
+		}
+		if (KEY_UP(eKeyCode::S))
+		{
+			mAnimator->Play(L"Idle", true);
+		}
+		if (KEY_UP(eKeyCode::A))
+		{
+			mAnimator->Play(L"Idle", true);
+		}
+		if (KEY_UP(eKeyCode::D))
+		{
+			mAnimator->Play(L"Idle", true);
+		}*/
+
+
 		if (KEY_DOWN(eKeyCode::SPACE)) {
 			Missile* missile = new Missile();
 
 			Scene* playScene = SceneManager::GetPlayScene();
-			playScene->AddGameObject(missile,eColliderLayer::Player_Projecttile);
+			playScene->AddGameObject(missile, eColliderLayer::Player_Projecttile);
 
 			Vector2 playerPos = GetPos();
 			Vector2 playerScale = GetScale() / 2.0f;
-
 			Vector2 missileScale = missile->GetScale();
 
 			missile->SetPos((playerPos + playerScale) - (missileScale / 2.0f));
@@ -145,5 +199,18 @@ namespace ya
 	void Player::OnCollisionExit(Collider* other)
 	{
 
+	}
+	void Player::WalkComplete()
+	{
+		Missile* missile = new Missile();
+
+		Scene* playScene = SceneManager::GetPlayScene();
+		playScene->AddGameObject(missile, eColliderLayer::Player_Projecttile);
+
+		Vector2 playerPos = GetPos();
+		Vector2 playerScale = GetScale() / 2.0f;
+		Vector2 missileScale = missile->GetScale();
+
+		missile->SetPos((playerPos + playerScale) - (missileScale / 2.0f));
 	}
 }

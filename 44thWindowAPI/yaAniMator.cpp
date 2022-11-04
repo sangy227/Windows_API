@@ -7,11 +7,10 @@
 namespace ya {
 	AniMator::AniMator()
 		:Component(eComponentType::Aimator)
-		,mPlayAnimation(nullptr)
-		,mLoop(false)
+		,mPlayAnimaion(nullptr)
+		,mbLoop(false)
 	{
 		//mImage = Resources::Load<Image>(L"Player", L"..\\Resources\\Image\\Player.bmp");
-
 	}
 	AniMator::~AniMator()
 	{
@@ -19,28 +18,38 @@ namespace ya {
 	}
 	void AniMator::Tick()
 	{
+		if (mPlayAnimaion != nullptr)
+		{
+			mPlayAnimaion->Tick();
 
+			if (mbLoop && mPlayAnimaion->isComplete())
+			{
+				mCompleteEvent();
+				mPlayAnimaion->Reset();
+			}
+		}
 	}
 	void AniMator::Render(HDC hdc)
 	{
-		if (mPlayAnimation != nullptr)
+		if (mPlayAnimaion != nullptr)
 		{
-			mPlayAnimation->Render(hdc);
+			mPlayAnimaion->Render(hdc);
 		}
 
 	}
 	Animation* AniMator::FindAnimation(const std::wstring& name)
 	{
-		std::map<const std::wstring&, Animation*>::iterator iter = mAnimations.find(name);
+		std::map<const std::wstring, Animation*>::iterator iter = mAnimations.find(name);
 		if (iter == mAnimations.end())
 		{
 			return nullptr;
 		}
 		return iter->second;
 	}
+
 	void AniMator::CreateAnimation(const std::wstring& name, Image* image
 		, Vector2 leftTop, Vector2 size, Vector2 offset
-		, float columnLength, UINT spriteLegth, float duration, bool bAffectedCamera = false)
+		, UINT spriteLegth, float duration, bool bAffectedCamera)
 	{
 		Animation* animation = FindAnimation(name);
 		if (animation != nullptr)
@@ -51,13 +60,24 @@ namespace ya {
 
 		
 		animation = new Animation();
-		animation->Create(image, leftTop, size, offset, columnLength, spriteLegth, duration, bAffectedCamera);
+		animation->Create(image, leftTop, size, offset
+			,spriteLegth, duration, bAffectedCamera);
 		animation->SetName(name);
 		animation->SetAnimator(this);
 
 		mAnimations.insert(std::make_pair(name, animation));
 	}
-	void AniMator::Play(std::wstring& name, bool bloop = false)
+	
+	void AniMator::Play(const std::wstring& name, bool bloop)
 	{
+		mStartEvent();
+
+		Animation* prevAnimation = mPlayAnimaion;
+		mPlayAnimaion = FindAnimation(name);
+		mPlayAnimaion->Reset();
+		mbLoop = bloop;
+
+		if (prevAnimation != mPlayAnimaion)
+			mEndEvent();
 	}
 }

@@ -13,10 +13,8 @@ namespace ya {
 	void SceneManager::Initialize()
 	{
 		
-
 		//모든씬들을 초기화
 		mScenes[(UINT)eSceneType::Logo] = new LogoScene();
-		ChangeScene(eSceneType::Logo);
 		mScenes[(UINT)eSceneType::Logo]->Initialize();
 
 		mScenes[(UINT)eSceneType::Title] = new TitleScene();
@@ -28,7 +26,8 @@ namespace ya {
 		mScenes[(UINT)eSceneType::End] = new EndScene();
 		mScenes[(UINT)eSceneType::End]->Initialize();
 
-	
+		ChangeScene(eSceneType::Logo);
+
 
 		//mPlayScene = mScenes[(UINT)eSceneType::Logo];
 	}
@@ -47,10 +46,7 @@ namespace ya {
 
 	void SceneManager::DetroyGameObject()
 	{
-
 		ya::object::Release();
-
-
 	}
 
 	void SceneManager::Release()
@@ -67,16 +63,18 @@ namespace ya {
 
 	void SceneManager::ChangeScene(eSceneType type)
 	{
-		if (mPlayScene == nullptr)
+		/*if (mPlayScene == nullptr)
 		{
 			mPlayScene = mScenes[(UINT)eSceneType::Logo];
-		}
-		else
-		{
-			mPlayScene->Exit();
-			mPlayScene = mScenes[(UINT)type];
-		}
+		}*/
 
+
+		if (mScenes[(UINT)type] == nullptr)
+			return;
+		
+		mPlayScene->Exit();
+		mPlayScene = mScenes[(UINT)type];
+		
 		mPlayScene->Enter();
 	}
 

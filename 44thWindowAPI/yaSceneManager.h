@@ -17,6 +17,9 @@ namespace ya {
 		static void ChangeScene(eSceneType type);
 
 		static Scene* GetPlayScene() { return mPlayScene; } 
+		static void   SetPlayScene(Scene* playScene) { mPlayScene = playScene; }
+
+
 	private:
 		static Scene* mScenes[(UINT)eSceneType::Max];
 		static Scene* mPlayScene;

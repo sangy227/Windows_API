@@ -2,6 +2,7 @@
 #include "yaGameObject.h"
 
 namespace ya {
+	class AniMator;
 	class Image;
 	class Player : public GameObject
 	{
@@ -16,10 +17,11 @@ namespace ya {
 		virtual void OnCollisionStay(Collider* other)override;
 		virtual void OnCollisionExit(Collider* other)override;
 		
+		void WalkComplete();
 	private:
 		float mSpeed;
 		Image* mImage;
-		
+		AniMator* mAnimator;
 	};
 }	
 

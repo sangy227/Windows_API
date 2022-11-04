@@ -1,20 +1,21 @@
 #pragma once
 #include "Common.h"
 #include "yaEntity.h"
+
 namespace ya {
 	class Image;
 	class AniMator;
 	class Animation : public Entity
 	{
 	public:
-		struct sprite
+		struct Sprite
 		{
 			Vector2 leftTop;
 			Vector2 size;
 			Vector2 offset;
 			float duration;
 
-			sprite()
+			Sprite()
 				:leftTop(0.0f, 0.0f)
 				, size(0.0f, 0.0f)
 				, offset(0.0f, 0.0f)
@@ -29,10 +30,11 @@ namespace ya {
 
 		void Tick();
 		void Render(HDC hdc);
+		
+		void Create(Image* image
+			, Vector2 leftTop,Vector2 size, Vector2 offset
+			,UINT spriteLegth, float duration, bool bAffectedCamera = true);
 
-		void Create(Image* image, Vector2 leftTop
-			, Vector2 size, Vector2 offset, float columnLength, UINT spriteLegth, float duration
-			, bool bAffectedCamera = true);
 		void Reset();
 		bool isComplete() { return mbComplete; }
 		void SetAnimator(AniMator* animator) { mAnimator = animator; }
@@ -40,15 +42,13 @@ namespace ya {
 	private:
 		AniMator* mAnimator;
 		Image* mImage;
-		std::vector<sprite> mSpriteSheet;
+		std::vector<Sprite> mSpriteSheet;
 		UINT mSpriteIndex;
-
 		float mTime;
 
 		bool mStart;
 		bool mbComplete;
 		bool mEnd;
-
 		bool mAffectedCamera;
 	};
 }

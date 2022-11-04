@@ -31,11 +31,11 @@ namespace ya {
 
 		Animation* FindAnimation(const std::wstring& name);
 
-		void CreateAnimation(const std::wstring& name, Image* image,Vector2 leftTop
-			,Vector2 size,Vector2 offset,float columnLength,UINT spriteLegth,float duration
-			,bool bAffectedCamera = false);
+		void CreateAnimation(const std::wstring& name, Image* image,
+			Vector2 leftTop,Vector2 size,Vector2 offset
+			,UINT spriteLegth,float duration,bool bAffectedCamera = false);
 
-		void Play(std::wstring& name,bool bloop = false);
+		void Play(const std::wstring& name,bool bloop = false);
 		
 	public:
 		Event mStartEvent;
@@ -45,9 +45,9 @@ namespace ya {
 	
 
 	private:
-		std::map<const std::wstring&, Animation*> mAnimations;
-		Animation* mPlayAnimation;
-		bool mLoop;
+		std::map<std::wstring, Animation*> mAnimations;
+		Animation* mPlayAnimaion;
+		bool mbLoop;
 	};
 }
 
