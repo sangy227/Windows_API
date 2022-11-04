@@ -2,6 +2,11 @@
 #include "yaPlayer.h"
 #include "yaInput.h"
 #include "yaSceneManager.h"
+#include "yaBgImageObject.h"
+#include "yaObject.h"
+#include "yaMonster.h"
+#include "yaCollisionManager.h"
+#include "chicken.h"
 
 
 namespace ya {
@@ -15,18 +20,36 @@ namespace ya {
 
 	void PlayScene::Initialize()
 	{
-		//플레이어 그리기
-		//AddGameObject(new Player(), eColliderLayer::Player);
+		BgImageObject* bg2 = new BgImageObject();
+		bg2->SetImage(L"PlayBG2", L"bg2.bmp");
+		bg2->Initialize();
+		AddGameObject(bg2, eColliderLayer::BackGround);
+
+		ya::object::Instantiate<Player>(eColliderLayer::Player);
+		mons1 = ya::object::Instantiate<Monster>(eColliderLayer::Monster);
+		mons2 = ya::object::Instantiate<Monster>(Vector2{ 1250.0f, 770.0f }, eColliderLayer::Monster);
+		mons3 = ya::object::Instantiate<chicken>(Vector2{ 1430.0f, 770.0f }, eColliderLayer::Monster);
+
+
+
+		CollisionManager::SetLayer(eColliderLayer::Player, eColliderLayer::Monster, true);
+		CollisionManager::SetLayer(eColliderLayer::Monster, eColliderLayer::Player_Projecttile, true);
 	}
 
 
 	void PlayScene::Tick()
 	{
 		Scene::Tick();
+		
+
 
 		if (KEY_DOWN(eKeyCode::N))
 		{
 			SceneManager::ChangeScene(eSceneType::End);
+		}
+		if (KEY_DOWN(eKeyCode::B))
+		{
+
 		}
 	}
 	void PlayScene::Render(HDC hdc)

@@ -10,7 +10,7 @@
 #include "yaAniMator.h"
 #include "yaCollider.h"
 #include "yaCamera.h"
-
+#include "yaAniMator.h"
 
 namespace ya {
 	Monster::Monster()
@@ -18,15 +18,22 @@ namespace ya {
 
 	{
 		SetName(L"Monster");
-		SetPos({ 1600 / 2, 300 / 2 });
+		SetPos({ 1070.0f, 770.0f });
 		SetScale({ 3.0f, 3.0f });
 
 		if (mImage == nullptr)
 		{
-			mImage = Resources::Load<Image>(L"Monster", L"..\\Resources\\Image\\Monster.bmp");
+			mImage = Resources::Load<Image>(L"crow_bandit", L"..\\Resources\\Image\\crow_bandit.bmp");
 		}
 
-		//AddComponent(new AniMator());
+		mAnimator = new AniMator();
+		mAnimator->CreateAnimation(L"Idle", mImage
+			, Vector2(0.0f, 0.0f), Vector2(48.0f, 48.0f)
+			, Vector2(-24.0f, -48.0f), 4, 0.4f);
+
+		mAnimator->Play(L"Idle", true);
+
+		AddComponent(mAnimator);
 		AddComponent(new Collider());
 	}
 	Monster::Monster(Vector2 position)
@@ -39,10 +46,19 @@ namespace ya {
 
 		if (mImage == nullptr)
 		{
-			mImage = Resources::Load<Image>(L"Monster", L"..\\Resources\\Image\\Monster.bmp");
+			mImage = Resources::Load<Image>(L"bearded_dragon", L"..\\Resources\\Image\\bearded dragon.bmp");
+
+
 		}
 
-		//AddComponent(new AniMator());
+		mAnimator = new AniMator();
+		mAnimator->CreateAnimation(L"Idle", mImage
+			, Vector2(0.0f, 0.0f), Vector2(48.0f, 48.0f)
+			, Vector2(-24.0f, -48.0f), 4, 0.4f);
+
+		mAnimator->Play(L"Idle", true);
+
+		AddComponent(mAnimator);
 		AddComponent(new Collider());
 	}
 
@@ -69,7 +85,7 @@ namespace ya {
 	}
 	void Monster::Render(HDC hdc)
 	{
-		Vector2 pos = GetPos();
+	/*	Vector2 pos = GetPos();
 		Vector2 scale = GetScale();
 
 		Vector2 finalPos;
@@ -85,7 +101,7 @@ namespace ya {
 
 		TransparentBlt(hdc, finalPos.x, finalPos.y, rect.x, rect.y
 			, mImage->GetDC(), 0, 0, mImage->GetWidth(), mImage->GetHeight()
-			, RGB(255, 0, 255));
+			, RGB(255, 255, 255));*/
 
 		GameObject::Render(hdc);
 	}

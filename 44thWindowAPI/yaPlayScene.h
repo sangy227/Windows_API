@@ -2,7 +2,8 @@
 #include "yaScene.h"
 
 namespace ya {
-
+	class chicken;
+	class Monster;
 	class PlayScene : public Scene
 	{
 	public:
@@ -18,6 +19,9 @@ namespace ya {
 		virtual void Exit();
 
 	private:
+		Monster* mons1;
+		Monster* mons2;
+		chicken* mons3;
 
 	};
 }

@@ -20,7 +20,7 @@ namespace ya
 
 
 	private:
-		Monster* mons[2];
+		Monster* mons[255];
 	};
 }
 

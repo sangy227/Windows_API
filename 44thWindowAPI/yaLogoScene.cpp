@@ -21,19 +21,13 @@ namespace ya {
 
 	void LogoScene::Initialize()
 	{
-		/*BgImageObject* bg = new BgImageObject();
-		bg->SetImage(L"LogoBG", L"LogoBG.bmp");
+		BgImageObject* bg = new BgImageObject();
+		bg->SetImage(L"LogoBG", L"bg1.bmp");
 		bg->Initialize();
-		AddGameObject(bg, eColliderLayer::BackGround);*/
+		AddGameObject(bg, eColliderLayer::BackGround);
 
 
-		ya::object::Instantiate<Player>(eColliderLayer::Player);
-		mons[0] = ya::object::Instantiate<Monster>(eColliderLayer::Monster);
-		mons[1] = ya::object::Instantiate<Monster>(Vector2{ 1600 / 2 + 130, 300 / 2 }, eColliderLayer::Monster);
-
-
-		CollisionManager::SetLayer(eColliderLayer::Player, eColliderLayer::Monster, true);
-		CollisionManager::SetLayer(eColliderLayer::Monster, eColliderLayer::Player_Projecttile, true);
+		
 	}
 
 	void LogoScene::Tick()
@@ -49,11 +43,7 @@ namespace ya {
 			SceneManager::ChangeScene(eSceneType::Title);
 			
 		}
-		if (KEY_DOWN(eKeyCode::M))
-		{
-			ya::object::Destroy(mons[0]);
-			ya::object::Destroy(mons[1]);
-		}
+		
 	}
 
 	void LogoScene::Render(HDC hdc)

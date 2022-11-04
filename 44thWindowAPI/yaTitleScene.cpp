@@ -13,11 +13,11 @@ namespace ya {
 	}
 	void TitleScene::Initialize()
 	{
-		/*BgImageObject* bg = new BgImageObject();
-		bg->SetImage(L"TitleBG", L"TitleBG.bmp");
+		BgImageObject* bg = new BgImageObject();
+		bg->SetImage(L"TitleBG", L"bg1.bmp");
 		bg->Initialize();
 
-		AddGameObject(bg,eColliderLayer::BackGround);*/
+		AddGameObject(bg,eColliderLayer::BackGround);
 	}
 	void TitleScene::Tick()
 	{

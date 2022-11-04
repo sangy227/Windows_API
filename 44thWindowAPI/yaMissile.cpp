@@ -9,25 +9,25 @@
 namespace ya {
     Missile::Missile()
         : mSpeed(1.0f)
-        , mAliveTime(1.0f)
+        , mAliveTime(5.0f)
     {
         SetPos({ 100.0f , 100.0f });
         SetScale({ 20.0f , 20.0f });
 
         Collider* col = new Collider();
-        col->SetScale(Vector2(20.0f, 20.0f));
+        col->SetScale(Vector2(168.0f, 168.0f));
 
         AddComponent(col);
 
         if (mImage == nullptr)
         {
-            mImage = Resources::Find<Image>(L"Player");
+            mImage = Resources::Load<Image>(L"Missile", L"..\\Resources\\Image\\attack.bmp");
         }
 
         AniMator* ani = new AniMator();
         ani->CreateAnimation(L"Idle", mImage
-            , Vector2(0.0f, 0.0f), Vector2(120.0f, 130.0f)
-            , Vector2(5.0f, -20.0f), 3, 0.1f);
+            , Vector2(0.0f, 0.0f), Vector2(64.0f, 48.0f)
+            , Vector2(-36.0f, -48.0f), 4, 0.1f);
 
         ani->Play(L"Idle", true);
 
@@ -51,7 +51,7 @@ namespace ya {
 
         Vector2 pos = GetPos();
 
-        pos.y -= 500.0f * Time::DeltaTime();
+        pos.x += 500.0f * Time::DeltaTime();
 
         SetPos(pos);
 

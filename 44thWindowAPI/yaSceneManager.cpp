@@ -26,7 +26,7 @@ namespace ya {
 		mScenes[(UINT)eSceneType::End] = new EndScene();
 		mScenes[(UINT)eSceneType::End]->Initialize();
 
-		ChangeScene(eSceneType::Logo);
+		ChangeScene(eSceneType::Play);
 
 
 		//mPlayScene = mScenes[(UINT)eSceneType::Logo];

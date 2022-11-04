@@ -142,6 +142,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="44thWindowAPI.h" />
+    <ClInclude Include="chicken.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="def.h" />
     <ClInclude Include="framework.h" />
@@ -176,6 +177,7 @@
     <ClInclude Include="yaTitleScene.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="chicken.cpp" />
     <ClCompile Include="yaAnimation.cpp" />
     <ClCompile Include="yaBackPack.cpp" />
     <ClCompile Include="yaCamera.cpp" />

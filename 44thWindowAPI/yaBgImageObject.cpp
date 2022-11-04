@@ -27,8 +27,8 @@ namespace ya {
 		Vector2 finalPos = pos;
 
 		Vector2 rect;
-		rect.x = mImage->GetWidth() * scale.x;
-		rect.y = mImage->GetHeight() * scale.y;
+		rect.x = mImage->GetWidth() * scale.x*5;
+		rect.y = mImage->GetHeight() * scale.y*5;
 
 		TransparentBlt(hdc, finalPos.x, finalPos.y, rect.x, rect.y
 			, mImage->GetDC(), 0, 0, mImage->GetWidth(), mImage->GetHeight()

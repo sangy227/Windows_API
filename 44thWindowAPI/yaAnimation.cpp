@@ -39,22 +39,35 @@ namespace ya {
 		func.BlendOp = AC_SRC_OVER;
 		func.BlendFlags = 0;
 		func.AlphaFormat = AC_SRC_ALPHA;
-		func.SourceConstantAlpha = 127; // 0 - 225
+		func.SourceConstantAlpha = 255; // 0 - 225
 
 
 		pos += mSpriteSheet[mSpriteIndex].offset;
 
-		AlphaBlend(hdc
+		/*AlphaBlend(hdc
 			,int( pos.x - mSpriteSheet[mSpriteIndex].size.x /2.0f)
 			,int( pos.y - mSpriteSheet[mSpriteIndex].size.y / 2.0f)
-			,int( mSpriteSheet[mSpriteIndex].size.x)
-			,int( mSpriteSheet[mSpriteIndex].size.y)
+			,int( mSpriteSheet[mSpriteIndex].size.x*5)
+			,int( mSpriteSheet[mSpriteIndex].size.y*5)
 			,mImage->GetDC()											  
 			,int( mSpriteSheet[mSpriteIndex].leftTop.x)
 			,int( mSpriteSheet[mSpriteIndex].leftTop.y)
 			,int( mSpriteSheet[mSpriteIndex].size.y)
 			,int( mSpriteSheet[mSpriteIndex].size.y)
-			,func);
+			,func);*/
+
+		TransparentBlt(hdc
+			, int(pos.x - mSpriteSheet[mSpriteIndex].size.x )
+			, int(pos.y - mSpriteSheet[mSpriteIndex].size.y )
+			, int(mSpriteSheet[mSpriteIndex].size.x * 3.5f)
+			, int(mSpriteSheet[mSpriteIndex].size.y * 3.5f)
+			, mImage->GetDC()
+			, int(mSpriteSheet[mSpriteIndex].leftTop.x)
+			, int(mSpriteSheet[mSpriteIndex].leftTop.y)
+			, int(mSpriteSheet[mSpriteIndex].size.y)
+			, int(mSpriteSheet[mSpriteIndex].size.y)
+			, RGB(255, 255, 255));
+
 	}
 	void Animation::Create(Image* image, Vector2 leftTop, Vector2 size, Vector2 offset
 		, UINT spriteLegth, float duration, bool bAffectedCamera)

@@ -14,9 +14,9 @@ namespace ya {
 			mImage = Resources::Load<Image>(L"BackPack", L"..\\Resources\\Image\\BackPack.bmp");
 		}
 
-		SetPos({ 1600 / 2, 900 / 2 });
+		SetPos({ 1600 / 2, 240  });
 		SetScale({ 3.0f, 3.0f });
-		alpha = 127;
+		alpha = 255;
 	}
 
 	BackPack::~BackPack()

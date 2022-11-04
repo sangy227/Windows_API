@@ -44,6 +44,12 @@
     <Filter Include="Engine\Component\Base">
       <UniqueIdentifier>{4ac9af7b-ed72-47bb-9cf6-47686c3cf599}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\GameObject\Enemies">
+      <UniqueIdentifier>{6e7d4fa5-9311-478b-9c5c-3c49905fd1e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\GameObject\Player">
+      <UniqueIdentifier>{043dcf55-e173-442a-ba63-7a92d59f545f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="44thWindowAPI.h">
@@ -79,9 +85,6 @@
     <ClInclude Include="yaLogoScene.h">
       <Filter>Engine\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="yaPlayer.h">
-      <Filter>Engine\GameObject</Filter>
-    </ClInclude>
     <ClInclude Include="yaGameObject.h">
       <Filter>Engine\GameObject\Base</Filter>
     </ClInclude>
@@ -93,9 +96,6 @@
     </ClInclude>
     <ClInclude Include="yaInput.h">
       <Filter>Engine\Manager</Filter>
-    </ClInclude>
-    <ClInclude Include="yaMissile.h">
-      <Filter>Engine\GameObject</Filter>
     </ClInclude>
     <ClInclude Include="yaResource.h">
       <Filter>Engine\Resource\Base</Filter>
@@ -127,23 +127,32 @@
     <ClInclude Include="yaBgImageObject.h">
       <Filter>Engine\GameObject</Filter>
     </ClInclude>
-    <ClInclude Include="yaMonster.h">
-      <Filter>Engine\GameObject</Filter>
-    </ClInclude>
     <ClInclude Include="yaCollisionManager.h">
       <Filter>Engine\Manager</Filter>
     </ClInclude>
     <ClInclude Include="yaCamera.h">
       <Filter>Engine\Manager</Filter>
     </ClInclude>
-    <ClInclude Include="yaBackPack.h">
-      <Filter>Engine\GameObject</Filter>
-    </ClInclude>
     <ClInclude Include="yaObject.h">
       <Filter>Engine\Common</Filter>
     </ClInclude>
     <ClInclude Include="yaAnimation.h">
       <Filter>Engine\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="yaMonster.h">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="yaPlayer.h">
+      <Filter>Engine\GameObject\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="yaMissile.h">
+      <Filter>Engine\GameObject\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="yaBackPack.h">
+      <Filter>Engine\GameObject\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="chicken.h">
+      <Filter>Engine\GameObject\Enemies</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -178,9 +187,6 @@
     <ClCompile Include="yaLogoScene.cpp">
       <Filter>Engine\Scene</Filter>
     </ClCompile>
-    <ClCompile Include="yaPlayer.cpp">
-      <Filter>Engine\GameObject</Filter>
-    </ClCompile>
     <ClCompile Include="yaGameObject.cpp">
       <Filter>Engine\GameObject\Base</Filter>
     </ClCompile>
@@ -192,9 +198,6 @@
     </ClCompile>
     <ClCompile Include="yaInput.cpp">
       <Filter>Engine\Manager</Filter>
-    </ClCompile>
-    <ClCompile Include="yaMissile.cpp">
-      <Filter>Engine\GameObject</Filter>
     </ClCompile>
     <ClCompile Include="yaResource.cpp">
       <Filter>Engine\Resource\Base</Filter>
@@ -229,20 +232,29 @@
     <ClCompile Include="yaBgImageObject.cpp">
       <Filter>Engine\GameObject</Filter>
     </ClCompile>
-    <ClCompile Include="yaMonster.cpp">
-      <Filter>Engine\GameObject</Filter>
-    </ClCompile>
     <ClCompile Include="yaCollisionManager.cpp">
       <Filter>Engine\Manager</Filter>
     </ClCompile>
     <ClCompile Include="yaCamera.cpp">
       <Filter>Engine\Manager</Filter>
     </ClCompile>
-    <ClCompile Include="yaBackPack.cpp">
-      <Filter>Engine\GameObject</Filter>
-    </ClCompile>
     <ClCompile Include="yaAnimation.cpp">
       <Filter>Engine\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="yaMonster.cpp">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="yaPlayer.cpp">
+      <Filter>Engine\GameObject\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="yaMissile.cpp">
+      <Filter>Engine\GameObject\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="yaBackPack.cpp">
+      <Filter>Engine\GameObject\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="chicken.cpp">
+      <Filter>Engine\GameObject\Enemies</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

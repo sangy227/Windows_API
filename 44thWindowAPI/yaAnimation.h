@@ -18,7 +18,7 @@ namespace ya {
 			Sprite()
 				:leftTop(0.0f, 0.0f)
 				, size(0.0f, 0.0f)
-				, offset(0.0f, 0.0f)
+				, offset(0.0f,0.0f)
 				, duration(0.0f)
 			{
 
