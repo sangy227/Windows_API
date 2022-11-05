@@ -25,7 +25,7 @@ namespace ya {
 
 		if (KEY_DOWN(eKeyCode::N))
 		{
-			SceneManager::ChangeScene(eSceneType::Play);
+			SceneManager::ChangeScene(eSceneType::PlayOne);
 		}
 	}
 	void TitleScene::Render(HDC hdc)

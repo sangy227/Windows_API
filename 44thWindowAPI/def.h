@@ -9,7 +9,10 @@
 	{
 		Logo,
 		Title,
-		Play,
+		PlayOne,
+		PlayTwo,
+		PlayThree,
+		PlayFour,
 		End,
 		Max,
 	};

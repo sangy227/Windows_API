@@ -6,7 +6,7 @@
 #include "yaMonster.h"
 #include "yaCollisionManager.h"
 #include "yaObject.h"
-
+#include "Logo.h"
 
 
 namespace ya {
@@ -26,6 +26,11 @@ namespace ya {
 		bg->Initialize();
 		AddGameObject(bg, eColliderLayer::BackGround);
 
+		Logo* logo = new Logo();
+		logo->SetImage(L"logo", L"Logo.bmp");
+		logo->Initialize();
+		AddGameObject(logo, eColliderLayer::UI);
+
 
 		
 	}
@@ -41,7 +46,6 @@ namespace ya {
 		if (KEY_DOWN(eKeyCode::N))
 		{
 			SceneManager::ChangeScene(eSceneType::Title);
-			
 		}
 		
 	}

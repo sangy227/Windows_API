@@ -50,6 +50,9 @@
     <Filter Include="Engine\GameObject\Player">
       <UniqueIdentifier>{043dcf55-e173-442a-ba63-7a92d59f545f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\GameObject\Object">
+      <UniqueIdentifier>{32d56f81-4a94-4b04-9e85-307f1238195e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="44thWindowAPI.h">
@@ -124,9 +127,6 @@
     <ClInclude Include="yaEndScene.h">
       <Filter>Engine\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="yaBgImageObject.h">
-      <Filter>Engine\GameObject</Filter>
-    </ClInclude>
     <ClInclude Include="yaCollisionManager.h">
       <Filter>Engine\Manager</Filter>
     </ClInclude>
@@ -153,6 +153,21 @@
     </ClInclude>
     <ClInclude Include="chicken.h">
       <Filter>Engine\GameObject\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="yaPlayScene2.h">
+      <Filter>Engine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="yaPlayScene3.h">
+      <Filter>Engine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="yaPlayScene4.h">
+      <Filter>Engine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Logo.h">
+      <Filter>Engine\GameObject\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="yaBgImageObject.h">
+      <Filter>Engine\GameObject\Object</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -229,9 +244,6 @@
     <ClCompile Include="yaEndScene.cpp">
       <Filter>Engine\Scene</Filter>
     </ClCompile>
-    <ClCompile Include="yaBgImageObject.cpp">
-      <Filter>Engine\GameObject</Filter>
-    </ClCompile>
     <ClCompile Include="yaCollisionManager.cpp">
       <Filter>Engine\Manager</Filter>
     </ClCompile>
@@ -255,6 +267,21 @@
     </ClCompile>
     <ClCompile Include="chicken.cpp">
       <Filter>Engine\GameObject\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="yaPlayScene2.cpp">
+      <Filter>Engine\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="yaPlayScene3.cpp">
+      <Filter>Engine\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="yaPlayScene4.cpp">
+      <Filter>Engine\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Logo.cpp">
+      <Filter>Engine\GameObject\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="yaBgImageObject.cpp">
+      <Filter>Engine\GameObject\Object</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

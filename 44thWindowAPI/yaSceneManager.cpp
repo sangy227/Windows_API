@@ -4,6 +4,9 @@
 #include "yaPlayScene.h"
 #include "yaEndScene.h"
 #include "yaObject.h"
+#include "yaPlayScene2.h"
+#include "yaPlayScene3.h"
+#include "yaPlayScene4.h"
 
 namespace ya {
 
@@ -20,13 +23,22 @@ namespace ya {
 		mScenes[(UINT)eSceneType::Title] = new TitleScene();
 		mScenes[(UINT)eSceneType::Title]->Initialize();
 
-		mScenes[(UINT)eSceneType::Play] = new PlayScene();
-		mScenes[(UINT)eSceneType::Play]->Initialize();
+		mScenes[(UINT)eSceneType::PlayOne] = new PlayScene();
+		mScenes[(UINT)eSceneType::PlayOne]->Initialize();
+
+		mScenes[(UINT)eSceneType::PlayTwo] = new PlayScene2();
+		mScenes[(UINT)eSceneType::PlayTwo]->Initialize();
+
+		mScenes[(UINT)eSceneType::PlayThree] = new PlayScene3();
+		mScenes[(UINT)eSceneType::PlayThree]->Initialize();
+
+		mScenes[(UINT)eSceneType::PlayFour] = new PlayScene4();
+		mScenes[(UINT)eSceneType::PlayFour]->Initialize();
 
 		mScenes[(UINT)eSceneType::End] = new EndScene();
 		mScenes[(UINT)eSceneType::End]->Initialize();
 
-		ChangeScene(eSceneType::Play);
+		ChangeScene(eSceneType::Logo);
 
 
 		//mPlayScene = mScenes[(UINT)eSceneType::Logo];

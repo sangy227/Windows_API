@@ -146,6 +146,7 @@
     <ClInclude Include="Common.h" />
     <ClInclude Include="def.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="Logo.h" />
     <ClInclude Include="yaAnimation.h" />
     <ClInclude Include="yaAniMator.h" />
     <ClInclude Include="yaBackPack.h" />
@@ -169,6 +170,9 @@
     <ClInclude Include="yaObject.h" />
     <ClInclude Include="yaPlayer.h" />
     <ClInclude Include="yaPlayScene.h" />
+    <ClInclude Include="yaPlayScene2.h" />
+    <ClInclude Include="yaPlayScene3.h" />
+    <ClInclude Include="yaPlayScene4.h" />
     <ClInclude Include="yaResource.h" />
     <ClInclude Include="yaResources.h" />
     <ClInclude Include="yaSceneManager.h" />
@@ -178,6 +182,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="chicken.cpp" />
+    <ClCompile Include="Logo.cpp" />
+    <ClCompile Include="yaPlayScene2.cpp" />
     <ClCompile Include="yaAnimation.cpp" />
     <ClCompile Include="yaBackPack.cpp" />
     <ClCompile Include="yaCamera.cpp" />
@@ -193,6 +199,8 @@
     <ClCompile Include="yaMissile.cpp" />
     <ClCompile Include="yaMonster.cpp" />
     <ClCompile Include="yaPlayScene.cpp" />
+    <ClCompile Include="yaPlayScene3.cpp" />
+    <ClCompile Include="yaPlayScene4.cpp" />
     <ClCompile Include="yaResource.cpp" />
     <ClCompile Include="yaResources.cpp" />
     <ClCompile Include="yaTime.cpp" />

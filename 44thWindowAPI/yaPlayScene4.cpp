@@ -1,4 +1,4 @@
-#include "yaPlayScene.h"
+#include "yaPlayScene4.h"
 #include "yaPlayer.h"
 #include "yaInput.h"
 #include "yaSceneManager.h"
@@ -10,20 +10,20 @@
 
 
 namespace ya {
-	PlayScene::PlayScene()
+	PlayScene4::PlayScene4()
 	{
 	}
-	PlayScene::~PlayScene()
+	PlayScene4::~PlayScene4()
 	{
 	}
 
 
-	void PlayScene::Initialize()
+	void PlayScene4::Initialize()
 	{
-		BgImageObject* bg2 = new BgImageObject();
-		bg2->SetImage(L"PlayBG2", L"bg2.bmp");
-		bg2->Initialize();
-		AddGameObject(bg2, eColliderLayer::BackGround);
+		BgImageObject* bg5 = new BgImageObject();
+		bg5->SetImage(L"PlayBG5", L"bg5.bmp");
+		bg5->Initialize();
+		AddGameObject(bg5, eColliderLayer::BackGround);
 
 		ya::object::Instantiate<Player>(eColliderLayer::Player);
 		mons1 = ya::object::Instantiate<Monster>(eColliderLayer::Monster);
@@ -37,34 +37,34 @@ namespace ya {
 	}
 
 
-	void PlayScene::Tick()
+	void PlayScene4::Tick()
 	{
 		Scene::Tick();
-		
+
 
 
 		if (KEY_DOWN(eKeyCode::N))
 		{
-			SceneManager::ChangeScene(eSceneType::PlayTwo);
+			SceneManager::ChangeScene(eSceneType::End);
 		}
 		if (KEY_DOWN(eKeyCode::B))
 		{
 
 		}
 	}
-	void PlayScene::Render(HDC hdc)
+	void PlayScene4::Render(HDC hdc)
 	{
 		Scene::Render(hdc);
 
 		wchar_t szFloat[50] = {};
-		swprintf_s(szFloat, 50, L"Play Scene");
+		swprintf_s(szFloat, 50, L"Play Scene4");
 		int strLen = wcsnlen_s(szFloat, 50);
 		TextOut(hdc, 10, 30, szFloat, strLen);
 	}
-	void PlayScene::Enter()
+	void PlayScene4::Enter()
 	{
 	}
-	void PlayScene::Exit()
+	void PlayScene4::Exit()
 	{
 	}
 }
