@@ -7,7 +7,7 @@
 #include "yaCollisionManager.h"
 #include "yaObject.h"
 #include "Logo.h"
-
+#include "LogoPlayerObject.h"
 
 namespace ya {
 	
@@ -30,6 +30,9 @@ namespace ya {
 		logo->SetImage(L"logo", L"Logo.bmp");
 		logo->Initialize();
 		AddGameObject(logo, eColliderLayer::UI);
+
+		ya::object::Instantiate<LogoPlayerObject>(eColliderLayer::UI);
+
 
 
 		

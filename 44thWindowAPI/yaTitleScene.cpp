@@ -2,6 +2,7 @@
 #include "yaInput.h"
 #include "yaSceneManager.h"
 #include "yaBgImageObject.h"
+#include "yaPlayerSeclectUI.h"
 
 namespace ya {
 
@@ -26,6 +27,12 @@ namespace ya {
 		if (KEY_DOWN(eKeyCode::N))
 		{
 			SceneManager::ChangeScene(eSceneType::PlayOne);
+		}
+		if (KEY_DOWN(eKeyCode::I)) 
+		{
+			PlayerSeclectUI* PlayerSelecetUI = new PlayerSeclectUI();
+			Scene* playScene = SceneManager::GetPlayScene();
+			playScene->AddGameObject(PlayerSelecetUI, eColliderLayer::UI);
 		}
 	}
 	void TitleScene::Render(HDC hdc)

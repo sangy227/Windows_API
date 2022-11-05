@@ -16,6 +16,7 @@ namespace ya
 {
 	Player::Player()
 		: mSpeed(1.0f)
+		, mTime(0.0f)
 	{
 		SetName(L"Player");
 		SetPos({ 520.0f, 770.0f });
@@ -134,9 +135,12 @@ namespace ya
 
 		if (KEY_DOWN(eKeyCode::LBTN)) {
 
+			pos.x += 120.0f;
+
 			mAnimator->Play(L"attack", true);
 			mAnimator->mCompleteEvent = std::bind(&Player::WalkComplete, this);
-
+			
+	
 			/*Missile* missile = new Missile();
 
 			Scene* playScene = SceneManager::GetPlayScene();
@@ -221,6 +225,11 @@ namespace ya
 	}
 	void Player::WalkComplete()
 	{
+		Vector2 pos = GetPos();
+		pos.x -= 120.0f;
+		SetPos(pos);
+
+
 		mAnimator->Play(L"Idle", true);
 
 		/*Missile* missile = new Missile();

@@ -23,6 +23,7 @@ namespace ya {
 		Image* mImage;
 		Image* mImage2;
 		AniMator* mAnimator;
+		float mTime;
 	};
 }	
 

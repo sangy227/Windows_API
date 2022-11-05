@@ -14,9 +14,9 @@ namespace ya {
 			mImage = Resources::Load<Image>(L"BackPack", L"..\\Resources\\Image\\BackPack.bmp");
 		}
 
-		SetPos({ 1600 / 2, 240  });
+		SetPos({ 1600 / 2,250 });
 		SetScale({ 3.0f, 3.0f });
-		alpha = 255;
+		alpha = 200;
 	}
 
 	BackPack::~BackPack()
@@ -59,6 +59,11 @@ namespace ya {
 		AlphaBlend(hdc, finalPos.x, finalPos.y, rect.x, rect.y,
 			mImage->GetDC(), 0, 0, mImage->GetWidth(), mImage->GetHeight()
 			, func);
+
+		/*TransparentBlt(hdc, finalPos.x, finalPos.y, rect.x, rect.y,
+			mImage->GetDC(), 0, 0, mImage->GetWidth(), mImage->GetHeight()
+			, RGB(0, 0, 0));*/
+		
 
 		GameObject::Render(hdc);
 	}

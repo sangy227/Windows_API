@@ -169,6 +169,12 @@
     <ClInclude Include="yaBgImageObject.h">
       <Filter>Engine\GameObject\Object</Filter>
     </ClInclude>
+    <ClInclude Include="yaPlayerSeclectUI.h">
+      <Filter>Engine\GameObject\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="LogoPlayerObject.h">
+      <Filter>Engine\GameObject\Object</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="44thWindowAPI.rc">
@@ -281,6 +287,12 @@
       <Filter>Engine\GameObject\Object</Filter>
     </ClCompile>
     <ClCompile Include="yaBgImageObject.cpp">
+      <Filter>Engine\GameObject\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="yaPlayerSeclectUI.cpp">
+      <Filter>Engine\GameObject\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="LogoPlayerObject.cpp">
       <Filter>Engine\GameObject\Object</Filter>
     </ClCompile>
   </ItemGroup>
