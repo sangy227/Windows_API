@@ -11,6 +11,7 @@ namespace ya {
 	}
 	Animation::~Animation()
 	{
+
 	}
 	void Animation::Tick()
 	{

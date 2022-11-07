@@ -22,6 +22,13 @@ namespace ya {
 
 			std::function<void()> mEvent;
 		};
+		struct Events
+		{
+			Event mStartEvent;
+			Event mCompleteEvent;
+			Event mEndEvent;
+
+		};
 
 		AniMator();
 		~AniMator();
@@ -36,8 +43,16 @@ namespace ya {
 			,UINT spriteLegth,float duration,bool bAffectedCamera = false);
 
 		void Play(const std::wstring& name,bool bloop = false);
+
+		Events* FindEvents(const std::wstring key);
+
+		std::function<void()>& GetStartEvent(const std::wstring key);
+		std::function<void()>& GetCompleteEvent(const std::wstring key);
+		std::function<void()>& GetEndEvent(const std::wstring key);
+		
 		
 	public:
+		//¿©±â ÇÑ¹ø ºÁ¾ß´ï
 		Event mStartEvent;
 		Event mCompleteEvent;
 		Event mEndEvent;
@@ -45,7 +60,9 @@ namespace ya {
 	
 
 	private:
+		std::map<std::wstring, Events*> mEvents;
 		std::map<std::wstring, Animation*> mAnimations;
+
 		Animation* mPlayAnimaion;
 		bool mbLoop;
 	};

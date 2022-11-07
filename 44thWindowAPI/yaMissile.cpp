@@ -49,13 +49,28 @@ namespace ya {
             this->Death();
         }
 
-        Vector2 pos = GetPos();
 
-        pos.x += 500.0f * Time::DeltaTime();
+
+
+        float radian = DegreeToRadian(90.0f);
+        float degree = RadianToDegree(2 * PI);
+        float speed = 100.0f;
+
+        Vector2 pos = GetPos();
+        // 삼각함수를 이용한 회전
+        //mDir = PI / 2.0f;
+        //pos.x += speed * cosf(mDir) * Time::DeltaTime();
+        //pos.y -= speed * sinf(mDir) * Time::DeltaTime();
+
+        // 벡터를 이용한 회전
+        pos.y += mDir.y * speed * Time::DeltaTime();
+        pos.x += mDir.x * speed * Time::DeltaTime();
+
+ 
+        //pos.x += 500.0f * Time::DeltaTime();
+
 
         SetPos(pos);
-
-
     }
     void Missile::Render(HDC hdc)
     {

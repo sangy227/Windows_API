@@ -1,5 +1,19 @@
 #pragma once
+#include "math.h"
+#define PI 3.141592
+
+
 namespace ya {
+	__forceinline float DegreeToRadian(float degree)
+	{
+		return degree * (180.0f / PI);
+	}
+
+	__forceinline float RadianToDegree(float radian)
+	{
+		return radian * ( PI / 180.0f );
+	}
+
 	struct Vector2
 	{
 		static Vector2 Zero;

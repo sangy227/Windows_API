@@ -14,6 +14,18 @@ namespace ya {
 	}
 	AniMator::~AniMator()
 	{
+		//std::map<std::wstring, Events*> mEvents;
+		for (auto iter : mAnimations)
+		{
+			delete iter.second;
+		}
+
+		for (auto iter : mEvents)
+		{
+			delete iter.second;
+		}
+
+		//std::map<std::wstring, Animation*> mAnimations;
 
 	}
 	void AniMator::Tick()
@@ -24,7 +36,9 @@ namespace ya {
 
 			if (mbLoop && mPlayAnimaion->isComplete())
 			{
-				mCompleteEvent();
+				AniMator::Events* events = FindEvents(mPlayAnimaion->GetName());
+				if (events != nullptr)
+					events->mCompleteEvent();
 				mPlayAnimaion->Reset();
 			}
 		}
@@ -66,11 +80,17 @@ namespace ya {
 		animation->SetAnimator(this);
 
 		mAnimations.insert(std::make_pair(name, animation));
+
+		Events* events = new Events();
+
+		mEvents.insert(std::make_pair(name, events));
 	}
 	
 	void AniMator::Play(const std::wstring& name, bool bloop)
 	{
-		mStartEvent();
+		AniMator::Events* events = FindEvents(name);
+		if(events != nullptr)
+			events->mStartEvent();
 
 		Animation* prevAnimation = mPlayAnimaion;
 		mPlayAnimaion = FindAnimation(name);
@@ -78,6 +98,39 @@ namespace ya {
 		mbLoop = bloop;
 
 		if (prevAnimation != mPlayAnimaion)
-			mEndEvent();
+			events->mEndEvent();
 	}
+	AniMator::Events* AniMator::FindEvents(const std::wstring key)
+	{
+		std::map<std::wstring, Events*>::iterator iter = mEvents.find(key);
+		if (iter == mEvents.end())
+		{
+			return nullptr;
+		}
+
+		return iter->second;
+		
+	}
+
+	std::function<void()>& AniMator::GetStartEvent(const std::wstring key)
+	{
+		Events* events = FindEvents(key);
+
+		return events->mStartEvent.mEvent;
+	}
+
+	std::function<void()>& AniMator::GetCompleteEvent(const std::wstring key)
+	{
+		Events* events = FindEvents(key);
+
+		return events->mCompleteEvent.mEvent;
+	}
+
+	std::function<void()>& AniMator::GetEndEvent(const std::wstring key)
+	{
+		Events* events = FindEvents(key);
+
+		return events->mEndEvent.mEvent;
+	}
+
 }

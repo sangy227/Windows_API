@@ -53,7 +53,10 @@ namespace ya
 
 		mAnimator->Play(L"Idle", true);
 
-		/*mAnimator->mCompleteEvent = std::bind(&Player::WalkComplete, this);*/
+		
+		//mAnimator->FindEvents(L"attack")->mCompleteEvent = std::bind(&Player::WalkComplete, this);
+		mAnimator->GetCompleteEvent(L"attack") = std::bind(&Player::WalkComplete, this);
+
 
 		AddComponent(mAnimator);
 		AddComponent(new Collider());
@@ -138,7 +141,9 @@ namespace ya
 			pos.x += 120.0f;
 
 			mAnimator->Play(L"attack", true);
-			mAnimator->mCompleteEvent = std::bind(&Player::WalkComplete, this);
+			mAnimator->GetCompleteEvent(L"attack") = std::bind(&Player::WalkComplete, this);
+			//mAnimator->FindEvents(L"attack")->mCompleteEvent = std::bind(&Player::WalkComplete, this);
+
 			
 	
 			/*Missile* missile = new Missile();
@@ -151,6 +156,9 @@ namespace ya
 			Vector2 missileScale = missile->GetScale();
 
 			missile->SetPos((playerPos + playerScale) - (missileScale / 2.0f));*/
+
+			//missile->mDir = Vector2(mCoff, -1.0f + mCoff);
+			//mCoff -= 0.1f;
 		}
 		
 		if (KEY_DOWN(eKeyCode::I))
@@ -226,7 +234,9 @@ namespace ya
 	void Player::WalkComplete()
 	{
 		Vector2 pos = GetPos();
-		pos.x -= 120.0f;
+		//SetPos({ 520.0f, 770.0f });
+		pos.x = 520.0f;
+		pos.y = 770.0f;
 		SetPos(pos);
 
 

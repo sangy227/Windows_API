@@ -21,6 +21,9 @@ namespace ya {
 		float mAliveTime;
 		Image* mImage;
 
+	public:
+		Vector2 mDir;
+
 	};
 
 }
