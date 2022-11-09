@@ -76,6 +76,7 @@ namespace ya {
 		animation = new Animation();
 		animation->Create(image, leftTop, size, offset
 			,spriteLegth, duration, bAffectedCamera);
+
 		animation->SetName(name);
 		animation->SetAnimator(this);
 
@@ -92,25 +93,43 @@ namespace ya {
 		, float duration)
 	{
 		
-		UINT width = 200;
-		UINT height = 200;
-		UINT fileCount = 5;
-
-		std::string multbyte;
+		UINT width = 0;
+		UINT height = 0;
+		UINT fileCount = 0;
 
 		std::filesystem::path fs(path);
+		std::vector<Image*> images;
+		for (auto& p : std::filesystem::recursive_directory_iterator(path))
+		{
+			std::wstring fileName = p.path().filename();;
+			std::wstring fullName = path + L"\\" + fileName;
+			Image* image = Resources::Load<Image>(fileName, fullName);
+			images.push_back(image);
+
+			if (width < image->GetWidth())
+				width = image->GetWidth();
+
+			if (height < image->GetHeight())
+				height = image->GetHeight();
+
+			fileCount++;
+		}
 		
-		//여기 추가
-		//여기 추가
-		//여기 추가
-
-		mSpriteSheet = Image::Create(name, width* fileCount, height);
-
+		mSPriteSheet = Image::Create(name, width* fileCount, height);
+		int index = 0;
+		for (Image* image : images)
+		{
+			BitBlt(mSPriteSheet->GetDC(), width * index, 0, image->GetWidth(), image->GetHeight()
+				, image->GetDC(), 0, 0, SRCCOPY);
+			index++;
+		}
 		
-
+		CreateAnimation(name, mSPriteSheet
+			, Vector2(0.0f, 0.0f), Vector2(width, height)
+			, offset, fileCount, duration);
 	}
 	
-	void AniMator::Play(const std::wstring& name, bool bloop)
+	void AniMator::Play(const std::wstring& name, bool bLoop)
 	{
 		AniMator::Events* events = FindEvents(name);
 		if(events != nullptr)
@@ -119,10 +138,13 @@ namespace ya {
 		Animation* prevAnimation = mPlayAnimaion;
 		mPlayAnimaion = FindAnimation(name);
 		mPlayAnimaion->Reset();
-		mbLoop = bloop;
+		mbLoop = bLoop;
 
-		if (prevAnimation != mPlayAnimaion)
-			events->mEndEvent();
+		if (prevAnimation != mPlayAnimaion) 
+		{
+			if (events != nullptr)
+				events->mEndEvent();
+		}
 	}
 	AniMator::Events* AniMator::FindEvents(const std::wstring key)
 	{

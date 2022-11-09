@@ -32,7 +32,13 @@ namespace ya
 
 		mAnimator = new AniMator();
 
-		//여기추가
+		//각각 스프라이트 형식 불러오기 방법
+		//알파 채널로 안해서 이미지 로드하면 버그남
+		/*mAnimator->CreateAnimations(L"..\\Resources\\Animations\\Player\\Idle"
+			, L"PlaneIdle");*/
+		//각각 스프라이트 형식 불러오기 방법
+
+
 
 		mAnimator->CreateAnimation(L"Idle", mImage
 			, Vector2(0.0f, 0.0f), Vector2(48.0f, 48.0f)
@@ -55,6 +61,7 @@ namespace ya
 			, Vector2(0.0f, 910.0f), Vector2(120.0f, 130.0f)
 			, Vector2(5.0f, -20.0f), 10, 0.1f);*/
 
+
 		mAnimator->Play(L"Idle", true);
 
 		
@@ -67,7 +74,8 @@ namespace ya
 
 		//Camera::SetTarget(this);
 
-
+		mCoff = 0.1f;
+		mMisiileDir = Vector2::One;
 
 
 

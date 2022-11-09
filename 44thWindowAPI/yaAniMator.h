@@ -45,31 +45,27 @@ namespace ya {
 		void CreateAnimations(const std::wstring& path, const std::wstring& name, 
 			Vector2 offset=Vector2::Zero, float duration=0.1f);
 
-		void Play(const std::wstring& name,bool bloop = false);
+		void Play(const std::wstring& name,bool bLoop = false);
 
 		Events* FindEvents(const std::wstring key);
-
 		std::function<void()>& GetStartEvent(const std::wstring key);
 		std::function<void()>& GetCompleteEvent(const std::wstring key);
 		std::function<void()>& GetEndEvent(const std::wstring key);
 		
 		
 	public:
-		
 		Event mStartEvent;
 		Event mCompleteEvent;
 		Event mEndEvent;
-
-	
 
 	private:
 		std::map<std::wstring, Events*> mEvents;
 		std::map<std::wstring, Animation*> mAnimations;
 
+
 		Animation* mPlayAnimaion;
 		bool mbLoop;
-
-		Image* mSpriteSheet;
+		Image* mSPriteSheet;
 	};
 }
 
