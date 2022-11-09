@@ -24,6 +24,7 @@ namespace ya {
 		Image* mImage2;
 		AniMator* mAnimator;
 		float mTime;
+		Vector2 mMisiileDir;
 	};
 }	
 

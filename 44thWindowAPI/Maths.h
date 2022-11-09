@@ -4,15 +4,7 @@
 
 
 namespace ya {
-	__forceinline float DegreeToRadian(float degree)
-	{
-		return degree * (180.0f / PI);
-	}
 
-	__forceinline float RadianToDegree(float radian)
-	{
-		return radian * ( PI / 180.0f );
-	}
 
 	struct Vector2
 	{
@@ -69,5 +61,43 @@ namespace ya {
 			x += other.x;
 			y += other.y;
 		}
+
+		float Length()
+		{
+			return sqrtf((x * x) + (y * y));
+		}
+
+		Vector2& Normailize()
+		{
+			float length = Length();
+
+			x /= length;
+			y /= length;
+
+			return *this;
+
+		}
 	};
+
+	namespace math {
+		__forceinline float DegreeToRadian(float degree)
+		{
+			return degree * (180.0f / PI);
+		}
+
+		__forceinline float RadianToDegree(float radian)
+		{
+			return radian * (PI / 180.0f);
+		}
+
+		inline Vector2 Rotate(const Vector2 value,float degeree)
+		{
+			Vector2 ret = Vector2::Zero;
+			float radian = DegreeToRadian(degeree);
+			ret.x = value.x * cosf(radian) - value.y * sinf(radian);
+			ret.y = value.x * sinf(radian) + value.y * cosf(radian);
+
+			return ret;
+		}
+	}
 }

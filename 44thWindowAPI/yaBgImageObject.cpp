@@ -38,7 +38,7 @@ namespace ya {
 	}
 	void BgImageObject::SetImage(const std::wstring& key, const std::wstring& fileName)
 	{
-		std::wstring path = L"..\\Resources\\Image\\";
+		std::wstring path = L"..\\Resources\\Image\\Object\\";
 		path += fileName;
 
 		mImage = Resources::Load<Image>(key, path);

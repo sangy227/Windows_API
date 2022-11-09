@@ -23,7 +23,7 @@ namespace ya {
 
 		if (mImage == nullptr)
 		{
-			mImage = Resources::Load<Image>(L"crow_bandit", L"..\\Resources\\Image\\crow_bandit.bmp");
+			mImage = Resources::Load<Image>(L"crow_bandit", L"..\\Resources\\Image\\Monster\\crow_bandit.bmp");
 		}
 
 		mAnimator = new AniMator();
@@ -46,9 +46,7 @@ namespace ya {
 
 		if (mImage == nullptr)
 		{
-			mImage = Resources::Load<Image>(L"bearded_dragon", L"..\\Resources\\Image\\bearded dragon.bmp");
-
-
+			mImage = Resources::Load<Image>(L"bearded_dragon", L"..\\Resources\\Image\\Monster\\bearded dragon.bmp");
 		}
 
 		mAnimator = new AniMator();

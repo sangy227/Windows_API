@@ -10,7 +10,7 @@ namespace ya {
 	{
 		if (mImage == nullptr)
 		{
-			mImage = Resources::Load<Image>(L"SelectUI", L"..\\Resources\\Image\\SelectUI.bmp");
+			mImage = Resources::Load<Image>(L"SelectUI", L"..\\Resources\\Image\\Object\\SelectUI.bmp");
 		}
 
 		SetPos({ 1600 / 2,420 });

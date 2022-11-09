@@ -12,7 +12,7 @@ namespace ya {
 
 		if (mImage == nullptr)
 		{
-			mImage = Resources::Load<Image>(L"LogoPlayerObject", L"..\\Resources\\Image\\tote_win.bmp");
+			mImage = Resources::Load<Image>(L"LogoPlayerObject", L"..\\Resources\\Image\\Object\\tote_win.bmp");
 		}
 
 		mAnimator = new AniMator();

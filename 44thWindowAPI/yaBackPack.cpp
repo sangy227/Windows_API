@@ -11,7 +11,7 @@ namespace ya {
 	{
 		if (mImage == nullptr)
 		{
-			mImage = Resources::Load<Image>(L"BackPack", L"..\\Resources\\Image\\BackPack.bmp");
+			mImage = Resources::Load<Image>(L"BackPack", L"..\\Resources\\Image\\Object\\BackPack.bmp");
 		}
 
 		SetPos({ 1600 / 2,250 });

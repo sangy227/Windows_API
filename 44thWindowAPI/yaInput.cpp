@@ -1,5 +1,8 @@
 #include "yaInput.h"
+#include "yaApplication.h"
 namespace ya {
+	Vector2 Input::mMousepos;
+
 	int ASCII[(UINT)eKeyCode::End] =
 	{
 		'Q','W','E','R','T','Y','U','I','O','P',
@@ -41,32 +44,61 @@ namespace ya {
 	}
 	void Input::Tick()
 	{
-		for (UINT i = 0; i < (UINT)eKeyCode::End; i++)
+		if (GetFocus())
 		{
-			//해당키가 현재 눌려져 있는경우
-			if (GetAsyncKeyState(ASCII[i]) & 0x8000)
+			for (UINT i = 0; i < (UINT)eKeyCode::End; i++)
 			{
-				//이전 프레임에 눌려져 있엇다.
-				if (mKeys[i].bPressed)
+				//해당키가 현재 눌려져 있는경우
+				if (GetAsyncKeyState(ASCII[i]) & 0x8000)
 				{
-					mKeys[i].state = eKeyState::PRESSED;
+					//이전 프레임에 눌려져 있엇다.
+					if (mKeys[i].bPressed)
+					{
+						mKeys[i].state = eKeyState::PRESSED;
+					}
+					else
+					{
+						mKeys[i].state = eKeyState::DOWN;
+					}
+					mKeys[i].bPressed = true;
 				}
+				//눌려져 있지 않은 경우
 				else
 				{
-					mKeys[i].state = eKeyState::DOWN;
+					// 이전 프레임 눌려져 있엇다
+					if (mKeys[i].bPressed)
+						mKeys[i].state = eKeyState::UP;
+					else
+						mKeys[i].state = eKeyState::NONE;
+					mKeys[i].bPressed = false;
 				}
-				mKeys[i].bPressed = true;
 			}
-			//눌려져 있지 않은 경우
-			else
-			{
-				// 이전 프레임 눌려져 있엇다
-				if (mKeys[i].bPressed)
-					mKeys[i].state = eKeyState::UP;
-				else			
-					mKeys[i].state = eKeyState::NONE;		
-				mKeys[i].bPressed = false;
 
+
+			POINT mousePos = {};
+			GetCursorPos(&mousePos);
+			HWND hwnd = Application::GetInstance().GetWindowData().hWnd;
+			ScreenToClient(hwnd, &mousePos);
+			mMousepos.x = mousePos.x;
+			mMousepos.y = mousePos.y;
+		}
+		else
+		{
+			for (size_t i = 0; i < (UINT)eKeyCode::End; i++)
+			{
+				if (eKeyState::DOWN == mKeys[i].state ||
+					eKeyState::PRESSED == mKeys[i].state)
+				{
+					mKeys[i].state = eKeyState::UP;
+				}
+				else if (eKeyState::UP == mKeys[i].state)
+				{
+					mKeys[i].state = eKeyState::NONE;
+				}
+
+				//여기추가
+				//여기추가
+				//여기추가
 			}
 		}
 	}

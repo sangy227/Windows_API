@@ -23,6 +23,7 @@ namespace ya {
 
 	public:
 		Vector2 mDir;
+		Vector2 mDestPos;
 
 	};
 

@@ -5,6 +5,7 @@
 #include "yaAniMator.h"
 #include "yaResources.h"
 #include "yaImage.h"
+#include "yaInput.h"
 
 namespace ya {
     Missile::Missile()
@@ -33,7 +34,11 @@ namespace ya {
 
         AddComponent(ani);
 
+        mDir = Vector2::Zero;
         //Camera::SetTarget(this);
+
+
+
 
     }
     Missile::~Missile()
@@ -52,15 +57,26 @@ namespace ya {
 
 
 
-        float radian = DegreeToRadian(90.0f);
-        float degree = RadianToDegree(2 * PI);
+        float radian = math::DegreeToRadian(90.0f);
+        float degree = math::RadianToDegree(2 * PI);
         float speed = 100.0f;
 
         Vector2 pos = GetPos();
+
         // 삼각함수를 이용한 회전
         //mDir = PI / 2.0f;
         //pos.x += speed * cosf(mDir) * Time::DeltaTime();
         //pos.y -= speed * sinf(mDir) * Time::DeltaTime();
+
+
+
+
+        //여기추가
+        //여기추가
+        //여기추가
+        
+     
+
 
         // 벡터를 이용한 회전
         pos.y += mDir.y * speed * Time::DeltaTime();

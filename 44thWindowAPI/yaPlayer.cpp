@@ -17,6 +17,7 @@ namespace ya
 	Player::Player()
 		: mSpeed(1.0f)
 		, mTime(0.0f)
+		, mMisiileDir(Vector2::Zero)
 	{
 		SetName(L"Player");
 		SetPos({ 520.0f, 770.0f });
@@ -145,7 +146,10 @@ namespace ya
 			//mAnimator->FindEvents(L"attack")->mCompleteEvent = std::bind(&Player::WalkComplete, this);
 
 			
-	
+			//여기변경
+			//여기변경
+			//여기변경
+
 			/*Missile* missile = new Missile();
 
 			Scene* playScene = SceneManager::GetPlayScene();
@@ -156,6 +160,13 @@ namespace ya
 			Vector2 missileScale = missile->GetScale();
 
 			missile->SetPos((playerPos + playerScale) - (missileScale / 2.0f));*/
+
+
+
+			//여기추가
+			//여기추가
+			//여기추가
+
 
 			//missile->mDir = Vector2(mCoff, -1.0f + mCoff);
 			//mCoff -= 0.1f;

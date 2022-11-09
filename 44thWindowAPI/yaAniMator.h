@@ -42,6 +42,8 @@ namespace ya {
 			Vector2 leftTop,Vector2 size,Vector2 offset
 			,UINT spriteLegth,float duration,bool bAffectedCamera = false);
 
+		void CreateAnimations(const std::wstring& path);
+
 		void Play(const std::wstring& name,bool bloop = false);
 
 		Events* FindEvents(const std::wstring key);
@@ -52,7 +54,7 @@ namespace ya {
 		
 		
 	public:
-		//¿©±â ÇÑ¹ø ºÁ¾ß´ï
+		
 		Event mStartEvent;
 		Event mCompleteEvent;
 		Event mEndEvent;
@@ -65,6 +67,8 @@ namespace ya {
 
 		Animation* mPlayAnimaion;
 		bool mbLoop;
+
+		Image* mSpriteSheet;
 	};
 }
 
