@@ -1,7 +1,7 @@
 #include "yaInput.h"
 #include "yaApplication.h"
 namespace ya {
-	Vector2 Input::mMousepos;
+	
 
 	int ASCII[(UINT)eKeyCode::End] =
 	{
@@ -29,6 +29,7 @@ namespace ya {
 
 	};				  
 	std::vector<Input::key> Input::mKeys;
+	Vector2 Input::mMousePos;
 
 	void Input::Initialize()
 	{
@@ -79,8 +80,8 @@ namespace ya {
 			GetCursorPos(&mousePos);
 			HWND hwnd = Application::GetInstance().GetWindowData().hWnd;
 			ScreenToClient(hwnd, &mousePos);
-			mMousepos.x = mousePos.x;
-			mMousepos.y = mousePos.y;
+			mMousePos.x = mousePos.x;
+			mMousePos.y = mousePos.y;
 		}
 		else
 		{
@@ -96,9 +97,7 @@ namespace ya {
 					mKeys[i].state = eKeyState::NONE;
 				}
 
-				//여기추가
-				//여기추가
-				//여기추가
+				mKeys[i].bPressed = false;
 			}
 		}
 	}

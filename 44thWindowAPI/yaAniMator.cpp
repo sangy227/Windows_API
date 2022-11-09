@@ -86,13 +86,27 @@ namespace ya {
 		mEvents.insert(std::make_pair(name, events));
 	}
 
-	void AniMator::CreateAnimations(const std::wstring& path)
+	void AniMator::CreateAnimations(const std::wstring& path
+		, const std::wstring& name
+		, Vector2 offset
+		, float duration)
 	{
-		std::wstring name = L"CupheadIdle";
+		
 		UINT width = 200;
 		UINT height = 200;
 		UINT fileCount = 5;
+
+		std::string multbyte;
+
+		std::filesystem::path fs(path);
+		
+		//여기 추가
+		//여기 추가
+		//여기 추가
+
 		mSpriteSheet = Image::Create(name, width* fileCount, height);
+
+		
 
 	}
 	

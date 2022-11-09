@@ -42,7 +42,8 @@ namespace ya {
 			Vector2 leftTop,Vector2 size,Vector2 offset
 			,UINT spriteLegth,float duration,bool bAffectedCamera = false);
 
-		void CreateAnimations(const std::wstring& path);
+		void CreateAnimations(const std::wstring& path, const std::wstring& name, 
+			Vector2 offset=Vector2::Zero, float duration=0.1f);
 
 		void Play(const std::wstring& name,bool bloop = false);
 

@@ -31,6 +31,9 @@ namespace ya
 		}
 
 		mAnimator = new AniMator();
+
+		//여기추가
+
 		mAnimator->CreateAnimation(L"Idle", mImage
 			, Vector2(0.0f, 0.0f), Vector2(48.0f, 48.0f)
 			, Vector2(-24.0f,-48.0f), 4, 0.4f);
@@ -146,26 +149,24 @@ namespace ya
 			//mAnimator->FindEvents(L"attack")->mCompleteEvent = std::bind(&Player::WalkComplete, this);
 
 			
-			//여기변경
-			//여기변경
-			//여기변경
+			//미사일 나가게 하기~
+			if (false)
+			{
+				Missile* missile = new Missile();
 
-			/*Missile* missile = new Missile();
+				Scene* playScene = SceneManager::GetPlayScene();
+				playScene->AddGameObject(missile, eColliderLayer::Player_Projecttile);
 
-			Scene* playScene = SceneManager::GetPlayScene();
-			playScene->AddGameObject(missile, eColliderLayer::Player_Projecttile);
+				Vector2 playerPos = GetPos();
+				Vector2 playerScale = GetScale() / 2.0f;
 
-			Vector2 playerPos = GetPos();
-			Vector2 playerScale = GetScale() / 2.0f;
-			Vector2 missileScale = missile->GetScale();
+				missile->SetPos(playerPos);
+				missile->mDestPos = Vector2::One; // = Input::GetMousePos();
+				//missile->mDir = missile->mDestPos - pos;
 
-			missile->SetPos((playerPos + playerScale) - (missileScale / 2.0f));*/
-
-
-
-			//여기추가
-			//여기추가
-			//여기추가
+				mMisiileDir = math::Rotate(mMisiileDir, 5.0f);
+				missile->mDir = mMisiileDir;
+			}
 
 
 			//missile->mDir = Vector2(mCoff, -1.0f + mCoff);
@@ -245,7 +246,6 @@ namespace ya
 	void Player::WalkComplete()
 	{
 		Vector2 pos = GetPos();
-		//SetPos({ 520.0f, 770.0f });
 		pos.x = 520.0f;
 		pos.y = 770.0f;
 		SetPos(pos);

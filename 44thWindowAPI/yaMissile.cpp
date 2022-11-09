@@ -22,6 +22,7 @@ namespace ya {
 
         if (mImage == nullptr)
         {
+            //mImage = Resources::Load<Image>(L"msiile", L"..\\Resources\\Image\\msiile.bmp");
             mImage = Resources::Load<Image>(L"Missile", L"..\\Resources\\Image\\attack.bmp");
         }
 
@@ -34,7 +35,7 @@ namespace ya {
 
         AddComponent(ani);
 
-        mDir = Vector2::Zero;
+        mDir += Vector2(0.0f, -1.0f);
         //Camera::SetTarget(this);
 
 
@@ -54,12 +55,9 @@ namespace ya {
             this->Death();
         }
 
-
-
-
         float radian = math::DegreeToRadian(90.0f);
         float degree = math::RadianToDegree(2 * PI);
-        float speed = 100.0f;
+        float speed = 200.0f;
 
         Vector2 pos = GetPos();
 
@@ -68,15 +66,7 @@ namespace ya {
         //pos.x += speed * cosf(mDir) * Time::DeltaTime();
         //pos.y -= speed * sinf(mDir) * Time::DeltaTime();
 
-
-
-
-        //여기추가
-        //여기추가
-        //여기추가
-        
-     
-
+        mDir.Normailize();
 
         // 벡터를 이용한 회전
         pos.y += mDir.y * speed * Time::DeltaTime();
@@ -90,13 +80,24 @@ namespace ya {
     }
     void Missile::Render(HDC hdc)
     {
-        /*Vector2 pos = GetPos();
+        Vector2 pos = GetPos();
         Vector2 scale = GetScale();
+
+        //Vector2 finalPos;
+        //finalPos.x = (pos.x - mImage->GetWidth() * (scale.x / 0.0f));
+        //finalPos.y = (pos.y - mImage->GetHeight() * (scale.y / 2.0f));
+
+        Vector2 rect;
+        rect.x = mImage->GetWidth(); //*scale.x;
+        rect.y = mImage->GetHeight(); //*scale.y;
 
         pos = Camera::CalculatePos(pos);
 
-        Ellipse(hdc, pos.x-10, pos.y-10, pos.x + scale.x, pos.y + scale.y);*/
+        //Ellipse(hdc, pos.x-10, pos.y-10, pos.x + scale.x, pos.y + scale.y);
 
+        /*TransparentBlt(hdc, pos.x, pos.y, rect.x, rect.y
+            , mImage->GetDC(), 0, 0, mImage->GetWidth(), mImage->GetHeight()
+            , RGB(255, 0, 255));*/
         
         GameObject::Render(hdc);
 
