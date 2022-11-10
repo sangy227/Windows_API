@@ -14,9 +14,10 @@ WCHAR szWindowClass[MAX_LOADSTRING];            // 기본 창 클래스 이름�
 
 
 // 이 코드 모듈에 포함된 함수의 선언을 전달합니다:
-ATOM                MyRegisterClass(HINSTANCE hInstance);
+ATOM                MyRegisterClass(HINSTANCE hInstance,WNDPROC wndproc,LPCWSTR windowName);
 BOOL                InitInstance(HINSTANCE, int);
 LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
+LRESULT CALLBACK    AtlasWndProc(HWND , UINT , WPARAM , LPARAM );
 INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
 
 
@@ -28,6 +29,9 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 {
     UNREFERENCED_PARAMETER(hPrevInstance);
     UNREFERENCED_PARAMETER(lpCmdLine);
+
+    // 메모리 누수를 체크해주는 함수
+    _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 
     // 1. wndclass 정의 윈도의 기반(여러가지 속성)이 되는 클래스 정의해준다.
 
@@ -48,7 +52,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     // 전역 문자열을 초기화합니다.
     LoadStringW(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
     LoadStringW(hInstance, IDC_MY44THWINDOWAPI, szWindowClass, MAX_LOADSTRING);
-    MyRegisterClass(hInstance);
+    MyRegisterClass(hInstance,WndProc,szWindowClass);
+    MyRegisterClass(hInstance,AtlasWndProc,L"AtlasWindow");
 
     // 애플리케이션 초기화를 수행합니다:
     if (!InitInstance(hInstance, nCmdShow))
@@ -114,22 +119,24 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 //
 //  용도: 창 클래스를 등록합니다.
 //
-ATOM MyRegisterClass(HINSTANCE hInstance)
+
+
+ATOM MyRegisterClass(HINSTANCE hInstance, WNDPROC wndproc, LPCWSTR windowName)
 {
     WNDCLASSEXW wcex;
 
     wcex.cbSize = sizeof(WNDCLASSEX);
 
     wcex.style = CS_HREDRAW | CS_VREDRAW;
-    wcex.lpfnWndProc = WndProc;
+    wcex.lpfnWndProc = wndproc;
     wcex.cbClsExtra = 0;
     wcex.cbWndExtra = 0;
     wcex.hInstance = hInstance;
     wcex.hIcon = LoadIcon(hInstance, MAKEINTRESOURCE(IDC_MY44THWINDOWAPI));
     wcex.hCursor = LoadCursor(nullptr, IDC_ARROW);
     wcex.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
-    wcex.lpszMenuName = MAKEINTRESOURCEW(IDC_MY44THWINDOWAPI);
-    wcex.lpszClassName = szWindowClass;
+    wcex.lpszMenuName = nullptr; //MAKEINTRESOURCEW(IDC_MY44THWINDOWAPI);
+    wcex.lpszClassName = windowName;
     wcex.hIconSm = LoadIcon(wcex.hInstance, MAKEINTRESOURCE(IDI_SMALL));
 
     return RegisterClassExW(&wcex);
@@ -156,6 +163,8 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
     HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
         CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
 
+
+
     windowData.hWnd = hWnd;
     windowData.hdc = nullptr;
 
@@ -168,6 +177,20 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
     UpdateWindow(hWnd);
 
     ya::Application::GetInstance().Initialize(windowData);
+
+    WindowData atlasWindowData;
+    //atlasWindowData.width = 500;
+    //atlasWindowData.height = 500;
+
+    hWnd = CreateWindowW(L"AtlasWindow", szTitle, WS_OVERLAPPEDWINDOW,
+        CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
+    atlasWindowData.hWnd = hWnd;
+
+    /*SetWindowPos(hWnd, nullptr, 0, 0, windowData.width, windowData.height, 0);
+    ShowWindow(hWnd, nCmdShow);
+    UpdateWindow(hWnd);*/
+
+    ya::Application::GetInstance().initializeAtlasWindow(atlasWindowData);
 
     return TRUE;
 }
@@ -182,6 +205,13 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 //  WM_DESTROY  - 종료 메시지를 게시하고 반환합니다.
 //
 //
+
+#include "yaScene.h"
+#include "yaSceneManager.h"
+#include "yaToolScene.h"
+#include "yaTilePalette.h"
+#include "yaImage.h"
+
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
     switch (message)
@@ -231,9 +261,9 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
         //// 스톡 오브젝트
         // 화면 지우기
-        HBRUSH hClearBrush = (HBRUSH)GetStockObject(DKGRAY_BRUSH);
+       /* HBRUSH hClearBrush = (HBRUSH)GetStockObject(DKGRAY_BRUSH);
         HBRUSH oldClearBrush = (HBRUSH)SelectObject(hdc, hClearBrush);
-        Rectangle(hdc, -1, -1, 1921, 1081);
+        Rectangle(hdc, -1, -1, 1921, 1081);*/
 
 
         // TODO: 여기에 hdc를 사용하는 그리기 코드를 추가합니다...
@@ -252,6 +282,92 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
         // 기존의 오브젝트로 되돌린다 ( 해제 )
         // 핸들을 삭제한다.
+    }
+    break;
+    case WM_DESTROY:
+    {
+        PostQuitMessage(0);
+        //KillTimer(hWnd, 0);
+    }
+    break;
+    default:
+        return DefWindowProc(hWnd, message, wParam, lParam);
+    }
+    return 0;
+}
+
+LRESULT CALLBACK AtlasWndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
+{
+    switch (message)
+    {
+    case WM_CREATE:
+    {
+        WindowData windowData
+            = ya::Application::GetInstance().GetWindowData();
+
+
+        WindowData atlasWindowData
+            = ya::Application::GetInstance().GetAtlasWindowData();
+
+        ya::Scene* scene = ya::SceneManager::GetPlayScene();
+        ya::ToolScene* toolScene = dynamic_cast<ya::ToolScene*>(scene);
+
+        ya::Image* atlas = toolScene->GetAtalasImage();
+
+        RECT rect = { 0, 0, atlas->GetWidth(), atlas->GetHeight() };
+        //AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, true);
+        SetWindowPos(hWnd, nullptr, windowData.width, 0, atlas->GetWidth(), atlas->GetHeight(), 0);
+
+        //SetWindowPos(atlasWindowData.hWnd
+        //    , nullptr, 1600, 0
+        //    , rect.right - rect.left
+        //    , rect.bottom - rect.top
+        //    , 0);
+
+        ShowWindow(hWnd, true);
+        UpdateWindow(hWnd);
+
+    }
+    break;
+    case WM_COMMAND:
+    {
+        int wmId = LOWORD(wParam);
+        // 메뉴 선택을 구문 분석합니다:
+        switch (wmId)
+        {
+        case IDM_ABOUT:
+            DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
+            break;
+        case IDM_EXIT:
+            DestroyWindow(hWnd);
+            break;
+        default:
+            return DefWindowProc(hWnd, message, wParam, lParam);
+        }
+    }
+    break;
+
+    case WM_PAINT:
+    {
+        PAINTSTRUCT ps;
+        HDC hdc = BeginPaint(hWnd, &ps);
+
+        WindowData atlasWindowData
+            = ya::Application::GetInstance().GetAtlasWindowData();
+
+        ya::Scene* scene = ya::SceneManager::GetPlayScene();
+        ya::ToolScene* toolScene = dynamic_cast<ya::ToolScene*>(scene);
+
+        ya::Image* atlas = toolScene->GetAtalasImage();
+
+        ya::Vector2 pos(ya::Vector2::Zero);
+        TransparentBlt(hdc, pos.x, pos.y
+            , atlas->GetWidth(), atlas->GetHeight()
+            , atlas->GetDC(), 0, 0, atlas->GetWidth(), atlas->GetHeight()
+            , RGB(255, 0, 255));
+
+
+        EndPaint(hWnd, &ps);
     }
     break;
     case WM_DESTROY:

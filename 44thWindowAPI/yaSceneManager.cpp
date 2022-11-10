@@ -7,6 +7,7 @@
 #include "yaPlayScene2.h"
 #include "yaPlayScene3.h"
 #include "yaPlayScene4.h"
+#include "yaToolScene.h"
 
 namespace ya {
 
@@ -38,7 +39,12 @@ namespace ya {
 		mScenes[(UINT)eSceneType::End] = new EndScene();
 		mScenes[(UINT)eSceneType::End]->Initialize();
 
-		ChangeScene(eSceneType::Logo);
+		mScenes[(UINT)eSceneType::Tool] = new ToolScene();
+		mScenes[(UINT)eSceneType::Tool]->Initialize();
+		
+
+
+		ChangeScene(eSceneType::Tool);
 
 
 		//mPlayScene = mScenes[(UINT)eSceneType::Logo];

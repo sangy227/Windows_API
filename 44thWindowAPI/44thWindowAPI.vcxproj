@@ -46,7 +46,7 @@
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
-    <EnableUnitySupport>false</EnableUnitySupport>
+    <EnableUnitySupport>true</EnableUnitySupport>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -183,8 +183,11 @@
     <ClInclude Include="yaResources.h" />
     <ClInclude Include="yaSceneManager.h" />
     <ClInclude Include="yaScene.h" />
+    <ClInclude Include="yaTile.h" />
+    <ClInclude Include="yaTilePalette.h" />
     <ClInclude Include="yaTime.h" />
     <ClInclude Include="yaTitleScene.h" />
+    <ClInclude Include="yaToolScene.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="chicken.cpp" />
@@ -211,6 +214,8 @@
     <ClCompile Include="yaPlayScene4.cpp" />
     <ClCompile Include="yaResource.cpp" />
     <ClCompile Include="yaResources.cpp" />
+    <ClCompile Include="yaTile.cpp" />
+    <ClCompile Include="yaTilePalette.cpp" />
     <ClCompile Include="yaTime.cpp" />
     <ClCompile Include="yaGameObject.cpp" />
     <ClCompile Include="main.cpp" />
@@ -222,6 +227,7 @@
     <ClCompile Include="yaEntity.cpp" />
     <ClCompile Include="yaScene.cpp" />
     <ClCompile Include="yaTitleScene.cpp" />
+    <ClCompile Include="yaToolScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="44thWindowAPI.rc" />

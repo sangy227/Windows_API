@@ -1,3 +1,9 @@
+#include <Windows.h>
+#include "Common.h"
+#include "44thWindowAPI.h"
+#include "framework.h"
+
+
 #include "yaApplication.h"
 #include "yaSceneManager.h"
 #include "yaTime.h"
@@ -18,6 +24,12 @@ namespace ya {
 		SceneManager::Initialize();
 		Camera::Initialize();
 
+	}
+
+	void Application::initializeAtlasWindow(WindowData data)
+	{
+		mAtlasWindowData = data;
+		mAtlasWindowData.hdc = GetDC(data.hWnd);
 	}
 
 	void Application::Tick()
@@ -54,6 +66,23 @@ namespace ya {
 
 		//DetroyGameObject 삭제
 		SceneManager::DetroyGameObject();
+	}
+
+	void Application::SetMenuBar(bool power)
+	{
+		SetMenu(mWindowData.hWnd, mMenu);
+
+		RECT rect = { 0, 0, mWindowData.width, mWindowData.height };
+		AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, power);
+		// 윈도우 크기 변경
+		SetWindowPos(mWindowData.hWnd,
+			nullptr, 0, 0
+			, rect.right - rect.left
+			, rect.bottom - rect.top
+			, 0
+		);
+
+		ShowWindow(mWindowData.hWnd, true);
 	}
 
 
@@ -114,7 +143,7 @@ namespace ya {
 		mBrushes[(UINT)eBrushColor::Gray] = (HBRUSH)GetStockObject(GRAY_BRUSH);
 		mBrushes[(UINT)eBrushColor::White] = (HBRUSH)GetStockObject(WHITE_BRUSH);
 
-
+		mMenu = LoadMenu(nullptr, MAKEINTRESOURCEW(IDC_MY44THWINDOWAPI));
 	}
 
 	

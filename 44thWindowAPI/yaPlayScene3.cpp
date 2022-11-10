@@ -32,8 +32,8 @@ namespace ya {
 
 
 
-		CollisionManager::SetLayer(eColliderLayer::Player, eColliderLayer::Monster, true);
-		CollisionManager::SetLayer(eColliderLayer::Monster, eColliderLayer::Player_Projecttile, true);
+		//CollisionManager::SetLayer(eColliderLayer::Player, eColliderLayer::Monster, true);
+		//CollisionManager::SetLayer(eColliderLayer::Monster, eColliderLayer::Player_Projecttile, true);
 	}
 
 
@@ -63,6 +63,8 @@ namespace ya {
 	}
 	void PlayScene3::Enter()
 	{
+		CollisionManager::SetLayer(eColliderLayer::Player, eColliderLayer::Monster, true);
+		CollisionManager::SetLayer(eColliderLayer::Monster, eColliderLayer::Player_Projecttile, true);
 	}
 	void PlayScene3::Exit()
 	{

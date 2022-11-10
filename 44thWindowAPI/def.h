@@ -14,6 +14,7 @@
 		PlayThree,
 		PlayFour,
 		End,
+		Tool,
 		Max,
 	};
 
@@ -78,3 +79,8 @@
 		FadeOut,
 		None,
 	};
+
+
+#define TILE_SIZE 32
+#define TILE_LINE_X 8
+#define TILE_LINE_Y 3

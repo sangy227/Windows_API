@@ -8,7 +8,7 @@
 namespace ya {
 	chicken::chicken()
 	{
-		SetName(L"Monster");
+		SetName(L"chicken");
 		SetPos({ 1070.0f, 770.0f });
 		SetScale({ 3.0f, 3.0f });
 
@@ -29,7 +29,7 @@ namespace ya {
 	}
 	chicken::chicken(Vector2 position)
 	{
-		SetName(L"Monster");
+		SetName(L"chicken");
 		SetPos(position);
 		SetScale({ 3.0f, 3.0f });
 

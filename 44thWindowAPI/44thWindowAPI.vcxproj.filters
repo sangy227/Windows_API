@@ -53,6 +53,9 @@
     <Filter Include="Engine\GameObject\Object">
       <UniqueIdentifier>{32d56f81-4a94-4b04-9e85-307f1238195e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\GameObject\Tile">
+      <UniqueIdentifier>{3fe63d49-4370-4b41-8582-5870e7ed6966}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="44thWindowAPI.h">
@@ -175,6 +178,15 @@
     <ClInclude Include="LogoPlayerObject.h">
       <Filter>Engine\GameObject\Object</Filter>
     </ClInclude>
+    <ClInclude Include="yaToolScene.h">
+      <Filter>Engine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="yaTile.h">
+      <Filter>Engine\GameObject\Tile</Filter>
+    </ClInclude>
+    <ClInclude Include="yaTilePalette.h">
+      <Filter>Engine\GameObject\Tile</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="44thWindowAPI.rc">
@@ -294,6 +306,15 @@
     </ClCompile>
     <ClCompile Include="LogoPlayerObject.cpp">
       <Filter>Engine\GameObject\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="yaToolScene.cpp">
+      <Filter>Engine\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="yaTile.cpp">
+      <Filter>Engine\GameObject\Tile</Filter>
+    </ClCompile>
+    <ClCompile Include="yaTilePalette.cpp">
+      <Filter>Engine\GameObject\Tile</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

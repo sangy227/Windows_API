@@ -112,7 +112,7 @@ namespace ya {
                 left->OnCollisionEnter(right);
                 right->OnCollisionEnter(left);
 
-                iter->second == true;
+                iter->second = true;
             }
             else
             {
@@ -131,7 +131,7 @@ namespace ya {
                 left->OnCollisionExit(right);
                 right->OnCollisionExit(left);
 
-                iter->second == false;
+                iter->second = false;
             }
 
             // if (iter->second == false)
@@ -158,5 +158,10 @@ namespace ya {
         }
 
         return false;
+    }
+    void CollisionManager::Clear()
+    {
+        memset(mMatrix, 0, sizeof(WORD) * _COLLIDER_LAYER);
+        mCollisionInformation.clear();
     }
 }

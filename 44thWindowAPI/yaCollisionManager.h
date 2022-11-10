@@ -15,6 +15,8 @@ namespace ya {
 
 		static bool Intersect(Collider* left, Collider* right);
 
+		static void Clear();
+
 	private:
 		static WORD mMatrix[_COLLIDER_LAYER];
 
