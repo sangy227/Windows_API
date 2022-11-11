@@ -29,6 +29,7 @@ namespace ya
 			mImages[1] = Resources::Load<Image>(L"attack", L"..\\Resources\\Image\\attack.bmp");
 			mImages[2] = Resources::Load<Image>(L"Walk", L"..\\Resources\\Image\\Walk.bmp");
 			mImages[3] = Resources::Load<Image>(L"BowAttack", L"..\\Resources\\Image\\BowAttack.bmp");
+			mImages[4] = Resources::Load<Image>(L"SearchPack", L"..\\Resources\\Image\\mc_searchPack.bmp");
 		}
 
 		mAnimator = new AniMator();
@@ -47,15 +48,19 @@ namespace ya
 
 		mAnimator->CreateAnimation(L"attack", mImages[1]
 			, Vector2(0.0f, 0.0f), Vector2(64.0f, 48.0f)
-			, Vector2(-36.0f, -48.0f), 4, 0.1f);
+			, Vector2(-36.0f, -48.0f), 8, 0.05f);
 
 		mAnimator->CreateAnimation(L"BowAttack", mImages[3]
 			, Vector2(0.0f, 0.0f), Vector2(48.0f, 48.0f)
-			, Vector2(-24.0f, -48.0f), 4, 0.1f);
+			, Vector2(-24.0f, -48.0f), 8, 0.07f);
 
 		mAnimator->CreateAnimation(L"Walk", mImages[2]
 			, Vector2(0.0f, 0.0f), Vector2(48.0f, 48.0f)
-			, Vector2(-24.0f, -48.0f), 4, 0.1f);
+			, Vector2(-24.0f, -48.0f), 8, 0.1f);
+
+		mAnimator->CreateAnimation(L"SearchPack", mImages[4]
+			, Vector2(0.0f, 0.0f), Vector2(64.0f, 48.0f)
+			, Vector2(-72.0f, -48.0f), 2, 0.4f);
 
 		/*mAnimator->CreateAnimation(L"MoveDown", mImage
 			, Vector2(0.0f, 520.0f), Vector2(120.0f, 130.0f)
@@ -112,28 +117,28 @@ namespace ya
 		{
 			pos.y -= 120.0f * Time::DeltaTime();
 		}
-		if (KEY_PREESE(eKeyCode::S))
-		{
-			pos.y += 120.0f * Time::DeltaTime();
-		}
+		//if (KEY_PREESE(eKeyCode::S))
+		//{
+		//	//pos.y += 120.0f * Time::DeltaTime();
+		//}
 		if (KEY_PREESE(eKeyCode::A))
 		{
 			pos.x -= 120.0f * Time::DeltaTime();
 		}
-		if (KEY_PREESE(eKeyCode::D))
-		{
-			//pos.x += 120.0f * Time::DeltaTime();
-		}
+		//if (KEY_PREESE(eKeyCode::D))
+		//{
+		//	//pos.x += 120.0f * Time::DeltaTime();
+		//}
 
 		/*if (KEY_DOWN(eKeyCode::W))
 		{
 			mAnimator->Play(L"MoveUp", true);
-		}
+		}*/
 		if (KEY_DOWN(eKeyCode::S))
 		{
-			mAnimator->Play(L"MoveDown", true);
+			mAnimator->Play(L"SearchPack", true);
 		}
-		if (KEY_DOWN(eKeyCode::A))
+		/*if (KEY_DOWN(eKeyCode::A))
 		{
 			mAnimator->Play(L"MoveLeft", true);
 		}*/
@@ -145,12 +150,12 @@ namespace ya
 		/*if (KEY_UP(eKeyCode::W))
 		{
 			mAnimator->Play(L"Idle", true);
-		}
+		}*/
 		if (KEY_UP(eKeyCode::S))
 		{
 			mAnimator->Play(L"Idle", true);
 		}
-		if (KEY_UP(eKeyCode::A))
+		/*if (KEY_UP(eKeyCode::A))
 		{
 			mAnimator->Play(L"Idle", true);
 		}*/
@@ -159,6 +164,7 @@ namespace ya
 			mAnimator->Play(L"Idle", true);
 		}
 
+		//마우스 우클릭
 		if (KEY_DOWN(eKeyCode::RBTN)) {
 
 			mAnimator->Play(L"BowAttack", true);
@@ -166,6 +172,7 @@ namespace ya
 			
 		}
 
+		//마우스 좌클릭
 		if (KEY_DOWN(eKeyCode::LBTN)) {
 
 			pos.x += 120.0f;
