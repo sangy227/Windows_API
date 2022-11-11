@@ -13,7 +13,8 @@ namespace ya
 		void Tick();
 		void Render(HDC hdc);
 
-		//void CrateTile
+		//여기 변경
+		void CrateTile(UINT index, Vector2 pos);
 		//void CrateTiles
 
 		//void Save
@@ -24,6 +25,7 @@ namespace ya
 
 	private:
 		Image* mImage;
+		std::unordered_map<UINT64, Tile*> mTiles;
 	};
 }
 

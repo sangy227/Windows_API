@@ -46,6 +46,13 @@ namespace ya {
 			return temp;
 		}
 
+		Vector2& operator*(const float other) {
+			x = x * other;
+			y = y * other;
+
+			return *this;
+		}
+
 
 		Vector2 operator -(const Vector2& other)
 		{
@@ -60,6 +67,12 @@ namespace ya {
 		{
 			x += other.x;
 			y += other.y;
+		}
+
+		void operator *=(const float other)
+		{
+			x *= other;
+			y *= other;
 		}
 
 		float Length()

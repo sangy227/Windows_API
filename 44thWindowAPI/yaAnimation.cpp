@@ -32,6 +32,7 @@ namespace ya {
 	{
 		GameObject* gameObj = mAnimator->GetOwner();
 		Vector2 pos = gameObj->GetPos();
+		Vector2 scale = gameObj->GetScale();
 
 		if (mAffectedCamera)
 			pos = Camera::CalculatePos(pos);
@@ -60,8 +61,8 @@ namespace ya {
 		TransparentBlt(hdc
 			, int(pos.x - mSpriteSheet[mSpriteIndex].size.x )
 			, int(pos.y - mSpriteSheet[mSpriteIndex].size.y )
-			, int(mSpriteSheet[mSpriteIndex].size.x * 3.5f)
-			, int(mSpriteSheet[mSpriteIndex].size.y * 3.5f)
+			, int(mSpriteSheet[mSpriteIndex].size.x * 3.5f)//*scale.x)
+			, int(mSpriteSheet[mSpriteIndex].size.y * 3.5f)//*scale.y)
 			, mImage->GetDC()
 			, int(mSpriteSheet[mSpriteIndex].leftTop.x)
 			, int(mSpriteSheet[mSpriteIndex].leftTop.y)

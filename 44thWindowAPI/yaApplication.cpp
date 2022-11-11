@@ -86,6 +86,11 @@ namespace ya {
 	}
 
 
+	eSceneType Application::GetplaySceneType()
+	{
+		return SceneManager::GetPlaySceneType();
+	}
+
 	Application::Application()
 	{
 		mWindowData.clear();

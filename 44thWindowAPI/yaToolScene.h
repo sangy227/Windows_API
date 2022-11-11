@@ -20,9 +20,11 @@ namespace ya {
 
 		Image* GetAtalasImage() { return mTilePalette->GetAtlasImage(); }
 
+		//추가
 
 	private:
 		TilePalette* mTilePalette;
+		//여기 추가
 	};
 }
 

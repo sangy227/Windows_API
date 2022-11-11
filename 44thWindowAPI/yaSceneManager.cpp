@@ -13,6 +13,8 @@ namespace ya {
 
 	Scene* SceneManager::mScenes[(UINT)eSceneType::Max] = {};
 	Scene* SceneManager::mPlayScene = nullptr;
+	eSceneType SceneManager::mType = eSceneType::Max;
+
 
 	void SceneManager::Initialize()
 	{
@@ -89,6 +91,8 @@ namespace ya {
 
 		if (mScenes[(UINT)type] == nullptr)
 			return;
+
+		mType = type;
 		
 		mPlayScene->Exit();
 		mPlayScene = mScenes[(UINT)type];

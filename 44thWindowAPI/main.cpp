@@ -178,6 +178,10 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 
     ya::Application::GetInstance().Initialize(windowData);
 
+    //추가변경
+    //추가변경
+    //추가변경
+
     WindowData atlasWindowData;
     //atlasWindowData.width = 500;
     //atlasWindowData.height = 500;
@@ -233,6 +237,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         case IDM_EXIT:
             DestroyWindow(hWnd);
             break;
+
+
         default:
             return DefWindowProc(hWnd, message, wParam, lParam);
         }
@@ -296,91 +302,91 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     return 0;
 }
 
-LRESULT CALLBACK AtlasWndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
-{
-    switch (message)
-    {
-    case WM_CREATE:
-    {
-        WindowData windowData
-            = ya::Application::GetInstance().GetWindowData();
-
-
-        WindowData atlasWindowData
-            = ya::Application::GetInstance().GetAtlasWindowData();
-
-        ya::Scene* scene = ya::SceneManager::GetPlayScene();
-        ya::ToolScene* toolScene = dynamic_cast<ya::ToolScene*>(scene);
-
-        ya::Image* atlas = toolScene->GetAtalasImage();
-
-        RECT rect = { 0, 0, atlas->GetWidth(), atlas->GetHeight() };
-        //AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, true);
-        SetWindowPos(hWnd, nullptr, windowData.width, 0, atlas->GetWidth(), atlas->GetHeight(), 0);
-
-        //SetWindowPos(atlasWindowData.hWnd
-        //    , nullptr, 1600, 0
-        //    , rect.right - rect.left
-        //    , rect.bottom - rect.top
-        //    , 0);
-
-        ShowWindow(hWnd, true);
-        UpdateWindow(hWnd);
-
-    }
-    break;
-    case WM_COMMAND:
-    {
-        int wmId = LOWORD(wParam);
-        // 메뉴 선택을 구문 분석합니다:
-        switch (wmId)
-        {
-        case IDM_ABOUT:
-            DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
-            break;
-        case IDM_EXIT:
-            DestroyWindow(hWnd);
-            break;
-        default:
-            return DefWindowProc(hWnd, message, wParam, lParam);
-        }
-    }
-    break;
-
-    case WM_PAINT:
-    {
-        PAINTSTRUCT ps;
-        HDC hdc = BeginPaint(hWnd, &ps);
-
-        WindowData atlasWindowData
-            = ya::Application::GetInstance().GetAtlasWindowData();
-
-        ya::Scene* scene = ya::SceneManager::GetPlayScene();
-        ya::ToolScene* toolScene = dynamic_cast<ya::ToolScene*>(scene);
-
-        ya::Image* atlas = toolScene->GetAtalasImage();
-
-        ya::Vector2 pos(ya::Vector2::Zero);
-        TransparentBlt(hdc, pos.x, pos.y
-            , atlas->GetWidth(), atlas->GetHeight()
-            , atlas->GetDC(), 0, 0, atlas->GetWidth(), atlas->GetHeight()
-            , RGB(255, 0, 255));
-
-
-        EndPaint(hWnd, &ps);
-    }
-    break;
-    case WM_DESTROY:
-    {
-        PostQuitMessage(0);
-        //KillTimer(hWnd, 0);
-    }
-    break;
-    default:
-        return DefWindowProc(hWnd, message, wParam, lParam);
-    }
-    return 0;
-}
+//LRESULT CALLBACK AtlasWndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
+//{
+//    switch (message)
+//    {
+//    case WM_CREATE:
+//    {
+//        WindowData windowData
+//            = ya::Application::GetInstance().GetWindowData();
+//
+//
+//        WindowData atlasWindowData
+//            = ya::Application::GetInstance().GetAtlasWindowData();
+//
+//        ya::Scene* scene = ya::SceneManager::GetPlayScene();
+//        ya::ToolScene* toolScene = dynamic_cast<ya::ToolScene*>(scene);
+//
+//        ya::Image* atlas = toolScene->GetAtalasImage();
+//
+//        RECT rect = { 0, 0, atlas->GetWidth(), atlas->GetHeight() };
+//        //AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, true);
+//        SetWindowPos(hWnd, nullptr, windowData.width, 0, atlas->GetWidth(), atlas->GetHeight(), 0);
+//
+//        //SetWindowPos(atlasWindowData.hWnd
+//        //    , nullptr, 1600, 0
+//        //    , rect.right - rect.left
+//        //    , rect.bottom - rect.top
+//        //    , 0);
+//
+//        ShowWindow(hWnd, true);
+//        UpdateWindow(hWnd);
+//
+//    }
+//    break;
+//    case WM_COMMAND:
+//    {
+//        int wmId = LOWORD(wParam);
+//        // 메뉴 선택을 구문 분석합니다:
+//        switch (wmId)
+//        {
+//        case IDM_ABOUT:
+//            DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
+//            break;
+//        case IDM_EXIT:
+//            DestroyWindow(hWnd);
+//            break;
+//        default:
+//            return DefWindowProc(hWnd, message, wParam, lParam);
+//        }
+//    }
+//    break;
+//
+//    case WM_PAINT:
+//    {
+//        PAINTSTRUCT ps;
+//        HDC hdc = BeginPaint(hWnd, &ps);
+//
+//        WindowData atlasWindowData
+//            = ya::Application::GetInstance().GetAtlasWindowData();
+//
+//        ya::Scene* scene = ya::SceneManager::GetPlayScene();
+//        ya::ToolScene* toolScene = dynamic_cast<ya::ToolScene*>(scene);
+//
+//        ya::Image* atlas = toolScene->GetAtalasImage();
+//
+//        ya::Vector2 pos(ya::Vector2::Zero);
+//        TransparentBlt(hdc, pos.x, pos.y
+//            , atlas->GetWidth(), atlas->GetHeight()
+//            , atlas->GetDC(), 0, 0, atlas->GetWidth(), atlas->GetHeight()
+//            , RGB(255, 0, 255));
+//
+//
+//        EndPaint(hWnd, &ps);
+//    }
+//    break;
+//    case WM_DESTROY:
+//    {
+//        PostQuitMessage(0);
+//        //KillTimer(hWnd, 0);
+//    }
+//    break;
+//    default:
+//        return DefWindowProc(hWnd, message, wParam, lParam);
+//    }
+//    return 0;
+//}
 
 // 정보 대화 상자의 메시지 처리기입니다.
 INT_PTR CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
