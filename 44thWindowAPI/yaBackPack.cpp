@@ -11,10 +11,10 @@ namespace ya {
 	{
 		if (mImage == nullptr)
 		{
-			mImage = Resources::Load<Image>(L"BackPack", L"..\\Resources\\Image\\Object\\BackPack.bmp");
+			mImage = Resources::Load<Image>(L"BackPack", L"..\\Resources\\Image\\Object\\map_bg.bmp");
 		}
 
-		SetPos({ 1600 / 2,250 });
+		SetPos({ 400 , 180 });
 		SetScale({ 3.0f, 3.0f });
 		alpha = 200;
 	}
@@ -43,8 +43,8 @@ namespace ya {
 		finalPos.y = (pos.y - mImage->GetHeight() * (scale.y / 2.0f));
 
 		Vector2 rect;
-		rect.x = mImage->GetWidth() * scale.x;
-		rect.y = mImage->GetHeight() * scale.y;
+		rect.x = mImage->GetWidth() * scale.x*2.4f;
+		rect.y = mImage->GetHeight() * scale.y*1.4f;
 
 		finalPos = Camera::CalculatePos(finalPos);
 
@@ -56,13 +56,13 @@ namespace ya {
 		func.AlphaFormat = AC_SRC_ALPHA;
 		func.SourceConstantAlpha = alpha; // 0 - 225
 
-		AlphaBlend(hdc, finalPos.x, finalPos.y, rect.x, rect.y,
+		/*AlphaBlend(hdc, finalPos.x, finalPos.y, rect.x, rect.y,
 			mImage->GetDC(), 0, 0, mImage->GetWidth(), mImage->GetHeight()
-			, func);
+			, func);*/
 
-		/*TransparentBlt(hdc, finalPos.x, finalPos.y, rect.x, rect.y,
+		TransparentBlt(hdc, finalPos.x, finalPos.y, rect.x, rect.y,
 			mImage->GetDC(), 0, 0, mImage->GetWidth(), mImage->GetHeight()
-			, RGB(0, 0, 0));*/
+			, RGB(255, 255, 255));
 		
 
 		GameObject::Render(hdc);

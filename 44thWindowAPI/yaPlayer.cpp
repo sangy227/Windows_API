@@ -28,6 +28,7 @@ namespace ya
 			mImages[0] = Resources::Load<Image>(L"Player", L"..\\Resources\\Image\\Player1.bmp");
 			mImages[1] = Resources::Load<Image>(L"attack", L"..\\Resources\\Image\\attack.bmp");
 			mImages[2] = Resources::Load<Image>(L"Walk", L"..\\Resources\\Image\\Walk.bmp");
+			mImages[3] = Resources::Load<Image>(L"BowAttack", L"..\\Resources\\Image\\BowAttack.bmp");
 		}
 
 		mAnimator = new AniMator();
@@ -47,6 +48,10 @@ namespace ya
 		mAnimator->CreateAnimation(L"attack", mImages[1]
 			, Vector2(0.0f, 0.0f), Vector2(64.0f, 48.0f)
 			, Vector2(-36.0f, -48.0f), 4, 0.1f);
+
+		mAnimator->CreateAnimation(L"BowAttack", mImages[3]
+			, Vector2(0.0f, 0.0f), Vector2(48.0f, 48.0f)
+			, Vector2(-24.0f, -48.0f), 4, 0.1f);
 
 		mAnimator->CreateAnimation(L"Walk", mImages[2]
 			, Vector2(0.0f, 0.0f), Vector2(48.0f, 48.0f)
@@ -70,7 +75,9 @@ namespace ya
 
 		
 		//mAnimator->FindEvents(L"attack")->mCompleteEvent = std::bind(&Player::WalkComplete, this);
-		mAnimator->GetCompleteEvent(L"attack") = std::bind(&Player::WalkComplete, this);
+		//키입력으로 내렸음 코드들
+		/*mAnimator->GetCompleteEvent(L"attack") = std::bind(&Player::WalkComplete, this);
+		mAnimator->GetCompleteEvent(L"BowAttack") = std::bind(&Player::WalkComplete, this);*/
 		
 
 
@@ -152,6 +159,12 @@ namespace ya
 			mAnimator->Play(L"Idle", true);
 		}
 
+		if (KEY_DOWN(eKeyCode::RBTN)) {
+
+			mAnimator->Play(L"BowAttack", true);
+			mAnimator->GetCompleteEvent(L"BowAttack") = std::bind(&Player::WalkComplete, this);
+			
+		}
 
 		if (KEY_DOWN(eKeyCode::LBTN)) {
 
