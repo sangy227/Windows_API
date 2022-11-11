@@ -1,5 +1,7 @@
 #include "yaToolScene.h"
 #include "yaApplication.h"
+#include "yaInput.h"
+#include "yaSceneManager.h"
 
 namespace ya {
 	ToolScene::ToolScene()
@@ -18,6 +20,12 @@ namespace ya {
 	}
 	void ToolScene::Tick()
 	{
+		Scene::Tick();
+
+		if (KEY_DOWN(eKeyCode::N))
+		{
+			SceneManager::ChangeScene(eSceneType::Logo);
+		}
 
 	}
 	void ToolScene::Render(HDC hdc)
