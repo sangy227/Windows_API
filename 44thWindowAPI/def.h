@@ -57,6 +57,7 @@
 		Monster,
 		monster_ProjectTile,
 
+		BackPack,
 		UI = _COLLIDER_LAYER-1,
 		End = _COLLIDER_LAYER,
 

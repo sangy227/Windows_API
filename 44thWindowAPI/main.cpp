@@ -178,14 +178,11 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 
     ya::Application::GetInstance().Initialize(windowData);
 
-    //추가변경
-    //추가변경
-    //추가변경
+    eSceneType type = ya::Application::GetInstance().GetPlaySceneType();
+    if (type != eSceneType::Tool)                    
+        return TRUE;
 
     WindowData atlasWindowData;
-    //atlasWindowData.width = 500;
-    //atlasWindowData.height = 500;
-
     hWnd = CreateWindowW(L"AtlasWindow", szTitle, WS_OVERLAPPEDWINDOW,
         CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
     atlasWindowData.hWnd = hWnd;
@@ -210,11 +207,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 //
 //
 
-#include "yaScene.h"
-#include "yaSceneManager.h"
-#include "yaToolScene.h"
-#include "yaTilePalette.h"
-#include "yaImage.h"
+
 
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {

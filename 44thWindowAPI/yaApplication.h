@@ -25,7 +25,7 @@ namespace ya
 		HDC GetHdc() { return mWindowData.hdc; }
 		HPEN GetPen(ePenColor color) { return mPens[(UINT)color]; }
 		HBRUSH GetBrush(eBrushColor color) { return mBrushes[(UINT)color]; }
-		eSceneType GetplaySceneType();
+		eSceneType GetPlaySceneType();
 
 	private:
 		Application();

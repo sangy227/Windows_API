@@ -19,12 +19,13 @@ namespace ya {
 		virtual void Exit();
 
 		Image* GetAtalasImage() { return mTilePalette->GetAtlasImage(); }
-
-		//추가
+		void SetTileIndex(UINT index) { mTileIndex = index; }
+		UINT GetTileIndex() { return mTileIndex; }
 
 	private:
 		TilePalette* mTilePalette;
-		//여기 추가
+		UINT mTileIndex;
+
 	};
 }
 

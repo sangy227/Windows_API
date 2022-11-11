@@ -105,7 +105,8 @@ namespace ya {
 	{
 	}
 
-	eKeyState Input::GetKeyState(eKeyCode keycode) {
+	eKeyState Input::GetKeyState(eKeyCode keycode)
+	{
 		return mKeys[(UINT)keycode].state;
 	}
 	Vector2 Input::GetMousePos(HWND hWnd)

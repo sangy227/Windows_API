@@ -10,9 +10,7 @@ namespace ya {
         , mX(-1)
     {
     }
-    Tile::Tile(Image* atlas, int index)
-    {
-    }
+   
     Tile::~Tile()
     {
     }
@@ -27,8 +25,8 @@ namespace ya {
 
         mAtlas = atlas;
 
-        int maxColumn = mAtlas->GetWidth() / TILE_SIZE * TILE_SCALE;
-        int maxRow = mAtlas->GetHeight() / TILE_SIZE * TILE_SCALE;
+        int maxColumn = mAtlas->GetWidth() / TILE_SIZE ;
+        int maxRow = mAtlas->GetHeight() / TILE_SIZE ;
 
         mY = index / maxColumn;
         mX = index % maxRow;

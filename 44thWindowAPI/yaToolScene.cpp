@@ -10,8 +10,9 @@
 
 namespace ya {
 	ToolScene::ToolScene()
+        : mTileIndex(0)
 	{
-		//초기화 만들기
+		
 		mTilePalette = new TilePalette();
 
 	}
@@ -26,13 +27,15 @@ namespace ya {
 	}
 	void ToolScene::Tick()
 	{
-		//추가
-		Scene::Tick();
+        if (mTilePalette)
+            mTilePalette->Tick();
 
-		if (KEY_DOWN(eKeyCode::N))
-		{
-			SceneManager::ChangeScene(eSceneType::Logo);
-		}
+		//Scene::Tick();
+
+		//if (KEY_DOWN(eKeyCode::N))
+		//{
+		//	SceneManager::ChangeScene(eSceneType::Logo);
+		//}
 
 	}
 	void ToolScene::Render(HDC hdc)
@@ -41,27 +44,22 @@ namespace ya {
 
 		WindowData mainWindow = Application::GetInstance().GetWindowData();
 
-		HPEN redPen = CreatePen(PS_SOLID, 2, RGB(05, 200, 0));
-		HPEN oldPen = (HPEN)SelectObject(hdc, redPen);
+        HPEN redPen = CreatePen(PS_SOLID, 2, RGB(0, 125, 0));
+        HPEN oldPen = (HPEN)SelectObject(hdc, redPen);
 
+        int maxRow = mainWindow.height / TILE_SIZE * TILE_SCALE + 1;
+        for (size_t i = 0; i < maxRow; i++)
+        {
+            MoveToEx(hdc, 0, TILE_SIZE * i * TILE_SCALE, nullptr);
+            LineTo(hdc, mainWindow.width, TILE_SIZE * i * TILE_SCALE);
+        }
 
-		//여기 변경
-
-		int maxRow = mainWindow.height / TILE_SIZE + 1;
-		for (size_t i = 0; i < maxRow; i++)
-		{
-			MoveToEx(hdc, 0, TILE_SIZE*i, nullptr);
-			LineTo(hdc, mainWindow.width, TILE_SIZE * i);
-		}
-
-		int maxColumn = mainWindow.width / TILE_SIZE + 1;
-		for (size_t i = 0; i < maxColumn; i++)
-		{
-			MoveToEx(hdc, TILE_SIZE * i, 0, nullptr);
-			LineTo(hdc, TILE_SIZE * i, mainWindow.height);
-		}
-
-		
+        int maxColumn = mainWindow.width / TILE_SIZE * TILE_SCALE + 1;
+        for (size_t i = 0; i < maxColumn; i++)
+        {
+            MoveToEx(hdc, TILE_SIZE * i * TILE_SCALE, 0, nullptr);
+            LineTo(hdc, TILE_SIZE * i * TILE_SCALE, mainWindow.height);
+        }
 
 		(HPEN)SelectObject(hdc, oldPen);
 		DeleteObject(redPen);
@@ -88,7 +86,6 @@ LRESULT CALLBACK AtlasWndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lPa
         WindowData windowData
             = ya::Application::GetInstance().GetWindowData();
 
-
         WindowData atlasWindowData
             = ya::Application::GetInstance().GetAtlasWindowData();
 
@@ -97,15 +94,17 @@ LRESULT CALLBACK AtlasWndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lPa
 
         ya::Image* atlas = toolScene->GetAtalasImage();
 
-        RECT rect = { 0, 0, atlas->GetWidth(), atlas->GetHeight() };
-        //AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, true);
-        SetWindowPos(hWnd, nullptr, windowData.width, 0, atlas->GetWidth(), atlas->GetHeight(), 0);
+        RECT rect = { 0, 0, atlas->GetWidth() * TILE_SCALE, atlas->GetHeight() * TILE_SCALE };
+        AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false);
 
-        //SetWindowPos(atlasWindowData.hWnd
-        //    , nullptr, 1600, 0
-        //    , rect.right - rect.left
-        //    , rect.bottom - rect.top
-        //    , 0);
+        //SetWindowPos(hWnd, nullptr, windowData.width, 0, atlas->GetWidth(), atlas->GetHeight(), 0);
+
+        SetWindowPos(hWnd,
+            nullptr, windowData.width, 0
+            , rect.right - rect.left
+            , rect.bottom - rect.top
+            , 0
+        );
 
         ShowWindow(hWnd, true);
         UpdateWindow(hWnd);
@@ -118,17 +117,35 @@ LRESULT CALLBACK AtlasWndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lPa
         // 메뉴 선택을 구문 분석합니다:
         switch (wmId)
         {
-        case IDM_ABOUT:
+        /*case IDM_ABOUT:
             DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
             break;
         case IDM_EXIT:
             DestroyWindow(hWnd);
-            break;
+            break;*/
         default:
             return DefWindowProc(hWnd, message, wParam, lParam);
         }
     }
     break;
+
+    case WM_LBUTTONDOWN:
+    {
+        if (GetFocus())
+        {
+            ya::Vector2  mousePos = ya::Input::GetMousePos(hWnd);
+
+            int y = mousePos.y / (TILE_SIZE * TILE_SCALE);
+            int x = mousePos.x / (TILE_SIZE * TILE_SCALE);
+
+            int index = (y * TILE_LINE_X) + (x % TILE_LINE_X);
+            ya::Scene* scene = ya::SceneManager::GetPlayScene();
+            ya::ToolScene* toolScene = dynamic_cast<ya::ToolScene*>(scene);
+            toolScene->SetTileIndex(index);
+        }
+    }
+    break;
+
 
     case WM_PAINT:
     {
@@ -144,10 +161,11 @@ LRESULT CALLBACK AtlasWndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lPa
         ya::Image* atlas = toolScene->GetAtalasImage();
 
         ya::Vector2 pos(ya::Vector2::Zero);
+
         TransparentBlt(hdc, pos.x, pos.y
-            , atlas->GetWidth(), atlas->GetHeight()
+            , atlas->GetWidth() * TILE_SCALE, atlas->GetHeight() * TILE_SCALE
             , atlas->GetDC(), 0, 0, atlas->GetWidth(), atlas->GetHeight()
-            , RGB(255, 0, 255));
+            , RGB(255, 255, 255));
 
 
         EndPaint(hWnd, &ps);

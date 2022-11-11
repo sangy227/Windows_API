@@ -6,7 +6,7 @@ namespace ya {
 	{
 	public:
 		Tile(Vector2 pos);
-		Tile(Image* atlas,int index);
+		
 		~Tile();
 
 		void Initiailize(Image* atlas, int index);

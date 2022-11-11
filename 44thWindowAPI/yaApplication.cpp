@@ -86,7 +86,7 @@ namespace ya {
 	}
 
 
-	eSceneType Application::GetplaySceneType()
+	eSceneType Application::GetPlaySceneType()
 	{
 		return SceneManager::GetPlaySceneType();
 	}

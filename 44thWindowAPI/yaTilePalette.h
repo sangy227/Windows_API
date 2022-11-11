@@ -14,7 +14,7 @@ namespace ya
 		void Render(HDC hdc);
 
 		//여기 변경
-		void CrateTile(UINT index, Vector2 pos);
+		void CrateTile(UINT index, Vector2 indexPos);
 		//void CrateTiles
 
 		//void Save
