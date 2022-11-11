@@ -27,6 +27,7 @@ namespace ya
 		{
 			mImages[0] = Resources::Load<Image>(L"Player", L"..\\Resources\\Image\\Player1.bmp");
 			mImages[1] = Resources::Load<Image>(L"attack", L"..\\Resources\\Image\\attack.bmp");
+			mImages[2] = Resources::Load<Image>(L"Walk", L"..\\Resources\\Image\\Walk.bmp");
 		}
 
 		mAnimator = new AniMator();
@@ -41,11 +42,15 @@ namespace ya
 
 		mAnimator->CreateAnimation(L"Idle", mImages[0]
 			, Vector2(0.0f, 0.0f), Vector2(48.0f, 48.0f)
-			, Vector2(-24.0f,-48.0f), 4, 0.4f);
+			, Vector2(-24.0f,-48.0f), 4, 0.2f);
 
 		mAnimator->CreateAnimation(L"attack", mImages[1]
 			, Vector2(0.0f, 0.0f), Vector2(64.0f, 48.0f)
 			, Vector2(-36.0f, -48.0f), 4, 0.1f);
+
+		mAnimator->CreateAnimation(L"Walk", mImages[2]
+			, Vector2(0.0f, 0.0f), Vector2(48.0f, 48.0f)
+			, Vector2(-24.0f, -48.0f), 4, 0.1f);
 
 		/*mAnimator->CreateAnimation(L"MoveDown", mImage
 			, Vector2(0.0f, 520.0f), Vector2(120.0f, 130.0f)
@@ -66,6 +71,7 @@ namespace ya
 		
 		//mAnimator->FindEvents(L"attack")->mCompleteEvent = std::bind(&Player::WalkComplete, this);
 		mAnimator->GetCompleteEvent(L"attack") = std::bind(&Player::WalkComplete, this);
+		
 
 
 		AddComponent(mAnimator);
@@ -109,7 +115,7 @@ namespace ya
 		}
 		if (KEY_PREESE(eKeyCode::D))
 		{
-			pos.x += 120.0f * Time::DeltaTime();
+			//pos.x += 120.0f * Time::DeltaTime();
 		}
 
 		/*if (KEY_DOWN(eKeyCode::W))
@@ -123,11 +129,11 @@ namespace ya
 		if (KEY_DOWN(eKeyCode::A))
 		{
 			mAnimator->Play(L"MoveLeft", true);
-		}
+		}*/
 		if (KEY_DOWN(eKeyCode::D))
 		{
-			mAnimator->Play(L"MoveRight", true);
-		}*/
+			mAnimator->Play(L"Walk", true);
+		}
 
 		/*if (KEY_UP(eKeyCode::W))
 		{
@@ -140,11 +146,11 @@ namespace ya
 		if (KEY_UP(eKeyCode::A))
 		{
 			mAnimator->Play(L"Idle", true);
-		}
+		}*/
 		if (KEY_UP(eKeyCode::D))
 		{
 			mAnimator->Play(L"Idle", true);
-		}*/
+		}
 
 
 		if (KEY_DOWN(eKeyCode::LBTN)) {
