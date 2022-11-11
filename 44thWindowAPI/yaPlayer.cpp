@@ -23,11 +23,10 @@ namespace ya
 		SetPos({ 520.0f, 770.0f });
 		SetScale({ 3.0f, 3.0f });
 
-		if (mImage == nullptr)
+		if (mImages[0] == nullptr)
 		{
-			mImage = Resources::Load<Image>(L"Player", L"..\\Resources\\Image\\Player1.bmp");
-			mImage2 = Resources::Load<Image>(L"attack", L"..\\Resources\\Image\\attack.bmp");
-
+			mImages[0] = Resources::Load<Image>(L"Player", L"..\\Resources\\Image\\Player1.bmp");
+			mImages[1] = Resources::Load<Image>(L"attack", L"..\\Resources\\Image\\attack.bmp");
 		}
 
 		mAnimator = new AniMator();
@@ -40,11 +39,11 @@ namespace ya
 
 
 
-		mAnimator->CreateAnimation(L"Idle", mImage
+		mAnimator->CreateAnimation(L"Idle", mImages[0]
 			, Vector2(0.0f, 0.0f), Vector2(48.0f, 48.0f)
 			, Vector2(-24.0f,-48.0f), 4, 0.4f);
 
-		mAnimator->CreateAnimation(L"attack", mImage2
+		mAnimator->CreateAnimation(L"attack", mImages[1]
 			, Vector2(0.0f, 0.0f), Vector2(64.0f, 48.0f)
 			, Vector2(-36.0f, -48.0f), 4, 0.1f);
 
