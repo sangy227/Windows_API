@@ -46,6 +46,15 @@ namespace ya {
 			return temp;
 		}
 
+		Vector2 operator+(const float value)
+		{
+			Vector2 temp;
+			temp.x = x + value;
+			temp.y = y + value;
+
+			return temp;
+		}
+
 		Vector2& operator*(const float other) {
 			x = x * other;
 			y = y * other;
@@ -67,6 +76,12 @@ namespace ya {
 		{
 			x += other.x;
 			y += other.y;
+		}
+
+		void operator +=(const float value)
+		{
+			x += value;
+			y += value;
 		}
 
 		void operator *=(const float other)

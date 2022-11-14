@@ -14,7 +14,7 @@ namespace ya {
 		virtual void Render(HDC hdc) override;
 
 		void SetIndex(UINT index);
-		UINT Getindex() { return mIndex; }
+		UINT GetIndex() { return mIndex; }
 
 	private:
 		Image* mAtlas;

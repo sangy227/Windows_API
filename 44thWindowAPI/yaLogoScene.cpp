@@ -8,6 +8,7 @@
 #include "yaObject.h"
 #include "Logo.h"
 #include "LogoPlayerObject.h"
+#include "yaToolScene.h"
 
 namespace ya {
 	
@@ -33,8 +34,10 @@ namespace ya {
 
 		ya::object::Instantiate<LogoPlayerObject>(eColliderLayer::UI);
 
-
-
+		//여기에 미리 불러온 툴씬 넣기
+		/*ya::Scene* scene = ya::SceneManager::GetScene(eSceneType::Tool);
+		ya::ToolScene* toolScene = dynamic_cast<ya::ToolScene*>(scene);
+		toolScene->LoadTilePalette(L"..\\Resources\\TileSaveFiles\\Test");*/
 		
 	}
 

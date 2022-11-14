@@ -187,6 +187,9 @@
     <ClInclude Include="yaTilePalette.h">
       <Filter>Engine\GameObject\Tile</Filter>
     </ClInclude>
+    <ClInclude Include="yaRigidbody.h">
+      <Filter>Engine\Component</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="44thWindowAPI.rc">
@@ -315,6 +318,9 @@
     </ClCompile>
     <ClCompile Include="yaTilePalette.cpp">
       <Filter>Engine\GameObject\Tile</Filter>
+    </ClCompile>
+    <ClCompile Include="yaRigidbody.cpp">
+      <Filter>Engine\Component</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

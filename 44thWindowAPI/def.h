@@ -39,8 +39,9 @@
 
 	enum class eComponentType
 	{
-		Aimator,
+		Rigidbody,
 		Collider,
+		Aimator,
 		Sound,
 		End,
 		

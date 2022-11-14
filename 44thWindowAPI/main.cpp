@@ -17,6 +17,7 @@ WCHAR szWindowClass[MAX_LOADSTRING];            // 기본 창 클래스 이름�
 ATOM                MyRegisterClass(HINSTANCE hInstance,WNDPROC wndproc,LPCWSTR windowName);
 BOOL                InitInstance(HINSTANCE, int);
 LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
+//LRESULT CALLBACK    ToolWndProc(HWND, UINT, WPARAM, LPARAM);
 LRESULT CALLBACK    AtlasWndProc(HWND , UINT , WPARAM , LPARAM );
 INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
 
@@ -52,6 +53,9 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     // 전역 문자열을 초기화합니다.
     LoadStringW(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
     LoadStringW(hInstance, IDC_MY44THWINDOWAPI, szWindowClass, MAX_LOADSTRING);
+
+
+
     MyRegisterClass(hInstance,WndProc,szWindowClass);
     MyRegisterClass(hInstance,AtlasWndProc,L"AtlasWindow");
 
@@ -163,8 +167,6 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
     HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
         CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
 
-
-
     windowData.hWnd = hWnd;
     windowData.hdc = nullptr;
 
@@ -186,11 +188,6 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
     hWnd = CreateWindowW(L"AtlasWindow", szTitle, WS_OVERLAPPEDWINDOW,
         CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
     atlasWindowData.hWnd = hWnd;
-
-    /*SetWindowPos(hWnd, nullptr, 0, 0, windowData.width, windowData.height, 0);
-    ShowWindow(hWnd, nCmdShow);
-    UpdateWindow(hWnd);*/
-
     ya::Application::GetInstance().initializeAtlasWindow(atlasWindowData);
 
     return TRUE;
@@ -208,6 +205,9 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 //
 
 
+#include "yaToolScene.h"
+#include "yaSceneManager.h"
+#include "yaScene.h"
 
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
@@ -230,6 +230,21 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         case IDM_EXIT:
             DestroyWindow(hWnd);
             break;
+        case ID_TILE_SAVE:
+        {
+            ya::Scene* scene = ya::SceneManager::GetPlayScene();
+            ya::ToolScene* toolScene = dynamic_cast<ya::ToolScene*>(scene);
+            toolScene->SaveTilePalette();
+        }
+        break;
+
+        case ID_TILE_LOAD:
+        {
+            ya::Scene* scene = ya::SceneManager::GetPlayScene();
+            ya::ToolScene* toolScene = dynamic_cast<ya::ToolScene*>(scene);
+            toolScene->LoadTilePalette();
+        }
+        break;
 
 
         default:

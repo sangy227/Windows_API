@@ -181,6 +181,7 @@
     <ClInclude Include="yaPlayScene4.h" />
     <ClInclude Include="yaResource.h" />
     <ClInclude Include="yaResources.h" />
+    <ClInclude Include="yaRigidbody.h" />
     <ClInclude Include="yaSceneManager.h" />
     <ClInclude Include="yaScene.h" />
     <ClInclude Include="yaTile.h" />
@@ -214,6 +215,7 @@
     <ClCompile Include="yaPlayScene4.cpp" />
     <ClCompile Include="yaResource.cpp" />
     <ClCompile Include="yaResources.cpp" />
+    <ClCompile Include="yaRigidbody.cpp" />
     <ClCompile Include="yaTile.cpp" />
     <ClCompile Include="yaTilePalette.cpp" />
     <ClCompile Include="yaTime.cpp" />

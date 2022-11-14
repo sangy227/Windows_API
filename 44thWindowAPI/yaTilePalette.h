@@ -13,12 +13,13 @@ namespace ya
 		void Tick();
 		void Render(HDC hdc);
 
-		//여기 변경
+		
 		void CrateTile(UINT index, Vector2 indexPos);
 		//void CrateTiles
 
-		//void Save
-		//void Load
+		void Save();
+		void Load();
+		void Load(const std::wstring& path);
 
 		Image* GetAtlasImage() { return mImage; }
 

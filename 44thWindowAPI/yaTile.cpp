@@ -4,7 +4,7 @@
 
 namespace ya {
     Tile::Tile(Vector2 pos)
-        : GameObject()
+        : GameObject(pos)
         , mAtlas(nullptr)
         , mY(-1)
         , mX(-1)
@@ -29,7 +29,7 @@ namespace ya {
         int maxRow = mAtlas->GetHeight() / TILE_SIZE ;
 
         mY = index / maxColumn;
-        mX = index % maxRow;
+        mX = index % maxColumn;
     }
     void Tile::Tick()
     {

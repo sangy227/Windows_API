@@ -18,6 +18,9 @@ namespace ya {
 
 	void SceneManager::Initialize()
 	{
+		//다른씬에서 툴씬을 사용할려면 가장먼저 생성해야한다
+		mScenes[(UINT)eSceneType::Tool] = new ToolScene();
+		mScenes[(UINT)eSceneType::Tool]->Initialize();
 		
 		//모든씬들을 초기화
 		mScenes[(UINT)eSceneType::Logo] = new LogoScene();
@@ -40,10 +43,6 @@ namespace ya {
 
 		mScenes[(UINT)eSceneType::End] = new EndScene();
 		mScenes[(UINT)eSceneType::End]->Initialize();
-
-		mScenes[(UINT)eSceneType::Tool] = new ToolScene();
-		mScenes[(UINT)eSceneType::Tool]->Initialize();
-		
 
 
 		ChangeScene(eSceneType::Logo);

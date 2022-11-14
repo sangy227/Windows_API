@@ -7,6 +7,7 @@
 #include "yaTilePalette.h"
 #include "yaInput.h"
 #include "yaImage.h"
+#include <Windows.h>
 
 namespace ya {
 	ToolScene::ToolScene()
@@ -75,7 +76,22 @@ namespace ya {
 	{
 
 	}
+    void ToolScene::SaveTilePalette()
+    {
+        mTilePalette->Save();
+    }
+    void ToolScene::LoadTilePalette()
+    {
+        mTilePalette->Load();
+    }
+    void ToolScene::LoadTilePalette(const std::wstring& path)
+    {
+        mTilePalette->Load(path);
+    }
+    
 }
+
+
 
 LRESULT CALLBACK AtlasWndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
@@ -117,12 +133,13 @@ LRESULT CALLBACK AtlasWndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lPa
         // 메뉴 선택을 구문 분석합니다:
         switch (wmId)
         {
-        /*case IDM_ABOUT:
-            DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
+        case IDM_ABOUT:
+            //DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
             break;
+        
         case IDM_EXIT:
             DestroyWindow(hWnd);
-            break;*/
+            break;
         default:
             return DefWindowProc(hWnd, message, wParam, lParam);
         }

@@ -18,10 +18,15 @@ namespace ya {
 		virtual void Enter();
 		virtual void Exit();
 
+		void SaveTilePalette();
+		void LoadTilePalette();
+		void LoadTilePalette(const std::wstring& path);
+
 		Image* GetAtalasImage() { return mTilePalette->GetAtlasImage(); }
 		void SetTileIndex(UINT index) { mTileIndex = index; }
 		UINT GetTileIndex() { return mTileIndex; }
 
+		
 	private:
 		TilePalette* mTilePalette;
 		UINT mTileIndex;

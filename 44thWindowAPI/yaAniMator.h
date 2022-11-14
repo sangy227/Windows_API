@@ -36,6 +36,8 @@ namespace ya {
 		virtual void Tick() override;
 		virtual void Render(HDC hdc) override;
 
+
+		std::wstring CreateAnimationKey(std::wstring path);
 		Animation* FindAnimation(const std::wstring& name);
 
 		void CreateAnimation(const std::wstring& name, Image* image,
