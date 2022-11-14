@@ -133,7 +133,7 @@ LRESULT CALLBACK AtlasWndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lPa
     {
         if (GetFocus())
         {
-            ya::Vector2  mousePos = ya::Input::GetMousePos(hWnd);
+            ya::Vector2 mousePos = ya::Input::GetMousePos(hWnd);
 
             int y = mousePos.y / (TILE_SIZE * TILE_SCALE);
             int x = mousePos.x / (TILE_SIZE * TILE_SCALE);

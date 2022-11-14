@@ -46,7 +46,7 @@ namespace ya {
 		
 
 
-		ChangeScene(eSceneType::Tool);
+		ChangeScene(eSceneType::Logo);
 
 
 		//mPlayScene = mScenes[(UINT)eSceneType::Logo];
