@@ -15,7 +15,7 @@ namespace ya {
 		void SetMass(float mass) { mMass = mass; }
 		void SetGround(bool isGround) { mbGround = isGround; }
 		Vector2 GetVelocity() { return mVelocity; }
-		void SetVelocity(Vector2 isGround) { mVelocity = isGround; }
+		void SetVelocity(Vector2 velocity) { mVelocity = velocity; }
 
 
 

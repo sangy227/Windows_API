@@ -6,7 +6,7 @@
 
 namespace ya {
 	AniMator::AniMator()
-		:Component(eComponentType::Aimator)
+		:Component(eComponentType::Animator)
 		,mPlayAnimaion(nullptr)
 		,mbLoop(false)
 	{

@@ -41,7 +41,7 @@
 	{
 		Rigidbody,
 		Collider,
-		Aimator,
+		Animator,
 		Sound,
 		End,
 		

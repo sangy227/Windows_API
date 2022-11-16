@@ -27,9 +27,9 @@ namespace ya {
 
 		ya::object::Instantiate<Player>(eColliderLayer::Player);
 
-		//여기가 왜 플레이어 좌표를 수정시킬까??
-		/*Ground* ground = ya::object::Instantiate<Ground>(eColliderLayer::Ground);
-		ground->SetPos(Vector2(600.0f, 900.0f));*/
+		//여기가 왜 플레이어 좌표를 수정시킬까?? - 찾음 타고 들어가서 선생한테 물어봐야댐
+		Ground* ground = ya::object::Instantiate<Ground>(eColliderLayer::Ground);
+		ground->SetPos(Vector2(600.0f, 900.0f));
 
 
 		mons1 = ya::object::Instantiate<Monster>(eColliderLayer::Monster);

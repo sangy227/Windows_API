@@ -6,7 +6,7 @@
 
 namespace ya {
 	Collider::Collider()
-		: Component(eComponentType::Aimator)
+		: Component(eComponentType::Animator)
 		, mOffset(Vector2::Zero)
 		, mPos(Vector2::Zero)
 		, mScale(Vector2::One)
