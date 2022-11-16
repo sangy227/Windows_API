@@ -10,7 +10,7 @@
 #include "yaCollider.h"
 #include "yaCamera.h"
 #include "yaBackPack.h"
-
+#include "yaRigidbody.h"
 
 namespace ya 
 {
@@ -85,9 +85,16 @@ namespace ya
 		mAnimator->GetCompleteEvent(L"BowAttack") = std::bind(&Player::WalkComplete, this);*/
 		
 
-
 		AddComponent(mAnimator);
-		AddComponent(new Collider());
+
+		Collider* collider = new Collider();
+		AddComponent(collider);
+
+
+		/*Rigidbody* rigidbody = new Rigidbody();
+		AddComponent(rigidbody);*/
+		//윗줄 아랫줄 같은거 같은거
+		AddComponent<Rigidbody>();
 
 		//Camera::SetTarget(this);
 
@@ -99,8 +106,9 @@ namespace ya
 		BackPack* backPack = new BackPack();
 		Scene* playScene = SceneManager::GetPlayScene();
 		playScene->AddGameObject(backPack, eColliderLayer::Player_Projecttile);
-
 	}
+
+
 	Player::~Player()
 	{
 
@@ -113,9 +121,12 @@ namespace ya
 
 		//키보드 입력
 		Vector2 pos = GetPos();
+
+
 		if (KEY_PREESE(eKeyCode::W))
 		{
-			pos.y -= 120.0f * Time::DeltaTime();
+			//pos.y -= 120.0f * Time::DeltaTime();
+			GetComponent<Rigidbody>()->AddForce(Vector2(0.0f, -200.0f));
 		}
 		//if (KEY_PREESE(eKeyCode::S))
 		//{
@@ -123,7 +134,9 @@ namespace ya
 		//}
 		if (KEY_PREESE(eKeyCode::A))
 		{
-			pos.x -= 120.0f * Time::DeltaTime();
+			//pos.x -= 120.0f * Time::DeltaTime();
+			GetComponent<Rigidbody>()->AddForce(Vector2(-200.0f, 0.0f));
+
 		}
 		//if (KEY_PREESE(eKeyCode::D))
 		//{
@@ -149,7 +162,7 @@ namespace ya
 
 		/*if (KEY_UP(eKeyCode::W))
 		{
-			mAnimator->Play(L"Idle", true);
+			mAnimator->Play(L"Idle", true);	
 		}*/
 		if (KEY_UP(eKeyCode::S))
 		{
@@ -176,6 +189,7 @@ namespace ya
 		if (KEY_DOWN(eKeyCode::LBTN)) {
 
 			pos.x += 120.0f;
+			SetPos(pos);
 
 			mAnimator->Play(L"attack", true);
 			mAnimator->GetCompleteEvent(L"attack") = std::bind(&Player::WalkComplete, this);
@@ -212,6 +226,8 @@ namespace ya
 			Scene* playScene = SceneManager::GetPlayScene();
 			playScene->AddGameObject(backPack, eColliderLayer::Player_Projecttile);
 		}
+
+
 		//움직인 Pos값 다시 설정
 		SetPos(pos);
 

@@ -1,131 +1,183 @@
 #pragma once
-#include "math.h"
-#define PI 3.141592
+
+#define PI 3.14159265f
+
+#include <cmath>
+#include <algorithm>
+
+namespace ya
+{
+    struct Vector2
+    {
+        static Vector2 Zero;
+        static Vector2 One;
+        static Vector2 Up;
+        static Vector2 Down;
+        static Vector2 Right;
+        static Vector2 Left;
+
+        float x;
+        float y;
+
+        Vector2() = default;
+
+        Vector2(const Vector2&) = default;
+        Vector2& operator=(const Vector2&) = default;
+
+        Vector2(Vector2&&) = default;
+        Vector2& operator=(Vector2&&) = default;
+
+        Vector2 operator -()
+        {
+            return Vector2(-x, -y);
+        }
+
+        Vector2 operator+(const Vector2& other)
+        {
+            Vector2 temp;
+            temp.x = x + other.x;
+            temp.y = y + other.y;
+
+            return temp;
+        }
+
+        Vector2 operator-(const Vector2& other)
+        {
+            Vector2 temp;
+            temp.x = x - other.x;
+            temp.y = y - other.y;
+
+            return temp;
+        }
+
+        Vector2 operator*(const Vector2& other)
+        {
+            Vector2 temp;
+            temp.x = x * other.x;
+            temp.y = y * other.y;
+
+            return temp;
+        }
+
+        Vector2 operator*(const float& value)
+        {
+            Vector2 temp;
+            temp.x = x * value;
+            temp.y = y * value;
+
+            return temp;
+        }
+
+        Vector2 operator/(const float& value)
+        {
+            Vector2 temp;
+
+            temp.x = x / value;
+            temp.y = y / value;
+
+            return temp;
+        }
+
+        Vector2& operator +=(const Vector2& other)
+        {
+            x += other.x;
+            y += other.y;
+
+            return *this;
+        }
+
+        Vector2& operator *=(const float value)
+        {
+            x *= value;
+            y *= value;
+
+            return *this;
+        }
+
+        Vector2& operator -=(const Vector2& other)
+        {
+            x -= other.x;
+            y -= other.y;
+
+            return *this;
+        }
+
+        bool operator ==(const Vector2& other)
+        {
+            return (x == other.x && y == other.y);
+        }
+        //bool operator !=(const Vector2& other)
+        //{
+        //    return (x != other.x && y != other.y);
+        //}
+
+        constexpr Vector2(float _x, float _y) noexcept
+            : x(_x)
+            , y(_y)
+        {
+
+        }
+        explicit Vector2(_In_reads_(2) const float* pArray)  noexcept
+            : x(pArray[0])
+            , y(pArray[1])
+        {
+
+        }
+
+        void clear()
+        {
+            x = 0.0f;
+            y = 0.0f;
+        }
+
+        float Length()
+        {
+            return sqrtf(x * x + y * y);
+        }
+
+        Vector2& Normalize()
+        {
+            float length = Length();
+            x /= length;
+            y /= length;
+
+            return *this;
+        }
+    };
+    typedef Vector2 Pos;
+    typedef Vector2 Size;
+}
 
 
-namespace ya {
-
-
-	struct Vector2
+namespace ya::math 
+{
+	__forceinline float DegreeToRadian(float degree)
 	{
-		static Vector2 Zero;
-		static Vector2 One;
-		static Vector2 Right;
-		static Vector2 Left;
-		static Vector2 Up;
-		static Vector2 Down;
+		return degree * (180.0f / PI);
+	}
 
-		float x;
-		float y;
+	__forceinline float RadianToDegree(float radian)
+	{
+		return radian * (PI / 180.0f);
+	}
 
-		Vector2(float x, float y)
-		{
-			this->x = x;
-			this->y = y;
-		}
+	inline Vector2 Rotate(Vector2 vector,float degree)
+	{
+        float radian = (degree / 180.f) * PI;
+        vector.Normalize();
+        float x = cosf(radian) * vector.x - sinf(radian) * vector.y;
+        float y = sinf(radian) * vector.x + cosf(radian) * vector.y;
 
-		Vector2(const Vector2& other) = default;
-		Vector2() = default;
-		~Vector2() = default;
+        return Vector2(x, y);
+	}
 
-		Vector2 operator / (const float value)
-		{
-			Vector2 temp;
-			temp.x = x / value;
-			temp.y = y / value;
+	inline float Dot(Vector2& v1, Vector2& v2)
+	{
+		return v1.x * v2.x + v1.y * v2.y;
+	}
 
-			return temp;
-		}
-
-		Vector2 operator +(const Vector2& other)
-		{
-			Vector2 temp;
-			temp.x = x + other.x;
-			temp.y = y + other.y;
-
-			return temp;
-		}
-
-		Vector2 operator+(const float value)
-		{
-			Vector2 temp;
-			temp.x = x + value;
-			temp.y = y + value;
-
-			return temp;
-		}
-
-		Vector2& operator*(const float other) {
-			x = x * other;
-			y = y * other;
-
-			return *this;
-		}
-
-
-		Vector2 operator -(const Vector2& other)
-		{
-			Vector2 temp;
-			temp.x = x - other.x;
-			temp.y = y - other.y;
-
-			return temp;
-		}
-
-		void operator +=(const Vector2& other)
-		{
-			x += other.x;
-			y += other.y;
-		}
-
-		void operator +=(const float value)
-		{
-			x += value;
-			y += value;
-		}
-
-		void operator *=(const float other)
-		{
-			x *= other;
-			y *= other;
-		}
-
-		float Length()
-		{
-			return sqrtf((x * x) + (y * y));
-		}
-
-		Vector2& Normailize()
-		{
-			float length = Length();
-
-			x /= length;
-			y /= length;
-
-			return *this;
-
-		}
-	};
-
-	namespace math {
-		__forceinline float DegreeToRadian(float degree)
-		{
-			return degree * (180.0f / PI);
-		}
-
-		__forceinline float RadianToDegree(float radian)
-		{
-			return radian * (PI / 180.0f);
-		}
-
-		inline Vector2 Rotate(const Vector2 value,float degeree)
-		{
-			Vector2 ret = Vector2::Zero;
-			float radian = DegreeToRadian(degeree);
-			ret.x = value.x * cosf(radian) - value.y * sinf(radian);
-			ret.y = value.x * sinf(radian) + value.y * cosf(radian);
-
-			return ret;
-		}
+	inline float Cross(Vector2 v1, Vector2 v2)
+	{
+		return v1.x * v2.y - v1.y * v2.x;
 	}
 }

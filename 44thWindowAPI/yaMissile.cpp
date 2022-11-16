@@ -66,7 +66,7 @@ namespace ya {
         //pos.x += speed * cosf(mDir) * Time::DeltaTime();
         //pos.y -= speed * sinf(mDir) * Time::DeltaTime();
 
-        mDir.Normailize();
+        //mDir.Normalize();
 
         // 벡터를 이용한 회전
         pos.y += mDir.y * speed * Time::DeltaTime();

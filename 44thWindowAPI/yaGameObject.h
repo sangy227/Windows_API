@@ -42,6 +42,15 @@ namespace ya {
 		}*/
 
 		void AddComponent(Component* component);
+		template<typename T>
+		__forceinline T* AddComponent()
+		{
+			T* comp = new T();
+			GameObject::AddComponent(comp);
+
+			return comp;
+		}
+
 
 		template<typename T>
 		__forceinline T* GetComponent()
