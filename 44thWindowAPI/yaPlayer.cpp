@@ -11,6 +11,8 @@
 #include "yaCamera.h"
 #include "yaBackPack.h"
 #include "yaRigidbody.h"
+#include "yaUIManager.h"
+
 
 namespace ya 
 {
@@ -91,6 +93,17 @@ namespace ya
 		AddComponent(collider);
 
 
+		//오른쪽 아래쪽 충돌체 각각 만드는 코드
+		/*collider->SetOffset(Vector2(0.0f, 50.0f));
+		collider->SetScale(Vector2(10.0f, 10.0f));
+
+		Collider* coliider2 = new Collider();
+		AddComponent(coliider2);
+
+		coliider2->SetOffset(Vector2(60.0f, 0.0f));
+		coliider2->SetScale(Vector2(10.0f, 10.0f));*/
+
+
 		/*Rigidbody* rigidbody = new Rigidbody();
 		AddComponent(rigidbody);*/
 		//윗줄 아랫줄 같은거 같은거
@@ -100,6 +113,8 @@ namespace ya
 
 		mCoff = 0.1f;
 		mMisiileDir = Vector2::One;
+
+		
 
 
 
@@ -120,7 +135,11 @@ namespace ya
 
 
 		//키보드 입력
-		Vector2 pos = GetPos();
+		//Vector2 pos = GetPos();
+
+
+
+
 
 
 		if (KEY_PREESE(eKeyCode::W))
@@ -143,6 +162,23 @@ namespace ya
 		//	//pos.x += 120.0f * Time::DeltaTime();
 		//}
 
+
+
+
+
+
+
+		if (KEY_DOWN(eKeyCode::SPACE))
+		{
+			Rigidbody* rigidbody = GetComponent<Rigidbody>();
+			Vector2 velocity = rigidbody->GetVelocity();
+			velocity.y = -500.f;
+			rigidbody->SetVelocity(velocity);
+
+			rigidbody->SetGround(false);
+
+			UIManager::Push(eUIType::INVENTORY);
+		}
 		/*if (KEY_DOWN(eKeyCode::W))
 		{
 			mAnimator->Play(L"MoveUp", true);
@@ -159,6 +195,12 @@ namespace ya
 		{
 			mAnimator->Play(L"Walk", true);
 		}
+
+
+
+
+
+
 
 		/*if (KEY_UP(eKeyCode::W))
 		{
@@ -177,6 +219,13 @@ namespace ya
 			mAnimator->Play(L"Idle", true);
 		}
 
+
+
+
+
+
+
+
 		//마우스 우클릭
 		if (KEY_DOWN(eKeyCode::RBTN)) {
 
@@ -187,7 +236,7 @@ namespace ya
 
 		//마우스 좌클릭
 		if (KEY_DOWN(eKeyCode::LBTN)) {
-
+			Vector2 pos = GetPos();
 			pos.x += 120.0f;
 			SetPos(pos);
 
@@ -195,7 +244,6 @@ namespace ya
 			mAnimator->GetCompleteEvent(L"attack") = std::bind(&Player::WalkComplete, this);
 			//mAnimator->FindEvents(L"attack")->mCompleteEvent = std::bind(&Player::WalkComplete, this);
 
-			
 			//미사일 나가게 하기~
 			if (false)
 			{
@@ -219,7 +267,6 @@ namespace ya
 			//missile->mDir = Vector2(mCoff, -1.0f + mCoff);
 			//mCoff -= 0.1f;
 		}
-		
 		if (KEY_DOWN(eKeyCode::I))
 		{
 			BackPack* backPack = new BackPack();
@@ -227,14 +274,15 @@ namespace ya
 			playScene->AddGameObject(backPack, eColliderLayer::Player_Projecttile);
 		}
 
-
 		//움직인 Pos값 다시 설정
-		SetPos(pos);
-
-		
-
-
+		//SetPos(pos);
 	}
+
+
+
+
+
+
 	void Player::Render(HDC hdc)
 	{
 		//아래 주석 대체용 common파일에 추가함

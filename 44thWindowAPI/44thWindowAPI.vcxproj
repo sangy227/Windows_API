@@ -167,6 +167,7 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="yaApplication.h" />
     <ClInclude Include="yaEntity.h" />
+    <ClInclude Include="yaGround.h" />
     <ClInclude Include="yaImage.h" />
     <ClInclude Include="yaInput.h" />
     <ClInclude Include="yaLogoScene.h" />
@@ -189,11 +190,14 @@
     <ClInclude Include="yaTime.h" />
     <ClInclude Include="yaTitleScene.h" />
     <ClInclude Include="yaToolScene.h" />
+    <ClInclude Include="yaUIBase.h" />
+    <ClInclude Include="yaUIManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="chicken.cpp" />
     <ClCompile Include="Logo.cpp" />
     <ClCompile Include="LogoPlayerObject.cpp" />
+    <ClCompile Include="yaGround.cpp" />
     <ClCompile Include="yaPlayerSeclectUI.cpp" />
     <ClCompile Include="yaPlayScene2.cpp" />
     <ClCompile Include="yaAnimation.cpp" />
@@ -230,6 +234,8 @@
     <ClCompile Include="yaScene.cpp" />
     <ClCompile Include="yaTitleScene.cpp" />
     <ClCompile Include="yaToolScene.cpp" />
+    <ClCompile Include="yaUIBase.cpp" />
+    <ClCompile Include="yaUIManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="44thWindowAPI.rc" />

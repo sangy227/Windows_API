@@ -51,13 +51,17 @@
 	enum class eColliderLayer
 	{
 		Default,
+
+		//gameobject
 		BackGround,
 		Tile,
 		Player,
 		Player_Projecttile,
 		Monster,
 		monster_ProjectTile,
+		Ground,
 
+		//ui
 		BackPack,
 		UI = _COLLIDER_LAYER-1,
 		End = _COLLIDER_LAYER,
@@ -81,6 +85,17 @@
 		FadeIn,
 		FadeOut,
 		None,
+	};
+
+	enum class eUIType
+	{
+		HP,
+		MP,
+		SHOP,
+		INVENTORY,
+		OPTION,
+
+		END,
 	};
 
 

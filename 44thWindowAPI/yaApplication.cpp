@@ -11,6 +11,7 @@
 #include "yaResources.h"
 #include "yaCollisionManager.h"
 #include "yaCamera.h"
+#include "yaUIManager.h"
 
 namespace ya {
 	//Application Application::mInstance;
@@ -22,6 +23,7 @@ namespace ya {
 		Time::Initialize();
 		Input::Initialize();
 		SceneManager::Initialize();
+		UIManager::Initialize();
 		Camera::Initialize();
 
 	}
@@ -38,10 +40,10 @@ namespace ya {
 		Input::Tick();
 		
 
-		Camera::Tick();
 		SceneManager::Tick();
 		CollisionManager::Tick();
-
+		UIManager::Tick();
+		Camera::Tick();
 
 
 		//clear
@@ -55,6 +57,7 @@ namespace ya {
 
 
 		SceneManager::Render(mWindowData.backBuffer);
+		UIManager::Render(mWindowData.backBuffer);
 		Camera::Render(mWindowData.backBuffer);
 		Time::Render(mWindowData.backBuffer);
 		Input::Render(mWindowData.backBuffer);

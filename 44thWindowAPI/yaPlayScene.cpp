@@ -7,7 +7,7 @@
 #include "yaMonster.h"
 #include "yaCollisionManager.h"
 #include "chicken.h"
-
+#include "yaGround.h"
 
 namespace ya {
 	PlayScene::PlayScene()
@@ -26,6 +26,12 @@ namespace ya {
 		AddGameObject(bg2, eColliderLayer::BackGround);
 
 		ya::object::Instantiate<Player>(eColliderLayer::Player);
+
+		//여기가 왜 플레이어 좌표를 수정시킬까??
+		/*Ground* ground = ya::object::Instantiate<Ground>(eColliderLayer::Ground);
+		ground->SetPos(Vector2(600.0f, 900.0f));*/
+
+
 		mons1 = ya::object::Instantiate<Monster>(eColliderLayer::Monster);
 		mons2 = ya::object::Instantiate<Monster>(Vector2{ 1250.0f, 770.0f }, eColliderLayer::Monster);
 		mons3 = ya::object::Instantiate<chicken>(Vector2{ 1430.0f, 770.0f }, eColliderLayer::Monster);
@@ -65,6 +71,7 @@ namespace ya {
 	{
 		CollisionManager::SetLayer(eColliderLayer::Player, eColliderLayer::Monster, true);
 		CollisionManager::SetLayer(eColliderLayer::Monster, eColliderLayer::Player_Projecttile, true);
+		CollisionManager::SetLayer(eColliderLayer::Ground, eColliderLayer::Player, true);
 	}
 	void PlayScene::Exit()
 	{

@@ -56,6 +56,9 @@
     <Filter Include="Engine\GameObject\Tile">
       <UniqueIdentifier>{3fe63d49-4370-4b41-8582-5870e7ed6966}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\GameObject\UI">
+      <UniqueIdentifier>{ff218ba4-985f-434d-9458-56a3418acabe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="44thWindowAPI.h">
@@ -190,6 +193,15 @@
     <ClInclude Include="yaRigidbody.h">
       <Filter>Engine\Component</Filter>
     </ClInclude>
+    <ClInclude Include="yaGround.h">
+      <Filter>Engine\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="yaUIManager.h">
+      <Filter>Engine\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="yaUIBase.h">
+      <Filter>Engine\GameObject\UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="44thWindowAPI.rc">
@@ -321,6 +333,15 @@
     </ClCompile>
     <ClCompile Include="yaRigidbody.cpp">
       <Filter>Engine\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="yaGround.cpp">
+      <Filter>Engine\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="yaUIManager.cpp">
+      <Filter>Engine\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="yaUIBase.cpp">
+      <Filter>Engine\GameObject\UI</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

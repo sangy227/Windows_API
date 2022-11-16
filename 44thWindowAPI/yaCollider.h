@@ -17,8 +17,8 @@ namespace ya
 		virtual void OnCollisionExit(Collider* other);
 
 		void SetScale(Vector2 scale) { mScale = scale; }
-		void SetmPos(Vector2 Pos) { mPos = Pos; }
-		void SetmmOffset(Vector2 mPos) { mOffset = mPos; }
+		void SetPos(Vector2 Pos) { mPos = Pos; }
+		void SetOffset(Vector2 mPos) { mOffset = mPos; }
 
 		Vector2 GetPos() { return mPos; }
 		Vector2 GetOffset() { return mOffset; }

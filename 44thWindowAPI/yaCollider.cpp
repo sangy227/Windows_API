@@ -7,9 +7,9 @@
 namespace ya {
 	Collider::Collider()
 		: Component(eComponentType::Aimator)
-		,mOffset(Vector2::Zero)
-		,mPos(Vector2::Zero)
-		,mScale(Vector2::One)
+		, mOffset(Vector2::Zero)
+		, mPos(Vector2::Zero)
+		, mScale(Vector2::One)
 		, mCollisionCount(0)
 
 	{
@@ -23,10 +23,7 @@ namespace ya {
 	{
 		GameObject* owner = GetOwner();
 		
-
 		mPos = owner->GetPos() + mOffset;
-
-
 	}
 	void Collider::Render(HDC hdc)
 	{
@@ -45,7 +42,6 @@ namespace ya {
 		else
 			oldPen = (HPEN)SelectObject(hdc, greenPen);
 
-		
 		mPos = Camera::CalculatePos(GetPos());
 
 		Rectangle(hdc, (mPos.x - mScale.x / 2.0f), (mPos.y - mScale.y / 2.0f)
