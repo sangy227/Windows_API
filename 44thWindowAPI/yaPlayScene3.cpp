@@ -68,5 +68,7 @@ namespace ya {
 	}
 	void PlayScene3::Exit()
 	{
+		CollisionManager::SetLayer(eColliderLayer::Player, eColliderLayer::Monster, false);
+		CollisionManager::SetLayer(eColliderLayer::Monster, eColliderLayer::Player_Projecttile, false);
 	}
 }

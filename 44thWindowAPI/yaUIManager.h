@@ -16,7 +16,11 @@ namespace ya {
 		static void Push(eUIType type);
 		static void Pop(eUIType type);
 
-
+		template <typename T>
+		static T* GetUiInstant(eUIType type)
+		{
+			return dynamic_cast<T*>(mUIs[type]);
+		}
 
 
 	private:

@@ -8,6 +8,7 @@
 #include "yaPlayScene3.h"
 #include "yaPlayScene4.h"
 #include "yaToolScene.h"
+#include "yaCollisionManager.h"
 
 namespace ya {
 
@@ -92,7 +93,9 @@ namespace ya {
 			return;
 
 		mType = type;
-		
+		CollisionManager::Clear();
+
+
 		mPlayScene->Exit();
 		mPlayScene = mScenes[(UINT)type];
 		

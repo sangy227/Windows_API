@@ -20,6 +20,7 @@ namespace ya
 		: mSpeed(1.0f)
 		, mTime(0.0f)
 		, mMisiileDir(Vector2::Zero)
+		, mHp(100)
 	{
 		SetName(L"Player");
 		SetPos({ 520.0f, 770.0f });
@@ -91,7 +92,7 @@ namespace ya
 
 		Collider* collider = new Collider();
 		AddComponent(collider);
-
+		collider->SetPos(GetPos());
 
 		//오른쪽 아래쪽 충돌체 각각 만드는 코드
 		/*collider->SetOffset(Vector2(0.0f, 50.0f));
@@ -177,7 +178,7 @@ namespace ya
 
 			rigidbody->SetGround(false);
 
-			UIManager::Push(eUIType::INVENTORY);
+			UIManager::Pop(eUIType::OPTION);
 		}
 		/*if (KEY_DOWN(eKeyCode::W))
 		{

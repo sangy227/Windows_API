@@ -8,6 +8,9 @@
 #include "yaCollisionManager.h"
 #include "chicken.h"
 #include "yaGround.h"
+#include "yaUIManager.h"
+#include "yaHUD.h"
+#include "yaButton.h"
 
 namespace ya {
 	PlayScene::PlayScene()
@@ -25,18 +28,23 @@ namespace ya {
 		bg2->Initialize();
 		AddGameObject(bg2, eColliderLayer::BackGround);
 
-		ya::object::Instantiate<Player>(eColliderLayer::Player);
+		Player* player = ya::object::Instantiate<Player>(eColliderLayer::Player);
 
-		//여기가 왜 플레이어 좌표를 수정시킬까?? - 찾음 타고 들어가서 선생한테 물어봐야댐
 		Ground* ground = ya::object::Instantiate<Ground>(eColliderLayer::Ground);
 		ground->SetPos(Vector2(600.0f, 900.0f));
+
+
+
+		
+
 
 
 		mons1 = ya::object::Instantiate<Monster>(eColliderLayer::Monster);
 		mons2 = ya::object::Instantiate<Monster>(Vector2{ 1250.0f, 770.0f }, eColliderLayer::Monster);
 		mons3 = ya::object::Instantiate<chicken>(Vector2{ 1430.0f, 770.0f }, eColliderLayer::Monster);
 
-		
+		//UIManager::Push(eUIType::INVENTORY);
+
 
 		/*CollisionManager::SetLayer(eColliderLayer::Player, eColliderLayer::Monster, true);
 		CollisionManager::SetLayer(eColliderLayer::Monster, eColliderLayer::Player_Projecttile, true);*/
@@ -72,9 +80,13 @@ namespace ya {
 		CollisionManager::SetLayer(eColliderLayer::Player, eColliderLayer::Monster, true);
 		CollisionManager::SetLayer(eColliderLayer::Monster, eColliderLayer::Player_Projecttile, true);
 		CollisionManager::SetLayer(eColliderLayer::Ground, eColliderLayer::Player, true);
+		UIManager::Push(eUIType::HP);
 	}
 	void PlayScene::Exit()
 	{
-		
+		CollisionManager::SetLayer(eColliderLayer::Player, eColliderLayer::Monster, false);
+		CollisionManager::SetLayer(eColliderLayer::Monster, eColliderLayer::Player_Projecttile, false);
+		CollisionManager::SetLayer(eColliderLayer::Ground, eColliderLayer::Player, false);
+		UIManager::Pop(eUIType::HP);
 	}
 }

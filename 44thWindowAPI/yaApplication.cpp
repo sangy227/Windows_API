@@ -22,8 +22,8 @@ namespace ya {
 
 		Time::Initialize();
 		Input::Initialize();
-		SceneManager::Initialize();
 		UIManager::Initialize();
+		SceneManager::Initialize();
 		Camera::Initialize();
 
 	}

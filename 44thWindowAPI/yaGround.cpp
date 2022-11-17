@@ -9,7 +9,7 @@ namespace ya {
         
         Collider* collider = AddComponent<Collider>();
         collider->SetScale(Vector2(600.0f, 50.0f));
-        
+        collider->SetPos(GetPos());
     }
     Ground::~Ground()
     {
@@ -24,16 +24,19 @@ namespace ya {
     }
     void Ground::OnCollisionEnter(Collider* other)
     {
-        GameObject* playerObj = other->GetOwner();
+        Player* playerObj = dynamic_cast<Player*>(other->GetOwner());
         playerObj->GetComponent<Rigidbody>()->SetGround(true);
 
+        int hp = playerObj->GetHp();
+        hp -= 10;
+        playerObj->SetHp(hp);
+
         float fLen = fabs(other->GetPos().y - GetComponent<Collider>()->GetPos().y);
-        //여기 변경 시켜야하는데, 원본 스프라이트를 3.5배 확대시키고 그려서 문제인가
         float fScale = other->GetScale().y / 2.0f + GetComponent<Collider>()->GetScale().y / 2.0f;
 
         if (fLen < fScale)
         {
-            //여기가 플레이어 포스를 움직여주는듯
+          
             Vector2 playerPos = playerObj->GetPos();
             playerPos.y -= (fScale - fLen) - 1.0f;
             playerObj->SetPos(playerPos);

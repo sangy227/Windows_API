@@ -83,7 +83,7 @@ namespace ya {
 
 	void Scene::Exit()
 	{
-		CollisionManager::Clear();
+		//CollisionManager::Clear();
 	}
 
 	void Scene::AddGameObject(GameObject* object,eColliderLayer type)

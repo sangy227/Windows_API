@@ -8,12 +8,13 @@ namespace ya {
 	Collider::Collider()
 		: Component(eComponentType::Animator)
 		, mOffset(Vector2::Zero)
-		, mPos(Vector2::Zero)
+		//, mPos(Vector2::Zero)
 		, mScale(Vector2::One)
 		, mCollisionCount(0)
 
 	{
 		mScale = Vector2(168.0f, 168.0f);
+		
 	}
 	Collider::~Collider()
 	{

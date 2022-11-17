@@ -18,6 +18,9 @@ namespace ya {
 		virtual void OnCollisionExit(Collider* other)override;
 		
 		void WalkComplete();
+
+		void SetHp(int hp) { mHp = hp; }
+		int GetHp() { return mHp; }
 	private:
 		float mCoff;
 		float mSpeed;
@@ -30,6 +33,8 @@ namespace ya {
 
 		float mTime;
 		Vector2 mMisiileDir;
+
+		int mHp;
 	};
 }	
 
