@@ -28,7 +28,8 @@ namespace ya {
 		bg2->Initialize();
 		AddGameObject(bg2, eColliderLayer::BackGround);
 
-		Player* player = ya::object::Instantiate<Player>(eColliderLayer::Player);
+		//임시방편
+		//Player* player = ya::object::Instantiate<Player>(eColliderLayer::Player);
 
 		Ground* ground = ya::object::Instantiate<Ground>(eColliderLayer::Ground);
 		ground->SetPos(Vector2(600.0f, 900.0f));
@@ -80,13 +81,23 @@ namespace ya {
 		CollisionManager::SetLayer(eColliderLayer::Player, eColliderLayer::Monster, true);
 		CollisionManager::SetLayer(eColliderLayer::Monster, eColliderLayer::Player_Projecttile, true);
 		CollisionManager::SetLayer(eColliderLayer::Ground, eColliderLayer::Player, true);
-		UIManager::Push(eUIType::HP);
+
+		UIManager::Push(eUIType::INVENTORY);
+
+		HUD* hud = UIManager::GetUiInstant<HUD>(eUIType::MP);
+		//임시방편 실험용
+		Player* player = ya::object::Instantiate<Player>(eColliderLayer::Player);
+		hud->SetTarget(player);
+
+		
 	}
 	void PlayScene::Exit()
 	{
 		CollisionManager::SetLayer(eColliderLayer::Player, eColliderLayer::Monster, false);
 		CollisionManager::SetLayer(eColliderLayer::Monster, eColliderLayer::Player_Projecttile, false);
 		CollisionManager::SetLayer(eColliderLayer::Ground, eColliderLayer::Player, false);
-		UIManager::Pop(eUIType::HP);
+
+		UIManager::Pop(eUIType::INVENTORY);
+		
 	}
 }

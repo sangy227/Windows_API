@@ -1,10 +1,12 @@
 #pragma once
 #include "yaResource.h"
-namespace ya {
+namespace ya 
+{
 	class Image : public Resource
 	{
 	public:
 		static Image* Create(const std::wstring& key, UINT width, UINT heihgt);
+
 		Image();
 		~Image();
 
@@ -15,6 +17,9 @@ namespace ya {
 		UINT GetWidth() { return mWidth; }
 		UINT GetHeight() { return mHeight; }
 
+
+		Pixel GetPixel(int x, int y);
+		void SetPixel(int x, int y, Pixel pixel);
 	private:
 		HBITMAP mBitmap;
 		HDC mHdc;

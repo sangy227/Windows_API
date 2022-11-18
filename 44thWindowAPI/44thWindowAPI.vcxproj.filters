@@ -214,6 +214,12 @@
     <ClInclude Include="yaPanel.h">
       <Filter>Engine\GameObject\UI</Filter>
     </ClInclude>
+    <ClInclude Include="yaSoundManager.h">
+      <Filter>Engine\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="yaSound.h">
+      <Filter>Engine\Resource</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="44thWindowAPI.rc">
@@ -363,6 +369,12 @@
     </ClCompile>
     <ClCompile Include="yaPanel.cpp">
       <Filter>Engine\GameObject\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="yaSoundManager.cpp">
+      <Filter>Engine\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="yaSound.cpp">
+      <Filter>Engine\Resource</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

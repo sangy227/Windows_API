@@ -38,36 +38,47 @@ namespace ya {
 		void UIClear();
 
 		void ImageLoad(const std::wstring& key, const std::wstring& path);
+		void AddChild(UIBase* uiBase);
 
 		eUIType GetType() { return mType; }
 		bool GetIsFullScreen() { return mbFullScreen; }
 		void SetIsFullScreen(bool enable) {mbEnable = enable;}
+
 		void SetParent(UIBase* parent) { mParent = parent; }
-		void SetPos(Vector2 pos) { mScreenPos = pos; }
-		Vector2 GetPos() { return mScreenPos; }
+		void SetScreenPos(Vector2 pos) { mScreenPos = pos; }
+		void SetPos(Vector2 pos) { mPos = pos; }
+
+		Vector2 GetScreenPos() { return mScreenPos; }
+		Vector2 GetPos() { return mPos; }
+
 		void SetSize(Vector2 size) { mSize = size; }
 		Vector2 GetSize() { return mSize; }
-
+		
 	protected:
+		UIBase* mParent;
 		Image* mImage;
-		Vector2 mScreenPos;
 		Vector2 mPos;
 		Vector2 mSize;
+		Vector2 mScreenPos;
+		
 
 	private:
 		virtual void OnInit() {};
 		virtual void OnActive() {};
-		virtual void OninActive() {};
+		virtual void OnInActive() {};
 		virtual void OnTick() {};
 		virtual void OnRender(HDC hdc) {};
 		virtual void OnClear() {};
 	
 
 	private:
-		UIBase* mParent;
+		std::vector<UIBase*> mChilds;
+		
 		eUIType mType;
 		bool mbFullScreen;
 		bool mbEnable;
+
+	
 	};
 }
 

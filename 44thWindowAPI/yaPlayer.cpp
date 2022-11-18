@@ -117,11 +117,11 @@ namespace ya
 
 		
 
+		
 
-
-		BackPack* backPack = new BackPack();
+		/*BackPack* backPack = new BackPack();
 		Scene* playScene = SceneManager::GetPlayScene();
-		playScene->AddGameObject(backPack, eColliderLayer::Player_Projecttile);
+		playScene->AddGameObject(backPack, eColliderLayer::Player_Projecttile);*/
 	}
 
 

@@ -1,6 +1,7 @@
 #include "yaUIManager.h"
 #include "yaHUD.h"
 #include "yaButton.h"
+#include "yaPanel.h"
 
 namespace ya {
 	std::unordered_map <eUIType, UIBase*> UIManager::mUIs;
@@ -11,24 +12,25 @@ namespace ya {
 
 	void UIManager::Initialize()
 	{
-
-		UIBase* newUI = new Button(eUIType::HP);
-		mUIs.insert(std::make_pair(eUIType::HP, newUI));
-		newUI->SetPos(Vector2(100.0f, 100.0f));
+		// 여기에서 ui 메모리에 할당하면 된다.
+		Button* button = new Button(eUIType::HP);
+		mUIs.insert(std::make_pair(eUIType::HP, button));
+		button->SetPos(Vector2(0.0f, 0.0f));
 		//newUI->SetSize(Vector2(500.0f, 100.0f));
-		newUI->ImageLoad(L"HPBAR", L"..\\Resources\\Image\\HPBAR.bmp");
+		button->ImageLoad(L"HPBAR", L"..\\Resources\\Image\\HPBAR.bmp");
 
-		newUI = new UIBase(eUIType::MP);
-		mUIs.insert(std::make_pair(eUIType::MP, newUI));
+		HUD* hud = new HUD(eUIType::MP);
+		mUIs.insert(std::make_pair(eUIType::MP, hud));
+		hud->SetPos(Vector2(0.0f, 100.0f));
+		hud->ImageLoad(L"HPBAR", L"..\\Resources\\Image\\HPBAR.bmp");
 
-		newUI = new UIBase(eUIType::SHOP);
-		mUIs.insert(std::make_pair(eUIType::SHOP, newUI));
-
-		newUI = new UIBase(eUIType::INVENTORY);
-		mUIs.insert(std::make_pair(eUIType::INVENTORY, newUI));
-
-		newUI = new UIBase(eUIType::OPTION);
-		mUIs.insert(std::make_pair(eUIType::OPTION, newUI));
+		Panel* panel = new Panel(eUIType::INVENTORY);
+		mUIs.insert(std::make_pair(eUIType::INVENTORY, panel));
+		//newUI->SetIsFullScreen(true);
+		panel->ImageLoad(L"BackPack1", L"..\\Resources\\Image\\BackPack.bmp");
+		panel->SetPos(Vector2(100.0f, 100.0f));
+		panel->AddChild(button);
+		panel->AddChild(hud);
 	}
 
 	void UIManager::OnLoad(eUIType type)
@@ -46,13 +48,15 @@ namespace ya {
 
 	void UIManager::Tick()
 	{
-		if (mRequestUIQueue.size() > 0)
+		std::stack<UIBase*> uiBases = mUIBases;
+		while (!uiBases.empty())
 		{
-			//UI 로드 해줘
-			eUIType requestUI = mRequestUIQueue.front();
-			mRequestUIQueue.pop();
-
-			OnLoad(requestUI);
+			UIBase* uiBase = uiBases.top();
+			if (uiBase != nullptr)
+			{
+				uiBase->Tick();
+			}
+			uiBases.pop();
 		}
 
 		if (mRequestUIQueue.size() > 0)
@@ -89,7 +93,7 @@ namespace ya {
 		addUI->Active();
 		addUI->Tick();
 
-		if (true)
+		if (addUI->GetIsFullScreen())
 		{
 			std::stack<UIBase*> uiBases = mUIBases;
 			while (!uiBases.empty())
@@ -113,10 +117,19 @@ namespace ya {
 		mCurrentData = nullptr;
 	}
 
+	void UIManager::Release()
+	{
+		for (auto ui : mUIs)
+		{
+			delete ui.second;
+			ui.second = nullptr;
+		}
+
+	}
+
 	void UIManager::Push(eUIType type)
 	{
 		mRequestUIQueue.push(type);
-
 	}
 
 	void UIManager::Pop(eUIType type)

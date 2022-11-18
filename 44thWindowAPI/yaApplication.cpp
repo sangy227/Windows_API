@@ -12,6 +12,7 @@
 #include "yaCollisionManager.h"
 #include "yaCamera.h"
 #include "yaUIManager.h"
+#include "yaSoundManager.h"
 
 namespace ya {
 	//Application Application::mInstance;
@@ -25,6 +26,7 @@ namespace ya {
 		UIManager::Initialize();
 		SceneManager::Initialize();
 		Camera::Initialize();
+		SoundManager::Initialize();
 
 	}
 
@@ -105,6 +107,7 @@ namespace ya {
 	{
 		SceneManager::Release();
 		Resources::Release();
+		UIManager::Release();
 
 		ReleaseDC(mWindowData.hWnd, mWindowData.hdc);
 		ReleaseDC(mWindowData.hWnd, mWindowData.backBuffer);

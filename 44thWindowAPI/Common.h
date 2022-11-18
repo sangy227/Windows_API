@@ -11,11 +11,36 @@
 #include <bitset>
 #include <functional>
 #include <filesystem>
+#include <assert.h>
+
 #include <set>	
 #include "def.h"
 #include "Maths.h"
 
+//그리는 라이브러리
 #pragma comment(lib,"Msimg32.lib")
+
+//사운드 헤더파일 추가
+#include <mmsystem.h>
+#include <dsound.h>
+#include <dinput.h>
+
+#pragma comment(lib, "winmm.lib")
+#pragma comment(lib, "dsound.lib")
+
+struct Pixel
+{
+	BYTE R;
+	BYTE G;
+	BYTE B;
+	BYTE A;
+
+	Pixel(BYTE r, BYTE g, BYTE b, BYTE a)
+		: R(r), G(g), B(b), A(a)
+	{
+
+	}
+};
 
 struct WindowData
 {

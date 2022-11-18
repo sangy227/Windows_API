@@ -21,7 +21,7 @@ namespace ya
 	{
 
 	}
-	void Button::OninActive()
+	void Button::OnInActive()
 	{
 
 	}
@@ -53,9 +53,11 @@ namespace ya
 		func.AlphaFormat = AC_SRC_ALPHA;
 		func.SourceConstantAlpha = 255;
 
+		
 		AlphaBlend(hdc, (int)mScreenPos.x, (int)mScreenPos.y
 			, mImage->GetWidth(), mImage->GetHeight()
 			, mImage->GetDC(), 0, 0, mImage->GetWidth(), mImage->GetHeight(), func);
+
 	}
 	void Button::OnClear()
 	{
@@ -63,6 +65,6 @@ namespace ya
 	}
 	void Button::Click()
 	{
-
+		int a = 0;
 	}
 }

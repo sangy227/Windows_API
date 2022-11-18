@@ -17,7 +17,7 @@ namespace ya {
 	void HUD::OnActive()
 	{
 	}
-	void HUD::OninActive()
+	void HUD::OnInActive()
 	{
 	}
 	void HUD::OnTick()

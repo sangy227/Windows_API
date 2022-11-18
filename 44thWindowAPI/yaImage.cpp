@@ -80,4 +80,24 @@ namespace ya {
 
 		return S_OK;
 	}
+	Pixel Image::GetPixel(int x, int y)
+	{
+		y = mHeight - (y + 1);
+
+		Pixel* pixel = (Pixel*)mBitmap;
+		pixel += (mWidth * y + x);
+
+		return *pixel;
+	}
+	void Image::SetPixel(int x, int y, Pixel pixel)
+	{
+		// 비트맵 좌표는 촤측하단이 0,0 
+		// 윈도우좌표처럼 사용하려면 y를 반대로 바꾸어 주어야 한다.
+		y = mHeight - (y + 1);
+
+		Pixel* bitmapPixel = (Pixel*)mBitmap;
+		bitmapPixel += (mWidth * y + x);
+
+		*bitmapPixel = pixel;
+	}
 }
