@@ -31,8 +31,8 @@ namespace ya {
 		//임시방편
 		//Player* player = ya::object::Instantiate<Player>(eColliderLayer::Player);
 
-		Ground* ground = ya::object::Instantiate<Ground>(eColliderLayer::Ground);
-		ground->SetPos(Vector2(600.0f, 900.0f));
+		/*Ground* ground = ya::object::Instantiate<Ground>(eColliderLayer::Ground);
+		ground->SetPos(Vector2(600.0f, 900.0f));*/
 
 
 
@@ -84,10 +84,10 @@ namespace ya {
 
 		UIManager::Push(eUIType::INVENTORY);
 
-		HUD* hud = UIManager::GetUiInstant<HUD>(eUIType::MP);
+		//HUD* hud = UIManager::GetUiInstant<HUD>(eUIType::MP);
 		//임시방편 실험용
 		Player* player = ya::object::Instantiate<Player>(eColliderLayer::Player);
-		hud->SetTarget(player);
+		//hud->SetTarget(player);
 
 		
 	}

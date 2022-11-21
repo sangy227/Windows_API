@@ -9,6 +9,7 @@
 #include "Logo.h"
 #include "LogoPlayerObject.h"
 #include "yaToolScene.h"
+#include "yaUIManager.h"
 
 namespace ya {
 	
@@ -33,6 +34,10 @@ namespace ya {
 		AddGameObject(logo, eColliderLayer::UI);
 
 		ya::object::Instantiate<LogoPlayerObject>(eColliderLayer::UI);
+
+		UIManager::Push(eUIType::LogoButton1);
+		UIManager::Push(eUIType::LogoButton2);
+		//UIManager::Push(eUIType::INVENTORY);
 
 		//여기에 미리 불러온 툴씬 넣기
 		/*ya::Scene* scene = ya::SceneManager::GetScene(eSceneType::Tool);
@@ -71,5 +76,8 @@ namespace ya {
 	}
 	void LogoScene::Exit()
 	{
+		UIManager::Pop(eUIType::LogoButton1);
+		UIManager::Pop(eUIType::LogoButton2);
+
 	}
 }

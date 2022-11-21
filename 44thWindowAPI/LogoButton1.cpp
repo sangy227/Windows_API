@@ -1,31 +1,32 @@
-#include "yaButton.h"
+#include "LogoButton1.h"
 #include "yaImage.h"
 #include "yaInput.h"
+#include "yaSceneManager.h"
 
-namespace ya 
+namespace ya
 {
-	Button::Button(eUIType type)
+	LogoButton1::LogoButton1(eUIType type)
 		:UIBase(type)
 	{
-		mOnClick = std::bind(&Button::Click, this);
+		mOnClick = std::bind(&LogoButton1::Click, this);
 	}
-	Button::~Button()
+	LogoButton1::~LogoButton1()
 	{
 
 	}
-	void Button::OnInit()
+	void LogoButton1::OnInit()
 	{
 
 	}
-	void Button::OnActive()
+	void LogoButton1::OnActive()
 	{
 
 	}
-	void Button::OnInActive()
+	void LogoButton1::OnInActive()
 	{
 
 	}
-	void Button::OnTick()
+	void LogoButton1::OnTick()
 	{
 		Vector2 mousePos = Input::GetMousePos();
 		Vector2 size = GetSize();
@@ -45,7 +46,7 @@ namespace ya
 			mOnClick();
 		}
 	}
-	void Button::OnRender(HDC hdc)
+	void LogoButton1::OnRender(HDC hdc)
 	{
 		/*BLENDFUNCTION func = {};
 		func.BlendOp = AC_SRC_OVER;
@@ -53,7 +54,7 @@ namespace ya
 		func.AlphaFormat = AC_SRC_ALPHA;
 		func.SourceConstantAlpha = 255;
 
-		
+
 		AlphaBlend(hdc, (int)mScreenPos.x, (int)mScreenPos.y
 			, mImage->GetWidth()*0.8f, mImage->GetHeight()*0.8f
 			, mImage->GetDC(), 0, 0, mImage->GetWidth(), mImage->GetHeight(), func);*/
@@ -64,12 +65,12 @@ namespace ya
 			, RGB(255, 255, 255));
 
 	}
-	void Button::OnClear()
+	void LogoButton1::OnClear()
 	{
 
 	}
-	void Button::Click()
+	void LogoButton1::Click()
 	{
-		int a = 0;
+		SceneManager::ChangeScene(eSceneType::PlayOne);
 	}
 }

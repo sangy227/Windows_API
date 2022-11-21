@@ -89,6 +89,13 @@
 
 	enum class eUIType
 	{
+		LogoButton1,
+		LogoButton2,
+		LogoButton3,
+		LogoButton4,
+		LogoButton5,
+		LogoButton6,
+		LogoButtonFull,
 		HP,
 		MP,
 		SHOP,

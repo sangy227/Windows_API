@@ -180,6 +180,7 @@ namespace ya
 
 			UIManager::Pop(eUIType::OPTION);
 		}
+
 		/*if (KEY_DOWN(eKeyCode::W))
 		{
 			mAnimator->Play(L"MoveUp", true);

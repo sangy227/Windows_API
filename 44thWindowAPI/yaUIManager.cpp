@@ -2,6 +2,8 @@
 #include "yaHUD.h"
 #include "yaButton.h"
 #include "yaPanel.h"
+#include "LogoButton1.h"
+#include "LogoButton2.h"
 
 namespace ya {
 	std::unordered_map <eUIType, UIBase*> UIManager::mUIs;
@@ -13,24 +15,45 @@ namespace ya {
 	void UIManager::Initialize()
 	{
 		// 여기에서 ui 메모리에 할당하면 된다.
-		Button* button = new Button(eUIType::HP);
-		mUIs.insert(std::make_pair(eUIType::HP, button));
-		button->SetPos(Vector2(0.0f, 0.0f));
+		//Button* button = new Button(eUIType::HP);
+		//mUIs.insert(std::make_pair(eUIType::HP, button));
+		//button->SetPos(Vector2(0.0f, 0.0f));
+		////newUI->SetSize(Vector2(500.0f, 100.0f));
+		//button->ImageLoad(L"HPBAR", L"..\\Resources\\Image\\HPBAR.bmp");
+
+		//Button* logobutton1 = new Button(eUIType::OPTION);
+		//mUIs.insert(std::make_pair(eUIType::OPTION, logobutton1));
+		//logobutton1->SetPos(Vector2(620.0f, 470.0f));
+		////newUI->SetSize(Vector2(500.0f, 100.0f));
+		//logobutton1->ImageLoad(L"LogoButton1", L"..\\Resources\\Image\\LogoButton.bmp");
+
+		LogoButton1* logobutton1 = new LogoButton1(eUIType::LogoButton1);
+		mUIs.insert(std::make_pair(eUIType::LogoButton1, logobutton1));
+		logobutton1->SetPos(Vector2(620.0f, 470.0f));
 		//newUI->SetSize(Vector2(500.0f, 100.0f));
-		button->ImageLoad(L"HPBAR", L"..\\Resources\\Image\\HPBAR.bmp");
+		logobutton1->ImageLoad(L"LogoButton1", L"..\\Resources\\Image\\LogoButton.bmp");
+
+		LogoButton2* logobutton2 = new LogoButton2(eUIType::LogoButton2);
+		mUIs.insert(std::make_pair(eUIType::LogoButton2, logobutton2));
+		logobutton2->SetPos(Vector2(620.0f, 530.0f));
+		//newUI->SetSize(Vector2(500.0f, 100.0f));
+		logobutton2->ImageLoad(L"LogoButton1", L"..\\Resources\\Image\\LogoButton.bmp");
+
+		
 
 		HUD* hud = new HUD(eUIType::MP);
 		mUIs.insert(std::make_pair(eUIType::MP, hud));
 		hud->SetPos(Vector2(0.0f, 100.0f));
 		hud->ImageLoad(L"HPBAR", L"..\\Resources\\Image\\HPBAR.bmp");
 
-		Panel* panel = new Panel(eUIType::INVENTORY);
-		mUIs.insert(std::make_pair(eUIType::INVENTORY, panel));
-		//newUI->SetIsFullScreen(true);
-		panel->ImageLoad(L"BackPack1", L"..\\Resources\\Image\\BackPack.bmp");
-		panel->SetPos(Vector2(100.0f, 100.0f));
-		panel->AddChild(button);
-		panel->AddChild(hud);
+		//Panel* panel = new Panel(eUIType::INVENTORY);
+		//mUIs.insert(std::make_pair(eUIType::INVENTORY, panel));
+		////newUI->SetIsFullScreen(true);
+		////panel->ImageLoad(L"BackPack1", L"..\\Resources\\Image\\LogoButton.bmp");
+		//panel->SetPos(Vector2(620.0f, 470.0f));
+		//panel->AddChild(logobutton1);
+		//panel->AddChild(logobutton2);
+
 	}
 
 	void UIManager::OnLoad(eUIType type)

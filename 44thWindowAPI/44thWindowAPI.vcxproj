@@ -151,6 +151,8 @@
     <ClInclude Include="def.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Logo.h" />
+    <ClInclude Include="LogoButton1.h" />
+    <ClInclude Include="LogoButton2.h" />
     <ClInclude Include="LogoPlayerObject.h" />
     <ClInclude Include="yaAnimation.h" />
     <ClInclude Include="yaAniMator.h" />
@@ -201,6 +203,8 @@
   <ItemGroup>
     <ClCompile Include="chicken.cpp" />
     <ClCompile Include="Logo.cpp" />
+    <ClCompile Include="LogoButton1.cpp" />
+    <ClCompile Include="LogoButton2.cpp" />
     <ClCompile Include="LogoPlayerObject.cpp" />
     <ClCompile Include="yaButton.cpp" />
     <ClCompile Include="yaGround.cpp" />

@@ -38,7 +38,8 @@ namespace ya {
         {
           
             Vector2 playerPos = playerObj->GetPos();
-            playerPos.y -= (fScale - fLen) - 1.0f;
+            //playerPos.y -= (fScale - fLen) - 1.0f;
+            playerPos.y = 770.0f;
             playerObj->SetPos(playerPos);
         }
     }
