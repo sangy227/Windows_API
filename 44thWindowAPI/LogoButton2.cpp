@@ -1,62 +1,58 @@
 #include "LogoButton2.h"
 #include "yaImage.h"
 #include "yaInput.h"
+#include "yaUIManager.h"
 
-ya::LogoButton2::LogoButton2(eUIType type)
-	:UIBase(type)
+namespace ya {
+	LogoButton2::LogoButton2(eUIType type)
+		:UIBase(type)
 	{
 		mOnClick = std::bind(&LogoButton2::Click, this);
-}
-
-ya::LogoButton2::~LogoButton2()
-{
-}
-
-void ya::LogoButton2::OnInit()
-{
-	Vector2 mousePos = Input::GetMousePos();
-	Vector2 size = GetSize();
-
-	if (mScreenPos.x <= mousePos.x && mousePos.x < mScreenPos.x + size.x
-		&& mScreenPos.y <= mousePos.y && mousePos.y < mScreenPos.y + size.y)
-	{
-		mbMouseOn = true;
 	}
-	else
+	LogoButton2::~LogoButton2()
 	{
-		mbMouseOn = false;
 	}
-
-	if (KEY_DOWN(eKeyCode::LBTN) && mbMouseOn)
+	void LogoButton2::OnInit()
 	{
-		mOnClick();
 	}
-}
+	void LogoButton2::OnActive()
+	{
+	}
+	void LogoButton2::OnInActive()
+	{
+	}
+	void LogoButton2::OnTick()
+	{
+		Vector2 mousePos = Input::GetMousePos();
+		Vector2 size = GetSize();
 
-void ya::LogoButton2::OnActive()
-{
-}
+		if (mScreenPos.x <= mousePos.x && mousePos.x < mScreenPos.x + size.x
+			&& mScreenPos.y <= mousePos.y && mousePos.y < mScreenPos.y + size.y)
+		{
+			mbMouseOn = true;
+		}
+		else
+		{
+			mbMouseOn = false;
+		}
 
-void ya::LogoButton2::OnInActive()
-{
-}
-
-void ya::LogoButton2::OnTick()
-{
-}
-
-void ya::LogoButton2::OnRender(HDC hdc)
-{
-	TransparentBlt(hdc, (int)mScreenPos.x, (int)mScreenPos.y,
-		mImage->GetWidth() * 0.8f, mImage->GetHeight() * 0.8f,
-		mImage->GetDC(), 0, 0, mImage->GetWidth(), mImage->GetHeight()
-		, RGB(255, 255, 255));
-}
-
-void ya::LogoButton2::OnClear()
-{
-}
-
-void ya::LogoButton2::Click()
-{
+		if (KEY_DOWN(eKeyCode::LBTN) && mbMouseOn)
+		{
+			mOnClick();
+		}
+	}
+	void LogoButton2::OnRender(HDC hdc)
+	{
+		TransparentBlt(hdc, (int)mScreenPos.x, (int)mScreenPos.y,
+			mImage->GetWidth() * 0.8f, mImage->GetHeight() * 0.8f,
+			mImage->GetDC(), 0, 0, mImage->GetWidth(), mImage->GetHeight()
+			, RGB(255, 255, 255));
+	}
+	void LogoButton2::OnClear()
+	{
+	}
+	void LogoButton2::Click()
+	{
+		UIManager::Push(eUIType::TitleDefault);
+	}
 }

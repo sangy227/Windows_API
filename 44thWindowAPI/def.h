@@ -99,6 +99,8 @@
 		TitleDefault,
 		McIcon,
 		ToteIcon,
+		Cr8Icon,
+		SetchelIcon,
 
 		HP,
 		MP,

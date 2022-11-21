@@ -13,6 +13,8 @@
 #include "TitleDefault.h"
 #include "McIcon.h"
 #include "ToteIcon.h"
+#include "Cr8Icon.h"
+#include "SetchelIcon.h"
 
 namespace ya {
 	std::unordered_map <eUIType, UIBase*> UIManager::mUIs;
@@ -243,12 +245,25 @@ namespace ya {
 		toteicon->SetPos(Vector2(30.0f, 300.0f));
 		toteicon->ImageLoad(L"toteicon", L"..\\Resources\\Image\\Object\\ToteIcon.bmp");
 
+		Cr8Icon* cr8icon = new Cr8Icon(eUIType::Cr8Icon);
+		mUIs.insert(std::make_pair(eUIType::Cr8Icon, cr8icon));
+		cr8icon->SetPos(Vector2(30.0f, 430.0f));
+		cr8icon->ImageLoad(L"cr8icon", L"..\\Resources\\Image\\Object\\Cr8Icon.bmp");
+
+		SetchelIcon* setchelicon = new SetchelIcon(eUIType::SetchelIcon);
+		mUIs.insert(std::make_pair(eUIType::SetchelIcon, setchelicon));
+		setchelicon->SetPos(Vector2(30.0f, 560.0f));
+		setchelicon->ImageLoad(L"setchelicon", L"..\\Resources\\Image\\Object\\SetchelIcon.bmp");
+
+
 		TitleDefault* titledefault = new TitleDefault(eUIType::TitleDefault);
 		mUIs.insert(std::make_pair(eUIType::TitleDefault, titledefault));
 		titledefault->ImageLoad(L"TitleDefault", L"..\\Resources\\Image\\Object\\TitleDefault.bmp");
 		titledefault->SetPos(Vector2(250.0f, 50.0f));
 		titledefault->AddChild(mcicon);
 		titledefault->AddChild(toteicon);
+		titledefault->AddChild(cr8icon);
+		titledefault->AddChild(setchelicon);
 	}
 
 	

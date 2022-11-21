@@ -1,6 +1,8 @@
 #pragma once
 #include "yaUIBase.h"
+
 namespace ya {
+
 	class LogoButton2 : public UIBase
 	{
 	public:
@@ -18,6 +20,6 @@ namespace ya {
 	private:
 		Event mOnClick;
 		bool mbMouseOn;
+
 	};
 }
-

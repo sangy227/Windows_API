@@ -1,6 +1,7 @@
 #include "McIcon.h"
 #include "yaImage.h"
 #include "yaInput.h"
+#include "yaUIManager.h"
 
 namespace ya {
 	McIcon::McIcon(eUIType type)
@@ -52,5 +53,6 @@ namespace ya {
 	}
 	void McIcon::Click()
 	{
+		UIManager::Pop(eUIType::TitleDefault);
 	}
 }
