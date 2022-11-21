@@ -4,6 +4,10 @@
 #include "yaPanel.h"
 #include "LogoButton1.h"
 #include "LogoButton2.h"
+#include "LogoButton3.h"
+#include "LogoButton4.h"
+#include "LogoButton5.h"
+#include "LogoButton6.h"
 
 namespace ya {
 	std::unordered_map <eUIType, UIBase*> UIManager::mUIs;
@@ -37,7 +41,31 @@ namespace ya {
 		mUIs.insert(std::make_pair(eUIType::LogoButton2, logobutton2));
 		logobutton2->SetPos(Vector2(620.0f, 530.0f));
 		//newUI->SetSize(Vector2(500.0f, 100.0f));
-		logobutton2->ImageLoad(L"LogoButton1", L"..\\Resources\\Image\\LogoButton.bmp");
+		logobutton2->ImageLoad(L"LogoButton2", L"..\\Resources\\Image\\LogoButton.bmp");
+
+		LogoButton3* logobutton3 = new LogoButton3(eUIType::LogoButton3);
+		mUIs.insert(std::make_pair(eUIType::LogoButton3, logobutton3));
+		logobutton3->SetPos(Vector2(620.0f, 590.0f));
+		//newUI->SetSize(Vector2(500.0f, 100.0f));
+		logobutton3->ImageLoad(L"LogoButton3", L"..\\Resources\\Image\\LogoButton.bmp");
+
+		LogoButton4* logobutton4 = new LogoButton4(eUIType::LogoButton4);
+		mUIs.insert(std::make_pair(eUIType::LogoButton4, logobutton4));
+		logobutton4->SetPos(Vector2(620.0f, 650.0f));
+		//newUI->SetSize(Vector2(500.0f, 100.0f));
+		logobutton4->ImageLoad(L"LogoButton4", L"..\\Resources\\Image\\LogoButton.bmp");
+
+		LogoButton5* logobutton5 = new LogoButton5(eUIType::LogoButton5);
+		mUIs.insert(std::make_pair(eUIType::LogoButton5, logobutton5));
+		logobutton5->SetPos(Vector2(620.0f, 710.0f));
+		//newUI->SetSize(Vector2(500.0f, 100.0f));
+		logobutton5->ImageLoad(L"LogoButton5", L"..\\Resources\\Image\\LogoButton.bmp");
+
+		LogoButton6* logobutton6 = new LogoButton6(eUIType::LogoButton6);
+		mUIs.insert(std::make_pair(eUIType::LogoButton6, logobutton6));
+		logobutton6->SetPos(Vector2(620.0f, 770.0f));
+		//newUI->SetSize(Vector2(500.0f, 100.0f));
+		logobutton6->ImageLoad(L"LogoButton6", L"..\\Resources\\Image\\LogoButton.bmp");
 
 		
 

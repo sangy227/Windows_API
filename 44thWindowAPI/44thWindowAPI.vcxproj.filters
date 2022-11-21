@@ -229,6 +229,18 @@
     <ClInclude Include="LogoButton2.h">
       <Filter>Engine\GameObject\UI\LogoSceneUI</Filter>
     </ClInclude>
+    <ClInclude Include="LogoButton3.h">
+      <Filter>Engine\GameObject\UI\LogoSceneUI</Filter>
+    </ClInclude>
+    <ClInclude Include="LogoButton4.h">
+      <Filter>Engine\GameObject\UI\LogoSceneUI</Filter>
+    </ClInclude>
+    <ClInclude Include="LogoButton5.h">
+      <Filter>Engine\GameObject\UI\LogoSceneUI</Filter>
+    </ClInclude>
+    <ClInclude Include="LogoButton6.h">
+      <Filter>Engine\GameObject\UI\LogoSceneUI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="44thWindowAPI.rc">
@@ -389,6 +401,18 @@
       <Filter>Engine\GameObject\UI\LogoSceneUI</Filter>
     </ClCompile>
     <ClCompile Include="LogoButton2.cpp">
+      <Filter>Engine\GameObject\UI\LogoSceneUI</Filter>
+    </ClCompile>
+    <ClCompile Include="LogoButton3.cpp">
+      <Filter>Engine\GameObject\UI\LogoSceneUI</Filter>
+    </ClCompile>
+    <ClCompile Include="LogoButton4.cpp">
+      <Filter>Engine\GameObject\UI\LogoSceneUI</Filter>
+    </ClCompile>
+    <ClCompile Include="LogoButton5.cpp">
+      <Filter>Engine\GameObject\UI\LogoSceneUI</Filter>
+    </ClCompile>
+    <ClCompile Include="LogoButton6.cpp">
       <Filter>Engine\GameObject\UI\LogoSceneUI</Filter>
     </ClCompile>
   </ItemGroup>

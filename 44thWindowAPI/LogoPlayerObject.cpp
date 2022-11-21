@@ -21,6 +21,7 @@ namespace ya {
 			, Vector2(-24.0f, -48.0f), 4, 0.15f);
 
 		mAnimator->Play(L"Win", true);
+		
 
 		AddComponent(mAnimator);
 	}

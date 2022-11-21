@@ -37,6 +37,10 @@ namespace ya {
 
 		UIManager::Push(eUIType::LogoButton1);
 		UIManager::Push(eUIType::LogoButton2);
+		UIManager::Push(eUIType::LogoButton3);
+		UIManager::Push(eUIType::LogoButton4);
+		UIManager::Push(eUIType::LogoButton5);
+		UIManager::Push(eUIType::LogoButton6);
 		//UIManager::Push(eUIType::INVENTORY);
 
 		//여기에 미리 불러온 툴씬 넣기
@@ -73,11 +77,18 @@ namespace ya {
 	}
 	void LogoScene::Enter()
 	{
+		/*UIManager::Push(eUIType::LogoButton1);
+		UIManager::Push(eUIType::LogoButton2);
+		UIManager::Push(eUIType::LogoButton3);*/
 	}
 	void LogoScene::Exit()
 	{
 		UIManager::Pop(eUIType::LogoButton1);
 		UIManager::Pop(eUIType::LogoButton2);
+		UIManager::Pop(eUIType::LogoButton3);
+		UIManager::Pop(eUIType::LogoButton4);
+		UIManager::Pop(eUIType::LogoButton5);
+		UIManager::Pop(eUIType::LogoButton6);
 
 	}
 }
