@@ -11,10 +11,13 @@
 #include "LogoButton6.h"
 
 #include "TitleDefault.h"
+#include "TitleSelectBg.h"
 #include "McIcon.h"
 #include "ToteIcon.h"
 #include "Cr8Icon.h"
 #include "SetchelIcon.h"
+#include "MC_Info.h"
+
 
 namespace ya {
 	std::unordered_map <eUIType, UIBase*> UIManager::mUIs;
@@ -256,14 +259,35 @@ namespace ya {
 		setchelicon->ImageLoad(L"setchelicon", L"..\\Resources\\Image\\Object\\SetchelIcon.bmp");
 
 
+		//
 		TitleDefault* titledefault = new TitleDefault(eUIType::TitleDefault);
 		mUIs.insert(std::make_pair(eUIType::TitleDefault, titledefault));
 		titledefault->ImageLoad(L"TitleDefault", L"..\\Resources\\Image\\Object\\TitleDefault.bmp");
 		titledefault->SetPos(Vector2(250.0f, 50.0f));
+
 		titledefault->AddChild(mcicon);
 		titledefault->AddChild(toteicon);
 		titledefault->AddChild(cr8icon);
 		titledefault->AddChild(setchelicon);
+		//△패널
+
+
+
+
+
+		//
+		TitleSelectBg* titleselectbg = new TitleSelectBg(eUIType::TitleSelectBg);
+		mUIs.insert(std::make_pair(eUIType::TitleSelectBg, titleselectbg));
+		titleselectbg->SetPos(Vector2(-20.0f, 420.0f));
+		titleselectbg->ImageLoad(L"titleselectbg", L"..\\Resources\\Image\\Object\\TitleSelectBg.bmp");
+
+		MC_Info* mc_info = new MC_Info(eUIType::Mc_Info);
+		mUIs.insert(std::make_pair(eUIType::Mc_Info, mc_info));
+		mc_info->SetPos(Vector2(470.0f, 170.0f));
+		mc_info->ImageLoad(L"mc_info", L"..\\Resources\\Image\\Object\\MC_Info.bmp");
+		mc_info->AddChild(titleselectbg);
+		//△패널
+		
 	}
 
 	

@@ -48,10 +48,12 @@ namespace ya {
 	}
 	void TitleScene::Enter()
 	{
+		UIManager::Push(eUIType::Mc_Info);
 		UIManager::Push(eUIType::TitleDefault);
 	}
 	void TitleScene::Exit()
 	{
+		UIManager::Pop(eUIType::Mc_Info);
 		UIManager::Pop(eUIType::TitleDefault);
 	}
 }

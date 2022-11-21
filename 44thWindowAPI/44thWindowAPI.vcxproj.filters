@@ -259,6 +259,21 @@
     <ClInclude Include="ToteIcon.h">
       <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
     </ClInclude>
+    <ClInclude Include="Cr8_Info.h">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
+    </ClInclude>
+    <ClInclude Include="MC_Info.h">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Setchel_Info.h">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Tote_Info.h">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleSelectBg.h">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="44thWindowAPI.rc">
@@ -446,6 +461,21 @@
       <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
     </ClCompile>
     <ClCompile Include="ToteIcon.cpp">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Cr8_Info.cpp">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
+    </ClCompile>
+    <ClCompile Include="MC_Info.cpp">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Setchel_Info.cpp">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Tote_Info.cpp">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleSelectBg.cpp">
       <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
     </ClCompile>
   </ItemGroup>

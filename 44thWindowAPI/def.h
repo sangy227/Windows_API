@@ -97,10 +97,15 @@
 		LogoButton6,
 
 		TitleDefault,
+		TitleSelectBg,
 		McIcon,
 		ToteIcon,
 		Cr8Icon,
 		SetchelIcon,
+		Mc_Info,
+		Tote_Info,
+		Cr8_Info,
+		Setchel_Info,
 
 		HP,
 		MP,

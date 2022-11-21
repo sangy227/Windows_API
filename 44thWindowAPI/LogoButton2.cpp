@@ -53,6 +53,14 @@ namespace ya {
 	}
 	void LogoButton2::Click()
 	{
+		UIManager::Push(eUIType::Mc_Info);
 		UIManager::Push(eUIType::TitleDefault);
+
+		UIManager::Pop(eUIType::LogoButton1);
+		UIManager::Pop(eUIType::LogoButton2);
+		UIManager::Pop(eUIType::LogoButton3);
+		UIManager::Pop(eUIType::LogoButton4);
+		UIManager::Pop(eUIType::LogoButton5);
+		UIManager::Pop(eUIType::LogoButton6);
 	}
 }

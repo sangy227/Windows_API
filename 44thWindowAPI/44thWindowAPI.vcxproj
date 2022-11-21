@@ -149,6 +149,7 @@
     <ClInclude Include="chicken.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="Cr8Icon.h" />
+    <ClInclude Include="Cr8_Info.h" />
     <ClInclude Include="def.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Logo.h" />
@@ -160,9 +161,13 @@
     <ClInclude Include="LogoButton6.h" />
     <ClInclude Include="LogoPlayerObject.h" />
     <ClInclude Include="McIcon.h" />
+    <ClInclude Include="MC_Info.h" />
     <ClInclude Include="SetchelIcon.h" />
+    <ClInclude Include="Setchel_Info.h" />
     <ClInclude Include="TitleDefault.h" />
+    <ClInclude Include="TitleSelectBg.h" />
     <ClInclude Include="ToteIcon.h" />
+    <ClInclude Include="Tote_Info.h" />
     <ClInclude Include="yaAnimation.h" />
     <ClInclude Include="yaAniMator.h" />
     <ClInclude Include="yaBackPack.h" />
@@ -212,6 +217,7 @@
   <ItemGroup>
     <ClCompile Include="chicken.cpp" />
     <ClCompile Include="Cr8Icon.cpp" />
+    <ClCompile Include="Cr8_Info.cpp" />
     <ClCompile Include="Logo.cpp" />
     <ClCompile Include="LogoButton1.cpp" />
     <ClCompile Include="LogoButton2.cpp" />
@@ -221,9 +227,13 @@
     <ClCompile Include="LogoButton6.cpp" />
     <ClCompile Include="LogoPlayerObject.cpp" />
     <ClCompile Include="McIcon.cpp" />
+    <ClCompile Include="MC_Info.cpp" />
     <ClCompile Include="SetchelIcon.cpp" />
+    <ClCompile Include="Setchel_Info.cpp" />
     <ClCompile Include="TitleDefault.cpp" />
+    <ClCompile Include="TitleSelectBg.cpp" />
     <ClCompile Include="ToteIcon.cpp" />
+    <ClCompile Include="Tote_Info.cpp" />
     <ClCompile Include="yaButton.cpp" />
     <ClCompile Include="yaGround.cpp" />
     <ClCompile Include="yaHUD.cpp" />
