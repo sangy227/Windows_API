@@ -24,6 +24,10 @@ namespace ya {
 			return dynamic_cast<T*>(mUIs[type]);
 		}
 
+		static void LogoButtonFull();
+
+		static void PlayerSelectFull();
+
 
 	private:
 		static std::unordered_map <eUIType, UIBase*> mUIs;

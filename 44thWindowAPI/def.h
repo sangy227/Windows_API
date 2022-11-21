@@ -95,7 +95,11 @@
 		LogoButton4,
 		LogoButton5,
 		LogoButton6,
-		LogoButtonFull,
+
+		TitleDefault,
+		McIcon,
+		ToteIcon,
+
 		HP,
 		MP,
 		SHOP,

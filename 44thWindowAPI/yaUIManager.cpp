@@ -2,12 +2,17 @@
 #include "yaHUD.h"
 #include "yaButton.h"
 #include "yaPanel.h"
+
 #include "LogoButton1.h"
 #include "LogoButton2.h"
 #include "LogoButton3.h"
 #include "LogoButton4.h"
 #include "LogoButton5.h"
 #include "LogoButton6.h"
+
+#include "TitleDefault.h"
+#include "McIcon.h"
+#include "ToteIcon.h"
 
 namespace ya {
 	std::unordered_map <eUIType, UIBase*> UIManager::mUIs;
@@ -19,68 +24,24 @@ namespace ya {
 	void UIManager::Initialize()
 	{
 		// 여기에서 ui 메모리에 할당하면 된다.
+
+		/*로고버튼 모음*/
+		LogoButtonFull();
+
+		/*플레이어 선택창*/
+		PlayerSelectFull();
+
+
 		//Button* button = new Button(eUIType::HP);
 		//mUIs.insert(std::make_pair(eUIType::HP, button));
 		//button->SetPos(Vector2(0.0f, 0.0f));
 		////newUI->SetSize(Vector2(500.0f, 100.0f));
 		//button->ImageLoad(L"HPBAR", L"..\\Resources\\Image\\HPBAR.bmp");
 
-		//Button* logobutton1 = new Button(eUIType::OPTION);
-		//mUIs.insert(std::make_pair(eUIType::OPTION, logobutton1));
-		//logobutton1->SetPos(Vector2(620.0f, 470.0f));
-		////newUI->SetSize(Vector2(500.0f, 100.0f));
-		//logobutton1->ImageLoad(L"LogoButton1", L"..\\Resources\\Image\\LogoButton.bmp");
-
-		LogoButton1* logobutton1 = new LogoButton1(eUIType::LogoButton1);
-		mUIs.insert(std::make_pair(eUIType::LogoButton1, logobutton1));
-		logobutton1->SetPos(Vector2(620.0f, 470.0f));
-		//newUI->SetSize(Vector2(500.0f, 100.0f));
-		logobutton1->ImageLoad(L"LogoButton1", L"..\\Resources\\Image\\LogoButton.bmp");
-
-		LogoButton2* logobutton2 = new LogoButton2(eUIType::LogoButton2);
-		mUIs.insert(std::make_pair(eUIType::LogoButton2, logobutton2));
-		logobutton2->SetPos(Vector2(620.0f, 530.0f));
-		//newUI->SetSize(Vector2(500.0f, 100.0f));
-		logobutton2->ImageLoad(L"LogoButton2", L"..\\Resources\\Image\\LogoButton.bmp");
-
-		LogoButton3* logobutton3 = new LogoButton3(eUIType::LogoButton3);
-		mUIs.insert(std::make_pair(eUIType::LogoButton3, logobutton3));
-		logobutton3->SetPos(Vector2(620.0f, 590.0f));
-		//newUI->SetSize(Vector2(500.0f, 100.0f));
-		logobutton3->ImageLoad(L"LogoButton3", L"..\\Resources\\Image\\LogoButton.bmp");
-
-		LogoButton4* logobutton4 = new LogoButton4(eUIType::LogoButton4);
-		mUIs.insert(std::make_pair(eUIType::LogoButton4, logobutton4));
-		logobutton4->SetPos(Vector2(620.0f, 650.0f));
-		//newUI->SetSize(Vector2(500.0f, 100.0f));
-		logobutton4->ImageLoad(L"LogoButton4", L"..\\Resources\\Image\\LogoButton.bmp");
-
-		LogoButton5* logobutton5 = new LogoButton5(eUIType::LogoButton5);
-		mUIs.insert(std::make_pair(eUIType::LogoButton5, logobutton5));
-		logobutton5->SetPos(Vector2(620.0f, 710.0f));
-		//newUI->SetSize(Vector2(500.0f, 100.0f));
-		logobutton5->ImageLoad(L"LogoButton5", L"..\\Resources\\Image\\LogoButton.bmp");
-
-		LogoButton6* logobutton6 = new LogoButton6(eUIType::LogoButton6);
-		mUIs.insert(std::make_pair(eUIType::LogoButton6, logobutton6));
-		logobutton6->SetPos(Vector2(620.0f, 770.0f));
-		//newUI->SetSize(Vector2(500.0f, 100.0f));
-		logobutton6->ImageLoad(L"LogoButton6", L"..\\Resources\\Image\\LogoButton.bmp");
-
-		
-
-		HUD* hud = new HUD(eUIType::MP);
+		/*HUD* hud = new HUD(eUIType::MP);
 		mUIs.insert(std::make_pair(eUIType::MP, hud));
 		hud->SetPos(Vector2(0.0f, 100.0f));
-		hud->ImageLoad(L"HPBAR", L"..\\Resources\\Image\\HPBAR.bmp");
-
-		//Panel* panel = new Panel(eUIType::INVENTORY);
-		//mUIs.insert(std::make_pair(eUIType::INVENTORY, panel));
-		////newUI->SetIsFullScreen(true);
-		////panel->ImageLoad(L"BackPack1", L"..\\Resources\\Image\\LogoButton.bmp");
-		//panel->SetPos(Vector2(620.0f, 470.0f));
-		//panel->AddChild(logobutton1);
-		//panel->AddChild(logobutton2);
+		hud->ImageLoad(L"HPBAR", L"..\\Resources\\Image\\HPBAR.bmp");*/
 
 	}
 
@@ -229,6 +190,65 @@ namespace ya {
 			tempStack.pop();
 			mUIBases.push(uiBase);
 		}
+	}
+
+	void UIManager::LogoButtonFull()
+	{
+		LogoButton1* logobutton1 = new LogoButton1(eUIType::LogoButton1);
+		mUIs.insert(std::make_pair(eUIType::LogoButton1, logobutton1));
+		logobutton1->SetPos(Vector2(620.0f, 470.0f));
+		//newUI->SetSize(Vector2(500.0f, 100.0f));
+		logobutton1->ImageLoad(L"LogoButton1", L"..\\Resources\\Image\\LogoButton.bmp");
+
+		LogoButton2* logobutton2 = new LogoButton2(eUIType::LogoButton2);
+		mUIs.insert(std::make_pair(eUIType::LogoButton2, logobutton2));
+		logobutton2->SetPos(Vector2(620.0f, 530.0f));
+		//newUI->SetSize(Vector2(500.0f, 100.0f));
+		logobutton2->ImageLoad(L"LogoButton2", L"..\\Resources\\Image\\LogoButton.bmp");
+
+		LogoButton3* logobutton3 = new LogoButton3(eUIType::LogoButton3);
+		mUIs.insert(std::make_pair(eUIType::LogoButton3, logobutton3));
+		logobutton3->SetPos(Vector2(620.0f, 590.0f));
+		//newUI->SetSize(Vector2(500.0f, 100.0f));
+		logobutton3->ImageLoad(L"LogoButton3", L"..\\Resources\\Image\\LogoButton.bmp");
+
+		LogoButton4* logobutton4 = new LogoButton4(eUIType::LogoButton4);
+		mUIs.insert(std::make_pair(eUIType::LogoButton4, logobutton4));
+		logobutton4->SetPos(Vector2(620.0f, 650.0f));
+		//newUI->SetSize(Vector2(500.0f, 100.0f));
+		logobutton4->ImageLoad(L"LogoButton4", L"..\\Resources\\Image\\LogoButton.bmp");
+
+		LogoButton5* logobutton5 = new LogoButton5(eUIType::LogoButton5);
+		mUIs.insert(std::make_pair(eUIType::LogoButton5, logobutton5));
+		logobutton5->SetPos(Vector2(620.0f, 710.0f));
+		//newUI->SetSize(Vector2(500.0f, 100.0f));
+		logobutton5->ImageLoad(L"LogoButton5", L"..\\Resources\\Image\\LogoButton.bmp");
+
+		LogoButton6* logobutton6 = new LogoButton6(eUIType::LogoButton6);
+		mUIs.insert(std::make_pair(eUIType::LogoButton6, logobutton6));
+		logobutton6->SetPos(Vector2(620.0f, 770.0f));
+		//newUI->SetSize(Vector2(500.0f, 100.0f));
+		logobutton6->ImageLoad(L"LogoButton6", L"..\\Resources\\Image\\LogoButton.bmp");
+	}
+
+	void UIManager::PlayerSelectFull()
+	{
+		McIcon* mcicon = new McIcon(eUIType::McIcon);
+		mUIs.insert(std::make_pair(eUIType::McIcon, mcicon));
+		mcicon->SetPos(Vector2(30.0f, 170.0f));
+		mcicon->ImageLoad(L"mcicon", L"..\\Resources\\Image\\Object\\McIcon.bmp");
+
+		ToteIcon* toteicon = new ToteIcon(eUIType::ToteIcon);
+		mUIs.insert(std::make_pair(eUIType::ToteIcon, toteicon));
+		toteicon->SetPos(Vector2(30.0f, 300.0f));
+		toteicon->ImageLoad(L"toteicon", L"..\\Resources\\Image\\Object\\ToteIcon.bmp");
+
+		TitleDefault* titledefault = new TitleDefault(eUIType::TitleDefault);
+		mUIs.insert(std::make_pair(eUIType::TitleDefault, titledefault));
+		titledefault->ImageLoad(L"TitleDefault", L"..\\Resources\\Image\\Object\\TitleDefault.bmp");
+		titledefault->SetPos(Vector2(250.0f, 50.0f));
+		titledefault->AddChild(mcicon);
+		titledefault->AddChild(toteicon);
 	}
 
 	

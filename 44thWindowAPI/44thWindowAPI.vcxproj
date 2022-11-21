@@ -148,6 +148,7 @@
     <ClInclude Include="44thWindowAPI.h" />
     <ClInclude Include="chicken.h" />
     <ClInclude Include="Common.h" />
+    <ClInclude Include="Cr8Icon.h" />
     <ClInclude Include="def.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Logo.h" />
@@ -158,6 +159,10 @@
     <ClInclude Include="LogoButton5.h" />
     <ClInclude Include="LogoButton6.h" />
     <ClInclude Include="LogoPlayerObject.h" />
+    <ClInclude Include="McIcon.h" />
+    <ClInclude Include="SetchelIcon.h" />
+    <ClInclude Include="TitleDefault.h" />
+    <ClInclude Include="ToteIcon.h" />
     <ClInclude Include="yaAnimation.h" />
     <ClInclude Include="yaAniMator.h" />
     <ClInclude Include="yaBackPack.h" />
@@ -206,6 +211,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="chicken.cpp" />
+    <ClCompile Include="Cr8Icon.cpp" />
     <ClCompile Include="Logo.cpp" />
     <ClCompile Include="LogoButton1.cpp" />
     <ClCompile Include="LogoButton2.cpp" />
@@ -214,6 +220,10 @@
     <ClCompile Include="LogoButton5.cpp" />
     <ClCompile Include="LogoButton6.cpp" />
     <ClCompile Include="LogoPlayerObject.cpp" />
+    <ClCompile Include="McIcon.cpp" />
+    <ClCompile Include="SetchelIcon.cpp" />
+    <ClCompile Include="TitleDefault.cpp" />
+    <ClCompile Include="ToteIcon.cpp" />
     <ClCompile Include="yaButton.cpp" />
     <ClCompile Include="yaGround.cpp" />
     <ClCompile Include="yaHUD.cpp" />

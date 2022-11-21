@@ -65,6 +65,9 @@
     <Filter Include="Engine\GameObject\UI\LogoSceneUI">
       <UniqueIdentifier>{8e7c7dc1-4276-4a02-a850-92524de96b6c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\GameObject\UI\PlayerSelectUI">
+      <UniqueIdentifier>{9cc3603e-15e3-4209-a886-96280f7bf819}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="44thWindowAPI.h">
@@ -241,6 +244,21 @@
     <ClInclude Include="LogoButton6.h">
       <Filter>Engine\GameObject\UI\LogoSceneUI</Filter>
     </ClInclude>
+    <ClInclude Include="TitleDefault.h">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Cr8Icon.h">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
+    </ClInclude>
+    <ClInclude Include="McIcon.h">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
+    </ClInclude>
+    <ClInclude Include="SetchelIcon.h">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
+    </ClInclude>
+    <ClInclude Include="ToteIcon.h">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="44thWindowAPI.rc">
@@ -414,6 +432,21 @@
     </ClCompile>
     <ClCompile Include="LogoButton6.cpp">
       <Filter>Engine\GameObject\UI\LogoSceneUI</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleDefault.cpp">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Cr8Icon.cpp">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
+    </ClCompile>
+    <ClCompile Include="McIcon.cpp">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
+    </ClCompile>
+    <ClCompile Include="SetchelIcon.cpp">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
+    </ClCompile>
+    <ClCompile Include="ToteIcon.cpp">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
