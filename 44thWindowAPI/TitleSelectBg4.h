@@ -4,11 +4,11 @@
 
 namespace ya {
 
-	class MC_Info : public UIBase
+	class TitleSelectBg4 : public UIBase
 	{
 	public:
-		MC_Info(eUIType type);
-		~MC_Info();
+		TitleSelectBg4(eUIType type);
+		~TitleSelectBg4();
 
 		virtual void OnInit() override;
 		virtual void OnActive() override;
@@ -16,5 +16,11 @@ namespace ya {
 		virtual void OnTick() override;
 		virtual void OnRender(HDC hdc) override;
 		virtual void OnClear() override;
+
+		virtual void Click();
+	private:
+		Event mOnClick;
+		bool mbMouseOn;
+
 	};
 }

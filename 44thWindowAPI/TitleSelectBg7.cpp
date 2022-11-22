@@ -1,27 +1,25 @@
-#include "ToteIcon.h"
+#include "TitleSelectBg7.h"
 #include "yaImage.h"
 #include "yaInput.h"
-#include "yaUIManager.h"
 
 namespace ya {
-	ToteIcon::ToteIcon(eUIType type)
+	TitleSelectBg7::TitleSelectBg7(eUIType type)
 		:UIBase(type)
 	{
-		mOnClick = std::bind(&ToteIcon::Click, this);
 	}
-	ToteIcon::~ToteIcon()
+	TitleSelectBg7::~TitleSelectBg7()
 	{
 	}
-	void ToteIcon::OnInit()
+	void TitleSelectBg7::OnInit()
 	{
 	}
-	void ToteIcon::OnActive()
+	void TitleSelectBg7::OnActive()
 	{
 	}
-	void ToteIcon::OnInActive()
+	void TitleSelectBg7::OnInActive()
 	{
 	}
-	void ToteIcon::OnTick()
+	void TitleSelectBg7::OnTick()
 	{
 		Vector2 mousePos = Input::GetMousePos();
 		Vector2 size = GetSize();
@@ -41,23 +39,17 @@ namespace ya {
 			mOnClick();
 		}
 	}
-	void ToteIcon::OnRender(HDC hdc)
+	void TitleSelectBg7::OnRender(HDC hdc)
 	{
 		TransparentBlt(hdc, (int)mScreenPos.x, (int)mScreenPos.y,
-			mImage->GetWidth() * 0.8f, mImage->GetHeight() * 0.8f,
+			mImage->GetWidth(), mImage->GetHeight(),
 			mImage->GetDC(), 0, 0, mImage->GetWidth(), mImage->GetHeight()
 			, RGB(255, 255, 255));
 	}
-	void ToteIcon::OnClear()
+	void TitleSelectBg7::OnClear()
 	{
 	}
-	void ToteIcon::Click()
+	void TitleSelectBg7::Click()
 	{
-		UIManager::Pop(eUIType::Mc_Info);
-		//?????
-		//UIManager::Pop(eUIType::TitleDefault);
-
-		UIManager::Push(eUIType::Tote_Info);
-
 	}
 }

@@ -96,12 +96,11 @@
 		LogoButton5,
 		LogoButton6,
 
-
-
 		McIcon,
 		ToteIcon,
 		Cr8Icon,
 		SetchelIcon,
+
 		Mc_Info,
 		Tote_Info,
 		Cr8_Info,
@@ -109,6 +108,17 @@
 
 		TitleDefault,
 		TitleSelectBg,
+		TitleSelectBg2,
+		TitleSelectBg3,
+		TitleSelectBg4,
+
+		TitleSelectBg5,
+		TitleSelectBg6,
+
+		TitleSelectBg7,
+
+		TitleSelectBg8,
+
 		TitleSelectButton1,
 		TitleSelectButton2,
 

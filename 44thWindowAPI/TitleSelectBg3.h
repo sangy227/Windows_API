@@ -1,14 +1,13 @@
-
 #pragma once
 #include "yaUIBase.h"
 
 namespace ya {
 
-	class MC_Info : public UIBase
+	class TitleSelectBg3 : public UIBase
 	{
 	public:
-		MC_Info(eUIType type);
-		~MC_Info();
+		TitleSelectBg3(eUIType type);
+		~TitleSelectBg3();
 
 		virtual void OnInit() override;
 		virtual void OnActive() override;
@@ -16,5 +15,11 @@ namespace ya {
 		virtual void OnTick() override;
 		virtual void OnRender(HDC hdc) override;
 		virtual void OnClear() override;
+
+		virtual void Click();
+	private:
+		Event mOnClick;
+		bool mbMouseOn;
+
 	};
 }

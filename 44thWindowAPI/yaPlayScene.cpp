@@ -82,7 +82,7 @@ namespace ya {
 		CollisionManager::SetLayer(eColliderLayer::Monster, eColliderLayer::Player_Projecttile, true);
 		CollisionManager::SetLayer(eColliderLayer::Ground, eColliderLayer::Player, true);
 
-		UIManager::Push(eUIType::INVENTORY);
+		//UIManager::Push(eUIType::INVENTORY);
 
 		//HUD* hud = UIManager::GetUiInstant<HUD>(eUIType::MP);
 		//임시방편 실험용
@@ -97,7 +97,7 @@ namespace ya {
 		CollisionManager::SetLayer(eColliderLayer::Monster, eColliderLayer::Player_Projecttile, false);
 		CollisionManager::SetLayer(eColliderLayer::Ground, eColliderLayer::Player, false);
 
-		UIManager::Pop(eUIType::INVENTORY);
+		//UIManager::Pop(eUIType::INVENTORY);
 		
 	}
 }

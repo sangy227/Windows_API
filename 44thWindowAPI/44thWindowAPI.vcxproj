@@ -166,6 +166,13 @@
     <ClInclude Include="Setchel_Info.h" />
     <ClInclude Include="TitleDefault.h" />
     <ClInclude Include="TitleSelectBg.h" />
+    <ClInclude Include="TitleSelectBg2.h" />
+    <ClInclude Include="TitleSelectBg3.h" />
+    <ClInclude Include="TitleSelectBg4.h" />
+    <ClInclude Include="TitleSelectBg5.h" />
+    <ClInclude Include="TitleSelectBg6.h" />
+    <ClInclude Include="TitleSelectBg7.h" />
+    <ClInclude Include="TitleSelectBg8.h" />
     <ClInclude Include="TitleSelectButton1.h" />
     <ClInclude Include="TitleSelectButton2.h" />
     <ClInclude Include="ToteIcon.h" />
@@ -234,6 +241,13 @@
     <ClCompile Include="Setchel_Info.cpp" />
     <ClCompile Include="TitleDefault.cpp" />
     <ClCompile Include="TitleSelectBg.cpp" />
+    <ClCompile Include="TitleSelectBg2.cpp" />
+    <ClCompile Include="TitleSelectBg3.cpp" />
+    <ClCompile Include="TitleSelectBg4.cpp" />
+    <ClCompile Include="TitleSelectBg5.cpp" />
+    <ClCompile Include="TitleSelectBg6.cpp" />
+    <ClCompile Include="TitleSelectBg7.cpp" />
+    <ClCompile Include="TitleSelectBg8.cpp" />
     <ClCompile Include="TitleSelectButton1.cpp" />
     <ClCompile Include="TitleSelectButton2.cpp" />
     <ClCompile Include="ToteIcon.cpp" />

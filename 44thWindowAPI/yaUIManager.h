@@ -27,6 +27,10 @@ namespace ya {
 		static void LogoButtonFull();
 
 		static void PlayerSelectFull();
+		static void Mc_In();
+		static void Tote_In();
+		static void Cr8_In();
+		static void Setchel_In();
 
 
 	private:

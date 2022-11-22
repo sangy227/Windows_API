@@ -80,6 +80,21 @@
     <Filter Include="Engine\GameObject\UI\PlayerSelectUI\SetchelUI">
       <UniqueIdentifier>{a6507b37-f84b-45b4-b274-dbaeb7dc84af}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\GameObject\UI\PlayerSelectUI\Title">
+      <UniqueIdentifier>{418b725b-28d3-4151-ad52-d26fd1e9b435}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\GameObject\UI\PlayerSelectUI\McUI\SelectBg">
+      <UniqueIdentifier>{291910ce-f50e-4c44-9e3a-9ee8ea08f9ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\GameObject\UI\PlayerSelectUI\ToteUI\SelectBg">
+      <UniqueIdentifier>{527d875c-426f-4b17-9262-9a8034f0d61d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\GameObject\UI\PlayerSelectUI\SetchelUI\SelectBg">
+      <UniqueIdentifier>{b2fe0b3f-871d-4254-8248-425293c5ab4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\GameObject\UI\PlayerSelectUI\Cr8UI\SelectBg">
+      <UniqueIdentifier>{e42703aa-44af-4982-8660-af2256cdf16c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="44thWindowAPI.h">
@@ -256,18 +271,6 @@
     <ClInclude Include="LogoButton6.h">
       <Filter>Engine\GameObject\UI\LogoSceneUI</Filter>
     </ClInclude>
-    <ClInclude Include="TitleDefault.h">
-      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
-    </ClInclude>
-    <ClInclude Include="TitleSelectBg.h">
-      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
-    </ClInclude>
-    <ClInclude Include="TitleSelectButton1.h">
-      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
-    </ClInclude>
-    <ClInclude Include="TitleSelectButton2.h">
-      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
-    </ClInclude>
     <ClInclude Include="Cr8_Info.h">
       <Filter>Engine\GameObject\UI\PlayerSelectUI\Cr8UI</Filter>
     </ClInclude>
@@ -291,6 +294,39 @@
     </ClInclude>
     <ClInclude Include="ToteIcon.h">
       <Filter>Engine\GameObject\UI\PlayerSelectUI\ToteUI</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleDefault.h">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\Title</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleSelectButton1.h">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\Title</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleSelectButton2.h">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\Title</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleSelectBg.h">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\McUI\SelectBg</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleSelectBg2.h">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\McUI\SelectBg</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleSelectBg3.h">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\McUI\SelectBg</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleSelectBg4.h">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\McUI\SelectBg</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleSelectBg5.h">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\ToteUI\SelectBg</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleSelectBg6.h">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\ToteUI\SelectBg</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleSelectBg7.h">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\Cr8UI\SelectBg</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleSelectBg8.h">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\SetchelUI\SelectBg</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -466,18 +502,6 @@
     <ClCompile Include="LogoButton6.cpp">
       <Filter>Engine\GameObject\UI\LogoSceneUI</Filter>
     </ClCompile>
-    <ClCompile Include="TitleDefault.cpp">
-      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
-    </ClCompile>
-    <ClCompile Include="TitleSelectBg.cpp">
-      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
-    </ClCompile>
-    <ClCompile Include="TitleSelectButton1.cpp">
-      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
-    </ClCompile>
-    <ClCompile Include="TitleSelectButton2.cpp">
-      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
-    </ClCompile>
     <ClCompile Include="Cr8_Info.cpp">
       <Filter>Engine\GameObject\UI\PlayerSelectUI\Cr8UI</Filter>
     </ClCompile>
@@ -501,6 +525,39 @@
     </ClCompile>
     <ClCompile Include="ToteIcon.cpp">
       <Filter>Engine\GameObject\UI\PlayerSelectUI\ToteUI</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleDefault.cpp">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\Title</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleSelectButton1.cpp">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\Title</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleSelectButton2.cpp">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\Title</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleSelectBg.cpp">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\McUI\SelectBg</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleSelectBg2.cpp">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\McUI\SelectBg</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleSelectBg3.cpp">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\McUI\SelectBg</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleSelectBg4.cpp">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\McUI\SelectBg</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleSelectBg5.cpp">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\ToteUI\SelectBg</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleSelectBg6.cpp">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\ToteUI\SelectBg</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleSelectBg7.cpp">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\Cr8UI\SelectBg</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleSelectBg8.cpp">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\SetchelUI\SelectBg</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
