@@ -1,6 +1,8 @@
 #include "SetchelIcon.h"
 #include "yaImage.h"
 #include "yaInput.h"
+#include "yaUIManager.h"
+
 
 namespace ya {
 	SetchelIcon::SetchelIcon(eUIType type)
@@ -52,6 +54,6 @@ namespace ya {
 	}
 	void SetchelIcon::Click()
 	{
-
+		//UIManager::Push(eUIType::Setchel_Info);
 	}
 }

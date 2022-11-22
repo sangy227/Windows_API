@@ -1,6 +1,7 @@
 #include "Cr8Icon.h"
 #include "yaImage.h"
 #include "yaInput.h"
+#include "yaUIManager.h"
 
 namespace ya {
 	Cr8Icon::Cr8Icon(eUIType type)
@@ -52,6 +53,7 @@ namespace ya {
 	}
 	void Cr8Icon::Click()
 	{
+		//UIManager::Push(eUIType::Cr8_Info);
 
 	}
 }

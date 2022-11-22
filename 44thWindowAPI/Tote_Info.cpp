@@ -30,5 +30,6 @@ namespace ya {
 	}
 	void Tote_Info::OnClear()
 	{
+
 	}
 }
