@@ -68,6 +68,18 @@
     <Filter Include="Engine\GameObject\UI\PlayerSelectUI">
       <UniqueIdentifier>{9cc3603e-15e3-4209-a886-96280f7bf819}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\GameObject\UI\PlayerSelectUI\McUI">
+      <UniqueIdentifier>{d714902f-54e8-4da6-86d7-93b21375f73c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\GameObject\UI\PlayerSelectUI\ToteUI">
+      <UniqueIdentifier>{d1c8ee17-de95-473e-8018-263246e783e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\GameObject\UI\PlayerSelectUI\Cr8UI">
+      <UniqueIdentifier>{39338a6b-ba0e-43d2-9432-15e984557c42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\GameObject\UI\PlayerSelectUI\SetchelUI">
+      <UniqueIdentifier>{a6507b37-f84b-45b4-b274-dbaeb7dc84af}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="44thWindowAPI.h">
@@ -247,32 +259,38 @@
     <ClInclude Include="TitleDefault.h">
       <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
     </ClInclude>
-    <ClInclude Include="Cr8Icon.h">
+    <ClInclude Include="TitleSelectBg.h">
       <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
     </ClInclude>
-    <ClInclude Include="McIcon.h">
+    <ClInclude Include="TitleSelectButton1.h">
       <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
     </ClInclude>
-    <ClInclude Include="SetchelIcon.h">
-      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
-    </ClInclude>
-    <ClInclude Include="ToteIcon.h">
+    <ClInclude Include="TitleSelectButton2.h">
       <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
     </ClInclude>
     <ClInclude Include="Cr8_Info.h">
-      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\Cr8UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Cr8Icon.h">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\Cr8UI</Filter>
     </ClInclude>
     <ClInclude Include="MC_Info.h">
-      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\McUI</Filter>
+    </ClInclude>
+    <ClInclude Include="McIcon.h">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\McUI</Filter>
     </ClInclude>
     <ClInclude Include="Setchel_Info.h">
-      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\SetchelUI</Filter>
+    </ClInclude>
+    <ClInclude Include="SetchelIcon.h">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\SetchelUI</Filter>
     </ClInclude>
     <ClInclude Include="Tote_Info.h">
-      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\ToteUI</Filter>
     </ClInclude>
-    <ClInclude Include="TitleSelectBg.h">
-      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
+    <ClInclude Include="ToteIcon.h">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\ToteUI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -451,32 +469,38 @@
     <ClCompile Include="TitleDefault.cpp">
       <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
     </ClCompile>
-    <ClCompile Include="Cr8Icon.cpp">
+    <ClCompile Include="TitleSelectBg.cpp">
       <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
     </ClCompile>
-    <ClCompile Include="McIcon.cpp">
+    <ClCompile Include="TitleSelectButton1.cpp">
       <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
     </ClCompile>
-    <ClCompile Include="SetchelIcon.cpp">
-      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
-    </ClCompile>
-    <ClCompile Include="ToteIcon.cpp">
+    <ClCompile Include="TitleSelectButton2.cpp">
       <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
     </ClCompile>
     <ClCompile Include="Cr8_Info.cpp">
-      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\Cr8UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Cr8Icon.cpp">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\Cr8UI</Filter>
     </ClCompile>
     <ClCompile Include="MC_Info.cpp">
-      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\McUI</Filter>
+    </ClCompile>
+    <ClCompile Include="McIcon.cpp">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\McUI</Filter>
     </ClCompile>
     <ClCompile Include="Setchel_Info.cpp">
-      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\SetchelUI</Filter>
+    </ClCompile>
+    <ClCompile Include="SetchelIcon.cpp">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\SetchelUI</Filter>
     </ClCompile>
     <ClCompile Include="Tote_Info.cpp">
-      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\ToteUI</Filter>
     </ClCompile>
-    <ClCompile Include="TitleSelectBg.cpp">
-      <Filter>Engine\GameObject\UI\PlayerSelectUI</Filter>
+    <ClCompile Include="ToteIcon.cpp">
+      <Filter>Engine\GameObject\UI\PlayerSelectUI\ToteUI</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -98,6 +98,10 @@
 
 		TitleDefault,
 		TitleSelectBg,
+		TitleSelectButton1,
+		TitleSelectButton2,
+
+
 		McIcon,
 		ToteIcon,
 		Cr8Icon,

@@ -166,6 +166,8 @@
     <ClInclude Include="Setchel_Info.h" />
     <ClInclude Include="TitleDefault.h" />
     <ClInclude Include="TitleSelectBg.h" />
+    <ClInclude Include="TitleSelectButton1.h" />
+    <ClInclude Include="TitleSelectButton2.h" />
     <ClInclude Include="ToteIcon.h" />
     <ClInclude Include="Tote_Info.h" />
     <ClInclude Include="yaAnimation.h" />
@@ -232,6 +234,8 @@
     <ClCompile Include="Setchel_Info.cpp" />
     <ClCompile Include="TitleDefault.cpp" />
     <ClCompile Include="TitleSelectBg.cpp" />
+    <ClCompile Include="TitleSelectButton1.cpp" />
+    <ClCompile Include="TitleSelectButton2.cpp" />
     <ClCompile Include="ToteIcon.cpp" />
     <ClCompile Include="Tote_Info.cpp" />
     <ClCompile Include="yaButton.cpp" />

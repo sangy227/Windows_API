@@ -12,6 +12,9 @@
 
 #include "TitleDefault.h"
 #include "TitleSelectBg.h"
+#include "TitleSelectButton1.h"
+#include "TitleSelectButton2.h"
+
 #include "McIcon.h"
 #include "ToteIcon.h"
 #include "Cr8Icon.h"
@@ -258,6 +261,16 @@ namespace ya {
 		setchelicon->SetPos(Vector2(30.0f, 560.0f));
 		setchelicon->ImageLoad(L"setchelicon", L"..\\Resources\\Image\\Object\\SetchelIcon.bmp");
 
+		TitleSelectButton1* titleselectbutton1 = new TitleSelectButton1(eUIType::TitleSelectButton1);
+		mUIs.insert(std::make_pair(eUIType::TitleSelectButton1, titleselectbutton1));
+		titleselectbutton1->SetPos(Vector2(250.0f, 750.0f));
+		titleselectbutton1->ImageLoad(L"titleselectbutton1", L"..\\Resources\\Image\\Object\\TitleSelectButton1.bmp");
+
+		TitleSelectButton2* titleselectbutton2 = new TitleSelectButton2(eUIType::TitleSelectButton2);
+		mUIs.insert(std::make_pair(eUIType::TitleSelectButton2, titleselectbutton2));
+		titleselectbutton2->SetPos(Vector2(650.0f, 750.0f));
+		titleselectbutton2->ImageLoad(L"titleselectbutton2", L"..\\Resources\\Image\\Object\\TitleSelectButton2.bmp");
+
 
 		//
 		TitleDefault* titledefault = new TitleDefault(eUIType::TitleDefault);
@@ -269,6 +282,9 @@ namespace ya {
 		titledefault->AddChild(toteicon);
 		titledefault->AddChild(cr8icon);
 		titledefault->AddChild(setchelicon);
+
+		titledefault->AddChild(titleselectbutton1);
+		titledefault->AddChild(titleselectbutton2);
 		//°‚∆–≥Œ
 
 
