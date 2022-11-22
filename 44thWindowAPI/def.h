@@ -96,10 +96,6 @@
 		LogoButton5,
 		LogoButton6,
 
-		TitleDefault,
-		TitleSelectBg,
-		TitleSelectButton1,
-		TitleSelectButton2,
 
 
 		McIcon,
@@ -110,6 +106,11 @@
 		Tote_Info,
 		Cr8_Info,
 		Setchel_Info,
+
+		TitleDefault,
+		TitleSelectBg,
+		TitleSelectButton1,
+		TitleSelectButton2,
 
 		HP,
 		MP,

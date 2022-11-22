@@ -1,6 +1,8 @@
 #include "TitleSelectButton2.h"
 #include "yaImage.h"
 #include "yaInput.h"
+#include "yaUIManager.h"
+
 namespace ya {
 	TitleSelectButton2::TitleSelectButton2(eUIType type)
 		:UIBase(type)
@@ -51,5 +53,14 @@ namespace ya {
 	}
 	void TitleSelectButton2::Click()
 	{
+		UIManager::Pop(eUIType::Mc_Info);
+		UIManager::Pop(eUIType::TitleDefault);
+
+		UIManager::Push(eUIType::LogoButton1);
+		UIManager::Push(eUIType::LogoButton2);
+		UIManager::Push(eUIType::LogoButton3);
+		UIManager::Push(eUIType::LogoButton4);
+		UIManager::Push(eUIType::LogoButton5);
+		UIManager::Push(eUIType::LogoButton6);
 	}
 }

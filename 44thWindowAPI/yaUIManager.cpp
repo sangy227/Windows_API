@@ -291,12 +291,12 @@ namespace ya {
 
 
 
-		//
+		
 		TitleSelectBg* titleselectbg = new TitleSelectBg(eUIType::TitleSelectBg);
 		mUIs.insert(std::make_pair(eUIType::TitleSelectBg, titleselectbg));
 		titleselectbg->SetPos(Vector2(-20.0f, 420.0f));
 		titleselectbg->ImageLoad(L"titleselectbg", L"..\\Resources\\Image\\Object\\TitleSelectBg.bmp");
-
+		//
 		MC_Info* mc_info = new MC_Info(eUIType::Mc_Info);
 		mUIs.insert(std::make_pair(eUIType::Mc_Info, mc_info));
 		mc_info->SetPos(Vector2(470.0f, 170.0f));

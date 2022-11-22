@@ -1,6 +1,8 @@
 #include "TitleSelectButton1.h"
 #include "yaImage.h"
 #include "yaInput.h"
+#include "yaSceneManager.h"
+#include "yaUIManager.h"
 
 namespace ya {
 	TitleSelectButton1::TitleSelectButton1(eUIType type)
@@ -52,6 +54,12 @@ namespace ya {
 	}
 	void TitleSelectButton1::Click()
 	{
+
+		UIManager::Pop(eUIType::Mc_Info);
+		UIManager::Pop(eUIType::TitleDefault);
+
+
+		SceneManager::ChangeScene(eSceneType::PlayOne);
 
 	}
 }

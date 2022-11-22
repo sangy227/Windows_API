@@ -12,7 +12,7 @@
 #include <functional>
 #include <filesystem>
 #include <assert.h>
-
+#include <math.h>
 #include <set>	
 #include "def.h"
 #include "Maths.h"

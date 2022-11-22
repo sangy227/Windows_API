@@ -122,6 +122,8 @@ namespace ya
 		/*BackPack* backPack = new BackPack();
 		Scene* playScene = SceneManager::GetPlayScene();
 		playScene->AddGameObject(backPack, eColliderLayer::Player_Projecttile);*/
+
+		//추가
 	}
 
 
@@ -137,7 +139,7 @@ namespace ya
 
 		//키보드 입력
 		//Vector2 pos = GetPos();
-
+		
 
 
 
@@ -147,6 +149,8 @@ namespace ya
 		{
 			//pos.y -= 120.0f * Time::DeltaTime();
 			GetComponent<Rigidbody>()->AddForce(Vector2(0.0f, -200.0f));
+
+			//여기서 11/22일 꺼 코드 추가 실험 lerp
 		}
 		//if (KEY_PREESE(eKeyCode::S))
 		//{

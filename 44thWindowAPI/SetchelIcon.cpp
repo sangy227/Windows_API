@@ -52,5 +52,6 @@ namespace ya {
 	}
 	void SetchelIcon::Click()
 	{
+
 	}
 }

@@ -54,6 +54,5 @@ namespace ya {
 	void ToteIcon::Click()
 	{
 		UIManager::Pop(eUIType::Mc_Info);
-		
 	}
 }

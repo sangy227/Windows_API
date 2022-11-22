@@ -180,4 +180,19 @@ namespace ya::math
 	{
 		return v1.x * v2.y - v1.y * v2.x;
 	}
+
+    
+    float lerp(float p1, float p2, float t)
+    {
+        return (1 - t) * p1 + t * p2;
+    }
+
+    Vector2 lerp(Vector2 v1, Vector2 v2, float t)
+    {
+        Vector2 temp;
+        temp.x = lerp(v1.x, v2.x, t);
+        temp.y = lerp(v1.y, v2.y, t);
+
+        return temp;
+    }
 }

@@ -52,5 +52,6 @@ namespace ya {
 	}
 	void LogoButton5::Click()
 	{
+
 	}
 }
