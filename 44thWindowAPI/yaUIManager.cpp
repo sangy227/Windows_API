@@ -35,6 +35,15 @@
 #include "Tote_Info.h" 
 #include "Cr8_Info.h"
 #include "Setchel_Info.h"
+/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+#include "TopLayerDefault.h"
+#include "Stats_Icon.h"
+#include "Save_Icon.h"
+#include "Option_Icon.h"
+#include "Map_Icon.h"
+#include "Book_Icon.h"
+#include "Back_Icon.h"
+/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
 
 
 
@@ -61,6 +70,7 @@ namespace ya {
 		Cr8_In();
 		Setchel_In();
 
+		PlaySceneUI();
 
 		//Button* button = new Button(eUIType::HP);
 		//mUIs.insert(std::make_pair(eUIType::HP, button));
@@ -411,6 +421,53 @@ namespace ya {
 		setchel_info->ImageLoad(L"setchel_info", L"..\\Resources\\Image\\Object\\Setchel_Info.bmp");
 		setchel_info->AddChild(titleselectbg8);
 		//△패널
+	}
+
+	void UIManager::PlaySceneUI()
+	{
+		Stats_Icon* stats_icon = new Stats_Icon(eUIType::Stats_Icon);
+		mUIs.insert(std::make_pair(eUIType::Stats_Icon, stats_icon));
+		stats_icon->SetPos(Vector2(1170.0f, 0.0f));
+		stats_icon->ImageLoad(L"stats_icon", L"..\\Resources\\Image\\Object\\Stats_Icon.bmp");
+
+		Save_Icon* save_icon = new Save_Icon(eUIType::Save_Icon);
+		mUIs.insert(std::make_pair(eUIType::Save_Icon, save_icon));
+		save_icon->SetPos(Vector2(1293.0f, 0.0f));
+		save_icon->ImageLoad(L"save_icon", L"..\\Resources\\Image\\Object\\Save_Icon.bmp");
+
+		Option_Icon* option_icon = new Option_Icon(eUIType::Option_Icon);
+		mUIs.insert(std::make_pair(eUIType::Stats_Icon, option_icon));
+		option_icon->SetPos(Vector2(1468.0f, 0.0f));
+		option_icon->ImageLoad(L"option_icon", L"..\\Resources\\Image\\Object\\Option_Icon.bmp");
+
+		Book_Icon* book_icon = new Book_Icon(eUIType::Book_Icon);
+		mUIs.insert(std::make_pair(eUIType::Book_Icon, book_icon));
+		book_icon->SetPos(Vector2(1130.0f, 0.0f));
+		book_icon->ImageLoad(L"book_icon", L"..\\Resources\\Image\\Object\\Book_Icon.bmp");
+
+
+		//
+		TopLayerDefault* toplayerdefault = new TopLayerDefault(eUIType::TopLayerDefault);
+		mUIs.insert(std::make_pair(eUIType::TopLayerDefault, toplayerdefault));
+		toplayerdefault->SetPos(Vector2(0.0f, 0.0f));
+		toplayerdefault->ImageLoad(L"toplayerdefault", L"..\\Resources\\Image\\Object\\TopLayerDefault.bmp");
+		toplayerdefault->AddChild(stats_icon);
+		toplayerdefault->AddChild(save_icon);
+		toplayerdefault->AddChild(option_icon);
+		toplayerdefault->AddChild(book_icon);
+		//△패널
+
+		Map_Icon* map_icon = new Map_Icon(eUIType::Map_Icon);
+		mUIs.insert(std::make_pair(eUIType::Map_Icon, map_icon));
+		map_icon->SetPos(Vector2(1518.0f, 72.0f));
+		map_icon->ImageLoad(L"Map_Icon", L"..\\Resources\\Image\\Object\\Map_Icon.bmp");
+		//△패널 && 버튼
+		Back_Icon* back_icon = new Back_Icon(eUIType::Back_Icon);
+		mUIs.insert(std::make_pair(eUIType::Back_Icon, back_icon));
+		back_icon->SetPos(Vector2(1518.0f, 144.0f));
+		back_icon->ImageLoad(L"back_icon", L"..\\Resources\\Image\\Object\\Back_Icon.bmp");
+		//△패널 && 버튼
+
 	}
 
 	

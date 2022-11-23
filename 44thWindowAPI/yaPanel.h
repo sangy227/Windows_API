@@ -15,9 +15,6 @@ namespace ya {
 		virtual void OnTick() override;
 		virtual void OnRender(HDC hdc) override;
 		virtual void OnClear() override;
-
-		
-		
 	};
 }
 

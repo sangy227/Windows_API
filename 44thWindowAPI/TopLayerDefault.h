@@ -1,14 +1,14 @@
+
 #pragma once
 #include "yaUIBase.h"
 
 namespace ya {
 
-	class TitleSelectBg : public UIBase
+	class TopLayerDefault : public UIBase
 	{
 	public:
-	
-		TitleSelectBg(eUIType type);
-		~TitleSelectBg();
+		TopLayerDefault(eUIType type);
+		~TopLayerDefault();
 
 		virtual void OnInit() override;
 		virtual void OnActive() override;
@@ -16,15 +16,5 @@ namespace ya {
 		virtual void OnTick() override;
 		virtual void OnRender(HDC hdc) override;
 		virtual void OnClear() override;
-
-		virtual void Click();
-	private:
-		Event mOnClick;
-		bool mbMouseOn;
-
-		
-
-		//Animator anim;
-
 	};
 }

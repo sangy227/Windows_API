@@ -122,6 +122,18 @@
 		TitleSelectButton1,
 		TitleSelectButton2,
 
+		/*�ѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤ�*/
+
+		TopLayerDefault,
+		Book_Icon,
+		Stats_Icon,
+		Save_Icon,
+		Option_Icon,
+		Map_Icon,
+		Back_Icon,
+
+		/*�ѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤ�*/
+
 		HP,
 		MP,
 		SHOP,

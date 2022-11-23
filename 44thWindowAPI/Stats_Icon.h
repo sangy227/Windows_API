@@ -3,12 +3,11 @@
 
 namespace ya {
 
-	class TitleSelectBg : public UIBase
+	class Stats_Icon : public UIBase
 	{
 	public:
-	
-		TitleSelectBg(eUIType type);
-		~TitleSelectBg();
+		Stats_Icon(eUIType type);
+		~Stats_Icon();
 
 		virtual void OnInit() override;
 		virtual void OnActive() override;
@@ -21,10 +20,6 @@ namespace ya {
 	private:
 		Event mOnClick;
 		bool mbMouseOn;
-
-		
-
-		//Animator anim;
 
 	};
 }

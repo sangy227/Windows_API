@@ -2,6 +2,7 @@
 #include "yaEntity.h"
 
 namespace ya {
+	class AniMator;
 	class Image;
 	class UIBase : public Entity
 	{
@@ -57,9 +58,12 @@ namespace ya {
 	protected:
 		UIBase* mParent;
 		Image* mImage;
+		Image* mImage2;
 		Vector2 mPos;
 		Vector2 mSize;
 		Vector2 mScreenPos;
+
+		AniMator* mAniMator;
 		
 
 	private:

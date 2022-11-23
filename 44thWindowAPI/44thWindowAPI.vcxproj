@@ -146,6 +146,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="44thWindowAPI.h" />
+    <ClInclude Include="Back_Icon.h" />
+    <ClInclude Include="Book_Icon.h" />
     <ClInclude Include="chicken.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="Cr8Icon.h" />
@@ -160,10 +162,14 @@
     <ClInclude Include="LogoButton5.h" />
     <ClInclude Include="LogoButton6.h" />
     <ClInclude Include="LogoPlayerObject.h" />
+    <ClInclude Include="Map_Icon.h" />
     <ClInclude Include="McIcon.h" />
     <ClInclude Include="MC_Info.h" />
+    <ClInclude Include="Option_Icon.h" />
+    <ClInclude Include="Save_Icon.h" />
     <ClInclude Include="SetchelIcon.h" />
     <ClInclude Include="Setchel_Info.h" />
+    <ClInclude Include="Stats_Icon.h" />
     <ClInclude Include="TitleDefault.h" />
     <ClInclude Include="TitleSelectBg.h" />
     <ClInclude Include="TitleSelectBg2.h" />
@@ -175,6 +181,7 @@
     <ClInclude Include="TitleSelectBg8.h" />
     <ClInclude Include="TitleSelectButton1.h" />
     <ClInclude Include="TitleSelectButton2.h" />
+    <ClInclude Include="TopLayerDefault.h" />
     <ClInclude Include="ToteIcon.h" />
     <ClInclude Include="Tote_Info.h" />
     <ClInclude Include="yaAnimation.h" />
@@ -224,6 +231,8 @@
     <ClInclude Include="yaUIManager.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Back_Icon.cpp" />
+    <ClCompile Include="Book_Icon.cpp" />
     <ClCompile Include="chicken.cpp" />
     <ClCompile Include="Cr8Icon.cpp" />
     <ClCompile Include="Cr8_Info.cpp" />
@@ -235,10 +244,14 @@
     <ClCompile Include="LogoButton5.cpp" />
     <ClCompile Include="LogoButton6.cpp" />
     <ClCompile Include="LogoPlayerObject.cpp" />
+    <ClCompile Include="Map_Icon.cpp" />
     <ClCompile Include="McIcon.cpp" />
     <ClCompile Include="MC_Info.cpp" />
+    <ClCompile Include="Option_Icon.cpp" />
+    <ClCompile Include="Save_Icon.cpp" />
     <ClCompile Include="SetchelIcon.cpp" />
     <ClCompile Include="Setchel_Info.cpp" />
+    <ClCompile Include="Stats_Icon.cpp" />
     <ClCompile Include="TitleDefault.cpp" />
     <ClCompile Include="TitleSelectBg.cpp" />
     <ClCompile Include="TitleSelectBg2.cpp" />
@@ -250,6 +263,7 @@
     <ClCompile Include="TitleSelectBg8.cpp" />
     <ClCompile Include="TitleSelectButton1.cpp" />
     <ClCompile Include="TitleSelectButton2.cpp" />
+    <ClCompile Include="TopLayerDefault.cpp" />
     <ClCompile Include="ToteIcon.cpp" />
     <ClCompile Include="Tote_Info.cpp" />
     <ClCompile Include="yaButton.cpp" />

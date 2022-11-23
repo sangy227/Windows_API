@@ -71,13 +71,17 @@ namespace ya {
 	{
 		Scene::Render(hdc);
 
-		wchar_t szFloat[50] = {};
+		/*wchar_t szFloat[50] = {};
 		swprintf_s(szFloat, 50, L"Play Scene");
 		int strLen = wcsnlen_s(szFloat, 50);
-		TextOut(hdc, 10, 30, szFloat, strLen);
+		TextOut(hdc, 10, 30, szFloat, strLen);*/
 	}
 	void PlayScene::Enter()
 	{
+		UIManager::Push(eUIType::TopLayerDefault);
+		UIManager::Push(eUIType::Map_Icon);
+		UIManager::Push(eUIType::Back_Icon);
+
 		CollisionManager::SetLayer(eColliderLayer::Player, eColliderLayer::Monster, true);
 		CollisionManager::SetLayer(eColliderLayer::Monster, eColliderLayer::Player_Projecttile, true);
 		CollisionManager::SetLayer(eColliderLayer::Ground, eColliderLayer::Player, true);

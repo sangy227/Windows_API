@@ -1,14 +1,14 @@
+
 #pragma once
 #include "yaUIBase.h"
 
 namespace ya {
 
-	class TitleSelectBg : public UIBase
+	class Map_Icon : public UIBase
 	{
 	public:
-	
-		TitleSelectBg(eUIType type);
-		~TitleSelectBg();
+		Map_Icon(eUIType type);
+		~Map_Icon();
 
 		virtual void OnInit() override;
 		virtual void OnActive() override;
@@ -21,10 +21,6 @@ namespace ya {
 	private:
 		Event mOnClick;
 		bool mbMouseOn;
-
-		
-
-		//Animator anim;
 
 	};
 }

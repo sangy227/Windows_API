@@ -70,6 +70,9 @@ namespace ya {
 
 		void DeathLoop();
 
+	protected:
+
+
 	private:
 		std::vector<Component*> mComponents;
 		Vector2 mPos;

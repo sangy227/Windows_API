@@ -32,6 +32,8 @@ namespace ya {
 		static void Cr8_In();
 		static void Setchel_In();
 
+		static void PlaySceneUI();
+
 
 	private:
 		static std::unordered_map <eUIType, UIBase*> mUIs;
