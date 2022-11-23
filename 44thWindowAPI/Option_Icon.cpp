@@ -1,6 +1,8 @@
 #include "Option_Icon.h"
 #include "yaInput.h"
 #include "yaImage.h"
+#include "yaSceneManager.h"
+#include "yaUIManager.h"
 
 namespace ya {
 	Option_Icon::Option_Icon(eUIType type)
@@ -52,5 +54,18 @@ namespace ya {
 	}
 	void Option_Icon::Click()
 	{
+		UIManager::Pop(eUIType::TopLayerDefault);
+		UIManager::Pop(eUIType::Map_Icon);
+		UIManager::Pop(eUIType::Back_Icon);
+
+
+		UIManager::Push(eUIType::LogoButton1);
+		UIManager::Push(eUIType::LogoButton2);
+		UIManager::Push(eUIType::LogoButton3);
+		UIManager::Push(eUIType::LogoButton4);
+		UIManager::Push(eUIType::LogoButton5);
+		UIManager::Push(eUIType::LogoButton6);
+
+		SceneManager::ChangeScene(eSceneType::Logo);
 	}
 }
