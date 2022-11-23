@@ -114,14 +114,25 @@ namespace ya {
 	void UIManager::Render(HDC hdc)
 	{
 		std::stack<UIBase*> uiBases = mUIBases;
+		std::stack<UIBase*> tempStack;
+		
+		//뒤집어서 렌더링을 해준다
 		while (!uiBases.empty())
 		{
 			UIBase* uiBase = uiBases.top();
+			tempStack.push(uiBase);
+			uiBases.pop();
+		}
+
+		while (!tempStack.empty())
+		{
+			UIBase* uiBase = tempStack.top();
+			//tempStack.push(uiBase);
 			if (uiBase != nullptr)
 			{
 				uiBase->Render(hdc);
 			}
-			uiBases.pop();
+			tempStack.pop();
 		}
 	}
 
@@ -186,6 +197,7 @@ namespace ya {
 		{
 			uiBase = mUIBases.top();
 			mUIBases.pop();
+			
 			// pop하는 ui가 전체화면 일경우에,
 			// 남은 ui중에 전체화면인 가장 상단의 ui 를 활성화 해주어야한다.
 			if (uiBase->GetType() == type)
@@ -206,6 +218,7 @@ namespace ya {
 					}
 				}
 
+				uiBase->InActive();
 				uiBase->UIClear();
 			}
 			else

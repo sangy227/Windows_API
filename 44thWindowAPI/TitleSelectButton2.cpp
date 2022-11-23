@@ -54,6 +54,10 @@ namespace ya {
 	void TitleSelectButton2::Click()
 	{
 		UIManager::Pop(eUIType::Mc_Info);
+		UIManager::Pop(eUIType::Tote_Info);
+		UIManager::Pop(eUIType::Cr8_Info);
+		UIManager::Pop(eUIType::Setchel_Info);
+
 		UIManager::Pop(eUIType::TitleDefault);
 
 		UIManager::Push(eUIType::LogoButton1);

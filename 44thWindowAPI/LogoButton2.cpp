@@ -61,7 +61,7 @@ namespace ya {
 		UIManager::Pop(eUIType::LogoButton5);
 		UIManager::Pop(eUIType::LogoButton6);
 
-		UIManager::Push(eUIType::Mc_Info);
 		UIManager::Push(eUIType::TitleDefault);
+		UIManager::Push(eUIType::Mc_Info);
 	}
 }

@@ -88,8 +88,8 @@ namespace ya {
 	{
 		for (UIBase* child : mChilds)
 		{
-			if (child->mbEnable)
-				child->OnClear();
+			//if (child->mbEnable)
+			child->OnClear();
 		}
 		OnClear();
 	}

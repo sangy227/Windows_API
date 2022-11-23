@@ -54,6 +54,11 @@ namespace ya {
 	}
 	void SetchelIcon::Click()
 	{
+		UIManager::Pop(eUIType::Mc_Info);
+		UIManager::Pop(eUIType::Cr8_Info);
+		UIManager::Pop(eUIType::Tote_Info);
+
+		UIManager::Push(eUIType::Setchel_Info);
 		//UIManager::Push(eUIType::Setchel_Info);
 	}
 }

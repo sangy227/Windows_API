@@ -53,7 +53,11 @@ namespace ya {
 	}
 	void McIcon::Click()
 	{
-		UIManager::Push(eUIType::Mc_Info);
+		UIManager::Pop(eUIType::Tote_Info);
+		UIManager::Pop(eUIType::Cr8_Info);
+		UIManager::Pop(eUIType::Setchel_Info);
+
 		//UIManager::Push(eUIType::TitleDefault);
+		UIManager::Push(eUIType::Mc_Info);
 	}
 }

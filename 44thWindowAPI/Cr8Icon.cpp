@@ -54,6 +54,12 @@ namespace ya {
 	void Cr8Icon::Click()
 	{
 		//UIManager::Push(eUIType::Cr8_Info);
+		UIManager::Pop(eUIType::Tote_Info);
+		UIManager::Pop(eUIType::Mc_Info);
+		UIManager::Pop(eUIType::Setchel_Info);
+
+		//UIManager::Push(eUIType::TitleDefault);
+		UIManager::Push(eUIType::Cr8_Info);
 
 	}
 }

@@ -53,11 +53,15 @@ namespace ya {
 	}
 	void ToteIcon::Click()
 	{
+
 		UIManager::Pop(eUIType::Mc_Info);
+		UIManager::Pop(eUIType::Cr8_Info);
+		UIManager::Pop(eUIType::Setchel_Info);
+
+		UIManager::Push(eUIType::Tote_Info);
 		//?????
 		//UIManager::Pop(eUIType::TitleDefault);
 
-		UIManager::Push(eUIType::Tote_Info);
 
 	}
 }
