@@ -41,7 +41,7 @@ namespace ya {
 		{
 			mPlayAnimaion->Tick();
 
-			if (mbLoop && mPlayAnimaion->isComplete())
+			if (/*mbLoop &&*/ mPlayAnimaion->isComplete())
 			{
 				AniMator::Events* events = FindEvents(mPlayAnimaion->GetName());
 				if (events != nullptr)

@@ -7,6 +7,14 @@ namespace ya {
 	class Player : public GameObject
 	{
 	public:
+		enum class eState
+		{
+			Attack,
+			Bow,
+			Death,
+		};
+
+
 		Player();
 		~Player();
 
@@ -21,7 +29,10 @@ namespace ya {
 
 		void SetHp(int hp) { mHp = hp; }
 		int GetHp() { return mHp; }
+
+		void Attack(); // 쿠키런 할때 볼수잇는것
 	private:
+		eState mState;
 		float mCoff;
 		float mSpeed;
 

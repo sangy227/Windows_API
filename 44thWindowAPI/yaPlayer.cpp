@@ -21,6 +21,7 @@ namespace ya
 		, mTime(0.0f)
 		, mMisiileDir(Vector2::Zero)
 		, mHp(100)
+		, mState(eState::Attack)
 	{
 		SetName(L"Player");
 		SetPos({ 520.0f, 770.0f });
@@ -140,7 +141,27 @@ namespace ya
 		//키보드 입력
 		//Vector2 pos = GetPos();
 		
+		//fsm 쿠키런
+		switch (mState)
+		{
+		case ya::Player::eState::Attack:
+		{
 
+		}
+			break;
+		case ya::Player::eState::Bow:
+		{
+
+		}
+			break;
+		case ya::Player::eState::Death:
+		{
+
+		}
+			break;
+		default:
+			break;
+		}
 
 
 

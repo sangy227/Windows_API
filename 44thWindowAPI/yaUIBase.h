@@ -2,6 +2,7 @@
 #include "yaEntity.h"
 
 namespace ya {
+	class GameObject;
 	class AniMator;
 	class Image;
 	class UIBase : public Entity
@@ -64,7 +65,7 @@ namespace ya {
 		Vector2 mScreenPos;
 
 		AniMator* mAniMator;
-		
+		GameObject* mRectObject;
 
 	private:
 		virtual void OnInit() {};

@@ -71,6 +71,8 @@ namespace ya {
 		}
 
 		mDistance = mLookPosition - (mResolution / 2.0f);
+
+		//º¯°æ..?
 	}
 	void Camera::Render(HDC hdc)
 	{

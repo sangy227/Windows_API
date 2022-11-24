@@ -17,6 +17,8 @@ namespace ya {
     void Ground::Tick()
     {
         GameObject::Tick();
+
+        //그라운드도 오른쪽으로 움직일려면 여기에다 추가
     }
     void Ground::Render(HDC hdc)
     {
@@ -26,6 +28,8 @@ namespace ya {
     {
         Player* playerObj = dynamic_cast<Player*>(other->GetOwner());
         playerObj->GetComponent<Rigidbody>()->SetGround(true);
+        //playerObj->SetState(Player::eState::Attack);
+
 
         int hp = playerObj->GetHp();
         hp -= 10;
@@ -36,7 +40,6 @@ namespace ya {
 
         if (fLen < fScale)
         {
-          
             Vector2 playerPos = playerObj->GetPos();
             //playerPos.y -= (fScale - fLen) - 1.0f;
             playerPos.y = 770.0f;

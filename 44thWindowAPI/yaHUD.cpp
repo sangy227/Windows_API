@@ -2,11 +2,24 @@
 #include "yaImage.h"
 #include "yaHUD.h"
 #include "yaPlayer.h"
+#include "yaAniMator.h"
+#include "yaResources.h"
 
 namespace ya {
 	HUD::HUD(eUIType type)
 		:UIBase(type)
 	{
+		/*mAniMator = new AniMator();
+
+		mImage2 = Resources::Load<Image>(L"Icon", L"..\\Resources\\Image\\Player1.bmp");
+
+
+		mAniMator->CreateAnimation(L"Icon", mImage2
+			, Vector2(0.0f, 0.0f), Vector2(48.0f, 48.0f)
+			, Vector2(-24.0f, -48.0f), 4, 0.2f);
+
+		mAniMator->Play(L"Icon", true);
+		mAniMator->SetOwnder(mRectObject);*/
 	}
 	HUD::~HUD()
 	{

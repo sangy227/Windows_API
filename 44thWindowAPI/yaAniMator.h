@@ -54,6 +54,7 @@ namespace ya {
 		std::function<void()>& GetCompleteEvent(const std::wstring key);
 		std::function<void()>& GetEndEvent(const std::wstring key);
 		
+		void SetRect(GameObject* rect) { SetOwnder(rect); }
 		
 	public:
 		Event mStartEvent;

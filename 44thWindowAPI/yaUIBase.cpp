@@ -1,6 +1,8 @@
 #include "yaUIBase.h"
 #include "yaResources.h"
 #include "yaImage.h"
+#include "yaAniMator.h"
+#include "yaGameObject.h"
 
 namespace ya {
 	UIBase::UIBase(eUIType type)
@@ -10,8 +12,10 @@ namespace ya {
 		, mParent(nullptr)
 		, mPos(Vector2::Zero)
 		, mSize(Vector2::Zero)
+		, mAniMator(nullptr)
+		, mRectObject(nullptr)
 	{
-
+		mRectObject = new GameObject();
 	}
 	UIBase::~UIBase()
 	{
@@ -34,7 +38,7 @@ namespace ya {
 		for (UIBase* child : mChilds)
 		{
 			child->mbEnable = true;
-			child->OnActive();
+			child->Active();
 		}
 	}
 	void UIBase::InActive()
@@ -43,7 +47,7 @@ namespace ya {
 
 		for (UIBase* child : mChilds)
 		{
-			child->OnInActive();
+			child->InActive();
 			child->mbEnable = false;
 		}
 		OnInActive();
@@ -54,12 +58,18 @@ namespace ya {
 		if (mbEnable == false)
 			return;
 
+		/*mRectObject->SetPos(GetPos());
+		mRectObject->SetScale(GetSize());
+
+		if (mAniMator)
+			mAniMator->Tick();*/
 		OnTick();
 
 		if (mParent)
 			mScreenPos = mParent->GetPos() + mPos;
 		else
 			mScreenPos = mPos;
+
 
 		for (UIBase* child : mChilds)
 		{
@@ -73,14 +83,17 @@ namespace ya {
 	{
 		if (mbEnable == false)
 			return;
-	
+
+		/*if (mAniMator)
+			mAniMator->Render(hdc);
+		*/
 		OnRender(hdc);
 
 		for (UIBase* child : mChilds)
 		{
 			if (child->mbEnable)
 			{
-				child->OnRender(hdc);
+				child->Render(hdc);
 			}
 		}
 	}
