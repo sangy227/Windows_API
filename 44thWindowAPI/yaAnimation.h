@@ -50,6 +50,9 @@ namespace ya {
 		bool mbComplete;
 		bool mEnd;
 		bool mAffectedCamera;
+
+		float mAlphaValue;
+		bool mbBlink;
 	};
 }
 

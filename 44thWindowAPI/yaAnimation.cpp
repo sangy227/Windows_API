@@ -7,6 +7,8 @@
 
 namespace ya {
 	Animation::Animation()
+		:mAlphaValue(255.0f)
+		, mbBlink(false)
 	{
 	}
 	Animation::~Animation()
@@ -17,6 +19,25 @@ namespace ya {
 	{
 		if (mbComplete)
 			return;
+
+		if (mbBlink)
+		{
+			const float blinkSpeed = 1000.0f;
+			
+
+			if (mAlphaValue <= 0.0f)
+			{
+				mAlphaValue += (blinkSpeed * Time::DeltaTime());
+			}
+			else
+			{
+				mAlphaValue -= (blinkSpeed * Time::DeltaTime());
+			}
+		}
+		else
+		{
+			mAlphaValue = 255.0f;
+		}
 
 		mTime += Time::DeltaTime();
 		if (mSpriteSheet[mSpriteIndex].duration < mTime)
@@ -41,7 +62,7 @@ namespace ya {
 		func.BlendOp = AC_SRC_OVER;
 		func.BlendFlags = 0;
 		func.AlphaFormat = AC_SRC_ALPHA;
-		func.SourceConstantAlpha = 255; // 0 - 225
+		func.SourceConstantAlpha = mAlphaValue; // 0 - 225
 
 
 		pos += mSpriteSheet[mSpriteIndex].offset;
