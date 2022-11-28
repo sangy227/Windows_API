@@ -1,14 +1,15 @@
+
 #pragma once
 #include "yaGameObject.h"
 
 namespace ya {
 	class AniMator;
 	class Image;
-	class UIGameObject : public GameObject
+	class TitleSelectPlayer2 : public GameObject
 	{
 	public:
-		UIGameObject();
-		~UIGameObject();
+		TitleSelectPlayer2();
+		~TitleSelectPlayer2();
 
 		virtual void Tick() override;
 		virtual void Render(HDC hdc) override;
@@ -17,4 +18,3 @@ namespace ya {
 		Image* mImages[20];
 	};
 }
-

@@ -4,11 +4,11 @@
 namespace ya {
 	class AniMator;
 	class Image;
-	class UIGameObject : public GameObject
+	class TitleSelectPlayer3 : public GameObject
 	{
 	public:
-		UIGameObject();
-		~UIGameObject();
+		TitleSelectPlayer3();
+		~TitleSelectPlayer3();
 
 		virtual void Tick() override;
 		virtual void Render(HDC hdc) override;
@@ -17,4 +17,3 @@ namespace ya {
 		Image* mImages[20];
 	};
 }
-

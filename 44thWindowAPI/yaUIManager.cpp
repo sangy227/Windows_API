@@ -14,16 +14,24 @@
 
 #include "TitleDefault.h"
 #include "TitleSelectBg.h"
+#include "TitleSelectPlayer.h"
 #include "TitleSelectBg2.h"
+#include "TitleSelectPlayer2.h"
 #include "TitleSelectBg3.h"
+#include "TitleSelectPlayer3.h"
 #include "TitleSelectBg4.h"
+#include "TitleSelectPlayer4.h"
 
 #include "TitleSelectBg5.h"
+#include "TitleSelectPlayer5.h"
 #include "TitleSelectBg6.h"
+#include "TitleSelectPlayer6.h"
 
 #include "TitleSelectBg7.h"
+//#include "TitleSelectPlayer7.h"
 
 #include "TitleSelectBg8.h"
+//#include "TitleSelectPlayer8.h"
 
 #include "TitleSelectButton1.h"
 #include "TitleSelectButton2.h"
@@ -339,29 +347,38 @@ namespace ya {
 
 	void UIManager::Mc_In()
 	{
-		UIGameObject* player = new UIGameObject();
+		TitleSelectPlayer* titleselectplayer = new TitleSelectPlayer();
+		TitleSelectPlayer2* titleselectplayer2 = new TitleSelectPlayer2();
+		TitleSelectPlayer3* titleselectplayer3 = new TitleSelectPlayer3();
+		TitleSelectPlayer4* titleselectplayer4 = new TitleSelectPlayer4();
 
 
 		TitleSelectBg* titleselectbg = new TitleSelectBg(eUIType::TitleSelectBg);
 		mUIs.insert(std::make_pair(eUIType::TitleSelectBg, titleselectbg));
 		titleselectbg->SetPos(Vector2(-20.0f, 420.0f));
 		titleselectbg->ImageLoad(L"titleselectbg", L"..\\Resources\\Image\\Object\\TitleSelectBg.bmp");
-		titleselectbg->AddGameObject(player); // 이거일꺼같은데?
+		titleselectbg->AddGameObject(titleselectplayer); 
 
 		TitleSelectBg2* titleselectbg2 = new TitleSelectBg2(eUIType::TitleSelectBg2);
 		mUIs.insert(std::make_pair(eUIType::TitleSelectBg2, titleselectbg2));
 		titleselectbg2->SetPos(Vector2(180.0f, 420.0f));
 		titleselectbg2->ImageLoad(L"titleselectbg2", L"..\\Resources\\Image\\Object\\TitleSelectBg.bmp");
+		titleselectbg2->AddGameObject(titleselectplayer2);
 
 		TitleSelectBg3* titleselectbg3 = new TitleSelectBg3(eUIType::TitleSelectBg3);
 		mUIs.insert(std::make_pair(eUIType::TitleSelectBg3, titleselectbg3));
 		titleselectbg3->SetPos(Vector2(380.0f, 420.0f));
 		titleselectbg3->ImageLoad(L"titleselectbg3", L"..\\Resources\\Image\\Object\\TitleSelectBg.bmp");
+		titleselectbg3->AddGameObject(titleselectplayer3);
+
 
 		TitleSelectBg4* titleselectbg4 = new TitleSelectBg4(eUIType::TitleSelectBg4);
 		mUIs.insert(std::make_pair(eUIType::TitleSelectBg4, titleselectbg4));
 		titleselectbg4->SetPos(Vector2(580.0f, 420.0f));
 		titleselectbg4->ImageLoad(L"titleselectbg4", L"..\\Resources\\Image\\Object\\TitleSelectBg.bmp");
+		titleselectbg4->AddGameObject(titleselectplayer4);
+
+
 		//
 		MC_Info* mc_info = new MC_Info(eUIType::Mc_Info);
 		mUIs.insert(std::make_pair(eUIType::Mc_Info, mc_info));
@@ -383,21 +400,27 @@ namespace ya {
 
 	void UIManager::Tote_In()
 	{
+		TitleSelectPlayer5* titleselectplayer5 = new TitleSelectPlayer5();
+		TitleSelectPlayer6* titleselectplayer6 = new TitleSelectPlayer6();
+
 
 		TitleSelectBg5* titleselectbg5 = new TitleSelectBg5(eUIType::TitleSelectBg5);
 		mUIs.insert(std::make_pair(eUIType::TitleSelectBg5, titleselectbg5));
-		titleselectbg5->SetPos(Vector2(150.0f, 390.0f));
+		titleselectbg5->SetPos(Vector2(170.0f, 410.0f));
 		titleselectbg5->ImageLoad(L"titleselectbg5", L"..\\Resources\\Image\\Object\\TitleSelectBg.bmp");
+		titleselectbg5->AddGameObject(titleselectplayer5);
+
 
 		TitleSelectBg6* titleselectbg6 = new TitleSelectBg6(eUIType::TitleSelectBg6);
 		mUIs.insert(std::make_pair(eUIType::TitleSelectBg6, titleselectbg6));
-		titleselectbg6->SetPos(Vector2(350.0f, 390.0f));
+		titleselectbg6->SetPos(Vector2(370.0f, 410.0f));
 		titleselectbg6->ImageLoad(L"titleselectbg6", L"..\\Resources\\Image\\Object\\TitleSelectBg.bmp");
+		titleselectbg6->AddGameObject(titleselectplayer6);
 
 		//
 		Tote_Info* tote_info = new Tote_Info(eUIType::Tote_Info);
 		mUIs.insert(std::make_pair(eUIType::Tote_Info, tote_info));
-		tote_info->SetPos(Vector2(500.0f, 200.0f));
+		tote_info->SetPos(Vector2(480.0f, 180.0f));
 		tote_info->ImageLoad(L"tote_info", L"..\\Resources\\Image\\Object\\Tote_Info.bmp");
 		tote_info->AddChild(titleselectbg5);
 		tote_info->AddChild(titleselectbg6);
@@ -408,14 +431,14 @@ namespace ya {
 	{
 		TitleSelectBg7* titleselectbg7 = new TitleSelectBg7(eUIType::TitleSelectBg7);
 		mUIs.insert(std::make_pair(eUIType::TitleSelectBg7, titleselectbg7));
-		titleselectbg7->SetPos(Vector2(250.0f, 380.0f));
+		titleselectbg7->SetPos(Vector2(270.0f, 410.0f));
 		titleselectbg7->ImageLoad(L"titleselectbg7", L"..\\Resources\\Image\\Object\\TitleSelectBg.bmp");
 
 
 		//
 		Cr8_Info* cr8_info = new Cr8_Info(eUIType::Cr8_Info);
 		mUIs.insert(std::make_pair(eUIType::Cr8_Info, cr8_info));
-		cr8_info->SetPos(Vector2(500.0f, 200.0f));
+		cr8_info->SetPos(Vector2(480.0f, 180.0f));
 		cr8_info->ImageLoad(L"cr8_info", L"..\\Resources\\Image\\Object\\Cr8_Info.bmp");
 		cr8_info->AddChild(titleselectbg7);
 		//△패널
@@ -425,13 +448,13 @@ namespace ya {
 	{
 		TitleSelectBg8* titleselectbg8 = new TitleSelectBg8(eUIType::TitleSelectBg8);
 		mUIs.insert(std::make_pair(eUIType::TitleSelectBg8, titleselectbg8));
-		titleselectbg8->SetPos(Vector2(250.0f, 380.0f));
+		titleselectbg8->SetPos(Vector2(270.0f, 410.0f));
 		titleselectbg8->ImageLoad(L"titleselectbg8", L"..\\Resources\\Image\\Object\\TitleSelectBg.bmp");
 
 		//
 		Setchel_Info* setchel_info = new Setchel_Info(eUIType::Setchel_Info);
 		mUIs.insert(std::make_pair(eUIType::Setchel_Info, setchel_info));
-		setchel_info->SetPos(Vector2(500.0f, 200.0f));
+		setchel_info->SetPos(Vector2(480.0f, 180.0f));
 		setchel_info->ImageLoad(L"setchel_info", L"..\\Resources\\Image\\Object\\Setchel_Info.bmp");
 		setchel_info->AddChild(titleselectbg8);
 		//△패널

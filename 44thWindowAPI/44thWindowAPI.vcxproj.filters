@@ -355,6 +355,24 @@
     <ClInclude Include="yaUIGameObject.h">
       <Filter>Engine\GameObject\UI</Filter>
     </ClInclude>
+    <ClInclude Include="TitleSelectPlayer.h">
+      <Filter>Engine\GameObject\UI\LogoSceneUI\PlayerSelectUI\McUI\SelectBg</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleSelectPlayer2.h">
+      <Filter>Engine\GameObject\UI\LogoSceneUI\PlayerSelectUI\McUI\SelectBg</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleSelectPlayer3.h">
+      <Filter>Engine\GameObject\UI\LogoSceneUI\PlayerSelectUI\McUI\SelectBg</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleSelectPlayer4.h">
+      <Filter>Engine\GameObject\UI\LogoSceneUI\PlayerSelectUI\McUI\SelectBg</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleSelectPlayer5.h">
+      <Filter>Engine\GameObject\UI\LogoSceneUI\PlayerSelectUI\ToteUI\SelectBg</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleSelectPlayer6.h">
+      <Filter>Engine\GameObject\UI\LogoSceneUI\PlayerSelectUI\ToteUI\SelectBg</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="44thWindowAPI.rc">
@@ -609,6 +627,24 @@
     </ClCompile>
     <ClCompile Include="yaUIGameObject.cpp">
       <Filter>Engine\GameObject\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleSelectPlayer.cpp">
+      <Filter>Engine\GameObject\UI\LogoSceneUI\PlayerSelectUI\McUI\SelectBg</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleSelectPlayer2.cpp">
+      <Filter>Engine\GameObject\UI\LogoSceneUI\PlayerSelectUI\McUI\SelectBg</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleSelectPlayer3.cpp">
+      <Filter>Engine\GameObject\UI\LogoSceneUI\PlayerSelectUI\McUI\SelectBg</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleSelectPlayer4.cpp">
+      <Filter>Engine\GameObject\UI\LogoSceneUI\PlayerSelectUI\McUI\SelectBg</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleSelectPlayer5.cpp">
+      <Filter>Engine\GameObject\UI\LogoSceneUI\PlayerSelectUI\ToteUI\SelectBg</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleSelectPlayer6.cpp">
+      <Filter>Engine\GameObject\UI\LogoSceneUI\PlayerSelectUI\ToteUI\SelectBg</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

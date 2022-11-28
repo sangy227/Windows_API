@@ -181,6 +181,12 @@
     <ClInclude Include="TitleSelectBg8.h" />
     <ClInclude Include="TitleSelectButton1.h" />
     <ClInclude Include="TitleSelectButton2.h" />
+    <ClInclude Include="TitleSelectPlayer.h" />
+    <ClInclude Include="TitleSelectPlayer2.h" />
+    <ClInclude Include="TitleSelectPlayer3.h" />
+    <ClInclude Include="TitleSelectPlayer4.h" />
+    <ClInclude Include="TitleSelectPlayer5.h" />
+    <ClInclude Include="TitleSelectPlayer6.h" />
     <ClInclude Include="TopLayerDefault.h" />
     <ClInclude Include="ToteIcon.h" />
     <ClInclude Include="Tote_Info.h" />
@@ -264,6 +270,12 @@
     <ClCompile Include="TitleSelectBg8.cpp" />
     <ClCompile Include="TitleSelectButton1.cpp" />
     <ClCompile Include="TitleSelectButton2.cpp" />
+    <ClCompile Include="TitleSelectPlayer.cpp" />
+    <ClCompile Include="TitleSelectPlayer2.cpp" />
+    <ClCompile Include="TitleSelectPlayer3.cpp" />
+    <ClCompile Include="TitleSelectPlayer4.cpp" />
+    <ClCompile Include="TitleSelectPlayer5.cpp" />
+    <ClCompile Include="TitleSelectPlayer6.cpp" />
     <ClCompile Include="TopLayerDefault.cpp" />
     <ClCompile Include="ToteIcon.cpp" />
     <ClCompile Include="Tote_Info.cpp" />

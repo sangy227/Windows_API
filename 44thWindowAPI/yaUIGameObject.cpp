@@ -1,17 +1,7 @@
 #include "yaUIGameObject.h"
-#include "yaTime.h"
-#include "yaSceneManager.h"
-#include "yaInput.h"
-#include "yaMissile.h"
-#include "yaScene.h"
-#include "yaImage.h"
 #include "yaResources.h"
 #include "yaAniMator.h"
-#include "yaCollider.h"
-#include "yaCamera.h"
-#include "yaBackPack.h"
-#include "yaRigidbody.h"
-#include "yaUIManager.h"
+#include "yaImage.h"
 
 ya::UIGameObject::UIGameObject()
 {
