@@ -2,6 +2,8 @@
 #include "yaHUD.h"
 #include "yaButton.h"
 #include "yaPanel.h"
+#include "yaPlayer.h"
+#include "yaUIGameObject.h"
 
 #include "LogoButton1.h"
 #include "LogoButton2.h"
@@ -57,6 +59,7 @@ namespace ya {
 	void UIManager::Initialize()
 	{
 		// 여기에서 ui 메모리에 할당하면 된다.
+		
 
 		/*로고버튼 모음*/
 		LogoButtonFull();
@@ -336,10 +339,14 @@ namespace ya {
 
 	void UIManager::Mc_In()
 	{
+		UIGameObject* player = new UIGameObject();
+
+
 		TitleSelectBg* titleselectbg = new TitleSelectBg(eUIType::TitleSelectBg);
 		mUIs.insert(std::make_pair(eUIType::TitleSelectBg, titleselectbg));
 		titleselectbg->SetPos(Vector2(-20.0f, 420.0f));
 		titleselectbg->ImageLoad(L"titleselectbg", L"..\\Resources\\Image\\Object\\TitleSelectBg.bmp");
+		titleselectbg->AddGameObject(player); // 이거일꺼같은데?
 
 		TitleSelectBg2* titleselectbg2 = new TitleSelectBg2(eUIType::TitleSelectBg2);
 		mUIs.insert(std::make_pair(eUIType::TitleSelectBg2, titleselectbg2));
@@ -365,6 +372,13 @@ namespace ya {
 		mc_info->AddChild(titleselectbg3);
 		mc_info->AddChild(titleselectbg4);
 		//△패널
+
+
+
+
+
+		
+		
 	}
 
 	void UIManager::Tote_In()

@@ -228,6 +228,7 @@
     <ClInclude Include="yaTitleScene.h" />
     <ClInclude Include="yaToolScene.h" />
     <ClInclude Include="yaUIBase.h" />
+    <ClInclude Include="yaUIGameObject.h" />
     <ClInclude Include="yaUIManager.h" />
   </ItemGroup>
   <ItemGroup>
@@ -309,6 +310,7 @@
     <ClCompile Include="yaTitleScene.cpp" />
     <ClCompile Include="yaToolScene.cpp" />
     <ClCompile Include="yaUIBase.cpp" />
+    <ClCompile Include="yaUIGameObject.cpp" />
     <ClCompile Include="yaUIManager.cpp" />
   </ItemGroup>
   <ItemGroup>

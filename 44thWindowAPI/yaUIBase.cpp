@@ -13,9 +13,9 @@ namespace ya {
 		, mPos(Vector2::Zero)
 		, mSize(Vector2::Zero)
 		, mAniMator(nullptr)
-		, mRectObject(nullptr)
+		/*, mRectObject(nullptr)*/
 	{
-		mRectObject = new GameObject();
+		//mRectObject = new GameObject();
 	}
 	UIBase::~UIBase()
 	{
@@ -27,7 +27,7 @@ namespace ya {
 
 		for (UIBase* child : mChilds)
 		{
-			child->OnInit();
+			child->Initialize();
 		}
 	}
 	void UIBase::Active()
@@ -37,7 +37,7 @@ namespace ya {
 
 		for (UIBase* child : mChilds)
 		{
-			child->mbEnable = true;
+			//child->mbEnable = true;
 			child->Active();
 		}
 	}
@@ -78,6 +78,11 @@ namespace ya {
 				child->Tick();
 			}
 		}
+
+		for (GameObject* gameObj : mGameObjects)
+		{
+			gameObj->Tick();
+		}
 	}
 	void UIBase::Render(HDC hdc)
 	{
@@ -88,13 +93,18 @@ namespace ya {
 			mAniMator->Render(hdc);
 		*/
 		OnRender(hdc);
-
 		for (UIBase* child : mChilds)
 		{
 			if (child->mbEnable)
 			{
 				child->Render(hdc);
 			}
+		}
+
+
+		for (GameObject* gameObj : mGameObjects)
+		{
+			gameObj->Render(hdc);
 		}
 	}
 	void UIBase::UIClear()
@@ -116,5 +126,12 @@ namespace ya {
 	{
 		mChilds.push_back(uiBase);
 		uiBase->mParent = this;
+	}
+	void UIBase::AddGameObject(GameObject* gameObj)
+	{
+		if (gameObj == nullptr)
+			return;
+
+		mGameObjects.push_back(gameObj);
 	}
 }

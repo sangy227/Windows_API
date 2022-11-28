@@ -55,8 +55,11 @@ namespace ya {
 		Vector2 pos = gameObj->GetPos();
 		Vector2 scale = gameObj->GetScale();
 
-		if (mAffectedCamera)
+		//여기 카메라 변경
+		if (mAffectedCamera
+			&& mAnimator->GetMode() != AniMator::Mode::UIGameObject)
 			pos = Camera::CalculatePos(pos);
+
 
 		BLENDFUNCTION func = {};
 		func.BlendOp = AC_SRC_OVER;

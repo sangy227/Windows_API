@@ -7,6 +7,11 @@ namespace ya {
 	class AniMator:public Component
 	{
 	public:
+		enum class Mode
+		{
+			GameObject,
+			UIGameObject,
+		};
 		struct Event
 		{
 			void operator=(std::function<void()> func)
@@ -30,7 +35,8 @@ namespace ya {
 
 		};
 
-		AniMator();
+		
+		AniMator(Mode mode = Mode::GameObject);
 		~AniMator();
 
 		virtual void Tick() override;
@@ -55,17 +61,17 @@ namespace ya {
 		std::function<void()>& GetEndEvent(const std::wstring key);
 		
 		void SetRect(GameObject* rect) { SetOwnder(rect); }
-		
+		Mode GetMode() { return mMode; }
 	public:
 		Event mStartEvent;
 		Event mCompleteEvent;
 		Event mEndEvent;
 
 	private:
-		std::map<std::wstring, Events*> mEvents;
 		std::map<std::wstring, Animation*> mAnimations;
+		std::map<std::wstring, Events*> mEvents;
 
-
+		Mode mMode;
 		Animation* mPlayAnimaion;
 		bool mbLoop;
 		Image* mSPriteSheet;

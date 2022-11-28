@@ -352,6 +352,9 @@
     <ClInclude Include="Option_Icon.h">
       <Filter>Engine\GameObject\UI\PlaySceneUI</Filter>
     </ClInclude>
+    <ClInclude Include="yaUIGameObject.h">
+      <Filter>Engine\GameObject\UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="44thWindowAPI.rc">
@@ -603,6 +606,9 @@
     </ClCompile>
     <ClCompile Include="Save_Icon.cpp">
       <Filter>Engine\GameObject\UI\PlaySceneUI</Filter>
+    </ClCompile>
+    <ClCompile Include="yaUIGameObject.cpp">
+      <Filter>Engine\GameObject\UI</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

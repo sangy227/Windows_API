@@ -41,6 +41,7 @@ namespace ya {
 
 		void ImageLoad(const std::wstring& key, const std::wstring& path);
 		void AddChild(UIBase* uiBase);
+		void AddGameObject(GameObject* gameObj);
 
 		eUIType GetType() { return mType; }
 		bool GetIsFullScreen() { return mbFullScreen; }
@@ -65,7 +66,7 @@ namespace ya {
 		Vector2 mScreenPos;
 
 		AniMator* mAniMator;
-		GameObject* mRectObject;
+		//GameObject* mRectObject;
 
 	private:
 		virtual void OnInit() {};
@@ -78,6 +79,9 @@ namespace ya {
 
 	private:
 		std::vector<UIBase*> mChilds;
+		std::vector<GameObject*> mGameObjects;
+
+
 		
 		eUIType mType;
 		bool mbFullScreen;

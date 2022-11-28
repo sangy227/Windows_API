@@ -5,15 +5,14 @@
 #include "yaResources.h"
 
 namespace ya {
-	AniMator::AniMator()
+	AniMator::AniMator(Mode mode) 
 		:Component(eComponentType::Animator)
-		,mPlayAnimaion(nullptr)
-		,mbLoop(false)
+		, mMode(mode)
+		, mPlayAnimaion(nullptr)
+		, mbLoop(false)
 	{
 		//mImage = Resources::Load<Image>(L"Player", L"..\\Resources\\Image\\Player.bmp");
 	}
-
-
 
 
 	AniMator::~AniMator()
