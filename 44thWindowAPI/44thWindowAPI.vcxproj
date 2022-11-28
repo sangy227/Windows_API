@@ -187,6 +187,8 @@
     <ClInclude Include="TitleSelectPlayer4.h" />
     <ClInclude Include="TitleSelectPlayer5.h" />
     <ClInclude Include="TitleSelectPlayer6.h" />
+    <ClInclude Include="TitleSelectPlayer7.h" />
+    <ClInclude Include="TitleSelectPlayer8.h" />
     <ClInclude Include="TopLayerDefault.h" />
     <ClInclude Include="ToteIcon.h" />
     <ClInclude Include="Tote_Info.h" />
@@ -276,6 +278,8 @@
     <ClCompile Include="TitleSelectPlayer4.cpp" />
     <ClCompile Include="TitleSelectPlayer5.cpp" />
     <ClCompile Include="TitleSelectPlayer6.cpp" />
+    <ClCompile Include="TitleSelectPlayer7.cpp" />
+    <ClCompile Include="TitleSelectPlayer8.cpp" />
     <ClCompile Include="TopLayerDefault.cpp" />
     <ClCompile Include="ToteIcon.cpp" />
     <ClCompile Include="Tote_Info.cpp" />
