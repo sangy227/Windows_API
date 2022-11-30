@@ -379,6 +379,12 @@
     <ClInclude Include="TitleSelectPlayer8.h">
       <Filter>Engine\GameObject\UI\LogoSceneUI\PlayerSelectUI\SetchelUI\SelectBg</Filter>
     </ClInclude>
+    <ClInclude Include="Inventory.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Map_bg.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="44thWindowAPI.rc">
@@ -657,6 +663,12 @@
     </ClCompile>
     <ClCompile Include="TitleSelectPlayer8.cpp">
       <Filter>Engine\GameObject\UI\LogoSceneUI\PlayerSelectUI\SetchelUI\SelectBg</Filter>
+    </ClCompile>
+    <ClCompile Include="Inventory.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Map_bg.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

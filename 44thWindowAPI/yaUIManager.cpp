@@ -4,7 +4,7 @@
 #include "yaPanel.h"
 #include "yaPlayer.h"
 #include "yaUIGameObject.h"
-
+/*ㅡㅡㅡㅡㅡㅡㅡ▼로고씬ㅡㅡㅡㅡㅡㅡㅡㅡ*/
 #include "LogoButton1.h"
 #include "LogoButton2.h"
 #include "LogoButton3.h"
@@ -45,7 +45,7 @@
 #include "Tote_Info.h" 
 #include "Cr8_Info.h"
 #include "Setchel_Info.h"
-/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+/*ㅡㅡㅡㅡㅡㅡㅡ▼플레이씬ㅡㅡㅡㅡㅡㅡㅡㅡ*/
 #include "TopLayerDefault.h"
 #include "Stats_Icon.h"
 #include "Save_Icon.h"
@@ -53,6 +53,9 @@
 #include "Map_Icon.h"
 #include "Book_Icon.h"
 #include "Back_Icon.h"
+
+#include "Inventory.h"
+#include "Map_bg.h"
 /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
 
 
@@ -505,11 +508,25 @@ namespace ya {
 		map_icon->SetPos(Vector2(1518.0f, 72.0f));
 		map_icon->ImageLoad(L"Map_Icon", L"..\\Resources\\Image\\Object\\Map_Icon.bmp");
 		//△패널 && 버튼
+
 		Back_Icon* back_icon = new Back_Icon(eUIType::Back_Icon);
 		mUIs.insert(std::make_pair(eUIType::Back_Icon, back_icon));
 		back_icon->SetPos(Vector2(1518.0f, 144.0f));
 		back_icon->ImageLoad(L"back_icon", L"..\\Resources\\Image\\Object\\Back_Icon.bmp");
 		//△패널 && 버튼
+
+		Inventory* inventory = new Inventory(eUIType::Inventory2);
+		mUIs.insert(std::make_pair(eUIType::Inventory2, inventory));
+		inventory->SetPos(Vector2(240.0f, 37.0f));
+		inventory->ImageLoad(L"inventory", L"..\\Resources\\Image\\Object\\Inventory.bmp");
+		//△패널 && 버튼
+
+		Map_bg* map_bg = new Map_bg(eUIType::Map_bg);
+		mUIs.insert(std::make_pair(eUIType::Map_bg, map_bg));
+		map_bg->SetPos(Vector2(150.0f, 37.0f));
+		map_bg->ImageLoad(L"map_bg", L"..\\Resources\\Image\\Object\\map_bg.bmp");
+		//△패널 && 버튼
+
 
 	}
 

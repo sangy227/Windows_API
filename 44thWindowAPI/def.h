@@ -132,6 +132,9 @@
 		Map_Icon,
 		Back_Icon,
 
+		Inventory2,
+		Map_bg,
+
 		/*�ѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤ�*/
 
 		HP,

@@ -154,6 +154,7 @@
     <ClInclude Include="Cr8_Info.h" />
     <ClInclude Include="def.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="Inventory.h" />
     <ClInclude Include="Logo.h" />
     <ClInclude Include="LogoButton1.h" />
     <ClInclude Include="LogoButton2.h" />
@@ -162,6 +163,7 @@
     <ClInclude Include="LogoButton5.h" />
     <ClInclude Include="LogoButton6.h" />
     <ClInclude Include="LogoPlayerObject.h" />
+    <ClInclude Include="Map_bg.h" />
     <ClInclude Include="Map_Icon.h" />
     <ClInclude Include="McIcon.h" />
     <ClInclude Include="MC_Info.h" />
@@ -245,6 +247,7 @@
     <ClCompile Include="chicken.cpp" />
     <ClCompile Include="Cr8Icon.cpp" />
     <ClCompile Include="Cr8_Info.cpp" />
+    <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Logo.cpp" />
     <ClCompile Include="LogoButton1.cpp" />
     <ClCompile Include="LogoButton2.cpp" />
@@ -253,6 +256,7 @@
     <ClCompile Include="LogoButton5.cpp" />
     <ClCompile Include="LogoButton6.cpp" />
     <ClCompile Include="LogoPlayerObject.cpp" />
+    <ClCompile Include="Map_bg.cpp" />
     <ClCompile Include="Map_Icon.cpp" />
     <ClCompile Include="McIcon.cpp" />
     <ClCompile Include="MC_Info.cpp" />

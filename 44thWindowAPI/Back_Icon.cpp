@@ -1,6 +1,7 @@
 #include "Back_Icon.h"
 #include "yaInput.h"
 #include "yaImage.h"
+#include "yaUIManager.h"
 
 namespace ya {
 	Back_Icon::Back_Icon(eUIType type)
@@ -52,5 +53,7 @@ namespace ya {
 	}
 	void Back_Icon::Click()
 	{
+		UIManager::Pop(eUIType::Map_bg);
+		UIManager::Push(eUIType::Inventory2);
 	}
 }

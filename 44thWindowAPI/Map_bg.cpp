@@ -1,26 +1,26 @@
-#include "Map_Icon.h"
-#include "yaInput.h"
+#include "Map_bg.h"
 #include "yaImage.h"
-#include "yaUIManager.h"
+#include "yaInput.h"
+
 namespace ya {
-	Map_Icon::Map_Icon(eUIType type)
+	Map_bg::Map_bg(eUIType type)
 		:UIBase(type)
 	{
-		mOnClick = std::bind(&Map_Icon::Click, this);
+		mOnClick = std::bind(&Map_bg::Click, this);
 	}
-	Map_Icon::~Map_Icon()
+	Map_bg::~Map_bg()
 	{
 	}
-	void Map_Icon::OnInit()
+	void Map_bg::OnInit()
 	{
 	}
-	void Map_Icon::OnActive()
+	void Map_bg::OnActive()
 	{
 	}
-	void Map_Icon::OnInActive()
+	void Map_bg::OnInActive()
 	{
 	}
-	void Map_Icon::OnTick()
+	void Map_bg::OnTick()
 	{
 		Vector2 mousePos = Input::GetMousePos();
 		Vector2 size = GetSize();
@@ -40,19 +40,17 @@ namespace ya {
 			mOnClick();
 		}
 	}
-	void Map_Icon::OnRender(HDC hdc)
+	void Map_bg::OnRender(HDC hdc)
 	{
 		TransparentBlt(hdc, (int)mScreenPos.x, (int)mScreenPos.y,
-			mImage->GetWidth(), mImage->GetHeight(),
+			mImage->GetWidth() * 7.0f, mImage->GetHeight() * 4.8f,
 			mImage->GetDC(), 0, 0, mImage->GetWidth(), mImage->GetHeight()
 			, RGB(255, 255, 255));
 	}
-	void Map_Icon::OnClear()
+	void Map_bg::OnClear()
 	{
 	}
-	void Map_Icon::Click()
+	void Map_bg::Click()
 	{
-		UIManager::Pop(eUIType::Inventory2);
-		UIManager::Push(eUIType::Map_bg);
 	}
 }
