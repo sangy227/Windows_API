@@ -29,11 +29,18 @@ namespace ya
 
 		if (mImages[0] == nullptr)
 		{
-			mImages[0] = Resources::Load<Image>(L"Player", L"..\\Resources\\Image\\Player1.bmp");
-			mImages[1] = Resources::Load<Image>(L"attack", L"..\\Resources\\Image\\attack.bmp");
-			mImages[2] = Resources::Load<Image>(L"Walk", L"..\\Resources\\Image\\Walk.bmp");
-			mImages[3] = Resources::Load<Image>(L"BowAttack", L"..\\Resources\\Image\\BowAttack.bmp");
-			mImages[4] = Resources::Load<Image>(L"SearchPack", L"..\\Resources\\Image\\mc_searchPack.bmp");
+			mImages[0] = Resources::Load<Image>(L"Player", L"..\\Resources\\Image\\Player\\MC\\Rogue\\mc_idle-1.bmp");
+			mImages[1] = Resources::Load<Image>(L"attack", L"..\\Resources\\Image\\Player\\MC\\Rogue\\rogue_attack_spritesheet.bmp");
+			mImages[2] = Resources::Load<Image>(L"mc_Walk", L"..\\Resources\\Image\\Player\\MC\\Rogue\\rogue_walk_spritesheet.bmp");
+			mImages[3] = Resources::Load<Image>(L"BowAttack", L"..\\Resources\\Image\\Player\\MC\\Rogue\\mc_bow_shot.bmp");
+			mImages[4] = Resources::Load<Image>(L"SearchPack", L"..\\Resources\\Image\\Player\\MC\\Rogue\\mc_searchPack.bmp");
+
+			mImages[5] = Resources::Load<Image>(L"mc_map", L"..\\Resources\\Image\\Player\\MC\\Rogue\\mc_map.bmp");
+			mImages[6] = Resources::Load<Image>(L"mc_hurt-1", L"..\\Resources\\Image\\Player\\MC\\Rogue\\mc_hurt-1.bmp");
+			mImages[7] = Resources::Load<Image>(L"mc_winsmall", L"..\\Resources\\Image\\Player\\MC\\Rogue\\mc_winsmall.bmp");
+			mImages[8] = Resources::Load<Image>(L"mc_die", L"..\\Resources\\Image\\Player\\MC\\Rogue\\mc_die.bmp");
+			mImages[9] = Resources::Load<Image>(L"mc_useItem-2", L"..\\Resources\\Image\\Player\\MC\\Rogue\\mc_useItem-2.bmp");
+			mImages[10] = Resources::Load<Image>(L"mc_block-4", L"..\\Resources\\Image\\Player\\MC\\Rogue\\mc_block-4.bmp");
 		}
 
 		mAnimator = new AniMator();
@@ -66,18 +73,30 @@ namespace ya
 			, Vector2(0.0f, 0.0f), Vector2(64.0f, 48.0f)
 			, Vector2(-72.0f, -48.0f), 2, 0.4f);
 
-		/*mAnimator->CreateAnimation(L"MoveDown", mImage
-			, Vector2(0.0f, 520.0f), Vector2(120.0f, 130.0f)
-			, Vector2(5.0f, -20.0f), 10, 0.1f);
-		mAnimator->CreateAnimation(L"MoveLeft", mImage
-			, Vector2(0.0f, 650.0f), Vector2(120.0f, 130.0f)
-			, Vector2(5.0f, -20.0f), 10, 0.1f);
-		mAnimator->CreateAnimation(L"MoveUp", mImage
-			, Vector2(0.0f, 780.0f), Vector2(120.0f, 130.0f)
-			, Vector2(5.0f, -20.0f), 10, 0.1f);
-		mAnimator->CreateAnimation(L"MoveRight", mImage
-			, Vector2(0.0f, 910.0f), Vector2(120.0f, 130.0f)
-			, Vector2(5.0f, -20.0f), 10, 0.1f);*/
+		//추가된부분
+		mAnimator->CreateAnimation(L"Map", mImages[5]
+			, Vector2(0.0f, 0.0f), Vector2(48.0f, 48.0f)
+			, Vector2(-24.0f, -48.0f), 4, 0.2f);
+
+		mAnimator->CreateAnimation(L"hurt", mImages[6]
+			, Vector2(0.0f, 0.0f), Vector2(64.0f, 48.0f)
+			, Vector2(-36.0f, -48.0f), 5, 0.05f);
+
+		mAnimator->CreateAnimation(L"winsmall", mImages[7]
+			, Vector2(0.0f, 0.0f), Vector2(48.0f, 48.0f)
+			, Vector2(-24.0f, -48.0f), 4, 0.2f);
+
+		mAnimator->CreateAnimation(L"die", mImages[8]
+			, Vector2(0.0f, 0.0f), Vector2(48.0f, 48.0f)
+			, Vector2(-24.0f, -48.0f), 2, 1.0f);
+
+		mAnimator->CreateAnimation(L"useitem", mImages[9]
+			, Vector2(0.0f, 0.0f), Vector2(48.0f, 48.0f)
+			, Vector2(-24.0f, -48.0f), 1, 1.0f);
+
+		mAnimator->CreateAnimation(L"block", mImages[10]
+			, Vector2(0.0f, 0.0f), Vector2(48.0f, 48.0f)
+			, Vector2(-24.0f, -48.0f), 1, 1.0f);
 
 
 		mAnimator->Play(L"Idle", true);
@@ -142,7 +161,7 @@ namespace ya
 		//Vector2 pos = GetPos();
 		
 		//fsm 쿠키런
-		switch (mState)
+		/*switch (mState)
 		{
 		case ya::Player::eState::Attack:
 		{
@@ -161,28 +180,28 @@ namespace ya
 			break;
 		default:
 			break;
-		}
+		}*/
 
 
 
 
-		if (KEY_PREESE(eKeyCode::W))
-		{
-			//pos.y -= 120.0f * Time::DeltaTime();
-			GetComponent<Rigidbody>()->AddForce(Vector2(0.0f, -200.0f));
+		//if (KEY_PREESE(eKeyCode::W))
+		//{
+		//	pos.y -= 120.0f * Time::DeltaTime();
+		//	GetComponent<Rigidbody>()->AddForce(Vector2(0.0f, -200.0f));
 
-			//여기서 11/22일 꺼 코드 추가 실험 lerp
-		}
+		//	여기서 11/22일 꺼 코드 추가 실험 lerp
+		//}
 		//if (KEY_PREESE(eKeyCode::S))
 		//{
 		//	//pos.y += 120.0f * Time::DeltaTime();
 		//}
-		if (KEY_PREESE(eKeyCode::A))
-		{
-			//pos.x -= 120.0f * Time::DeltaTime();
-			GetComponent<Rigidbody>()->AddForce(Vector2(-200.0f, 0.0f));
+		//if (KEY_PREESE(eKeyCode::A))
+		//{
+		//	pos.x -= 120.0f * Time::DeltaTime();
+		//	GetComponent<Rigidbody>()->AddForce(Vector2(-200.0f, 0.0f));
 
-		}
+		//}
 		//if (KEY_PREESE(eKeyCode::D))
 		//{
 		//	//pos.x += 120.0f * Time::DeltaTime();
@@ -206,45 +225,94 @@ namespace ya
 			UIManager::Pop(eUIType::OPTION);
 		}
 
-		/*if (KEY_DOWN(eKeyCode::W))
+		
+		if (KEY_DOWN(eKeyCode::Q))
 		{
-			mAnimator->Play(L"MoveUp", true);
-		}*/
-		if (KEY_DOWN(eKeyCode::S))
-		{
-			mAnimator->Play(L"SearchPack", true);
+			mAnimator->Play(L"attack", true);
+			mAnimator->GetCompleteEvent(L"attack") = std::bind(&Player::WalkComplete, this);
 		}
-		/*if (KEY_DOWN(eKeyCode::A))
+		if (KEY_DOWN(eKeyCode::W))
 		{
-			mAnimator->Play(L"MoveLeft", true);
-		}*/
-		if (KEY_DOWN(eKeyCode::D))
+			mAnimator->Play(L"BowAttack", true);
+			mAnimator->GetCompleteEvent(L"BowAttack") = std::bind(&Player::WalkComplete, this);
+		}
+		if (KEY_DOWN(eKeyCode::E))
 		{
 			mAnimator->Play(L"Walk", true);
 		}
-
-
-
-
-
-
-
-		/*if (KEY_UP(eKeyCode::W))
+		if (KEY_DOWN(eKeyCode::R))
 		{
-			mAnimator->Play(L"Idle", true);	
-		}*/
+			mAnimator->Play(L"SearchPack", true);
+		}
+		if (KEY_DOWN(eKeyCode::T))
+		{
+			mAnimator->Play(L"Map", true);
+		}
+		if (KEY_DOWN(eKeyCode::Y))
+		{
+			Vector2 pos = GetPos();
+			pos.x -= 100.0f;
+			SetPos(pos);
+
+			mAnimator->Play(L"hurt", true);
+			mAnimator->GetCompleteEvent(L"hurt") = std::bind(&Player::WalkComplete, this);
+		}
+		if (KEY_DOWN(eKeyCode::A))
+		{
+			mAnimator->Play(L"winsmall", true);
+		}
+		if (KEY_DOWN(eKeyCode::S))
+		{
+			mAnimator->Play(L"die", true);
+		}
+		if (KEY_DOWN(eKeyCode::D))
+		{
+			mAnimator->Play(L"useitem", true);
+		}
+		if (KEY_DOWN(eKeyCode::F))
+		{
+			mAnimator->Play(L"block", true);
+		}
+
+
+
+
+		if (KEY_UP(eKeyCode::E))
+		{
+			mAnimator->Play(L"Idle", true);
+		}
+		if (KEY_UP(eKeyCode::R))
+		{
+			mAnimator->Play(L"Idle", true);
+		}
+		if (KEY_UP(eKeyCode::T))
+		{
+			mAnimator->Play(L"Idle", true);
+		}
+		if (KEY_UP(eKeyCode::A))
+		{
+			mAnimator->Play(L"Idle", true);
+		}
 		if (KEY_UP(eKeyCode::S))
 		{
 			mAnimator->Play(L"Idle", true);
 		}
-		/*if (KEY_UP(eKeyCode::A))
-		{
-			mAnimator->Play(L"Idle", true);
-		}*/
 		if (KEY_UP(eKeyCode::D))
 		{
 			mAnimator->Play(L"Idle", true);
 		}
+		if (KEY_UP(eKeyCode::F))
+		{
+			mAnimator->Play(L"Idle", true);
+		}
+
+
+
+
+
+
+
+		
 
 
 
@@ -294,12 +362,12 @@ namespace ya
 			//missile->mDir = Vector2(mCoff, -1.0f + mCoff);
 			//mCoff -= 0.1f;
 		}
-		if (KEY_DOWN(eKeyCode::I))
+		/*if (KEY_DOWN(eKeyCode::I))
 		{
 			BackPack* backPack = new BackPack();
 			Scene* playScene = SceneManager::GetPlayScene();
 			playScene->AddGameObject(backPack, eColliderLayer::Player_Projecttile);
-		}
+		}*/
 
 		//움직인 Pos값 다시 설정
 		//SetPos(pos);

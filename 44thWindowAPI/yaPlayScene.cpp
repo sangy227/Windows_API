@@ -72,7 +72,7 @@ namespace ya {
 		Scene::Render(hdc);
 
 		wchar_t szFloat[50] = {};
-		swprintf_s(szFloat, 50, L"LBTN , RBTN , S , D , A , Space ,");
+		swprintf_s(szFloat, 50, L"Q,W,E,R,T,Y,A,S,D,LBTN,RBTN,");
 		int strLen = wcsnlen_s(szFloat, 50);
 		TextOut(hdc, 200, 700, szFloat, strLen);
 	}
