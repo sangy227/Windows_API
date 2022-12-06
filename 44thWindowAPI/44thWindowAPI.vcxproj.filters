@@ -391,6 +391,18 @@
     <ClInclude Include="TestSword.h">
       <Filter>Engine\GameObject\UI</Filter>
     </ClInclude>
+    <ClInclude Include="copy.h">
+      <Filter>Engine\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="axeman.h">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="badgerKing.h">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="bandit_lord.h">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="44thWindowAPI.rc">
@@ -681,6 +693,18 @@
     </ClCompile>
     <ClCompile Include="TestSword.cpp">
       <Filter>Engine\GameObject\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="copy.cpp">
+      <Filter>Engine\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="axeman.cpp">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="badgerKing.cpp">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="bandit_lord.cpp">
+      <Filter>Engine\GameObject\Enemies</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

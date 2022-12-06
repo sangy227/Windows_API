@@ -146,10 +146,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="44thWindowAPI.h" />
+    <ClInclude Include="axeman.h" />
     <ClInclude Include="Back_Icon.h" />
+    <ClInclude Include="badgerKing.h" />
+    <ClInclude Include="bandit_lord.h" />
     <ClInclude Include="Book_Icon.h" />
     <ClInclude Include="chicken.h" />
     <ClInclude Include="Common.h" />
+    <ClInclude Include="copy.h" />
     <ClInclude Include="Cr8Icon.h" />
     <ClInclude Include="Cr8_Info.h" />
     <ClInclude Include="def.h" />
@@ -244,9 +248,13 @@
     <ClInclude Include="yaUIManager.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="axeman.cpp" />
     <ClCompile Include="Back_Icon.cpp" />
+    <ClCompile Include="badgerKing.cpp" />
+    <ClCompile Include="bandit_lord.cpp" />
     <ClCompile Include="Book_Icon.cpp" />
     <ClCompile Include="chicken.cpp" />
+    <ClCompile Include="copy.cpp" />
     <ClCompile Include="Cr8Icon.cpp" />
     <ClCompile Include="Cr8_Info.cpp" />
     <ClCompile Include="Inventory.cpp" />
