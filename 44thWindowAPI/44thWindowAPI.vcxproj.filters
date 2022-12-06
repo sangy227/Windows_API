@@ -403,6 +403,27 @@
     <ClInclude Include="bandit_lord.h">
       <Filter>Engine\GameObject\Enemies</Filter>
     </ClInclude>
+    <ClInclude Include="bee.h">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="boastful_spellsword.h">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="boss.h">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="crossbowman.h">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="cultist.h">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="cultist_blade.h">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="dealmaker.h">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="44thWindowAPI.rc">
@@ -704,6 +725,27 @@
       <Filter>Engine\GameObject\Enemies</Filter>
     </ClCompile>
     <ClCompile Include="bandit_lord.cpp">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="bee.cpp">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="boastful_spellsword.cpp">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="boss.cpp">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="crossbowman.cpp">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="cultist.cpp">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="cultist_blade.cpp">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="dealmaker.cpp">
       <Filter>Engine\GameObject\Enemies</Filter>
     </ClCompile>
   </ItemGroup>
