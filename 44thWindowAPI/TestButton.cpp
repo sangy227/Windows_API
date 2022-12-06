@@ -44,8 +44,8 @@ namespace ya {
 	void TestButton::OnRender(HDC hdc)
 	{
 		TransparentBlt(hdc, (int)mScreenPos.x, (int)mScreenPos.y,
-			/*0.82 , 0.8 ÇØ¾ß ÀÎº¥Åä¸® ºóÄ­°ú µü¸ÂÀ½*/
-			mImage->GetWidth() * 0.82f, mImage->GetHeight() * 0.8f,
+			/*0.82 , 0.82 ÇØ¾ß ÀÎº¥Åä¸® ºóÄ­°ú µü¸ÂÀ½*/
+			mImage->GetWidth() * 0.82f, mImage->GetHeight() * 0.82f,
 			mImage->GetDC(), 0, 0, mImage->GetWidth(), mImage->GetHeight()
 			, RGB(255, 255, 255));
 	}

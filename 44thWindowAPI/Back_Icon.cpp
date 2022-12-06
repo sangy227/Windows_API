@@ -54,6 +54,7 @@ namespace ya {
 	void Back_Icon::Click()
 	{
 		UIManager::Pop(eUIType::Map_bg);
+		UIManager::Pop(eUIType::Inventory2);
 		UIManager::Push(eUIType::Inventory2);
 	}
 }

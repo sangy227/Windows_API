@@ -90,8 +90,9 @@ namespace ya {
 		/*플레이씬 UI모음*/
 		PlaySceneUI();
 
-		
-		TestButton* testbutton = new TestButton(eUIType::TestButton);
+
+		//인벤토리 Panel 자식들로 내림
+		/*TestButton* testbutton = new TestButton(eUIType::TestButton);
 		mUIs.insert(std::make_pair(eUIType::TestButton, testbutton));
 		//470 , 122 로 좌표해야 인벤토리 한칸 안에 딱맞음
 		testbutton->SetPos(Vector2(470.0f, 122.0f));
@@ -100,7 +101,7 @@ namespace ya {
 		TestSword* testsword = new TestSword(eUIType::TestSword);
 		mUIs.insert(std::make_pair(eUIType::TestSword, testsword));
 		testsword->SetPos(Vector2(550.0f, 120.0f));
-		testsword->ImageLoad(L"testsword", L"..\\Resources\\Image\\Sword_of_Venom.bmp");
+		testsword->ImageLoad(L"testsword", L"..\\Resources\\Image\\Sword_of_Venom.bmp"); */
 	}
 
 	void UIManager::OnLoad(eUIType type)
@@ -519,10 +520,25 @@ namespace ya {
 		back_icon->ImageLoad(L"back_icon", L"..\\Resources\\Image\\Object\\Back_Icon.bmp");
 		//△패널 && 버튼
 
+
+		TestButton* testbutton = new TestButton(eUIType::TestButton);
+		mUIs.insert(std::make_pair(eUIType::TestButton, testbutton));
+		//460.0f, 160.0f 로 좌표해야 인벤토리 한칸 안에 딱맞음
+		testbutton->SetPos(Vector2(460.0f, 160.0f));
+		testbutton->ImageLoad(L"testbutton", L"..\\Resources\\Image\\TestButton.bmp");
+
+		TestSword* testsword = new TestSword(eUIType::TestSword);
+		mUIs.insert(std::make_pair(eUIType::TestSword, testsword));
+		testsword->SetPos(Vector2(542.0f, 160.0f));
+		testsword->ImageLoad(L"testsword", L"..\\Resources\\Image\\Sword_of_Venom.bmp");
+
+
 		Inventory* inventory = new Inventory(eUIType::Inventory2);
 		mUIs.insert(std::make_pair(eUIType::Inventory2, inventory));
 		inventory->SetPos(Vector2(240.0f, 37.0f));
 		inventory->ImageLoad(L"inventory", L"..\\Resources\\Image\\Object\\Inventory.bmp");
+		inventory->AddChild(testbutton);
+		inventory->AddChild(testsword);
 		//△패널 && 버튼
 
 		Map_bg* map_bg = new Map_bg(eUIType::Map_bg);

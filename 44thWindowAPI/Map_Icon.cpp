@@ -53,6 +53,7 @@ namespace ya {
 	void Map_Icon::Click()
 	{
 		UIManager::Pop(eUIType::Inventory2);
+		UIManager::Pop(eUIType::Map_bg);
 		UIManager::Push(eUIType::Map_bg);
 	}
 }

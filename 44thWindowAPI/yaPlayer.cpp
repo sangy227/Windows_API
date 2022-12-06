@@ -27,7 +27,7 @@ namespace ya
 	{
 		SetName(L"Player");
 		SetPos({ 520.0f, 770.0f });
-		SetScale({ 3.0f, 3.0f });
+		SetScale({ 0.0f, 0.0f });
 
 		if (mImages[0] == nullptr)
 		{
