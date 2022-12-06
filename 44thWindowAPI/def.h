@@ -96,6 +96,8 @@
 		LogoButton5,
 		LogoButton6,
 
+		/*�ѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤ�*/
+
 		McIcon,
 		ToteIcon,
 		Cr8Icon,
@@ -134,6 +136,9 @@
 
 		Inventory2,
 		Map_bg,
+
+		TestButton,
+		TestSword,
 
 		/*�ѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤ�*/
 

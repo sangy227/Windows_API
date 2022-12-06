@@ -2,12 +2,12 @@
 #include "yaUIBase.h"
 
 namespace ya {
-	
-	class Button : public UIBase
+
+	class TestButton : public UIBase
 	{
 	public:
-		Button(eUIType type);
-		~Button();
+		TestButton(eUIType type);
+		~TestButton();
 
 		virtual void OnInit() override;
 		virtual void OnActive() override;
@@ -20,5 +20,6 @@ namespace ya {
 	private:
 		Event mOnClick;
 		bool mbMouseOn;
+
 	};
 }

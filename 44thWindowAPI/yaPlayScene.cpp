@@ -83,6 +83,10 @@ namespace ya {
 		UIManager::Push(eUIType::Back_Icon);
 		UIManager::Push(eUIType::Inventory2);
 
+		UIManager::Push(eUIType::TestButton);
+		UIManager::Push(eUIType::TestSword);
+
+
 		CollisionManager::SetLayer(eColliderLayer::Player, eColliderLayer::Monster, true);
 		CollisionManager::SetLayer(eColliderLayer::Monster, eColliderLayer::Player_Projecttile, true);
 		CollisionManager::SetLayer(eColliderLayer::Ground, eColliderLayer::Player, true);

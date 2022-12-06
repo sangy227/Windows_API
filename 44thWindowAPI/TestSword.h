@@ -2,12 +2,12 @@
 #include "yaUIBase.h"
 
 namespace ya {
-	
-	class Button : public UIBase
+
+	class TestSword : public UIBase
 	{
 	public:
-		Button(eUIType type);
-		~Button();
+		TestSword(eUIType type);
+		~TestSword();
 
 		virtual void OnInit() override;
 		virtual void OnActive() override;

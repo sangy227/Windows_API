@@ -56,6 +56,9 @@
 
 #include "Inventory.h"
 #include "Map_bg.h"
+
+#include "TestButton.h"
+#include "TestSword.h"
 /*天天天天天天天天天天天天天天天*/
 
 
@@ -84,19 +87,20 @@ namespace ya {
 		Cr8_In();
 		Setchel_In();
 
+		/*Ы溯檜壁 UI賅擠*/
 		PlaySceneUI();
 
-		//Button* button = new Button(eUIType::HP);
-		//mUIs.insert(std::make_pair(eUIType::HP, button));
-		//button->SetPos(Vector2(0.0f, 0.0f));
-		////newUI->SetSize(Vector2(500.0f, 100.0f));
-		//button->ImageLoad(L"HPBAR", L"..\\Resources\\Image\\HPBAR.bmp");
+		
+		TestButton* testbutton = new TestButton(eUIType::TestButton);
+		mUIs.insert(std::make_pair(eUIType::TestButton, testbutton));
+		//470 , 122 煎 謝ルп撿 檣漸饜葬 и蘊 寰縑 詞蜃擠
+		testbutton->SetPos(Vector2(470.0f, 122.0f));
+		testbutton->ImageLoad(L"testbutton", L"..\\Resources\\Image\\TestButton.bmp");
 
-		/*HUD* hud = new HUD(eUIType::MP);
-		mUIs.insert(std::make_pair(eUIType::MP, hud));
-		hud->SetPos(Vector2(0.0f, 100.0f));
-		hud->ImageLoad(L"HPBAR", L"..\\Resources\\Image\\HPBAR.bmp");*/
-
+		TestSword* testsword = new TestSword(eUIType::TestSword);
+		mUIs.insert(std::make_pair(eUIType::TestSword, testsword));
+		testsword->SetPos(Vector2(550.0f, 120.0f));
+		testsword->ImageLoad(L"testsword", L"..\\Resources\\Image\\Sword_of_Venom.bmp");
 	}
 
 	void UIManager::OnLoad(eUIType type)
