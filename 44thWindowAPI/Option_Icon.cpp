@@ -57,6 +57,8 @@ namespace ya {
 		UIManager::Pop(eUIType::TopLayerDefault);
 		UIManager::Pop(eUIType::Map_Icon);
 		UIManager::Pop(eUIType::Back_Icon);
+		UIManager::Pop(eUIType::Map_bg);
+		UIManager::Pop(eUIType::Inventory2);
 
 
 		UIManager::Push(eUIType::LogoButton1);

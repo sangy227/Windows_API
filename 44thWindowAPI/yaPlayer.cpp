@@ -22,6 +22,8 @@ namespace ya
 		, mMisiileDir(Vector2::Zero)
 		, mHp(100)
 		, mState(eState::Attack)
+		, mAttackCount(0)
+		, mDamageCount(0)
 	{
 		SetName(L"Player");
 		SetPos({ 520.0f, 770.0f });
@@ -228,8 +230,17 @@ namespace ya
 		
 		if (KEY_DOWN(eKeyCode::Q))
 		{
-			mAnimator->Play(L"attack", true);
-			mAnimator->GetCompleteEvent(L"attack") = std::bind(&Player::WalkComplete, this);
+			if (mAttackCount == 0)
+			{
+				Vector2 pos = GetPos();
+				pos.x += 120.0f;
+				SetPos(pos);
+
+				mAnimator->Play(L"attack", true);
+				mAnimator->GetCompleteEvent(L"attack") = std::bind(&Player::WalkComplete, this);
+
+				mAttackCount++;
+			}
 		}
 		if (KEY_DOWN(eKeyCode::W))
 		{
@@ -250,12 +261,15 @@ namespace ya
 		}
 		if (KEY_DOWN(eKeyCode::Y))
 		{
-			Vector2 pos = GetPos();
-			pos.x -= 100.0f;
-			SetPos(pos);
+			if (mDamageCount == 0) {
+				Vector2 pos = GetPos();
+				pos.x -= 100.0f;
+				SetPos(pos);
 
-			mAnimator->Play(L"hurt", true);
-			mAnimator->GetCompleteEvent(L"hurt") = std::bind(&Player::WalkComplete, this);
+				mAnimator->Play(L"hurt", true);
+				mAnimator->GetCompleteEvent(L"hurt") = std::bind(&Player::WalkComplete, this);
+				mDamageCount++;
+			}
 		}
 		if (KEY_DOWN(eKeyCode::A))
 		{
@@ -322,46 +336,46 @@ namespace ya
 
 
 		//마우스 우클릭
-		if (KEY_DOWN(eKeyCode::RBTN)) {
+		/*if (KEY_DOWN(eKeyCode::RBTN)) {
 
 			mAnimator->Play(L"BowAttack", true);
 			mAnimator->GetCompleteEvent(L"BowAttack") = std::bind(&Player::WalkComplete, this);
 			
-		}
+		}*/
 
 		//마우스 좌클릭
-		if (KEY_DOWN(eKeyCode::LBTN)) {
-			Vector2 pos = GetPos();
-			pos.x += 120.0f;
-			SetPos(pos);
+		//if (KEY_DOWN(eKeyCode::LBTN)) {
+		//	Vector2 pos = GetPos();
+		//	pos.x += 120.0f;
+		//	SetPos(pos);
 
-			mAnimator->Play(L"attack", true);
-			mAnimator->GetCompleteEvent(L"attack") = std::bind(&Player::WalkComplete, this);
-			//mAnimator->FindEvents(L"attack")->mCompleteEvent = std::bind(&Player::WalkComplete, this);
+		//	mAnimator->Play(L"attack", true);
+		//	mAnimator->GetCompleteEvent(L"attack") = std::bind(&Player::WalkComplete, this);
+		//	//mAnimator->FindEvents(L"attack")->mCompleteEvent = std::bind(&Player::WalkComplete, this);
 
-			//미사일 나가게 하기~
-			if (false)
-			{
-				Missile* missile = new Missile();
+		//	//미사일 나가게 하기~
+		//	if (false)
+		//	{
+		//		Missile* missile = new Missile();
 
-				Scene* playScene = SceneManager::GetPlayScene();
-				playScene->AddGameObject(missile, eColliderLayer::Player_Projecttile);
+		//		Scene* playScene = SceneManager::GetPlayScene();
+		//		playScene->AddGameObject(missile, eColliderLayer::Player_Projecttile);
 
-				Vector2 playerPos = GetPos();
-				Vector2 playerScale = GetScale() / 2.0f;
+		//		Vector2 playerPos = GetPos();
+		//		Vector2 playerScale = GetScale() / 2.0f;
 
-				missile->SetPos(playerPos);
-				missile->mDestPos = Vector2::One; // = Input::GetMousePos();
-				//missile->mDir = missile->mDestPos - pos;
+		//		missile->SetPos(playerPos);
+		//		missile->mDestPos = Vector2::One; // = Input::GetMousePos();
+		//		//missile->mDir = missile->mDestPos - pos;
 
-				mMisiileDir = math::Rotate(mMisiileDir, 5.0f);
-				missile->mDir = mMisiileDir;
-			}
+		//		mMisiileDir = math::Rotate(mMisiileDir, 5.0f);
+		//		missile->mDir = mMisiileDir;
+		//	}
 
 
 			//missile->mDir = Vector2(mCoff, -1.0f + mCoff);
 			//mCoff -= 0.1f;
-		}
+		//}
 		/*if (KEY_DOWN(eKeyCode::I))
 		{
 			BackPack* backPack = new BackPack();
@@ -444,7 +458,8 @@ namespace ya
 
 
 		mAnimator->Play(L"Idle", true);
-
+		mAttackCount = 0;
+		mDamageCount = 0;
 		/*Missile* missile = new Missile();
 
 		Scene* playScene = SceneManager::GetPlayScene();

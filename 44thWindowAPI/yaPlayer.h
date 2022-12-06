@@ -45,6 +45,8 @@ namespace ya {
 		float mTime;
 		Vector2 mMisiileDir;
 
+		int mAttackCount;
+		int mDamageCount;
 		int mHp;
 	};
 }	
