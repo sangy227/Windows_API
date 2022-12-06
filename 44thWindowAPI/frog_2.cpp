@@ -44,6 +44,8 @@ namespace ya {
 
 		mAnimator->Play(L"Idle", true);
 
+
+
 		AddComponent(mAnimator);
 		AddComponent(new Collider());
 	}
