@@ -164,7 +164,12 @@
     <ClInclude Include="cultist_blade.h" />
     <ClInclude Include="dealmaker.h" />
     <ClInclude Include="def.h" />
+    <ClInclude Include="Elder_Mage.h" />
+    <ClInclude Include="Feral_Badger.h" />
+    <ClInclude Include="fire_cobra.h" />
+    <ClInclude Include="fire_gecko.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="frog_2.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Logo.h" />
     <ClInclude Include="LogoButton1.h" />
@@ -271,6 +276,11 @@
     <ClCompile Include="cultist.cpp" />
     <ClCompile Include="cultist_blade.cpp" />
     <ClCompile Include="dealmaker.cpp" />
+    <ClCompile Include="Elder_Mage.cpp" />
+    <ClCompile Include="Feral_Badger.cpp" />
+    <ClCompile Include="fire_cobra.cpp" />
+    <ClCompile Include="fire_gecko.cpp" />
+    <ClCompile Include="frog_2.cpp" />
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Logo.cpp" />
     <ClCompile Include="LogoButton1.cpp" />

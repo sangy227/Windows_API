@@ -424,6 +424,21 @@
     <ClInclude Include="dealmaker.h">
       <Filter>Engine\GameObject\Enemies</Filter>
     </ClInclude>
+    <ClInclude Include="Elder_Mage.h">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Feral_Badger.h">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="fire_cobra.h">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="fire_gecko.h">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="frog_2.h">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="44thWindowAPI.rc">
@@ -746,6 +761,21 @@
       <Filter>Engine\GameObject\Enemies</Filter>
     </ClCompile>
     <ClCompile Include="dealmaker.cpp">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="Elder_Mage.cpp">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="Feral_Badger.cpp">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="fire_cobra.cpp">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="fire_gecko.cpp">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="frog_2.cpp">
       <Filter>Engine\GameObject\Enemies</Filter>
     </ClCompile>
   </ItemGroup>
