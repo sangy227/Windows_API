@@ -3,11 +3,11 @@
 
 namespace ya {
 
-	class TestSword : public UIBase
+	class UIItem : public UIBase
 	{
 	public:
-		TestSword(eUIType type);
-		~TestSword();
+		UIItem(eUIType type);
+		~UIItem();
 
 		virtual void OnInit() override;
 		virtual void OnActive() override;
@@ -17,8 +17,16 @@ namespace ya {
 		virtual void OnClear() override;
 
 		virtual void Click();
+
+		Vector2 CalculateIndex(Vector2 pos);
+		Vector2 CalculateIndexPos(Vector2 pos);
 	private:
+		const UINT row = 5;
+		const UINT coulmn = 11;
+
 		Event mOnClick;
 		bool mbMouseOn;
+		Vector2 mPrevMousePos;
+
 	};
 }

@@ -527,7 +527,7 @@ namespace ya {
 		testbutton->SetPos(Vector2(460.0f, 160.0f));
 		testbutton->ImageLoad(L"testbutton", L"..\\Resources\\Image\\TestButton.bmp");
 
-		TestSword* testsword = new TestSword(eUIType::TestSword);
+		UIItem* testsword = new UIItem(eUIType::TestSword);
 		mUIs.insert(std::make_pair(eUIType::TestSword, testsword));
 		testsword->SetPos(Vector2(542.0f, 160.0f));
 		testsword->ImageLoad(L"testsword", L"..\\Resources\\Image\\Sword_of_Venom.bmp");

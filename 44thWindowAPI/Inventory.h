@@ -1,5 +1,6 @@
 #pragma once
 #include "yaUIBase.h"
+#include "TestSword.h"
 
 namespace ya {
 
@@ -18,8 +19,12 @@ namespace ya {
 
 		virtual void Click();
 	private:
+		const UINT row = 5;
+		const UINT coulmn = 11;
 		Event mOnClick;
 		bool mbMouseOn;
+
+		std::vector<std::vector<UIItem*>> mInventories;
 
 	};
 }

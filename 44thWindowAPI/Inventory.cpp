@@ -7,6 +7,11 @@ namespace ya {
 		:UIBase(type)
 	{
 		mOnClick = std::bind(&Inventory::Click, this);
+
+		// Inven Init
+		mInventories.resize(row);
+		for (size_t i = 0; i < row; i++)
+			mInventories[i].resize(coulmn);
 	}
 	Inventory::~Inventory()
 	{
@@ -22,7 +27,7 @@ namespace ya {
 	}
 	void Inventory::OnTick()
 	{
-		Vector2 mousePos = Input::GetMousePos();
+		/*Vector2 mousePos = Input::GetMousePos();
 		Vector2 size = GetSize();
 
 		if (mScreenPos.x <= mousePos.x && mousePos.x < mScreenPos.x + size.x
@@ -38,7 +43,7 @@ namespace ya {
 		if (KEY_DOWN(eKeyCode::LBTN) && mbMouseOn)
 		{
 			mOnClick();
-		}
+		}*/
 	}
 	void Inventory::OnRender(HDC hdc)
 	{

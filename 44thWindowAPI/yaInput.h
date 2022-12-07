@@ -44,9 +44,11 @@ namespace ya {
 
 		 static void Initialize();
 		 static void Tick();
+		 static void PostTick();
 		 static void Render(HDC hdc);
 		 static eKeyState GetKeyState(eKeyCode keyCode);
 		 static Vector2 GetMousePos() { return mMousePos; }
+		 //static Vector2 GetpostMousePos() { return mPosetMousePos; }
 		 static Vector2 GetMousePos(HWND hWnd);
 
 
@@ -55,6 +57,8 @@ namespace ya {
 	private:
 		static std::vector<key> mKeys;
 		static Vector2 mMousePos;
+		//static Vector2 mPosetMousePos;
+		
 	};
 }
 

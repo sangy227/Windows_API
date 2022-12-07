@@ -2,6 +2,7 @@
 #include "yaApplication.h"
 namespace ya {
 	
+	//Ãß°¡
 
 	int ASCII[(UINT)eKeyCode::End] =
 	{
@@ -100,6 +101,9 @@ namespace ya {
 				mKeys[i].bPressed = false;
 			}
 		}
+	}
+	void Input::PostTick()
+	{
 	}
 	void Input::Render(HDC hdc)
 	{
