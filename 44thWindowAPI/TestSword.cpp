@@ -3,11 +3,13 @@
 #include "yaInput.h"
 #include "yaUIManager.h"
 #include "yaCamera.h"
+
 namespace ya {
 	UIItem::UIItem(eUIType type)
 		:UIBase(type)
 	{
 		mOnClick = std::bind(&UIItem::Click, this);
+		//mPrevPos = GetScreenPos();
 	}
 	UIItem::~UIItem()
 	{
@@ -36,6 +38,14 @@ namespace ya {
 			mbMouseOn = false;
 		}
 
+		if (KEY_DOWN(eKeyCode::LBTN) && mbMouseOn)
+		{
+			mPrevClickPos = GetScreenPos();
+
+			Vector2 mousePos = Input::GetMousePos();
+			mPrevMousePos = mousePos;
+		}
+
 		if (KEY_PREESE(eKeyCode::LBTN) && mbMouseOn)
 		{
 			mOnClick();
@@ -44,9 +54,19 @@ namespace ya {
 		if (KEY_UP(eKeyCode::LBTN) && mbMouseOn)
 		{
 			Vector2 pos = GetScreenPos();
-			pos = CalculateIndexPos(pos);
-			pos -= mParent->GetPos();
-			SetPos(pos);
+			if (399.0f < pos.x && 1257.0f > pos.x
+				&& 51.0f < pos.y && 441.0f > pos.y)
+			{
+				pos = CalculateIndexPos(pos);
+				pos -= mParent->GetPos();
+				SetPos(pos);
+			}
+			else
+			{
+				//pos = mPrevClickPos;
+				//pos -= mParent->GetPos();
+				//SetPos(pos);
+			}
 		}
 	}
 	void UIItem::OnRender(HDC hdc)
@@ -67,7 +87,6 @@ namespace ya {
 		SelectObject(hdc, oldPen);
 		DeleteObject(bluePen);
 		SelectObject(hdc, oldBrush);
-		
 	}
 	void UIItem::OnClear()
 	{
@@ -75,9 +94,6 @@ namespace ya {
 	void UIItem::Click()
 	{
 		Vector2 mousePos = Input::GetMousePos();
-
-		//
-
 
 		// 마우스 드래그 이동
 		if (mPrevMousePos.x != 0.0f && mPrevMousePos.y != 0.0f)
@@ -91,10 +107,9 @@ namespace ya {
 			SetPos(pos);
 		}
 
-
-
 		mPrevMousePos = mousePos;
 	}
+
 	Vector2 UIItem::CalculateIndex(Vector2 pos)
 	{
 		Vector2 start(399.0f, 51.0f);
@@ -116,6 +131,7 @@ namespace ya {
 
 		return Vector2(-1.0f, -1.0f);
 	}
+
 	Vector2 UIItem::CalculateIndexPos(Vector2 pos)
 	{
 		Vector2 start(399.0f, 51.0f);

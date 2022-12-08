@@ -43,8 +43,6 @@ namespace ya {
 	}
 	void UIBase::InActive()
 	{
-		
-
 		for (UIBase* child : mChilds)
 		{
 			child->InActive();

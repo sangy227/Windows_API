@@ -539,6 +539,8 @@ namespace ya {
 		inventory->ImageLoad(L"inventory", L"..\\Resources\\Image\\Object\\Inventory.bmp");
 		inventory->AddChild(testbutton);
 		inventory->AddChild(testsword);
+
+		
 		//△패널 && 버튼
 
 		Map_bg* map_bg = new Map_bg(eUIType::Map_bg);

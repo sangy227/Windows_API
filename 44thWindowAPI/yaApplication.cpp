@@ -71,6 +71,7 @@ namespace ya {
 
 		//DetroyGameObject ªË¡¶
 		SceneManager::DetroyGameObject();
+
 	}
 
 	void Application::SetMenuBar(bool power)

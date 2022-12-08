@@ -26,8 +26,8 @@ namespace ya {
 		Vector2 mousePos = Input::GetMousePos();
 		Vector2 size = GetSize();
 
-		if (mScreenPos.x <= mousePos.x && mousePos.x < mScreenPos.x + size.x 
-			&& mScreenPos.y <= mousePos.y && mousePos.y < mScreenPos.y + size.y )
+		if (mScreenPos.x <= mousePos.x && mousePos.x < mScreenPos.x + size.x
+			&& mScreenPos.y <= mousePos.y && mousePos.y < mScreenPos.y + size.y)
 		{
 			mbMouseOn = true;
 		}
@@ -55,5 +55,6 @@ namespace ya {
 	void TestButton::Click()
 	{
 		UIManager::Pop(eUIType::TestButton);
+
 	}
 }

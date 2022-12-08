@@ -2,7 +2,8 @@
 #include "yaUIBase.h"
 #include "TestSword.h"
 
-namespace ya {
+namespace ya
+{
 
 	class Inventory : public UIBase
 	{
@@ -18,13 +19,14 @@ namespace ya {
 		virtual void OnClear() override;
 
 		virtual void Click();
+
 	private:
 		const UINT row = 5;
 		const UINT coulmn = 11;
+
 		Event mOnClick;
 		bool mbMouseOn;
 
 		std::vector<std::vector<UIItem*>> mInventories;
-
 	};
 }

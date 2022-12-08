@@ -2,7 +2,6 @@
 #include "yaApplication.h"
 namespace ya {
 	
-	//Ãß°¡
 
 	int ASCII[(UINT)eKeyCode::End] =
 	{
@@ -102,11 +101,13 @@ namespace ya {
 			}
 		}
 	}
-	void Input::PostTick()
-	{
-	}
+
 	void Input::Render(HDC hdc)
 	{
+		const std::wstring str = L"x : " + std::to_wstring((UINT)mMousePos.x) 
+			+ L" y : " + std::to_wstring((UINT)mMousePos.y);
+
+		TextOut(hdc, 10, 100, str.c_str(), str.length());
 	}
 
 	eKeyState Input::GetKeyState(eKeyCode keycode)
