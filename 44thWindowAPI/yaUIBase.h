@@ -57,6 +57,8 @@ namespace ya {
 		void SetSize(Vector2 size) { mSize = size; }
 		Vector2 GetSize() { return mSize; }
 		
+		//내가 추가한것
+		bool ExitChild() { return (mbEnable = false); }
 	protected:
 		UIBase* mParent;
 		Image* mImage;
@@ -66,6 +68,10 @@ namespace ya {
 		Vector2 mScreenPos;
 
 		AniMator* mAniMator;
+		bool mbEnable;
+
+
+		UINT LevelUp_Inventory_Count;
 		//GameObject* mRectObject;
 
 	private:
@@ -85,7 +91,7 @@ namespace ya {
 		
 		eUIType mType;
 		bool mbFullScreen;
-		bool mbEnable;
+		//bool mbEnable;
 
 	
 	};

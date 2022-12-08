@@ -29,7 +29,7 @@ namespace ya {
 		Vector2 size = GetSize();
 
 		if (mScreenPos.x <= mousePos.x && mousePos.x < mScreenPos.x + size.x * 4.0f
-			&& mScreenPos.y <= mousePos.y && mousePos.y < mScreenPos.y + size.y * 4.0f)
+			&& mScreenPos.y <= mousePos.y && mousePos.y < mScreenPos.y + size.y * 3.5f)
 		{
 			mbMouseOn = true;
 		}
@@ -112,45 +112,54 @@ namespace ya {
 
 	Vector2 UIItem::CalculateIndex(Vector2 pos)
 	{
+		float width = 399.0f;
+		float hegiht = 51.0f;
+
 		Vector2 start(399.0f, 51.0f);
 		for (size_t y = 0; y < row; y++)
 		{
 			for (size_t x = 0; x < coulmn; x++)
 			{
 				Vector2 indexPos;
-				indexPos.x = 78 * (x + 1) + 399;
-				indexPos.y = 78 * (y + 1) + 51;
+				indexPos.x = 77.0f * (x +1) +width;
+				indexPos.y = 77.0f * (y +1) +hegiht;
 
-				if (indexPos.x < pos.x && indexPos.x + 78.0f > pos.x
-					&& indexPos.y < pos.y && indexPos.y + 78.0f > pos.y)
+				if (indexPos.x < pos.x && indexPos.x + 77.0f > pos.x
+					&& indexPos.y < pos.y && indexPos.y + 77.0f > pos.y)
 				{
 					return Vector2(x, y);
 				}
 			}
 		}
 
-		return Vector2(-1.0f, -1.0f);
+		//return Vector2(-1.0f, -1.0f);
+		return mPrevClickPos;
 	}
 
 	Vector2 UIItem::CalculateIndexPos(Vector2 pos)
 	{
+		float width = 399.0f;
+		float hegiht = 51.0f;
+
 		Vector2 start(399.0f, 51.0f);
 		for (size_t y = 0; y < row; y++)
 		{
 			for (size_t x = 0; x < coulmn; x++)
 			{
 				Vector2 indexPos;
-				indexPos.x = 78 * (x)+399;
-				indexPos.y = 78 * (y)+51;
+				indexPos.x = 77.0f * (x) + width;
+				indexPos.y = 77.0f * (y) + hegiht;
 
-				if (indexPos.x < pos.x && indexPos.x + 78.0f > pos.x
-					&& indexPos.y < pos.y && indexPos.y + 78.0f > pos.y)
+				if (indexPos.x < pos.x && indexPos.x + 77.0f > pos.x
+					&& indexPos.y < pos.y && indexPos.y + 77.0f > pos.y)
 				{
 					return Vector2(indexPos);
 				}
 			}
 		}
 
-		return Vector2(-1.0f, -1.0f);
+		//return Vector2(-1.0f, -1.0f);
+		return mPrevClickPos;
+
 	}
 }

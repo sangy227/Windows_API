@@ -33,13 +33,15 @@ namespace ya {
 		static void Setchel_In();
 
 		static void PlaySceneUI();
-
+		static void Inventoty_Pull();
 
 	private:
 		static std::unordered_map <eUIType, UIBase*> mUIs;
 		static std::queue<eUIType> mRequestUIQueue;
 		static std::stack<UIBase*> mUIBases;
 		static UIBase* mCurrentData;
+
+		
 	};
 }
 

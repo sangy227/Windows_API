@@ -17,6 +17,7 @@ namespace ya {
 	}
 	void TestButton::OnActive()
 	{
+		
 	}
 	void TestButton::OnInActive()
 	{
@@ -26,8 +27,8 @@ namespace ya {
 		Vector2 mousePos = Input::GetMousePos();
 		Vector2 size = GetSize();
 
-		if (mScreenPos.x <= mousePos.x && mousePos.x < mScreenPos.x + size.x
-			&& mScreenPos.y <= mousePos.y && mousePos.y < mScreenPos.y + size.y)
+		if (mScreenPos.x <= mousePos.x && mousePos.x < mScreenPos.x + size.x * 0.819f
+			&& mScreenPos.y <= mousePos.y && mousePos.y < mScreenPos.y + size.y * 0.819f)
 		{
 			mbMouseOn = true;
 		}
@@ -45,16 +46,32 @@ namespace ya {
 	{
 		TransparentBlt(hdc, (int)mScreenPos.x, (int)mScreenPos.y,
 			/*0.82 , 0.82 ÇØ¾ß ÀÎº¥Åä¸® ºóÄ­°ú µü¸ÂÀ½*/
-			mImage->GetWidth() * 0.82f, mImage->GetHeight() * 0.82f,
+			mImage->GetWidth() * 0.818f, mImage->GetHeight() * 0.818f,
 			mImage->GetDC(), 0, 0, mImage->GetWidth(), mImage->GetHeight()
 			, RGB(255, 255, 255));
+
+		HBRUSH oldBrush = (HBRUSH)GetStockObject(HOLLOW_BRUSH);
+		HPEN bluePen = CreatePen(PS_SOLID, 1, RGB(0, 0, 255));
+		HPEN oldPen = (HPEN)SelectObject(hdc, bluePen);
+
+		Rectangle(hdc, (int)mScreenPos.x, (int)mScreenPos.y,
+			(int)mScreenPos.x + mImage->GetWidth() * 0.818f
+			, (int)mScreenPos.y + mImage->GetHeight() * 0.818f);
+
+		SelectObject(hdc, oldPen);
+		DeleteObject(bluePen);
+		SelectObject(hdc, oldBrush);
 	}
 	void TestButton::OnClear()
 	{
 	}
 	void TestButton::Click()
 	{
-		UIManager::Pop(eUIType::TestButton);
-
+		//UIManager::Pop(eUIType::TestButton);
+		//ExitChild();
+		if (LevelUp_Inventory_Count == 0)
+			return;
+		LevelUp_Inventory_Count -= 1;
+		mbEnable = false;
 	}
 }

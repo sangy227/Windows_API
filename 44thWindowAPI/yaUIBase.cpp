@@ -13,6 +13,7 @@ namespace ya {
 		, mPos(Vector2::Zero)
 		, mSize(Vector2::Zero)
 		, mAniMator(nullptr)
+		, LevelUp_Inventory_Count(5)
 		/*, mRectObject(nullptr)*/
 	{
 		//mRectObject = new GameObject();

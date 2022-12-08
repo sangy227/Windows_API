@@ -68,6 +68,7 @@ namespace ya {
 	std::queue<eUIType> UIManager::mRequestUIQueue;
 	std::stack<UIBase*> UIManager::mUIBases;
 	UIBase* UIManager::mCurrentData = nullptr;
+	
 
 
 	void UIManager::Initialize()
@@ -521,11 +522,34 @@ namespace ya {
 		//△패널 && 버튼
 
 
-		TestButton* testbutton = new TestButton(eUIType::TestButton);
-		mUIs.insert(std::make_pair(eUIType::TestButton, testbutton));
-		//460.0f, 160.0f 로 좌표해야 인벤토리 한칸 안에 딱맞음
-		testbutton->SetPos(Vector2(460.0f, 160.0f));
-		testbutton->ImageLoad(L"testbutton", L"..\\Resources\\Image\\TestButton.bmp");
+		Inventoty_Pull();
+		//△패널 && 버튼
+
+		Map_bg* map_bg = new Map_bg(eUIType::Map_bg);
+		mUIs.insert(std::make_pair(eUIType::Map_bg, map_bg));
+		map_bg->SetPos(Vector2(150.0f, 37.0f));
+		map_bg->ImageLoad(L"map_bg", L"..\\Resources\\Image\\Object\\map_bg.bmp");
+		//△패널 && 버튼
+	}
+
+	void UIManager::Inventoty_Pull()
+	{
+		TestButton* testbutton[46] = {};
+		for (size_t i = 0; i < 46; i++)
+		{
+			testbutton[i] = new TestButton(eUIType::TestButton);
+			mUIs.insert(std::make_pair(eUIType::TestButton, testbutton[i]));
+			//460.0f, 160.0f 로 좌표해야 인벤토리 한칸 안에 딱맞음
+			//testbutton[i]->SetPos(Vector2(460.0f, 160.0f));
+			testbutton[i]->ImageLoad(L"testbutton", L"..\\Resources\\Image\\blackLayer.bmp");
+		}
+
+		testbutton[0]->SetPos(Vector2(163.0f, 16.5f));
+		testbutton[1]->SetPos(Vector2(240.0f, 16.5f));
+		testbutton[2]->SetPos(Vector2(163.0f, 94.0f));
+		testbutton[3]->SetPos(Vector2(240.0f, 94.0f));
+		testbutton[4]->SetPos(Vector2(654.0f, 200.0f));
+
 
 		UIItem* testsword = new UIItem(eUIType::TestSword);
 		mUIs.insert(std::make_pair(eUIType::TestSword, testsword));
@@ -537,20 +561,12 @@ namespace ya {
 		mUIs.insert(std::make_pair(eUIType::Inventory2, inventory));
 		inventory->SetPos(Vector2(240.0f, 37.0f));
 		inventory->ImageLoad(L"inventory", L"..\\Resources\\Image\\Object\\Inventory.bmp");
-		inventory->AddChild(testbutton);
+		for (size_t i = 0; i < 5; i++)
+			inventory->AddChild(testbutton[i]);
 		inventory->AddChild(testsword);
-
-		
-		//△패널 && 버튼
-
-		Map_bg* map_bg = new Map_bg(eUIType::Map_bg);
-		mUIs.insert(std::make_pair(eUIType::Map_bg, map_bg));
-		map_bg->SetPos(Vector2(150.0f, 37.0f));
-		map_bg->ImageLoad(L"map_bg", L"..\\Resources\\Image\\Object\\map_bg.bmp");
-		//△패널 && 버튼
-
-
 	}
+
+	
 
 	
 
