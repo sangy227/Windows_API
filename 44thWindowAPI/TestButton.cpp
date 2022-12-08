@@ -37,7 +37,7 @@ namespace ya {
 			mbMouseOn = false;
 		}
 
-		if (KEY_DOWN(eKeyCode::LBTN) && mbMouseOn)
+		if (KEY_DOWN(eKeyCode::LBTN) && mbMouseOn && LevelUp_Inventory_Count>0)
 		{
 			mOnClick();
 		}
@@ -54,9 +54,9 @@ namespace ya {
 		HPEN bluePen = CreatePen(PS_SOLID, 1, RGB(0, 0, 255));
 		HPEN oldPen = (HPEN)SelectObject(hdc, bluePen);
 
-		Rectangle(hdc, (int)mScreenPos.x, (int)mScreenPos.y,
+		/*Rectangle(hdc, (int)mScreenPos.x, (int)mScreenPos.y,
 			(int)mScreenPos.x + mImage->GetWidth() * 0.818f
-			, (int)mScreenPos.y + mImage->GetHeight() * 0.818f);
+			, (int)mScreenPos.y + mImage->GetHeight() * 0.818f);*/
 
 		SelectObject(hdc, oldPen);
 		DeleteObject(bluePen);
@@ -69,8 +69,6 @@ namespace ya {
 	{
 		//UIManager::Pop(eUIType::TestButton);
 		//ExitChild();
-		if (LevelUp_Inventory_Count == 0)
-			return;
 		LevelUp_Inventory_Count -= 1;
 		mbEnable = false;
 	}

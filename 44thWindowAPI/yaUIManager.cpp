@@ -543,13 +543,23 @@ namespace ya {
 			//testbutton[i]->SetPos(Vector2(460.0f, 160.0f));
 			testbutton[i]->ImageLoad(L"testbutton", L"..\\Resources\\Image\\blackLayer.bmp");
 		}
+		
+		int black_layer_count = 0;
+		for (int y = 16; y <= 324; y += 77)
+		{
+			for (int z = 163; z <= 933; z += 77)
+			{
+				if ((z == 471 && y == 93) || (z == 548 && y == 93) || (z == 625 && y == 93))
+					continue;
+				if ((z == 471 && y == 170) || (z == 548 && y == 170) || (z == 625 && y == 170))
+					continue;
+				if ((z == 471 && y == 247) || (z == 548 && y == 247) || (z == 625 && y == 247))
+					continue;
 
-		testbutton[0]->SetPos(Vector2(163.0f, 16.5f));
-		testbutton[1]->SetPos(Vector2(240.0f, 16.5f));
-		testbutton[2]->SetPos(Vector2(163.0f, 94.0f));
-		testbutton[3]->SetPos(Vector2(240.0f, 94.0f));
-		testbutton[4]->SetPos(Vector2(654.0f, 200.0f));
-
+				testbutton[black_layer_count]->SetPos(Vector2(z, y));
+				black_layer_count++;
+			}
+		}
 
 		UIItem* testsword = new UIItem(eUIType::TestSword);
 		mUIs.insert(std::make_pair(eUIType::TestSword, testsword));
@@ -561,7 +571,7 @@ namespace ya {
 		mUIs.insert(std::make_pair(eUIType::Inventory2, inventory));
 		inventory->SetPos(Vector2(240.0f, 37.0f));
 		inventory->ImageLoad(L"inventory", L"..\\Resources\\Image\\Object\\Inventory.bmp");
-		for (size_t i = 0; i < 5; i++)
+		for (size_t i = 0; i < 46; i++)
 			inventory->AddChild(testbutton[i]);
 		inventory->AddChild(testsword);
 	}

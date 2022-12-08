@@ -70,8 +70,9 @@ namespace ya {
 		AniMator* mAniMator;
 		bool mbEnable;
 
+		static UINT LevelUp_Inventory_Count;
 
-		UINT LevelUp_Inventory_Count;
+		
 		//GameObject* mRectObject;
 
 	private:
@@ -86,7 +87,6 @@ namespace ya {
 	private:
 		std::vector<UIBase*> mChilds;
 		std::vector<GameObject*> mGameObjects;
-
 
 		
 		eUIType mType;

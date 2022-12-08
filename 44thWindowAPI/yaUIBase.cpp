@@ -5,6 +5,8 @@
 #include "yaGameObject.h"
 
 namespace ya {
+	UINT UIBase::LevelUp_Inventory_Count = 3;
+
 	UIBase::UIBase(eUIType type)
 		: mType(type)
 		, mbFullScreen(false)
@@ -13,7 +15,7 @@ namespace ya {
 		, mPos(Vector2::Zero)
 		, mSize(Vector2::Zero)
 		, mAniMator(nullptr)
-		, LevelUp_Inventory_Count(5)
+		//, LevelUp_Inventory_Count(5)
 		/*, mRectObject(nullptr)*/
 	{
 		//mRectObject = new GameObject();
