@@ -56,7 +56,7 @@
 
 #include "Inventory.h"
 #include "Map_bg.h"
-
+#include "Enter_Button.h"
 #include "TestButton.h"
 #include "TestSword.h"
 /*天天天天天天天天天天天天天天天*/
@@ -563,8 +563,13 @@ namespace ya {
 
 		UIItem* testsword = new UIItem(eUIType::TestSword);
 		mUIs.insert(std::make_pair(eUIType::TestSword, testsword));
-		testsword->SetPos(Vector2(542.0f, 160.0f));
+		testsword->SetPos(Vector2(542.0f, 90.0f));
 		testsword->ImageLoad(L"testsword", L"..\\Resources\\Image\\Sword_of_Venom.bmp");
+
+		Enter_Button* enter_button = new Enter_Button(eUIType::Enter_Button);
+		mUIs.insert(std::make_pair(eUIType::Enter_Button, enter_button));
+		enter_button->SetPos(Vector2(1200.0f, 350.0f));
+		enter_button->ImageLoad(L"enter_button", L"..\\Resources\\Image\\Object\\Enter_Button.bmp");
 
 
 		Inventory* inventory = new Inventory(eUIType::Inventory2);
@@ -574,6 +579,7 @@ namespace ya {
 		for (size_t i = 0; i < 46; i++)
 			inventory->AddChild(testbutton[i]);
 		inventory->AddChild(testsword);
+		inventory->AddChild(enter_button);
 	}
 
 	

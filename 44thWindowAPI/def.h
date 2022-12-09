@@ -136,6 +136,7 @@
 
 		Inventory2,
 		Map_bg,
+		Enter_Button,
 
 		TestButton,
 		TestSword,

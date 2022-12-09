@@ -165,6 +165,7 @@
     <ClInclude Include="dealmaker.h" />
     <ClInclude Include="def.h" />
     <ClInclude Include="Elder_Mage.h" />
+    <ClInclude Include="Enter_Button.h" />
     <ClInclude Include="Feral_Badger.h" />
     <ClInclude Include="fire_cobra.h" />
     <ClInclude Include="fire_gecko.h" />
@@ -277,6 +278,7 @@
     <ClCompile Include="cultist_blade.cpp" />
     <ClCompile Include="dealmaker.cpp" />
     <ClCompile Include="Elder_Mage.cpp" />
+    <ClCompile Include="Enter_Button.cpp" />
     <ClCompile Include="Feral_Badger.cpp" />
     <ClCompile Include="fire_cobra.cpp" />
     <ClCompile Include="fire_gecko.cpp" />
