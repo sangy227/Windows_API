@@ -104,6 +104,9 @@
     <Filter Include="Engine\GameObject\UI\PlaySceneUI\Mid_Status_Bar">
       <UniqueIdentifier>{8b0ad01b-9b32-4f34-aa35-db1d78a590f4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\GameObject\Enemies\Monster_include">
+      <UniqueIdentifier>{f510b0d9-2cdc-4214-995a-11ca4f97edf4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="44thWindowAPI.h">
@@ -448,6 +451,39 @@
     <ClInclude Include="Enter_Button.h">
       <Filter>Engine\GameObject\UI\PlaySceneUI\Mid_Status_Bar</Filter>
     </ClInclude>
+    <ClInclude Include="Gerbil_Ruffian.h">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Grandmaster.h">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Glory_Knight.h">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Hare_Defender.h">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="hawk_knight.h">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="head_honcho.h">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="healer_enemy.h">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="hermit_crab_bomb.h">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="legman.h">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Monster_include.h">
+      <Filter>Engine\GameObject\Enemies\Monster_include</Filter>
+    </ClInclude>
+    <ClInclude Include="salamander.h">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="44thWindowAPI.rc">
@@ -789,6 +825,36 @@
     </ClCompile>
     <ClCompile Include="Enter_Button.cpp">
       <Filter>Engine\GameObject\UI\PlaySceneUI\Mid_Status_Bar</Filter>
+    </ClCompile>
+    <ClCompile Include="Gerbil_Ruffian.cpp">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="Glory_Knight.cpp">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="Grandmaster.cpp">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="Hare_Defender.cpp">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="hawk_knight.cpp">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="head_honcho.cpp">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="healer_enemy.cpp">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="hermit_crab_bomb.cpp">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="legman.cpp">
+      <Filter>Engine\GameObject\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="salamander.cpp">
+      <Filter>Engine\GameObject\Enemies</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

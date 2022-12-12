@@ -4,9 +4,10 @@
 #include "yaSceneManager.h"
 #include "yaBgImageObject.h"
 #include "yaObject.h"
-#include "yaMonster.h"
+
+#include "Monster_include.h"
+
 #include "yaCollisionManager.h"
-#include "chicken.h"
 #include "yaGround.h"
 #include "yaUIManager.h"
 #include "yaHUD.h"
