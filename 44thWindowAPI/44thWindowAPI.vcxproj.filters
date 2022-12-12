@@ -128,6 +128,9 @@
     <Filter Include="Engine\GameObject\UI\PlaySceneUI\Item\Weapon">
       <UniqueIdentifier>{904c82c8-0f57-4726-a12a-544b52f6f06c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\GameObject\UI\PlaySceneUI\Item\Shield">
+      <UniqueIdentifier>{4fc687b7-832f-40d0-9128-180db7ad06a0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="44thWindowAPI.h">
