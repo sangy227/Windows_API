@@ -107,6 +107,27 @@
     <Filter Include="Engine\GameObject\Enemies\Monster_include">
       <UniqueIdentifier>{f510b0d9-2cdc-4214-995a-11ca4f97edf4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\GameObject\UI\PlaySceneUI\Item">
+      <UniqueIdentifier>{aadae0b0-31be-4f6e-970c-eeb78aa3d44d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\GameObject\UI\PlaySceneUI\Item\Armor">
+      <UniqueIdentifier>{724baae7-8078-457d-9a82-e35e2402ad36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\GameObject\UI\PlaySceneUI\Item\Bow_Arrow">
+      <UniqueIdentifier>{860706b3-38aa-4b47-9944-922caa08a1d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\GameObject\UI\PlaySceneUI\Item\Dagger">
+      <UniqueIdentifier>{27c0298f-0099-40a8-9962-0b6e10e32afc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\GameObject\UI\PlaySceneUI\Item\Jewelry">
+      <UniqueIdentifier>{954c0a23-240c-4f16-ae14-203ce184e28a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\GameObject\UI\PlaySceneUI\Item\Potion">
+      <UniqueIdentifier>{54291a3a-31c4-433e-9373-3107e881db85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\GameObject\UI\PlaySceneUI\Item\Weapon">
+      <UniqueIdentifier>{904c82c8-0f57-4726-a12a-544b52f6f06c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="44thWindowAPI.h">
