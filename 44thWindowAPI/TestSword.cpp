@@ -64,16 +64,16 @@ namespace ya {
 			else
 			{
 				//인벤토리 바깥으로 벗어난다면 다시 원상복귀로 돌아가는 문법
-				pos = mPrevClickPos;
+				/*pos = mPrevClickPos;
 				pos -= mParent->GetPos();
-				SetPos(pos);
+				SetPos(pos);*/
 			}
 		}
 	}
 	void UIItem::OnRender(HDC hdc)
 	{
 		TransparentBlt(hdc, (int)mScreenPos.x, (int)mScreenPos.y,
-			mImage->GetWidth() * 4.0f, mImage->GetHeight() * 3.5f,
+			mImage->GetWidth() * 4.0f, mImage->GetHeight() * 4.0f,
 			mImage->GetDC(), 0, 0, mImage->GetWidth(), mImage->GetHeight()
 			, RGB(255, 255, 255));
 
@@ -81,9 +81,9 @@ namespace ya {
 		HPEN bluePen = CreatePen(PS_SOLID, 3, RGB(0, 0, 255));
 		HPEN oldPen = (HPEN)SelectObject(hdc, bluePen);
 
-		Rectangle(hdc, (int)mScreenPos.x, (int)mScreenPos.y,
+		/*Rectangle(hdc, (int)mScreenPos.x, (int)mScreenPos.y,
 			(int)mScreenPos.x + mImage->GetWidth() * 4.0f
-			, (int)mScreenPos.y + mImage->GetHeight() * 3.5f);
+			, (int)mScreenPos.y + mImage->GetHeight() * 3.5f);*/
 
 		SelectObject(hdc, oldPen);
 		DeleteObject(bluePen);

@@ -367,9 +367,6 @@
     <ClInclude Include="TitleSelectPlayer8.h">
       <Filter>Engine\GameObject\UI\LogoSceneUI\PlayerSelectUI\SetchelUI\SelectBg</Filter>
     </ClInclude>
-    <ClInclude Include="TestButton.h">
-      <Filter>Engine\GameObject\UI</Filter>
-    </ClInclude>
     <ClInclude Include="TestSword.h">
       <Filter>Engine\GameObject\UI</Filter>
     </ClInclude>
@@ -483,6 +480,9 @@
     </ClInclude>
     <ClInclude Include="salamander.h">
       <Filter>Engine\GameObject\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="TestButton.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Mid_Status_Bar</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -742,9 +742,6 @@
     <ClCompile Include="TitleSelectPlayer8.cpp">
       <Filter>Engine\GameObject\UI\LogoSceneUI\PlayerSelectUI\SetchelUI\SelectBg</Filter>
     </ClCompile>
-    <ClCompile Include="TestButton.cpp">
-      <Filter>Engine\GameObject\UI</Filter>
-    </ClCompile>
     <ClCompile Include="TestSword.cpp">
       <Filter>Engine\GameObject\UI</Filter>
     </ClCompile>
@@ -855,6 +852,9 @@
     </ClCompile>
     <ClCompile Include="salamander.cpp">
       <Filter>Engine\GameObject\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="TestButton.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Mid_Status_Bar</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

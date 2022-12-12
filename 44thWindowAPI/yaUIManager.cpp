@@ -576,6 +576,7 @@ namespace ya {
 		mUIs.insert(std::make_pair(eUIType::Inventory2, inventory));
 		inventory->SetPos(Vector2(240.0f, 37.0f));
 		inventory->ImageLoad(L"inventory", L"..\\Resources\\Image\\Object\\Inventory.bmp");
+		//인벤토리-자식들
 		for (size_t i = 0; i < 46; i++)
 			inventory->AddChild(testbutton[i]);
 		inventory->AddChild(testsword);
