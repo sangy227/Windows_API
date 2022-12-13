@@ -10,9 +10,9 @@ namespace ya {
 
 
 		// Inven Init
-		mInventories.resize(row);
+		/*mInventories.resize(row);
 		for (size_t i = 0; i < row; i++)
-			mInventories[i].resize(coulmn);
+			mInventories[i].resize(coulmn);*/
 
 	}
 	Inventory::~Inventory()

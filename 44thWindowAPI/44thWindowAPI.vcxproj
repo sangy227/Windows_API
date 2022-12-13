@@ -200,8 +200,9 @@
     <ClInclude Include="SetchelIcon.h" />
     <ClInclude Include="Setchel_Info.h" />
     <ClInclude Include="Stats_Icon.h" />
+    <ClInclude Include="Sword.h" />
     <ClInclude Include="TestButton.h" />
-    <ClInclude Include="TestSword.h" />
+    <ClInclude Include="UIItem.h" />
     <ClInclude Include="TitleDefault.h" />
     <ClInclude Include="TitleSelectBg.h" />
     <ClInclude Include="TitleSelectBg2.h" />
@@ -322,8 +323,9 @@
     <ClCompile Include="SetchelIcon.cpp" />
     <ClCompile Include="Setchel_Info.cpp" />
     <ClCompile Include="Stats_Icon.cpp" />
+    <ClCompile Include="Sword.cpp" />
     <ClCompile Include="TestButton.cpp" />
-    <ClCompile Include="TestSword.cpp" />
+    <ClCompile Include="UIItem.cpp" />
     <ClCompile Include="TitleDefault.cpp" />
     <ClCompile Include="TitleSelectBg.cpp" />
     <ClCompile Include="TitleSelectBg2.cpp" />

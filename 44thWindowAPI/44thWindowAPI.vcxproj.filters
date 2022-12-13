@@ -391,9 +391,6 @@
     <ClInclude Include="TitleSelectPlayer8.h">
       <Filter>Engine\GameObject\UI\LogoSceneUI\PlayerSelectUI\SetchelUI\SelectBg</Filter>
     </ClInclude>
-    <ClInclude Include="TestSword.h">
-      <Filter>Engine\GameObject\UI</Filter>
-    </ClInclude>
     <ClInclude Include="copy.h">
       <Filter>Engine\GameObject</Filter>
     </ClInclude>
@@ -507,6 +504,12 @@
     </ClInclude>
     <ClInclude Include="TestButton.h">
       <Filter>Engine\GameObject\UI\PlaySceneUI\Mid_Status_Bar</Filter>
+    </ClInclude>
+    <ClInclude Include="UIItem.h">
+      <Filter>Engine\GameObject\UI\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Sword.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Weapon</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -766,9 +769,6 @@
     <ClCompile Include="TitleSelectPlayer8.cpp">
       <Filter>Engine\GameObject\UI\LogoSceneUI\PlayerSelectUI\SetchelUI\SelectBg</Filter>
     </ClCompile>
-    <ClCompile Include="TestSword.cpp">
-      <Filter>Engine\GameObject\UI</Filter>
-    </ClCompile>
     <ClCompile Include="copy.cpp">
       <Filter>Engine\GameObject</Filter>
     </ClCompile>
@@ -879,6 +879,12 @@
     </ClCompile>
     <ClCompile Include="TestButton.cpp">
       <Filter>Engine\GameObject\UI\PlaySceneUI\Mid_Status_Bar</Filter>
+    </ClCompile>
+    <ClCompile Include="UIItem.cpp">
+      <Filter>Engine\GameObject\UI\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Sword.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Weapon</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

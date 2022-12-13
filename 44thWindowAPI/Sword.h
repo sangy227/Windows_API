@@ -1,15 +1,14 @@
+
 #pragma once
-#include "yaUIBase.h"
 #include "UIItem.h"
 
-namespace ya
-{
+namespace ya {
 
-	class Inventory : public UIBase
+	class Sword : public UIItem
 	{
 	public:
-		Inventory(eUIType type);
-		~Inventory();
+		Sword(eUIType type);
+		~Sword();
 
 		virtual void OnInit() override;
 		virtual void OnActive() override;
@@ -19,14 +18,5 @@ namespace ya
 		virtual void OnClear() override;
 
 		virtual void Click();
-
-	private:
-		/*const UINT row = 5;
-		const UINT coulmn = 11;*/
-
-		Event mOnClick;
-		bool mbMouseOn;
-
-		//std::vector<std::vector<UIItem*>> mInventories;
 	};
 }

@@ -58,7 +58,8 @@
 #include "Map_bg.h"
 #include "Enter_Button.h"
 #include "TestButton.h"
-#include "TestSword.h"
+#include "UIItem.h"
+#include "Sword.h"
 /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
 
 
@@ -561,10 +562,10 @@ namespace ya {
 			}
 		}
 
-		UIItem* testsword = new UIItem(eUIType::TestSword);
-		mUIs.insert(std::make_pair(eUIType::TestSword, testsword));
-		testsword->SetPos(Vector2(542.0f, 90.0f));
-		testsword->ImageLoad(L"testsword", L"..\\Resources\\Image\\Sword_of_Venom.bmp");
+		Sword* sword01 = new Sword(eUIType::TestSword);
+		mUIs.insert(std::make_pair(eUIType::TestSword, sword01));
+		sword01->SetPos(Vector2(542.0f, 90.0f));
+		sword01->ImageLoad(L"sword", L"..\\Resources\\Image\\Sword_of_Venom.bmp");
 
 		Enter_Button* enter_button = new Enter_Button(eUIType::Enter_Button);
 		mUIs.insert(std::make_pair(eUIType::Enter_Button, enter_button));
@@ -579,7 +580,7 @@ namespace ya {
 		//인벤토리-자식들
 		for (size_t i = 0; i < 46; i++)
 			inventory->AddChild(testbutton[i]);
-		inventory->AddChild(testsword);
+		inventory->AddChild(sword01);
 		inventory->AddChild(enter_button);
 	}
 

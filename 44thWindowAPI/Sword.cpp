@@ -1,30 +1,33 @@
-#include "TestSword.h"
-#include "yaImage.h"
+#include "Sword.h"
 #include "yaInput.h"
+#include "yaImage.h"
 #include "yaUIManager.h"
 #include "yaCamera.h"
 
+
 namespace ya {
-	UIItem::UIItem(eUIType type)
-		:UIBase(type)
+	Sword::Sword(eUIType type)
+		: UIItem(type)
 	{
-		mOnClick = std::bind(&UIItem::Click, this);
-		//mPrevPos = GetScreenPos();
+		mOnClick = std::bind(&Sword::Click, this);
+		mXarrIndex = 1;
+		mYarrIndex = 3;
 	}
-	UIItem::~UIItem()
-	{
-	}
-	void UIItem::OnInit()
+	Sword::~Sword()
 	{
 	}
-	void UIItem::OnActive()
+	void Sword::OnInit()
 	{
 	}
-	void UIItem::OnInActive()
+	void Sword::OnActive()
 	{
 	}
-	void UIItem::OnTick()
+	void Sword::OnInActive()
 	{
+	}
+	void Sword::OnTick()
+	{
+		
 		Vector2 mousePos = Input::GetMousePos();
 		Vector2 size = GetSize();
 
@@ -40,6 +43,8 @@ namespace ya {
 
 		if (KEY_DOWN(eKeyCode::LBTN) && mbMouseOn)
 		{
+			UIItem::OnTick();
+
 			mPrevClickPos = GetScreenPos();
 
 			Vector2 mousePos = Input::GetMousePos();
@@ -70,7 +75,7 @@ namespace ya {
 			}
 		}
 	}
-	void UIItem::OnRender(HDC hdc)
+	void Sword::OnRender(HDC hdc)
 	{
 		TransparentBlt(hdc, (int)mScreenPos.x, (int)mScreenPos.y,
 			mImage->GetWidth() * 4.0f, mImage->GetHeight() * 4.0f,
@@ -89,10 +94,10 @@ namespace ya {
 		DeleteObject(bluePen);
 		SelectObject(hdc, oldBrush);
 	}
-	void UIItem::OnClear()
+	void Sword::OnClear()
 	{
 	}
-	void UIItem::Click()
+	void Sword::Click()
 	{
 		Vector2 mousePos = Input::GetMousePos();
 
@@ -109,58 +114,5 @@ namespace ya {
 		}
 
 		mPrevMousePos = mousePos;
-	}
-
-	Vector2 UIItem::CalculateIndex(Vector2 pos)
-	{
-		float width = 399.0f;
-		float hegiht = 51.0f;
-
-		Vector2 start(399.0f, 51.0f);
-		for (size_t y = 0; y < row; y++)
-		{
-			for (size_t x = 0; x < coulmn; x++)
-			{
-				Vector2 indexPos;
-				indexPos.x = 77.0f * (x +1) +width;
-				indexPos.y = 77.0f * (y +1) +hegiht;
-
-				if (indexPos.x < pos.x && indexPos.x + 77.0f > pos.x
-					&& indexPos.y < pos.y && indexPos.y + 77.0f > pos.y)
-				{
-					return Vector2(x, y);
-				}
-			}
-		}
-
-		//return Vector2(-1.0f, -1.0f);
-		return mPrevClickPos;
-	}
-
-	Vector2 UIItem::CalculateIndexPos(Vector2 pos)
-	{
-		float width = 399.0f;
-		float hegiht = 51.0f;
-
-		Vector2 start(399.0f, 51.0f);
-		for (size_t y = 0; y < row; y++)
-		{
-			for (size_t x = 0; x < coulmn; x++)
-			{
-				Vector2 indexPos;
-				indexPos.x = 77.0f * (x) + width;
-				indexPos.y = 77.0f * (y) + hegiht;
-
-				if (indexPos.x < pos.x && indexPos.x + 77.0f > pos.x
-					&& indexPos.y < pos.y && indexPos.y + 77.0f > pos.y)
-				{
-					return Vector2(indexPos);
-				}
-			}
-		}
-
-		//return Vector2(-1.0f, -1.0f);
-		return mPrevClickPos;
-
 	}
 }
