@@ -5,24 +5,23 @@
 #include "yaCamera.h"
 
 namespace ya {
-	 std::vector<std::vector<UIItem*>> UIItem::mInventories;
+	 std::vector<std::vector<UINT>> UIItem::mInventories;
 
 	UIItem::UIItem(eUIType type)
 		:UIBase(type)
-		,mXarrIndex(0)
-		,mYarrIndex(0)
 	{
 		//mOnClick = std::bind(&UIItem::Click, this);
 		//mPrevPos = GetScreenPos();
+		mInventories.resize(row);
+		for (size_t i = 0; i < row; i++)
+			mInventories[i].resize(coulmn);
 	}
 	UIItem::~UIItem()
 	{
 	}
 	void UIItem::OnInit()
 	{
-		mInventories.resize(row);
-		for (size_t i = 0; i < row; i++)
-			mInventories[i].resize(coulmn);
+
 	}
 	void UIItem::OnActive()
 	{
@@ -33,8 +32,6 @@ namespace ya {
 	void UIItem::OnTick()
 	{
 		
-		int a = 0;
-	
 	}
 	void UIItem::OnRender(HDC hdc)
 	{
@@ -48,8 +45,39 @@ namespace ya {
 		
 	}
 
+	void UIItem::InventorieArr()
+	{
+
+		Vector2 Index = this->CalculateIndex(this->GetPos());
+		
+		//인벤토리가 클릭될때 원래있던 배열자리 0으로초기화
+		if (mInventories[Index.y][Index.x] == 1)
+		{
+			for (UINT y = 0; y < this->mYarrIndex; y++)
+			{
+				for (UINT x = 0; x < this->mXarrIndex; x++)
+				{
+					mInventories[Index.y + y][Index.x + x] = 0;
+				}
+			}
+		}
+
+		//새로운 자리에 배열자리 1로 채워넣기
+		for (UINT y = 0; y < this->mYarrIndex; y++)
+		{
+			for (UINT x = 0; x < this->mXarrIndex; x++)
+			{
+				mInventories[Index.y + y][Index.x + x] = 1;
+			}
+		}
+		
+		
+		int a = 0;
+	}
+
 	Vector2 UIItem::CalculateIndex(Vector2 pos)
 	{
+		
 		float width = 399.0f;
 		float hegiht = 51.0f;
 
@@ -59,8 +87,8 @@ namespace ya {
 			for (size_t x = 0; x < coulmn; x++)
 			{
 				Vector2 indexPos;
-				indexPos.x = 77.0f * (x +1) +width;
-				indexPos.y = 77.0f * (y +1) +hegiht;
+				indexPos.x = 77.0f * (x) + width;
+				indexPos.y = 77.0f * (y) + hegiht;
 
 				if (indexPos.x < pos.x && indexPos.x + 77.0f > pos.x
 					&& indexPos.y < pos.y && indexPos.y + 77.0f > pos.y)

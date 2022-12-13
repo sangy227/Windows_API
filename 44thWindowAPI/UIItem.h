@@ -6,7 +6,7 @@ namespace ya {
 	class UIItem : public UIBase
 	{
 	public:
-		static std::vector<std::vector<UIItem*>> mInventories;
+		static std::vector<std::vector<UINT>> mInventories;
 
 		UIItem(eUIType type);
 		~UIItem();
@@ -20,12 +20,14 @@ namespace ya {
 
 		virtual void Click();
 
+		void InventorieArr();
+
 	protected:
 		Vector2 CalculateIndex(Vector2 pos);
 		Vector2 CalculateIndexPos(Vector2 Index);
 
-		int mXarrIndex;
-		int mYarrIndex;
+		UINT mXarrIndex;
+		UINT mYarrIndex;
 
 		Event mOnClick;
 		bool mbMouseOn;

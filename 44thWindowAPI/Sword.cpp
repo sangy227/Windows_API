@@ -43,12 +43,13 @@ namespace ya {
 
 		if (KEY_DOWN(eKeyCode::LBTN) && mbMouseOn)
 		{
-			UIItem::OnTick();
-
 			mPrevClickPos = GetScreenPos();
 
 			Vector2 mousePos = Input::GetMousePos();
 			mPrevMousePos = mousePos;
+
+			UIItem::InventorieArr();
+
 		}
 
 		if (KEY_PREESE(eKeyCode::LBTN) && mbMouseOn)
@@ -65,6 +66,8 @@ namespace ya {
 				pos = CalculateIndexPos(pos);
 				pos -= mParent->GetPos();
 				SetPos(pos);
+
+				UIItem::InventorieArr();
 			}
 			else
 			{
@@ -72,6 +75,7 @@ namespace ya {
 				/*pos = mPrevClickPos;
 				pos -= mParent->GetPos();
 				SetPos(pos);*/
+
 			}
 		}
 	}
@@ -109,7 +113,7 @@ namespace ya {
 			pos.x += distance.x;
 			pos.y += distance.y;
 
-			//pos = CalculateIndexPos(pos);
+			pos = CalculateIndexPos(pos);
 			SetPos(pos);
 		}
 
