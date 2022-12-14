@@ -17,7 +17,6 @@ namespace ya {
 	}
 	void TestButton::OnActive()
 	{
-		
 	}
 	void TestButton::OnInActive()
 	{

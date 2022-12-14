@@ -6,7 +6,7 @@ namespace ya {
 	class UIItem : public UIBase
 	{
 	public:
-		static std::vector<std::vector<UINT>> mInventories;
+		static std::vector<std::vector<UIItem*>> mInventories;
 
 		UIItem(eUIType type);
 		~UIItem();
@@ -20,7 +20,7 @@ namespace ya {
 
 		virtual void Click();
 
-		void InventorieArr();
+		void InventorieArr(Vector2 mPos, Vector2 mPrevClickPos);
 
 	protected:
 		Vector2 CalculateIndex(Vector2 pos);
@@ -37,5 +37,6 @@ namespace ya {
 	private:
 		const UINT row = 5;
 		const UINT coulmn = 11;
+		Vector2 mPrevIndex;
 	};
 }
