@@ -1,32 +1,34 @@
-#include "Sword.h"
+#include "Weapon02.h"
 #include "yaInput.h"
 #include "yaImage.h"
 #include "yaUIManager.h"
 #include "yaCamera.h"
 
-
 namespace ya {
-	Sword::Sword(eUIType type)
+	Weapon02::Weapon02(eUIType type)
 		: UIItem(type)
 	{
-		mOnClick = std::bind(&Sword::Click, this);
+		mOnClick = std::bind(&Weapon02::Click, this);
 		mXarrIndex = 1;
 		mYarrIndex = 3;
 	}
-	Sword::~Sword()
+	Weapon02::~Weapon02()
 	{
 	}
-	void Sword::OnInit()
+	void Weapon02::OnInit()
 	{
 	}
-	void Sword::OnActive()
+	void Weapon02::OnActive()
 	{
 	}
-	void Sword::OnInActive()
+	void Weapon02::OnInActive()
 	{
 	}
-	void Sword::OnTick()
+	void Weapon02::OnTick()
 	{
+		//if (mOverlap == 0) {
+			//mOverlap = 1;
+
 		Vector2 mousePos = Input::GetMousePos();
 		Vector2 size = GetSize();
 
@@ -41,53 +43,53 @@ namespace ya {
 		}
 
 		if (KEY_DOWN(eKeyCode::LBTN) && mbMouseOn)
+		{
+			mPrevClickPos = GetScreenPos();
+
+			Vector2 mousePos = Input::GetMousePos();
+			mPrevMousePos = mousePos;
+
+			//UIItem::InventorieArr();
+
+		}
+
+		if (KEY_PREESE(eKeyCode::LBTN) && mbMouseOn)
+		{
+
+
+			mOnClick();
+
+
+		}
+
+		if (KEY_UP(eKeyCode::LBTN) && mbMouseOn)
+		{
+			Vector2 pos = GetScreenPos();
+
+			UIItem::InventorieArr(pos, mPrevClickPos);
+
+			if (399.0f < pos.x && 1257.0f > pos.x
+				&& 51.0f < pos.y && 441.0f > pos.y)
 			{
-				
-				mPrevClickPos = GetScreenPos();
+				pos = CalculateIndexPos(pos);
+				pos -= mParent->GetPos();
+				SetPos(pos);
 
-				Vector2 mousePos = Input::GetMousePos();
-				mPrevMousePos = mousePos;
-
-				//UIItem::InventorieArr();
-				
+				//mOverlap = 0;
 			}
-
-			if (KEY_PREESE(eKeyCode::LBTN) && mbMouseOn)
+			else
 			{
-
-				mOnClick();
-
+				//인벤토리 바깥으로 벗어난다면 다시 원상복귀로 돌아가는 문법
+				/*pos = mPrevClickPos;
+				pos -= mParent->GetPos();
+				SetPos(pos);*/
+				//mOverlap = 0;
 			}
+		}
 
-			if (KEY_UP(eKeyCode::LBTN) && mbMouseOn)
-			{
-				Vector2 pos = GetScreenPos();
-
-				UIItem::InventorieArr(pos, mPrevClickPos);
-
-				if (399.0f < pos.x && 1257.0f > pos.x
-					&& 51.0f < pos.y && 441.0f > pos.y)
-				{
-					pos = CalculateIndexPos(pos);
-					pos -= mParent->GetPos();
-					SetPos(pos);
-					//mOverlap = 0;
-
-				}
-				else
-				{
-					//인벤토리 바깥으로 벗어난다면 다시 원상복귀로 돌아가는 문법
-					/*pos = mPrevClickPos;
-					pos -= mParent->GetPos();
-					SetPos(pos);*/
-					//mOverlap = 0;
-
-				}
-
-			}
-		
+		//}
 	}
-	void Sword::OnRender(HDC hdc)
+	void Weapon02::OnRender(HDC hdc)
 	{
 		TransparentBlt(hdc, (int)mScreenPos.x, (int)mScreenPos.y,
 			mImage->GetWidth() * 4.0f, mImage->GetHeight() * 3.5f,
@@ -106,10 +108,10 @@ namespace ya {
 		DeleteObject(bluePen);
 		SelectObject(hdc, oldBrush);
 	}
-	void Sword::OnClear()
+	void Weapon02::OnClear()
 	{
 	}
-	void Sword::Click()
+	void Weapon02::Click()
 	{
 		Vector2 mousePos = Input::GetMousePos();
 

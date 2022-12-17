@@ -5,13 +5,14 @@
 #include "yaCamera.h"
 #include "Common.h"
 namespace ya {
-	 std::vector<std::vector<UIItem*>> UIItem::mInventories;
-
+	std::vector<std::vector<UIItem*>> UIItem::mInventories;
+	UINT UIItem::mOverlap;
 	UIItem::UIItem(eUIType type)
 		:UIBase(type)
 	{
 		//mOnClick = std::bind(&UIItem::Click, this);
 		//mPrevPos = GetScreenPos();
+		mOverlap = 0;
 		mInventories.resize(row);
 		for (size_t i = 0; i < row; i++)
 			mInventories[i].resize(coulmn);
@@ -56,6 +57,10 @@ namespace ya {
 		{
 			for (UINT x = 0; x < 11; x++)
 			{
+				/* 인벤토리 바깥에 가니까 오류남*/
+				/* 인벤토리 바깥에 가니까 오류남*/
+				/* 인벤토리 바깥에 가니까 오류남*/
+
 				//이거는 자리이동 한뒤 , 원래있던자리에 NULL만들기
 				if (mInventories[y][x] == this)
 				{
@@ -63,6 +68,7 @@ namespace ya {
 				}
 				
 				//이거는 자리이동 한곳에 이미 다른게 있으면 다시 돌아가기
+				//
 				if (!(mInventories[Index.y][Index.x] == NULL))
 				{
 					mPos = mPrevClickPos;
@@ -85,7 +91,7 @@ namespace ya {
 		
 
 
-		int a = 0;
+		
 	}
 
 	Vector2 UIItem::CalculateIndex(Vector2 pos)

@@ -131,6 +131,9 @@
     <Filter Include="Engine\GameObject\UI\PlaySceneUI\Item\Shield">
       <UniqueIdentifier>{4fc687b7-832f-40d0-9128-180db7ad06a0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\GameObject\UI\PlaySceneUI\Item\Item_include">
+      <UniqueIdentifier>{fc197271-ac30-4dea-9d69-c7fc3976f139}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="44thWindowAPI.h">
@@ -511,6 +514,24 @@
     <ClInclude Include="Sword.h">
       <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Weapon</Filter>
     </ClInclude>
+    <ClInclude Include="Weapon01.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="Item_include.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Item_include</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapon02.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapon03.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapon04.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapon05.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Weapon</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="44thWindowAPI.rc">
@@ -884,6 +905,21 @@
       <Filter>Engine\GameObject\UI\Base</Filter>
     </ClCompile>
     <ClCompile Include="Sword.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapon01.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapon02.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapon03.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapon04.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapon05.cpp">
       <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Weapon</Filter>
     </ClCompile>
   </ItemGroup>

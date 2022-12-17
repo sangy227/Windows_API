@@ -1,61 +1,64 @@
-#include "Sword.h"
+#include "Weapon01.h"
 #include "yaInput.h"
 #include "yaImage.h"
 #include "yaUIManager.h"
 #include "yaCamera.h"
 
-
 namespace ya {
-	Sword::Sword(eUIType type)
+	Weapon01::Weapon01(eUIType type)
 		: UIItem(type)
 	{
-		mOnClick = std::bind(&Sword::Click, this);
+		mOnClick = std::bind(&Weapon01::Click, this);
 		mXarrIndex = 1;
-		mYarrIndex = 3;
+		mYarrIndex = 2;
 	}
-	Sword::~Sword()
+	Weapon01::~Weapon01()
 	{
 	}
-	void Sword::OnInit()
+	void Weapon01::OnInit()
 	{
 	}
-	void Sword::OnActive()
+	void Weapon01::OnActive()
 	{
 	}
-	void Sword::OnInActive()
+	void Weapon01::OnInActive()
 	{
 	}
-	void Sword::OnTick()
+	void Weapon01::OnTick()
 	{
-		Vector2 mousePos = Input::GetMousePos();
-		Vector2 size = GetSize();
+		//if (mOverlap == 0) {
+			//mOverlap = 1;
 
-		if (mScreenPos.x <= mousePos.x && mousePos.x < mScreenPos.x + size.x * 4.0f
-			&& mScreenPos.y <= mousePos.y && mousePos.y < mScreenPos.y + size.y * 3.5f)
-		{
-			mbMouseOn = true;
-		}
-		else
-		{
-			mbMouseOn = false;
-		}
+			Vector2 mousePos = Input::GetMousePos();
+			Vector2 size = GetSize();
 
-		if (KEY_DOWN(eKeyCode::LBTN) && mbMouseOn)
+			if (mScreenPos.x <= mousePos.x && mousePos.x < mScreenPos.x + size.x * 4.0f
+				&& mScreenPos.y <= mousePos.y && mousePos.y < mScreenPos.y + size.y * 3.5f)
 			{
-				
+				mbMouseOn = true;
+			}
+			else
+			{
+				mbMouseOn = false;
+			}
+
+			if (KEY_DOWN(eKeyCode::LBTN) && mbMouseOn)
+			{
 				mPrevClickPos = GetScreenPos();
 
 				Vector2 mousePos = Input::GetMousePos();
 				mPrevMousePos = mousePos;
 
 				//UIItem::InventorieArr();
-				
+
 			}
 
 			if (KEY_PREESE(eKeyCode::LBTN) && mbMouseOn)
 			{
 
+
 				mOnClick();
+
 
 			}
 
@@ -71,8 +74,8 @@ namespace ya {
 					pos = CalculateIndexPos(pos);
 					pos -= mParent->GetPos();
 					SetPos(pos);
-					//mOverlap = 0;
 
+					//mOverlap = 0;
 				}
 				else
 				{
@@ -81,13 +84,12 @@ namespace ya {
 					pos -= mParent->GetPos();
 					SetPos(pos);*/
 					//mOverlap = 0;
-
 				}
-
 			}
-		
+			
+		//}
 	}
-	void Sword::OnRender(HDC hdc)
+	void Weapon01::OnRender(HDC hdc)
 	{
 		TransparentBlt(hdc, (int)mScreenPos.x, (int)mScreenPos.y,
 			mImage->GetWidth() * 4.0f, mImage->GetHeight() * 3.5f,
@@ -106,10 +108,10 @@ namespace ya {
 		DeleteObject(bluePen);
 		SelectObject(hdc, oldBrush);
 	}
-	void Sword::OnClear()
+	void Weapon01::OnClear()
 	{
 	}
-	void Sword::Click()
+	void Weapon01::Click()
 	{
 		Vector2 mousePos = Input::GetMousePos();
 

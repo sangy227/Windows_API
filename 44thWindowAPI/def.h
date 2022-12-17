@@ -141,6 +141,55 @@
 		TestButton,
 		TestSword,
 
+		Weapon01,
+		Weapon02,
+		Weapon03,
+		Weapon04,
+		Weapon05,
+
+		Shield01,
+		Shield02,
+		Shield03,
+		Shield04,
+		Shield05,
+
+		Jewelry01,
+		Jewelry02,
+		Jewelry03,
+
+		Dagger01,
+		Dagger02,
+		Dagger03,
+		Dagger04,
+
+		Armor01,
+		Armor02,
+		Armor03,
+		Armor04,
+		Armor05,
+
+		Bow01,
+		Bow02,
+		Bow03,
+
+		Arrow01,
+		Arrow02,
+		Arrow03,
+
+		Potion01,
+		Potion02,
+		Potion03,
+		Potion04,
+		Potion05,
+		Potion06,
+		Potion07,
+		Potion08,
+		Potion09,
+		Potion10,
+		Potion11,
+		Potion12,
+
+
 		/*�ѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤ�*/
 
 		HP,

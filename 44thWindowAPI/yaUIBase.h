@@ -68,6 +68,7 @@ namespace ya {
 		Vector2 mScreenPos;
 
 		AniMator* mAniMator;
+		//렌더링 보이기 안보이기
 		bool mbEnable;
 
 		static UINT LevelUp_Inventory_Count;

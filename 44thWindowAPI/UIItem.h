@@ -2,12 +2,12 @@
 #include "yaUIBase.h"
 
 namespace ya {
-
+	class GameObject;
 	class UIItem : public UIBase
 	{
 	public:
 		static std::vector<std::vector<UIItem*>> mInventories;
-
+		static UINT mOverlap;
 		UIItem(eUIType type);
 		~UIItem();
 
@@ -22,7 +22,10 @@ namespace ya {
 
 		void InventorieArr(Vector2 mPos, Vector2 mPrevClickPos);
 
+		void SetTarget(GameObject* target) { mTarget = target; }
+
 	protected:
+		GameObject* mTarget;
 		Vector2 CalculateIndex(Vector2 pos);
 		Vector2 CalculateIndexPos(Vector2 Index);
 

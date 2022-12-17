@@ -180,6 +180,7 @@
     <ClInclude Include="healer_enemy.h" />
     <ClInclude Include="hermit_crab_bomb.h" />
     <ClInclude Include="Inventory.h" />
+    <ClInclude Include="Item_include.h" />
     <ClInclude Include="legman.h" />
     <ClInclude Include="Logo.h" />
     <ClInclude Include="LogoButton1.h" />
@@ -225,6 +226,11 @@
     <ClInclude Include="TopLayerDefault.h" />
     <ClInclude Include="ToteIcon.h" />
     <ClInclude Include="Tote_Info.h" />
+    <ClInclude Include="Weapon04.h" />
+    <ClInclude Include="Weapon01.h" />
+    <ClInclude Include="Weapon02.h" />
+    <ClInclude Include="Weapon03.h" />
+    <ClInclude Include="Weapon05.h" />
     <ClInclude Include="yaAnimation.h" />
     <ClInclude Include="yaAniMator.h" />
     <ClInclude Include="yaBackPack.h" />
@@ -348,6 +354,11 @@
     <ClCompile Include="TopLayerDefault.cpp" />
     <ClCompile Include="ToteIcon.cpp" />
     <ClCompile Include="Tote_Info.cpp" />
+    <ClCompile Include="Weapon04.cpp" />
+    <ClCompile Include="Weapon01.cpp" />
+    <ClCompile Include="Weapon02.cpp" />
+    <ClCompile Include="Weapon03.cpp" />
+    <ClCompile Include="Weapon05.cpp" />
     <ClCompile Include="yaButton.cpp" />
     <ClCompile Include="yaGround.cpp" />
     <ClCompile Include="yaHUD.cpp" />
