@@ -200,6 +200,11 @@
     <ClInclude Include="Save_Icon.h" />
     <ClInclude Include="SetchelIcon.h" />
     <ClInclude Include="Setchel_Info.h" />
+    <ClInclude Include="Shield01.h" />
+    <ClInclude Include="Shield02.h" />
+    <ClInclude Include="Shield03.h" />
+    <ClInclude Include="Shield04.h" />
+    <ClInclude Include="Shield05.h" />
     <ClInclude Include="Stats_Icon.h" />
     <ClInclude Include="Sword.h" />
     <ClInclude Include="TestButton.h" />
@@ -328,6 +333,11 @@
     <ClCompile Include="Save_Icon.cpp" />
     <ClCompile Include="SetchelIcon.cpp" />
     <ClCompile Include="Setchel_Info.cpp" />
+    <ClCompile Include="Shield01.cpp" />
+    <ClCompile Include="Shield02.cpp" />
+    <ClCompile Include="Shield03.cpp" />
+    <ClCompile Include="Shield04.cpp" />
+    <ClCompile Include="Shield05.cpp" />
     <ClCompile Include="Stats_Icon.cpp" />
     <ClCompile Include="Sword.cpp" />
     <ClCompile Include="TestButton.cpp" />

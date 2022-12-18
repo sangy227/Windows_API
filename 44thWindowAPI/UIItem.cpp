@@ -4,9 +4,11 @@
 #include "yaUIManager.h"
 #include "yaCamera.h"
 #include "Common.h"
+
 namespace ya {
 	std::vector<std::vector<UIItem*>> UIItem::mInventories;
 	UINT UIItem::mOverlap;
+
 	UIItem::UIItem(eUIType type)
 		:UIBase(type)
 	{
@@ -68,7 +70,7 @@ namespace ya {
 				}
 				
 				//이거는 자리이동 한곳에 이미 다른게 있으면 다시 돌아가기
-				//
+				// 이거왜 안될까
 				if (!(mInventories[Index.y][Index.x] == NULL))
 				{
 					mPos = mPrevClickPos;

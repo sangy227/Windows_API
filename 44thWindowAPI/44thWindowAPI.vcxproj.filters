@@ -532,6 +532,21 @@
     <ClInclude Include="Weapon05.h">
       <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Weapon</Filter>
     </ClInclude>
+    <ClInclude Include="Shield01.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Shield</Filter>
+    </ClInclude>
+    <ClInclude Include="Shield02.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Shield</Filter>
+    </ClInclude>
+    <ClInclude Include="Shield03.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Shield</Filter>
+    </ClInclude>
+    <ClInclude Include="Shield04.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Shield</Filter>
+    </ClInclude>
+    <ClInclude Include="Shield05.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Shield</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="44thWindowAPI.rc">
@@ -921,6 +936,21 @@
     </ClCompile>
     <ClCompile Include="Weapon05.cpp">
       <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="Shield01.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Shield</Filter>
+    </ClCompile>
+    <ClCompile Include="Shield02.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Shield</Filter>
+    </ClCompile>
+    <ClCompile Include="Shield03.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Shield</Filter>
+    </ClCompile>
+    <ClCompile Include="Shield04.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Shield</Filter>
+    </ClCompile>
+    <ClCompile Include="Shield05.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Shield</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
