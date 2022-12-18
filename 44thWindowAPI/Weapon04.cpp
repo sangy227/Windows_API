@@ -34,7 +34,7 @@ void ya::Weapon04::OnTick()
 	Vector2 size = GetSize();
 
 	if (mScreenPos.x <= mousePos.x && mousePos.x < mScreenPos.x + size.x * 4.0f
-		&& mScreenPos.y <= mousePos.y && mousePos.y < mScreenPos.y + size.y * 3.5f)
+		&& mScreenPos.y <= mousePos.y && mousePos.y < mScreenPos.y + size.y * 4.5f)
 	{
 		mbMouseOn = true;
 	}
@@ -92,7 +92,7 @@ void ya::Weapon04::OnTick()
 void ya::Weapon04::OnRender(HDC hdc)
 {
 	TransparentBlt(hdc, (int)mScreenPos.x, (int)mScreenPos.y,
-		mImage->GetWidth() * 4.0f, mImage->GetHeight() * 3.5f,
+		mImage->GetWidth() * 4.0f, mImage->GetHeight() * 4.5f,
 		mImage->GetDC(), 0, 0, mImage->GetWidth(), mImage->GetHeight()
 		, RGB(255, 255, 255));
 
@@ -102,7 +102,7 @@ void ya::Weapon04::OnRender(HDC hdc)
 
 	Rectangle(hdc, (int)mScreenPos.x, (int)mScreenPos.y,
 		(int)mScreenPos.x + mImage->GetWidth() * 4.0f
-		, (int)mScreenPos.y + mImage->GetHeight() * 3.5f);
+		, (int)mScreenPos.y + mImage->GetHeight() * 4.5f);
 
 	SelectObject(hdc, oldPen);
 	DeleteObject(bluePen);

@@ -562,6 +562,19 @@ namespace ya {
 			}
 		}
 
+		Enter_Button* enter_button = new Enter_Button(eUIType::Enter_Button);
+		mUIs.insert(std::make_pair(eUIType::Enter_Button, enter_button));
+		enter_button->SetPos(Vector2(1200.0f, 350.0f));
+		enter_button->ImageLoad(L"enter_button", L"..\\Resources\\Image\\Object\\Enter_Button.bmp");
+
+
+
+
+
+
+
+
+
 		Sword* sword = new Sword(eUIType::TestSword);
 		mUIs.insert(std::make_pair(eUIType::TestSword, sword));
 		sword->SetPos(Vector2(542.0f, 90.0f));
@@ -572,10 +585,36 @@ namespace ya {
 		weapon01->SetPos(Vector2(619.0f, 90.0f));
 		weapon01->ImageLoad(L"weapon01", L"..\\Resources\\Image\\item\\Weapon\\Weapon01.bmp");
 
-		Enter_Button* enter_button = new Enter_Button(eUIType::Enter_Button);
-		mUIs.insert(std::make_pair(eUIType::Enter_Button, enter_button));
-		enter_button->SetPos(Vector2(1200.0f, 350.0f));
-		enter_button->ImageLoad(L"enter_button", L"..\\Resources\\Image\\Object\\Enter_Button.bmp");
+		Weapon02* weapon02 = new Weapon02(eUIType::Weapon02);
+		mUIs.insert(std::make_pair(eUIType::Weapon02, weapon02));
+		weapon02->SetPos(Vector2(450.0f, 90.0f));
+		weapon02->ImageLoad(L"weapon02", L"..\\Resources\\Image\\item\\Weapon\\Weapon02.bmp");
+
+		Weapon03* weapon03 = new Weapon03(eUIType::Weapon03);
+		mUIs.insert(std::make_pair(eUIType::Weapon03, weapon03));
+		weapon03->SetPos(Vector2(370.0f, 90.0f));
+		weapon03->ImageLoad(L"weapon03", L"..\\Resources\\Image\\item\\Weapon\\Weapon03.bmp");
+
+		Weapon04* weapon04 = new Weapon04(eUIType::Weapon04);
+		mUIs.insert(std::make_pair(eUIType::Weapon04, weapon04));
+		weapon04->SetPos(Vector2(690.0f, 90.0f));
+		weapon04->ImageLoad(L"weapon04", L"..\\Resources\\Image\\item\\Weapon\\Weapon04.bmp");
+
+		Weapon05* weapon05 = new Weapon05(eUIType::Weapon05);
+		mUIs.insert(std::make_pair(eUIType::Weapon05, weapon05));
+		weapon05->SetPos(Vector2(370.0f, 170.0f));
+		weapon05->ImageLoad(L"weapon05", L"..\\Resources\\Image\\item\\Weapon\\Weapon05.bmp");
+
+
+
+
+
+
+
+
+
+
+
 
 
 		Inventory* inventory = new Inventory(eUIType::Inventory2);
@@ -586,6 +625,10 @@ namespace ya {
 		for (size_t i = 0; i < 46; i++)
 			inventory->AddChild(testbutton[i]);
 		inventory->AddChild(weapon01);
+		inventory->AddChild(weapon02);
+		inventory->AddChild(weapon03);
+		inventory->AddChild(weapon04);
+		inventory->AddChild(weapon05);
 		inventory->AddChild(sword);
 		inventory->AddChild(enter_button);
 	}
