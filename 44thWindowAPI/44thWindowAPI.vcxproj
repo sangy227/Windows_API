@@ -146,6 +146,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="44thWindowAPI.h" />
+    <ClInclude Include="Armor01.h" />
+    <ClInclude Include="Armor02.h" />
+    <ClInclude Include="Armor03.h" />
+    <ClInclude Include="Armor04.h" />
+    <ClInclude Include="Armor05.h" />
+    <ClInclude Include="Armor06.h" />
+    <ClInclude Include="Arrow01.h" />
+    <ClInclude Include="Arrow02.h" />
+    <ClInclude Include="Arrow03.h" />
     <ClInclude Include="axeman.h" />
     <ClInclude Include="Back_Icon.h" />
     <ClInclude Include="badgerKing.h" />
@@ -154,6 +163,9 @@
     <ClInclude Include="boastful_spellsword.h" />
     <ClInclude Include="Book_Icon.h" />
     <ClInclude Include="boss.h" />
+    <ClInclude Include="Bow01.h" />
+    <ClInclude Include="Bow02.h" />
+    <ClInclude Include="Bow03.h" />
     <ClInclude Include="chicken.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="copy.h" />
@@ -162,6 +174,11 @@
     <ClInclude Include="crossbowman.h" />
     <ClInclude Include="cultist.h" />
     <ClInclude Include="cultist_blade.h" />
+    <ClInclude Include="Dagger01.h" />
+    <ClInclude Include="Dagger02.h" />
+    <ClInclude Include="Dagger03.h" />
+    <ClInclude Include="Dagger04.h" />
+    <ClInclude Include="Dagger05.h" />
     <ClInclude Include="dealmaker.h" />
     <ClInclude Include="def.h" />
     <ClInclude Include="Elder_Mage.h" />
@@ -181,6 +198,9 @@
     <ClInclude Include="hermit_crab_bomb.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item_include.h" />
+    <ClInclude Include="Jewelry01.h" />
+    <ClInclude Include="Jewelry02.h" />
+    <ClInclude Include="Jewelry03.h" />
     <ClInclude Include="legman.h" />
     <ClInclude Include="Logo.h" />
     <ClInclude Include="LogoButton1.h" />
@@ -196,6 +216,18 @@
     <ClInclude Include="MC_Info.h" />
     <ClInclude Include="Monster_include.h" />
     <ClInclude Include="Option_Icon.h" />
+    <ClInclude Include="Potion01.h" />
+    <ClInclude Include="Potion02.h" />
+    <ClInclude Include="Potion03.h" />
+    <ClInclude Include="Potion04.h" />
+    <ClInclude Include="Potion05.h" />
+    <ClInclude Include="Potion06.h" />
+    <ClInclude Include="Potion07.h" />
+    <ClInclude Include="Potion08.h" />
+    <ClInclude Include="Potion09.h" />
+    <ClInclude Include="Potion10.h" />
+    <ClInclude Include="Potion11.h" />
+    <ClInclude Include="Potion12.h" />
     <ClInclude Include="salamander.h" />
     <ClInclude Include="Save_Icon.h" />
     <ClInclude Include="SetchelIcon.h" />
@@ -284,6 +316,15 @@
     <ClInclude Include="yaUIManager.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Armor01.cpp" />
+    <ClCompile Include="Armor02.cpp" />
+    <ClCompile Include="Armor03.cpp" />
+    <ClCompile Include="Armor04.cpp" />
+    <ClCompile Include="Armor05.cpp" />
+    <ClCompile Include="Armor06.cpp" />
+    <ClCompile Include="Arrow01.cpp" />
+    <ClCompile Include="Arrow02.cpp" />
+    <ClCompile Include="Arrow03.cpp" />
     <ClCompile Include="axeman.cpp" />
     <ClCompile Include="Back_Icon.cpp" />
     <ClCompile Include="badgerKing.cpp" />
@@ -292,6 +333,9 @@
     <ClCompile Include="boastful_spellsword.cpp" />
     <ClCompile Include="Book_Icon.cpp" />
     <ClCompile Include="boss.cpp" />
+    <ClCompile Include="Bow01.cpp" />
+    <ClCompile Include="Bow02.cpp" />
+    <ClCompile Include="Bow03.cpp" />
     <ClCompile Include="chicken.cpp" />
     <ClCompile Include="copy.cpp" />
     <ClCompile Include="Cr8Icon.cpp" />
@@ -299,6 +343,11 @@
     <ClCompile Include="crossbowman.cpp" />
     <ClCompile Include="cultist.cpp" />
     <ClCompile Include="cultist_blade.cpp" />
+    <ClCompile Include="Dagger01.cpp" />
+    <ClCompile Include="Dagger02.cpp" />
+    <ClCompile Include="Dagger03.cpp" />
+    <ClCompile Include="Dagger04.cpp" />
+    <ClCompile Include="Dagger05.cpp" />
     <ClCompile Include="dealmaker.cpp" />
     <ClCompile Include="Elder_Mage.cpp" />
     <ClCompile Include="Enter_Button.cpp" />
@@ -315,6 +364,9 @@
     <ClCompile Include="healer_enemy.cpp" />
     <ClCompile Include="hermit_crab_bomb.cpp" />
     <ClCompile Include="Inventory.cpp" />
+    <ClCompile Include="Jewelry01.cpp" />
+    <ClCompile Include="Jewelry02.cpp" />
+    <ClCompile Include="Jewelry03.cpp" />
     <ClCompile Include="legman.cpp" />
     <ClCompile Include="Logo.cpp" />
     <ClCompile Include="LogoButton1.cpp" />
@@ -329,6 +381,18 @@
     <ClCompile Include="McIcon.cpp" />
     <ClCompile Include="MC_Info.cpp" />
     <ClCompile Include="Option_Icon.cpp" />
+    <ClCompile Include="Potion01.cpp" />
+    <ClCompile Include="Potion02.cpp" />
+    <ClCompile Include="Potion03.cpp" />
+    <ClCompile Include="Potion04.cpp" />
+    <ClCompile Include="Potion05.cpp" />
+    <ClCompile Include="Potion06.cpp" />
+    <ClCompile Include="Potion07.cpp" />
+    <ClCompile Include="Potion08.cpp" />
+    <ClCompile Include="Potion09.cpp" />
+    <ClCompile Include="Potion10.cpp" />
+    <ClCompile Include="Potion11.cpp" />
+    <ClCompile Include="Potion12.cpp" />
     <ClCompile Include="salamander.cpp" />
     <ClCompile Include="Save_Icon.cpp" />
     <ClCompile Include="SetchelIcon.cpp" />

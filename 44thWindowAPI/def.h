@@ -167,6 +167,7 @@
 		Armor03,
 		Armor04,
 		Armor05,
+		Armor06,
 
 		Bow01,
 		Bow02,

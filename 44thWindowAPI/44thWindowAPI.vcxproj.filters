@@ -547,6 +547,102 @@
     <ClInclude Include="Shield05.h">
       <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Shield</Filter>
     </ClInclude>
+    <ClInclude Include="Dagger01.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Dagger</Filter>
+    </ClInclude>
+    <ClInclude Include="Dagger05.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Dagger</Filter>
+    </ClInclude>
+    <ClInclude Include="Dagger02.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Dagger</Filter>
+    </ClInclude>
+    <ClInclude Include="Dagger03.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Dagger</Filter>
+    </ClInclude>
+    <ClInclude Include="Dagger04.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Dagger</Filter>
+    </ClInclude>
+    <ClInclude Include="Jewelry01.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Jewelry</Filter>
+    </ClInclude>
+    <ClInclude Include="Jewelry02.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Jewelry</Filter>
+    </ClInclude>
+    <ClInclude Include="Jewelry03.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Jewelry</Filter>
+    </ClInclude>
+    <ClInclude Include="Armor01.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Armor</Filter>
+    </ClInclude>
+    <ClInclude Include="Armor02.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Armor</Filter>
+    </ClInclude>
+    <ClInclude Include="Armor03.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Armor</Filter>
+    </ClInclude>
+    <ClInclude Include="Armor04.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Armor</Filter>
+    </ClInclude>
+    <ClInclude Include="Armor05.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Armor</Filter>
+    </ClInclude>
+    <ClInclude Include="Armor06.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Armor</Filter>
+    </ClInclude>
+    <ClInclude Include="Arrow03.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Bow_Arrow</Filter>
+    </ClInclude>
+    <ClInclude Include="Arrow01.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Bow_Arrow</Filter>
+    </ClInclude>
+    <ClInclude Include="Arrow02.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Bow_Arrow</Filter>
+    </ClInclude>
+    <ClInclude Include="Bow03.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Bow_Arrow</Filter>
+    </ClInclude>
+    <ClInclude Include="Bow01.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Bow_Arrow</Filter>
+    </ClInclude>
+    <ClInclude Include="Bow02.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Bow_Arrow</Filter>
+    </ClInclude>
+    <ClInclude Include="Potion01.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Potion</Filter>
+    </ClInclude>
+    <ClInclude Include="Potion02.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Potion</Filter>
+    </ClInclude>
+    <ClInclude Include="Potion03.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Potion</Filter>
+    </ClInclude>
+    <ClInclude Include="Potion04.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Potion</Filter>
+    </ClInclude>
+    <ClInclude Include="Potion05.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Potion</Filter>
+    </ClInclude>
+    <ClInclude Include="Potion06.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Potion</Filter>
+    </ClInclude>
+    <ClInclude Include="Potion07.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Potion</Filter>
+    </ClInclude>
+    <ClInclude Include="Potion08.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Potion</Filter>
+    </ClInclude>
+    <ClInclude Include="Potion09.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Potion</Filter>
+    </ClInclude>
+    <ClInclude Include="Potion10.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Potion</Filter>
+    </ClInclude>
+    <ClInclude Include="Potion11.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Potion</Filter>
+    </ClInclude>
+    <ClInclude Include="Potion12.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Potion</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="44thWindowAPI.rc">
@@ -951,6 +1047,102 @@
     </ClCompile>
     <ClCompile Include="Shield05.cpp">
       <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Shield</Filter>
+    </ClCompile>
+    <ClCompile Include="Dagger01.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Dagger</Filter>
+    </ClCompile>
+    <ClCompile Include="Dagger02.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Dagger</Filter>
+    </ClCompile>
+    <ClCompile Include="Dagger03.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Dagger</Filter>
+    </ClCompile>
+    <ClCompile Include="Dagger04.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Dagger</Filter>
+    </ClCompile>
+    <ClCompile Include="Dagger05.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Dagger</Filter>
+    </ClCompile>
+    <ClCompile Include="Jewelry01.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Jewelry</Filter>
+    </ClCompile>
+    <ClCompile Include="Jewelry02.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Jewelry</Filter>
+    </ClCompile>
+    <ClCompile Include="Jewelry03.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Jewelry</Filter>
+    </ClCompile>
+    <ClCompile Include="Armor01.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Armor</Filter>
+    </ClCompile>
+    <ClCompile Include="Armor02.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Armor</Filter>
+    </ClCompile>
+    <ClCompile Include="Armor03.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Armor</Filter>
+    </ClCompile>
+    <ClCompile Include="Armor04.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Armor</Filter>
+    </ClCompile>
+    <ClCompile Include="Armor05.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Armor</Filter>
+    </ClCompile>
+    <ClCompile Include="Armor06.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Armor</Filter>
+    </ClCompile>
+    <ClCompile Include="Arrow01.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Bow_Arrow</Filter>
+    </ClCompile>
+    <ClCompile Include="Arrow02.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Bow_Arrow</Filter>
+    </ClCompile>
+    <ClCompile Include="Arrow03.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Bow_Arrow</Filter>
+    </ClCompile>
+    <ClCompile Include="Bow02.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Bow_Arrow</Filter>
+    </ClCompile>
+    <ClCompile Include="Bow03.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Bow_Arrow</Filter>
+    </ClCompile>
+    <ClCompile Include="Bow01.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Bow_Arrow</Filter>
+    </ClCompile>
+    <ClCompile Include="Potion01.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Potion</Filter>
+    </ClCompile>
+    <ClCompile Include="Potion02.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Potion</Filter>
+    </ClCompile>
+    <ClCompile Include="Potion03.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Potion</Filter>
+    </ClCompile>
+    <ClCompile Include="Potion04.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Potion</Filter>
+    </ClCompile>
+    <ClCompile Include="Potion05.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Potion</Filter>
+    </ClCompile>
+    <ClCompile Include="Potion06.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Potion</Filter>
+    </ClCompile>
+    <ClCompile Include="Potion07.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Potion</Filter>
+    </ClCompile>
+    <ClCompile Include="Potion08.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Potion</Filter>
+    </ClCompile>
+    <ClCompile Include="Potion09.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Potion</Filter>
+    </ClCompile>
+    <ClCompile Include="Potion10.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Potion</Filter>
+    </ClCompile>
+    <ClCompile Include="Potion11.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Potion</Filter>
+    </ClCompile>
+    <ClCompile Include="Potion12.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Item\Potion</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
