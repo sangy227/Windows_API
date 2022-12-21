@@ -8,6 +8,7 @@
 namespace ya {
 	std::vector<std::vector<UIItem*>> UIItem::mInventories;
 	UINT UIItem::mOverlap;
+	UIItem* UIItem::thisVariable;
 
 	UIItem::UIItem(eUIType type)
 		:UIBase(type)
@@ -53,6 +54,13 @@ namespace ya {
 
 		Vector2 Index = this->CalculateIndex(this->GetPos() + mParent->GetPos());
 		
+		if (Index.x >= 11 && Index.y >= 5)
+		{
+			mPos = mPrevClickPos;
+			mPos -= mParent->GetPos();
+			SetPos(mPos);
+			return;
+		}
 		//전체 배열을 다 돌면서 있는지 확인
 		//this가 있으면 인벤토리안에서 자리 이동 한걸로 확인 가능
 		for (UINT y = 0; y < 5; y++)
@@ -71,6 +79,7 @@ namespace ya {
 				
 				//이거는 자리이동 한곳에 이미 다른게 있으면 다시 돌아가기
 				// 이거왜 안될까
+				//배열이 넘어가면 에외처리 위에서
 				if (!(mInventories[Index.y][Index.x] == NULL))
 				{
 					mPos = mPrevClickPos;
@@ -84,6 +93,10 @@ namespace ya {
 		{
 			for (UINT x = 0; x < this->mXarrIndex; x++)
 			{
+				/*if (Index.x + x >= 11 && Index.y+y >= 5)
+				{
+					return;
+				}*/
 				mInventories[Index.y + y][Index.x + x] = this;
 			}
 		}

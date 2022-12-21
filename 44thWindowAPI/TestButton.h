@@ -1,9 +1,9 @@
 #pragma once
-#include "yaUIBase.h"
 
+#include "UIItem.h"
 namespace ya {
 
-	class TestButton : public UIBase
+	class TestButton : public UIItem
 	{
 	public:
 		TestButton(eUIType type);

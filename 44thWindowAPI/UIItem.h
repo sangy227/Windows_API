@@ -8,6 +8,8 @@ namespace ya {
 	public:
 		static std::vector<std::vector<UIItem*>> mInventories;
 		static UINT mOverlap;
+		static UIItem* thisVariable;
+
 		UIItem(eUIType type);
 		~UIItem();
 

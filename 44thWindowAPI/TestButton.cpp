@@ -2,10 +2,10 @@
 #include "yaImage.h"
 #include "yaInput.h"
 #include "yaUIManager.h"
-
+#include "Common.h"
 namespace ya {
 	TestButton::TestButton(eUIType type)
-		:UIBase(type)
+		:UIItem(type)
 	{
 		mOnClick = std::bind(&TestButton::Click, this);
 	}
@@ -17,6 +17,8 @@ namespace ya {
 	}
 	void TestButton::OnActive()
 	{
+		Vector2 pos = GetPos();
+		UIItem::InventorieArr(pos, mPrevClickPos);
 	}
 	void TestButton::OnInActive()
 	{

@@ -27,8 +27,11 @@ namespace ya {
 	}
 	void Sword::OnTick()
 	{
+		//포인터 변수 디스랑 지금 클릭한 아이템 주솟값이랑 비교
 		Vector2 mousePos = Input::GetMousePos();
 		Vector2 size = GetSize();
+
+
 
 		if (mScreenPos.x <= mousePos.x && mousePos.x < mScreenPos.x + size.x * 4.0f
 			&& mScreenPos.y <= mousePos.y && mousePos.y < mScreenPos.y + size.y * 3.5f)
@@ -48,19 +51,22 @@ namespace ya {
 				Vector2 mousePos = Input::GetMousePos();
 				mPrevMousePos = mousePos;
 
+				thisVariable = this;
 				//UIItem::InventorieArr();
 				
 			}
 
 			if (KEY_PREESE(eKeyCode::LBTN) && mbMouseOn)
 			{
-
-				mOnClick();
+				if(thisVariable == this)
+					mOnClick();
 
 			}
 
 			if (KEY_UP(eKeyCode::LBTN) && mbMouseOn)
 			{
+				thisVariable = NULL;
+
 				Vector2 pos = GetScreenPos();
 
 				UIItem::InventorieArr(pos, mPrevClickPos);

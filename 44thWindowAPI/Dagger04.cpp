@@ -48,21 +48,21 @@ void ya::Dagger04::OnTick()
 		Vector2 mousePos = Input::GetMousePos();
 		mPrevMousePos = mousePos;
 
+		thisVariable = this;
 		//UIItem::InventorieArr();
 
 	}
 
 	if (KEY_PREESE(eKeyCode::LBTN) && mbMouseOn)
 	{
-
-
-		mOnClick();
-
+		if (thisVariable == this)
+			mOnClick();
 
 	}
 
 	if (KEY_UP(eKeyCode::LBTN) && mbMouseOn)
 	{
+		thisVariable = NULL;
 		Vector2 pos = GetScreenPos();
 
 		UIItem::InventorieArr(pos, mPrevClickPos);

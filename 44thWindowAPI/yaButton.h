@@ -1,6 +1,6 @@
 #pragma once
-#include "yaUIBase.h"
 
+#include "yaUIBase.h"
 namespace ya {
 	
 	class Button : public UIBase
