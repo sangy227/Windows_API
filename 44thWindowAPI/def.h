@@ -161,6 +161,7 @@
 		Dagger02,
 		Dagger03,
 		Dagger04,
+		Dagger05,
 
 		Armor01,
 		Armor02,

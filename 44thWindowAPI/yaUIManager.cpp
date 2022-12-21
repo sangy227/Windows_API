@@ -694,6 +694,80 @@ namespace ya {
 
 
 
+		Jewelry01* jewelry01 = new Jewelry01(eUIType::Jewelry01);
+		mUIs.insert(std::make_pair(eUIType::Jewelry01, jewelry01));
+		jewelry01->SetPos(Vector2(10.0f, 150.0f));
+		jewelry01->ImageLoad(L"jewelry01", L"..\\Resources\\Image\\item\\Jewelry\\Jewelry01.bmp");
+
+		Jewelry02* jewelry02 = new Jewelry02(eUIType::Jewelry02);
+		mUIs.insert(std::make_pair(eUIType::Jewelry02, jewelry02));
+		jewelry02->SetPos(Vector2(10.0f, 150.0f));
+		jewelry02->ImageLoad(L"jewelry02", L"..\\Resources\\Image\\item\\Jewelry\\Jewelry02.bmp");
+
+		Jewelry03* jewelry03 = new Jewelry03(eUIType::Jewelry03);
+		mUIs.insert(std::make_pair(eUIType::Jewelry03, jewelry03));
+		jewelry03->SetPos(Vector2(10.0f, 150.0f));
+		jewelry03->ImageLoad(L"jewelry03", L"..\\Resources\\Image\\item\\Jewelry\\Jewelry03.bmp");
+
+
+		//Dagger
+		Dagger01* dagger01 = new Dagger01(eUIType::Dagger01);
+		mUIs.insert(std::make_pair(eUIType::Dagger01, dagger01));
+		dagger01->SetPos(Vector2(10.0f, 220.0f));
+		dagger01->ImageLoad(L"dagger01", L"..\\Resources\\Image\\item\\Dagger\\Dagger01.bmp");
+
+		Dagger02* dagger02 = new Dagger02(eUIType::Dagger02);
+		mUIs.insert(std::make_pair(eUIType::Dagger02, dagger02));
+		dagger02->SetPos(Vector2(10.0f, 220.0f));
+		dagger02->ImageLoad(L"dagger02", L"..\\Resources\\Image\\item\\Dagger\\Dagger02.bmp");
+
+		Dagger03* dagger03 = new Dagger03(eUIType::Dagger03);
+		mUIs.insert(std::make_pair(eUIType::Dagger03, dagger03));
+		dagger03->SetPos(Vector2(10.0f, 220.0f));
+		dagger03->ImageLoad(L"dagger03", L"..\\Resources\\Image\\item\\Dagger\\Dagger03.bmp");
+
+		Dagger04* dagger04 = new Dagger04(eUIType::Dagger04);
+		mUIs.insert(std::make_pair(eUIType::Dagger04, dagger04));
+		dagger04->SetPos(Vector2(10.0f, 220.0f));
+		dagger04->ImageLoad(L"dagger04", L"..\\Resources\\Image\\item\\Dagger\\Dagger04.bmp");
+
+		Dagger05* dagger05 = new Dagger05(eUIType::Dagger05);
+		mUIs.insert(std::make_pair(eUIType::Dagger05, dagger05));
+		dagger05->SetPos(Vector2(10.0f, 220.0f));
+		dagger05->ImageLoad(L"dagger05", L"..\\Resources\\Image\\item\\Dagger\\Dagger05.bmp");
+
+
+		//Bow01
+		Bow01* bow01 = new Bow01(eUIType::Bow01);
+		mUIs.insert(std::make_pair(eUIType::Bow01, bow01));
+		bow01->SetPos(Vector2(300.0f, 80.0f));
+		bow01->ImageLoad(L"bow01", L"..\\Resources\\Image\\item\\Bow_Arrow\\Bow01.bmp");
+
+		Bow02* bow02 = new Bow02(eUIType::Bow02);
+		mUIs.insert(std::make_pair(eUIType::Bow02, bow02));
+		bow02->SetPos(Vector2(300.0f, 80.0f));
+		bow02->ImageLoad(L"bow02", L"..\\Resources\\Image\\item\\Bow_Arrow\\Bow02.bmp");
+
+		Bow03* bow03 = new Bow03(eUIType::Bow03);
+		mUIs.insert(std::make_pair(eUIType::Bow03, bow03));
+		bow03->SetPos(Vector2(300.0f, 80.0f));
+		bow03->ImageLoad(L"bow03", L"..\\Resources\\Image\\item\\Bow_Arrow\\Bow03.bmp");
+
+		//Arrow01
+		Arrow01* arrow01 = new Arrow01(eUIType::Arrow01);
+		mUIs.insert(std::make_pair(eUIType::Arrow01, arrow01));
+		arrow01->SetPos(Vector2(300.0f, 80.0f));
+		arrow01->ImageLoad(L"arrow01", L"..\\Resources\\Image\\item\\Bow_Arrow\\Arrow01.bmp");
+
+		Arrow02* arrow02 = new Arrow02(eUIType::Arrow02);
+		mUIs.insert(std::make_pair(eUIType::Arrow02, arrow02));
+		arrow02->SetPos(Vector2(300.0f, 80.0f));
+		arrow02->ImageLoad(L"arrow02", L"..\\Resources\\Image\\item\\Bow_Arrow\\Arrow02.bmp");
+
+		Arrow03* arrow03 = new Arrow03(eUIType::Arrow03);
+		mUIs.insert(std::make_pair(eUIType::Arrow03, arrow03));
+		arrow03->SetPos(Vector2(300.0f, 80.0f));
+		arrow03->ImageLoad(L"arrow03", L"..\\Resources\\Image\\item\\Bow_Arrow\\Arrow03.bmp");
 
 
 		Inventory* inventory = new Inventory(eUIType::Inventory2);
@@ -708,11 +782,43 @@ namespace ya {
 		inventory->AddChild(weapon03);
 		inventory->AddChild(weapon04);
 		inventory->AddChild(weapon05);
+
 		inventory->AddChild(shield01);
 		inventory->AddChild(shield02);
 		inventory->AddChild(shield03);
 		inventory->AddChild(shield04);
 		inventory->AddChild(shield05);
+
+		inventory->AddChild(potion01);
+		inventory->AddChild(potion02);
+		inventory->AddChild(potion03);
+		inventory->AddChild(potion04);
+		inventory->AddChild(potion05);
+		inventory->AddChild(potion06);
+		inventory->AddChild(potion07);
+		inventory->AddChild(potion08);
+		inventory->AddChild(potion09);
+		inventory->AddChild(potion10);
+		inventory->AddChild(potion11);
+		inventory->AddChild(potion12);
+
+		inventory->AddChild(jewelry01);
+		inventory->AddChild(jewelry02);
+		inventory->AddChild(jewelry03);
+		
+		inventory->AddChild(dagger01);
+		inventory->AddChild(dagger02);
+		inventory->AddChild(dagger03);
+
+		inventory->AddChild(bow01);
+		inventory->AddChild(bow02);
+		inventory->AddChild(bow03);
+
+		inventory->AddChild(arrow01);
+		inventory->AddChild(arrow02);
+		inventory->AddChild(arrow03);
+
+		
 		inventory->AddChild(sword);
 		inventory->AddChild(enter_button);
 	}
