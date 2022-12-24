@@ -51,11 +51,13 @@
 #include "Save_Icon.h"
 #include "Option_Icon.h"
 #include "Map_Icon.h"
+#include "Enemie_icon01.h"
 #include "Book_Icon.h"
 #include "Back_Icon.h"
 
 #include "Inventory.h"
 #include "Map_bg.h"
+#include "Map_Gate.h"
 #include "Enter_Button.h"
 #include "TestButton.h"
 #include "UIItem.h"
@@ -526,41 +528,56 @@ namespace ya {
 		Inventoty_Pull();
 		//△패널 && 버튼
 
+		//Enemie_icon01
+		Enemie_icon01* enemie_icon01 = new Enemie_icon01(eUIType::Enemie_icon01);
+		mUIs.insert(std::make_pair(eUIType::Enemie_icon01, enemie_icon01));
+		enemie_icon01->SetPos(Vector2(480.0f, 70.0f));
+		enemie_icon01->ImageLoad(L"enemie_icon01", L"..\\Resources\\Image\\Object\\Enemie_icon.bmp");
+
+		//Map_Gate
+		Map_Gate* map_gate = new Map_Gate(eUIType::Map_Gate);
+		mUIs.insert(std::make_pair(eUIType::Map_Gate, map_gate));
+		map_gate->SetPos(Vector2(450.0f, 50.0f));
+		map_gate->ImageLoad(L"map_gate", L"..\\Resources\\Image\\Object\\map_gate.bmp");
+
 		Map_bg* map_bg = new Map_bg(eUIType::Map_bg);
 		mUIs.insert(std::make_pair(eUIType::Map_bg, map_bg));
 		map_bg->SetPos(Vector2(150.0f, 37.0f));
 		map_bg->ImageLoad(L"map_bg", L"..\\Resources\\Image\\Object\\map_bg.bmp");
+		map_bg->AddChild(map_gate);
+		map_bg->AddChild(enemie_icon01);
 		//△패널 && 버튼
 	}
 
 	void UIManager::Inventoty_Pull()
 	{
-		TestButton* testbutton[46] = {};
-		for (size_t i = 0; i < 46; i++)
-		{
-			testbutton[i] = new TestButton(eUIType::TestButton);
-			mUIs.insert(std::make_pair(eUIType::TestButton, testbutton[i]));
-			//460.0f, 160.0f 로 좌표해야 인벤토리 한칸 안에 딱맞음
-			//testbutton[i]->SetPos(Vector2(460.0f, 160.0f));
-			testbutton[i]->ImageLoad(L"testbutton", L"..\\Resources\\Image\\blackLayer.bmp");
-		}
-		
-		int black_layer_count = 0;
-		for (int y = 16; y <= 324; y += 77)
-		{
-			for (int z = 163; z <= 933; z += 77)
-			{
-				if ((z == 471 && y == 93) || (z == 548 && y == 93) || (z == 625 && y == 93))
-					continue;
-				if ((z == 471 && y == 170) || (z == 548 && y == 170) || (z == 625 && y == 170))
-					continue;
-				if ((z == 471 && y == 247) || (z == 548 && y == 247) || (z == 625 && y == 247))
-					continue;
+		//인벤토리 잠금 모자이크 패턴 들
+		//TestButton* testbutton[46] = {};
+		//for (size_t i = 0; i < 46; i++)
+		//{
+		//	testbutton[i] = new TestButton(eUIType::TestButton);
+		//	mUIs.insert(std::make_pair(eUIType::TestButton, testbutton[i]));
+		//	//460.0f, 160.0f 로 좌표해야 인벤토리 한칸 안에 딱맞음
+		//	//testbutton[i]->SetPos(Vector2(460.0f, 160.0f));
+		//	testbutton[i]->ImageLoad(L"testbutton", L"..\\Resources\\Image\\blackLayer.bmp");
+		//}
+		//
+		//int black_layer_count = 0;
+		//for (int y = 16; y <= 324; y += 77)
+		//{
+		//	for (int z = 163; z <= 933; z += 77)
+		//	{
+		//		if ((z == 471 && y == 93) || (z == 548 && y == 93) || (z == 625 && y == 93))
+		//			continue;
+		//		if ((z == 471 && y == 170) || (z == 548 && y == 170) || (z == 625 && y == 170))
+		//			continue;
+		//		if ((z == 471 && y == 247) || (z == 548 && y == 247) || (z == 625 && y == 247))
+		//			continue;
 
-				testbutton[black_layer_count]->SetPos(Vector2(z, y));
-				black_layer_count++;
-			}
-		}
+		//		testbutton[black_layer_count]->SetPos(Vector2(z, y));
+		//		black_layer_count++;
+		//	}
+		//}
 
 		Enter_Button* enter_button = new Enter_Button(eUIType::Enter_Button);
 		mUIs.insert(std::make_pair(eUIType::Enter_Button, enter_button));
@@ -775,8 +792,9 @@ namespace ya {
 		inventory->SetPos(Vector2(240.0f, 37.0f));
 		inventory->ImageLoad(L"inventory", L"..\\Resources\\Image\\Object\\Inventory.bmp");
 		//인벤토리-자식들
-		for (size_t i = 0; i < 46; i++)
-			inventory->AddChild(testbutton[i]);
+		/*for (size_t i = 0; i < 46; i++)
+			inventory->AddChild(testbutton[i]);*/
+
 		inventory->AddChild(weapon01);
 		inventory->AddChild(weapon02);
 		inventory->AddChild(weapon03);

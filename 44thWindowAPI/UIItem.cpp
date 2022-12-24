@@ -53,12 +53,13 @@ namespace ya {
 	{
 
 		Vector2 Index = this->CalculateIndex(this->GetPos() + mParent->GetPos());
-		
+		bool out = false;
 		if (Index.x >= 11 && Index.y >= 5)
 		{
-			mPos = mPrevClickPos;
-			mPos -= mParent->GetPos();
-			SetPos(mPos);
+			out = true;
+			//mPos = mPrevClickPos;
+			//mPos -= mParent->GetPos();
+			//SetPos(mPos);
 			return;
 		}
 		//전체 배열을 다 돌면서 있는지 확인
@@ -89,17 +90,24 @@ namespace ya {
 			}
 		}
 		//새로운 자리에 배열 this 로 집어넣기
-		for (UINT y = 0; y < this->mYarrIndex; y++)
+
+		
+		if (Index.y + mYarrIndex <= 4 && Index.x + mXarrIndex <=10)
 		{
-			for (UINT x = 0; x < this->mXarrIndex; x++)
+			for (UINT y = 0; y < this->mYarrIndex; y++)
 			{
-				/*if (Index.x + x >= 11 && Index.y+y >= 5)
+				for (UINT x = 0; x < this->mXarrIndex; x++)
 				{
-					return;
-				}*/
-				mInventories[Index.y + y][Index.x + x] = this;
+					/*if (Index.x + x >= 11 && Index.y+y >= 5)
+					{
+						return;
+					}*/
+					mInventories[Index.y + y][Index.x + x] = this;
+				}
 			}
 		}
+
+		
 			
 		
 		

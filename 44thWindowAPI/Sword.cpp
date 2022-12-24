@@ -80,15 +80,15 @@ namespace ya {
 					//mOverlap = 0;
 
 				}
-				else
-				{
-					//인벤토리 바깥으로 벗어난다면 다시 원상복귀로 돌아가는 문법
-					/*pos = mPrevClickPos;
-					pos -= mParent->GetPos();
-					SetPos(pos);*/
-					//mOverlap = 0;
+				//else
+				//{
+				//	//인벤토리 바깥으로 벗어난다면 다시 원상복귀로 돌아가는 문법
+				//	/*pos = mPrevClickPos;
+				//	pos -= mParent->GetPos();
+				//	SetPos(pos);*/
+				//	//mOverlap = 0;
 
-				}
+				//}
 
 			}
 		

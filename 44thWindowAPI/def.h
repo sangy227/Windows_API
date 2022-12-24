@@ -136,6 +136,17 @@
 
 		Inventory2,
 		Map_bg,
+		Map_Gate,
+		Enemie_icon01,
+		Enemie_icon02,
+		Enemie_icon03,
+		Enemie_icon04,
+		Enemie_icon05,
+		Enemie_icon06,
+		Enemie_icon07,
+		Enemie_icon08,
+		Enemie_icon09,
+		Enemie_icon10,
 		Enter_Button,
 
 		TestButton,

@@ -17,13 +17,12 @@ namespace ya {
 	void BgImageObject::Tick()
 	{
 		GameObject::Tick();
-
 	}
 	void BgImageObject::Render(HDC hdc)
 	{
 		Vector2 pos = GetPos();
 		Vector2 scale = GetScale();
-
+		
 		Vector2 finalPos = pos;
 
 		Vector2 rect;
