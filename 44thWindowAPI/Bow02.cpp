@@ -32,8 +32,8 @@ void ya::Bow02::OnTick()
 	Vector2 mousePos = Input::GetMousePos();
 	Vector2 size = GetSize();
 
-	if (mScreenPos.x <= mousePos.x && mousePos.x < mScreenPos.x + size.x * 4.0f
-		&& mScreenPos.y <= mousePos.y && mousePos.y < mScreenPos.y + size.y * 3.5f)
+	if (mScreenPos.x <= mousePos.x && mousePos.x < mScreenPos.x + size.x * 5.0f
+		&& mScreenPos.y <= mousePos.y && mousePos.y < mScreenPos.y + size.y * 5.5f)
 	{
 		mbMouseOn = true;
 	}
@@ -91,7 +91,7 @@ void ya::Bow02::OnTick()
 void ya::Bow02::OnRender(HDC hdc)
 {
 	TransparentBlt(hdc, (int)mScreenPos.x, (int)mScreenPos.y,
-		mImage->GetWidth() * 4.0f, mImage->GetHeight() * 3.5f,
+		mImage->GetWidth() * 5.0f, mImage->GetHeight() * 5.5f,
 		mImage->GetDC(), 0, 0, mImage->GetWidth(), mImage->GetHeight()
 		, RGB(255, 255, 255));
 
@@ -99,9 +99,10 @@ void ya::Bow02::OnRender(HDC hdc)
 	HPEN bluePen = CreatePen(PS_SOLID, 3, RGB(0, 0, 255));
 	HPEN oldPen = (HPEN)SelectObject(hdc, bluePen);
 
-	Rectangle(hdc, (int)mScreenPos.x, (int)mScreenPos.y,
-		(int)mScreenPos.x + mImage->GetWidth() * 4.0f
-		, (int)mScreenPos.y + mImage->GetHeight() * 3.5f);
+	if (mRectEnable == true)
+		Rectangle(hdc, (int)mScreenPos.x, (int)mScreenPos.y,
+		(int)mScreenPos.x + mImage->GetWidth() * 5.0f
+		, (int)mScreenPos.y + mImage->GetHeight() * 5.5f);
 
 	SelectObject(hdc, oldPen);
 	DeleteObject(bluePen);

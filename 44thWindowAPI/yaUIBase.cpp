@@ -3,9 +3,12 @@
 #include "yaImage.h"
 #include "yaAniMator.h"
 #include "yaGameObject.h"
-
+#include "yaInput.h"
 namespace ya {
 	UINT UIBase::LevelUp_Inventory_Count = 3;
+	UIBase* UIBase::Player_icon=nullptr;
+	ya::UIBase::Player_Icon_Move UIBase::mIconState = Player_Icon_Move::DEFALUT;
+	
 
 	UIBase::UIBase(eUIType type)
 		: mType(type)
@@ -56,6 +59,16 @@ namespace ya {
 	}
 	void UIBase::Tick()
 	{
+		if (KEY_DOWN(eKeyCode::Z))
+		{
+			mRectEnable = false;
+		}
+
+		if (KEY_DOWN(eKeyCode::X))
+		{
+			mRectEnable = true;
+		}
+
 		if (mbEnable == false)
 			return;
 

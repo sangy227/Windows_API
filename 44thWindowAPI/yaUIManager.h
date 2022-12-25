@@ -35,6 +35,7 @@ namespace ya {
 		static void PlaySceneUI();
 		static void Inventoty_Pull();
 
+		
 	private:
 		static std::unordered_map <eUIType, UIBase*> mUIs;
 		static std::queue<eUIType> mRequestUIQueue;

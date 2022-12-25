@@ -59,6 +59,16 @@ namespace ya {
 		
 		//내가 추가한것
 		bool ExitChild() { return (mbEnable = false); }
+		enum class Player_Icon_Move
+		{
+			DEFALUT,
+			LEFT,
+			RIGHT,
+			UP,
+			DOWN,
+		};
+		static Player_Icon_Move mIconState;
+		bool mRectEnable = true;
 	protected:
 		UIBase* mParent;
 		Image* mImage;
@@ -72,8 +82,9 @@ namespace ya {
 		bool mbEnable;
 
 		static UINT LevelUp_Inventory_Count;
-
+		static UIBase* Player_icon;
 		
+
 		//GameObject* mRectObject;
 
 	private:

@@ -147,6 +147,7 @@
 		Enemie_icon08,
 		Enemie_icon09,
 		Enemie_icon10,
+		Map_Player_icon,
 		Enter_Button,
 
 		TestButton,

@@ -652,6 +652,21 @@
     <ClInclude Include="Enemie_icon01.h">
       <Filter>Engine\GameObject\UI\PlaySceneUI\Mid_Status_Bar\Map</Filter>
     </ClInclude>
+    <ClInclude Include="Enemie_icon02.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Mid_Status_Bar\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemie_icon03.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Mid_Status_Bar\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemie_icon04.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Mid_Status_Bar\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemie_icon05.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Mid_Status_Bar\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Map_Player_icon.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Mid_Status_Bar\Map</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="44thWindowAPI.rc">
@@ -1157,6 +1172,21 @@
       <Filter>Engine\GameObject\UI\PlaySceneUI\Mid_Status_Bar\Map</Filter>
     </ClCompile>
     <ClCompile Include="Enemie_icon01.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Mid_Status_Bar\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemie_icon02.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Mid_Status_Bar\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemie_icon03.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Mid_Status_Bar\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemie_icon04.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Mid_Status_Bar\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemie_icon05.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\Mid_Status_Bar\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Map_Player_icon.cpp">
       <Filter>Engine\GameObject\UI\PlaySceneUI\Mid_Status_Bar\Map</Filter>
     </ClCompile>
   </ItemGroup>

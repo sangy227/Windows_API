@@ -99,8 +99,8 @@ void ya::Weapon04::OnRender(HDC hdc)
 	HBRUSH oldBrush = (HBRUSH)GetStockObject(HOLLOW_BRUSH);
 	HPEN bluePen = CreatePen(PS_SOLID, 3, RGB(0, 0, 255));
 	HPEN oldPen = (HPEN)SelectObject(hdc, bluePen);
-
-	Rectangle(hdc, (int)mScreenPos.x, (int)mScreenPos.y,
+	if (mRectEnable == true)
+		Rectangle(hdc, (int)mScreenPos.x, (int)mScreenPos.y,
 		(int)mScreenPos.x + mImage->GetWidth() * 4.0f
 		, (int)mScreenPos.y + mImage->GetHeight() * 4.5f);
 

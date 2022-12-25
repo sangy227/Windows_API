@@ -52,6 +52,11 @@
 #include "Option_Icon.h"
 #include "Map_Icon.h"
 #include "Enemie_icon01.h"
+#include "Enemie_icon02.h"
+#include "Enemie_icon03.h"
+#include "Enemie_icon04.h"
+#include "Enemie_icon05.h"
+#include "Map_Player_icon.h"
 #include "Book_Icon.h"
 #include "Back_Icon.h"
 
@@ -142,6 +147,11 @@ namespace ya {
 
 			OnLoad(requestUI);
 		}
+
+
+
+
+
 	}
 
 	void UIManager::Render(HDC hdc)
@@ -531,8 +541,35 @@ namespace ya {
 		//Enemie_icon01
 		Enemie_icon01* enemie_icon01 = new Enemie_icon01(eUIType::Enemie_icon01);
 		mUIs.insert(std::make_pair(eUIType::Enemie_icon01, enemie_icon01));
-		enemie_icon01->SetPos(Vector2(480.0f, 70.0f));
+		enemie_icon01->SetPos(Vector2(800.0f, 400.0f)); //1
 		enemie_icon01->ImageLoad(L"enemie_icon01", L"..\\Resources\\Image\\Object\\Enemie_icon.bmp");
+
+		Enemie_icon02* enemie_icon02 = new Enemie_icon02(eUIType::Enemie_icon02);
+		mUIs.insert(std::make_pair(eUIType::Enemie_icon02, enemie_icon02));
+		enemie_icon02->SetPos(Vector2(470.0f, 400.0f));//2
+		enemie_icon02->ImageLoad(L"enemie_icon02", L"..\\Resources\\Image\\Object\\Enemie_icon.bmp");
+
+		Enemie_icon03* enemie_icon03 = new Enemie_icon03(eUIType::Enemie_icon03);
+		mUIs.insert(std::make_pair(eUIType::Enemie_icon03, enemie_icon03));
+		enemie_icon03->SetPos(Vector2(480.0f, 70.0f)); //3 
+		enemie_icon03->ImageLoad(L"enemie_icon03", L"..\\Resources\\Image\\Object\\Enemie_icon.bmp");
+
+		Enemie_icon04* enemie_icon04 = new Enemie_icon04(eUIType::Enemie_icon04);
+		mUIs.insert(std::make_pair(eUIType::Enemie_icon04, enemie_icon04));
+		enemie_icon04->SetPos(Vector2(720.0f, 75.0f)); //4
+		enemie_icon04->ImageLoad(L"enemie_icon04", L"..\\Resources\\Image\\Object\\Enemie_icon.bmp");
+
+		Enemie_icon05* enemie_icon05 = new Enemie_icon05(eUIType::Enemie_icon05);
+		mUIs.insert(std::make_pair(eUIType::Enemie_icon01, enemie_icon05));
+		enemie_icon05->SetPos(Vector2(710.0f, 315.0f)); //5
+		enemie_icon05->ImageLoad(L"enemie_icon05", L"..\\Resources\\Image\\Object\\Enemie_icon.bmp");
+
+		//Map_Player_icon
+		Map_Player_icon* map_player_icon = new Map_Player_icon(eUIType::Map_Player_icon);
+		mUIs.insert(std::make_pair(eUIType::Map_Player_icon, map_player_icon));
+		map_player_icon->SetPos(Vector2(775.0f, 130.0f)); //5
+		map_player_icon->ImageLoad(L"map_player_icon", L"..\\Resources\\Image\\Object\\MC_Rouge_icon.bmp");
+		
 
 		//Map_Gate
 		Map_Gate* map_gate = new Map_Gate(eUIType::Map_Gate);
@@ -546,6 +583,11 @@ namespace ya {
 		map_bg->ImageLoad(L"map_bg", L"..\\Resources\\Image\\Object\\map_bg.bmp");
 		map_bg->AddChild(map_gate);
 		map_bg->AddChild(enemie_icon01);
+		map_bg->AddChild(enemie_icon02);
+		map_bg->AddChild(enemie_icon03);
+		map_bg->AddChild(enemie_icon04);
+		map_bg->AddChild(enemie_icon05);
+		map_bg->AddChild(map_player_icon);
 		//△패널 && 버튼
 	}
 
@@ -786,6 +828,38 @@ namespace ya {
 		arrow03->SetPos(Vector2(300.0f, 80.0f));
 		arrow03->ImageLoad(L"arrow03", L"..\\Resources\\Image\\item\\Bow_Arrow\\Arrow03.bmp");
 
+		//Armor01
+		Armor01* armor01 = new Armor01(eUIType::Armor01);
+		mUIs.insert(std::make_pair(eUIType::Armor01, armor01));
+		armor01->SetPos(Vector2(400.0f, 80.0f));
+		armor01->ImageLoad(L"armor01", L"..\\Resources\\Image\\item\\Armor\\Armor01.bmp");
+
+		Armor02* armor02 = new Armor02(eUIType::Armor02);
+		mUIs.insert(std::make_pair(eUIType::Armor02, armor02));
+		armor02->SetPos(Vector2(400.0f, 80.0f));
+		armor02->ImageLoad(L"armor02", L"..\\Resources\\Image\\item\\Armor\\Armor02.bmp");
+
+		Armor03* armor03 = new Armor03(eUIType::Armor03);
+		mUIs.insert(std::make_pair(eUIType::Armor03, armor03));
+		armor03->SetPos(Vector2(400.0f, 80.0f));
+		armor03->ImageLoad(L"armor03", L"..\\Resources\\Image\\item\\Armor\\Armor03.bmp");
+
+		Armor04* armor04 = new Armor04(eUIType::Armor04);
+		mUIs.insert(std::make_pair(eUIType::Armor04, armor04));
+		armor04->SetPos(Vector2(400.0f, 80.0f));
+		armor04->ImageLoad(L"armor04", L"..\\Resources\\Image\\item\\Armor\\Armor04.bmp");
+
+		Armor05* armor05 = new Armor05(eUIType::Armor05);
+		mUIs.insert(std::make_pair(eUIType::Armor05, armor05));
+		armor05->SetPos(Vector2(400.0f, 80.0f));
+		armor05->ImageLoad(L"armor05", L"..\\Resources\\Image\\item\\Armor\\Armor05.bmp");
+
+		Armor06* armor06 = new Armor06(eUIType::Armor06);
+		mUIs.insert(std::make_pair(eUIType::Armor06, armor06));
+		armor06->SetPos(Vector2(400.0f, 80.0f));
+		armor06->ImageLoad(L"armor06", L"..\\Resources\\Image\\item\\Armor\\Armor06.bmp");
+
+
 
 		Inventory* inventory = new Inventory(eUIType::Inventory2);
 		mUIs.insert(std::make_pair(eUIType::Inventory2, inventory));
@@ -827,6 +901,8 @@ namespace ya {
 		inventory->AddChild(dagger01);
 		inventory->AddChild(dagger02);
 		inventory->AddChild(dagger03);
+		inventory->AddChild(dagger04);
+		inventory->AddChild(dagger05);
 
 		inventory->AddChild(bow01);
 		inventory->AddChild(bow02);
@@ -835,6 +911,16 @@ namespace ya {
 		inventory->AddChild(arrow01);
 		inventory->AddChild(arrow02);
 		inventory->AddChild(arrow03);
+
+
+		inventory->AddChild(armor01);
+		inventory->AddChild(armor02);
+		inventory->AddChild(armor03);
+		inventory->AddChild(armor04);
+		inventory->AddChild(armor05);
+		inventory->AddChild(armor06);
+
+
 
 		
 		inventory->AddChild(sword);

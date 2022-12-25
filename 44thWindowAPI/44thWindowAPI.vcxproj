@@ -183,6 +183,10 @@
     <ClInclude Include="def.h" />
     <ClInclude Include="Elder_Mage.h" />
     <ClInclude Include="Enemie_icon01.h" />
+    <ClInclude Include="Enemie_icon02.h" />
+    <ClInclude Include="Enemie_icon03.h" />
+    <ClInclude Include="Enemie_icon04.h" />
+    <ClInclude Include="Enemie_icon05.h" />
     <ClInclude Include="Enter_Button.h" />
     <ClInclude Include="Feral_Badger.h" />
     <ClInclude Include="fire_cobra.h" />
@@ -214,6 +218,7 @@
     <ClInclude Include="Map_bg.h" />
     <ClInclude Include="Map_Gate.h" />
     <ClInclude Include="Map_Icon.h" />
+    <ClInclude Include="Map_Player_icon.h" />
     <ClInclude Include="McIcon.h" />
     <ClInclude Include="MC_Info.h" />
     <ClInclude Include="Monster_include.h" />
@@ -353,6 +358,10 @@
     <ClCompile Include="dealmaker.cpp" />
     <ClCompile Include="Elder_Mage.cpp" />
     <ClCompile Include="Enemie_icon01.cpp" />
+    <ClCompile Include="Enemie_icon02.cpp" />
+    <ClCompile Include="Enemie_icon03.cpp" />
+    <ClCompile Include="Enemie_icon04.cpp" />
+    <ClCompile Include="Enemie_icon05.cpp" />
     <ClCompile Include="Enter_Button.cpp" />
     <ClCompile Include="Feral_Badger.cpp" />
     <ClCompile Include="fire_cobra.cpp" />
@@ -382,6 +391,7 @@
     <ClCompile Include="Map_bg.cpp" />
     <ClCompile Include="Map_Gate.cpp" />
     <ClCompile Include="Map_Icon.cpp" />
+    <ClCompile Include="Map_Player_icon.cpp" />
     <ClCompile Include="McIcon.cpp" />
     <ClCompile Include="MC_Info.cpp" />
     <ClCompile Include="Option_Icon.cpp" />
