@@ -30,7 +30,7 @@ namespace ya {
 		void SetHp(int hp) { mHp = hp; }
 		int GetHp() { return mHp; }
 
-		void Attack(); // 쿠키런 할때 볼수잇는것
+		void Player_Move(); 
 	private:
 		eState mState;
 		float mCoff;

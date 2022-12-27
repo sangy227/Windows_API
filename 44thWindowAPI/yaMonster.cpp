@@ -11,7 +11,7 @@
 #include "yaCollider.h"
 #include "yaCamera.h"
 #include "yaAniMator.h"
-
+#include "yaUIManager.h"
 namespace ya {
 	Monster::Monster()
 		: mTime(0.0f)
@@ -35,6 +35,9 @@ namespace ya {
 
 		AddComponent(mAnimator);
 		AddComponent(new Collider());
+
+		
+
 	}
 	Monster::Monster(Vector2 position)
 		: mTime(0.0f)
@@ -105,6 +108,7 @@ namespace ya {
 	}
 	void Monster::OnCollisionEnter(Collider* other)
 	{
+
 	}
 	void Monster::OnCollisionStay(Collider* other)
 	{

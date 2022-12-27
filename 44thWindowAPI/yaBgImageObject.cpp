@@ -13,9 +13,18 @@ namespace ya {
 	}
 	void BgImageObject::Initialize()
 	{
+		Vector2 pos = GetPos();
+		pos.x += 900.0f;
+		SetPos(pos);
 	}
 	void BgImageObject::Tick()
 	{
+		if (mBgStatus == BgStatus::MOVE) {
+			Vector2 pos = GetPos();
+			pos.x -= 2.0f;
+			SetPos(pos);
+		}
+
 		GameObject::Tick();
 	}
 	void BgImageObject::Render(HDC hdc)

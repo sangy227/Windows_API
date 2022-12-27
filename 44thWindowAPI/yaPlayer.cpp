@@ -12,7 +12,7 @@
 #include "yaBackPack.h"
 #include "yaRigidbody.h"
 #include "yaUIManager.h"
-
+#include "yaUIBase.h"
 
 namespace ya 
 {
@@ -247,9 +247,11 @@ namespace ya
 			mAnimator->Play(L"BowAttack", true);
 			mAnimator->GetCompleteEvent(L"BowAttack") = std::bind(&Player::WalkComplete, this);
 		}
-		if (KEY_DOWN(eKeyCode::E))
+		if (KEY_DOWN(eKeyCode::E) /*|| (!(mIconState == Player_Icon_Move::DEFALUT))*/ )
 		{
 			mAnimator->Play(L"Walk", true);
+			mBgStatus = BgStatus::MOVE;
+			
 		}
 		if (KEY_DOWN(eKeyCode::R))
 		{
@@ -289,11 +291,12 @@ namespace ya
 		}
 
 
+		
 
-
-		if (KEY_UP(eKeyCode::E))
+		if (KEY_UP(eKeyCode::E) )
 		{
 			mAnimator->Play(L"Idle", true);
+			mBgStatus = BgStatus::DEFALUT;
 		}
 		if (KEY_UP(eKeyCode::R))
 		{
@@ -470,5 +473,9 @@ namespace ya
 		Vector2 missileScale = missile->GetScale();
 
 		missile->SetPos((playerPos + playerScale) - (missileScale / 2.0f));*/
+	}
+	void Player::Player_Move()
+	{
+		mAnimator->Play(L"Walk", true);
 	}
 }

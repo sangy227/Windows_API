@@ -3,10 +3,13 @@
 #include "yaImage.h"
 #include "yaUIManager.h"
 #include "yaTime.h"
+#include "yaPlayer.h"
 
 ya::Map_Player_icon::Map_Player_icon(eUIType type)
 	:UIBase(type)
-	, zero100(0)
+	, mPrevpos(0)
+	, mEnemiepos(0)
+	, mDistance(0)
 {
 	mOnClick = std::bind(&Map_Player_icon::Click, this);
 }
@@ -56,35 +59,78 @@ void ya::Map_Player_icon::OnTick()
 	}
 	
 	//mIconState = Player_Icon_Move::DOWN;
+
+	/*if (mprevpos.y + 200.0f < GEtpos().y)
+	{
+
+	}*/
 	
+	//Distance();
+	//if (!(mIconState == Player_Icon_Move::DEFALUT))
+	//{
+	//	if (mEnemiepos - GetPos().y < 25)
+	//	{
+	//		mIconState = Player_Icon_Move::DEFALUT;
+	//		mEnemiepos = 0;
+	//	}
+
+	//	
+	//}
+	
+
 	switch (mIconState)
 	{
-		case ya::UIBase::Player_Icon_Move::DOWN:
+		case ya::Entity::Player_Icon_Move::DOWN:
 		{
 			Vector2 pos = GetPos();
 			pos.y += speed * Time::DeltaTime();
 			SetPos(pos);
+			if (mEnemiepos - GetPos().y < 25)
+			{
+				GameObject::mBgStatus = ya::GameObject::BgStatus::DEFALUT;
+				mIconState = Player_Icon_Move::DEFALUT;
+				mEnemiepos = 0;
+				UIManager::Pop(eUIType::Enemie_icon01); //pop이 걸렷는데 사라지지 않는이유?
+			}
 		}
 			break;
-		case ya::UIBase::Player_Icon_Move::UP:
+		case ya::Entity::Player_Icon_Move::UP:
 		{
 			Vector2 pos = GetPos();
 			pos.y -= speed * Time::DeltaTime();
 			SetPos(pos);
+			if (mEnemiepos - GetPos().y > 25)
+			{
+				GameObject::mBgStatus = ya::GameObject::BgStatus::DEFALUT;
+				mIconState = Player_Icon_Move::DEFALUT;
+				mEnemiepos = 0;
+			}
 		}
 			break;
-		case ya::UIBase::Player_Icon_Move::LEFT:
+		case ya::Entity::Player_Icon_Move::LEFT:
 		{
 			Vector2 pos = GetPos();
 			pos.x -= speed * Time::DeltaTime();
 			SetPos(pos);
+			if (mEnemiepos - GetPos().x > 25)
+			{
+				GameObject::mBgStatus = ya::GameObject::BgStatus::DEFALUT;
+				mIconState = Player_Icon_Move::DEFALUT;
+				mEnemiepos = 0;
+			}
 		}
 			break;
-		case ya::UIBase::Player_Icon_Move::RIGHT:
+		case ya::Entity::Player_Icon_Move::RIGHT:
 		{
 			Vector2 pos = GetPos();
 			pos.x += speed * Time::DeltaTime();
 			SetPos(pos);
+			if (mEnemiepos - GetPos().x < 25)
+			{
+				GameObject::mBgStatus = ya::GameObject::BgStatus::DEFALUT;
+				mIconState = Player_Icon_Move::DEFALUT;
+				mEnemiepos = 0;
+			}
 		}
 		break;
 		default:
@@ -106,5 +152,15 @@ void ya::Map_Player_icon::OnClear()
 
 void ya::Map_Player_icon::Click()
 {
-	
+	int a = 0;
+}
+
+void ya::Map_Player_icon::Distance(Vector2 mPrevpos, Vector2 mPos, UINT mDistance)
+{
+	//mIconState = Player_Icon_Move::DOWN;
+
+	/*if (mprevpos.y + 200.0f < GEtpos().y)
+	{
+
+	}*/
 }

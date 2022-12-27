@@ -34,6 +34,7 @@ namespace ya {
 
 		static void PlaySceneUI();
 		static void Inventoty_Pull();
+		static void Player_HUD();
 
 		
 	private:

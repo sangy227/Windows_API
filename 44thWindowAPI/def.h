@@ -206,6 +206,15 @@
 
 		/*�ѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤ�*/
 
+		heart01,
+		heart02,
+		heart03,
+		heart04,
+		block,
+		newenergy,
+		target,
+
+
 		HP,
 		MP,
 		SHOP,

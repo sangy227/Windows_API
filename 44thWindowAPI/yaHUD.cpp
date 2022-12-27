@@ -1,6 +1,5 @@
 #include "yaHUD.h"
 #include "yaImage.h"
-#include "yaHUD.h"
 #include "yaPlayer.h"
 #include "yaAniMator.h"
 #include "yaResources.h"

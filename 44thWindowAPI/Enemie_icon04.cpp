@@ -2,6 +2,8 @@
 #include "yaInput.h"
 #include "yaImage.h"
 #include "yaUIManager.h"
+#include "Map_Player_icon.h"
+#include "yaGameObject.h"
 ya::Enemie_icon04::Enemie_icon04(eUIType type)
 	:UIBase(type)
 {
@@ -58,6 +60,10 @@ void ya::Enemie_icon04::OnClear()
 
 void ya::Enemie_icon04::Click()
 {
-	mIconState = Player_Icon_Move::RIGHT;
+	Map_Player_icon* playerUi = UIManager::GetUiInstant<Map_Player_icon>(eUIType::Map_Player_icon);
 
+	Vector2 enemie_icon = GetPos();
+	playerUi->SetEnemiePos(enemie_icon.x);
+	mIconState = Player_Icon_Move::RIGHT;
+	GameObject::mBgStatus = ya::GameObject::BgStatus::MOVE;
 }

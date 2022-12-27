@@ -67,6 +67,11 @@
 #include "TestButton.h"
 #include "UIItem.h"
 #include "Item_include.h"
+
+#include "block.h"
+#include "heart.h"
+#include "newenergy.h"
+#include "target.h"
 /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
 
 
@@ -83,6 +88,10 @@ namespace ya {
 	{
 		// 여기에서 ui 메모리에 할당하면 된다.
 		
+		Sword* sword = new Sword(eUIType::TestSword);
+		mUIs.insert(std::make_pair(eUIType::TestSword, sword));
+		sword->SetPos(Vector2(542.0f, 90.0f));
+		sword->ImageLoad(L"sword", L"..\\Resources\\Image\\Sword_of_Venom.bmp");
 
 		/*로고버튼 모음*/
 		LogoButtonFull();
@@ -98,6 +107,7 @@ namespace ya {
 
 		/*플레이씬 UI모음*/
 		PlaySceneUI();
+		Player_HUD();
 
 
 		//인벤토리 Panel 자식들로 내림
@@ -925,6 +935,35 @@ namespace ya {
 		
 		inventory->AddChild(sword);
 		inventory->AddChild(enter_button);
+	}
+
+	void UIManager::Player_HUD()
+	{
+		heart* player_heart = new heart(eUIType::heart01);
+		mUIs.insert(std::make_pair(eUIType::heart01, player_heart));
+		player_heart->SetPos(Vector2(475.0f, 845.0f));
+		player_heart->ImageLoad(L"player_heart", L"..\\Resources\\Image\\Object\\heart.bmp");
+
+		heart* monster_heart01 = new heart(eUIType::heart02);
+		mUIs.insert(std::make_pair(eUIType::heart02, monster_heart01));
+		monster_heart01->SetPos(Vector2(1020.0f, 845.0f));
+		monster_heart01->ImageLoad(L"monster_heart01", L"..\\Resources\\Image\\Object\\heart.bmp");
+
+		heart* monster_heart02 = new heart(eUIType::heart03);
+		mUIs.insert(std::make_pair(eUIType::heart03, monster_heart02));
+		monster_heart02->SetPos(Vector2(1200.0f, 845.0f));
+		monster_heart02->ImageLoad(L"monster_heart02", L"..\\Resources\\Image\\Object\\heart.bmp");
+
+		heart* monster_heart03 = new heart(eUIType::heart04);
+		mUIs.insert(std::make_pair(eUIType::heart04, monster_heart03));
+		monster_heart03->SetPos(Vector2(1380.0f, 845.0f));
+		monster_heart03->ImageLoad(L"monster_heart03", L"..\\Resources\\Image\\Object\\heart.bmp");
+
+		newenergy* player_newenergy = new newenergy(eUIType::newenergy);
+		mUIs.insert(std::make_pair(eUIType::newenergy, player_newenergy));
+		player_newenergy->SetPos(Vector2(455.0f, 685.0f));
+		player_newenergy->ImageLoad(L"player_newenergy", L"..\\Resources\\Image\\Object\\newenergy.bmp");
+
 	}
 
 	

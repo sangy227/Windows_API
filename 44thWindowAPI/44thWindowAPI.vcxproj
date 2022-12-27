@@ -160,6 +160,7 @@
     <ClInclude Include="badgerKing.h" />
     <ClInclude Include="bandit_lord.h" />
     <ClInclude Include="bee.h" />
+    <ClInclude Include="block.h" />
     <ClInclude Include="boastful_spellsword.h" />
     <ClInclude Include="Book_Icon.h" />
     <ClInclude Include="boss.h" />
@@ -200,6 +201,7 @@
     <ClInclude Include="hawk_knight.h" />
     <ClInclude Include="head_honcho.h" />
     <ClInclude Include="healer_enemy.h" />
+    <ClInclude Include="heart.h" />
     <ClInclude Include="hermit_crab_bomb.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item_include.h" />
@@ -222,6 +224,7 @@
     <ClInclude Include="McIcon.h" />
     <ClInclude Include="MC_Info.h" />
     <ClInclude Include="Monster_include.h" />
+    <ClInclude Include="newenergy.h" />
     <ClInclude Include="Option_Icon.h" />
     <ClInclude Include="Potion01.h" />
     <ClInclude Include="Potion02.h" />
@@ -246,6 +249,7 @@
     <ClInclude Include="Shield05.h" />
     <ClInclude Include="Stats_Icon.h" />
     <ClInclude Include="Sword.h" />
+    <ClInclude Include="target.h" />
     <ClInclude Include="TestButton.h" />
     <ClInclude Include="UIItem.h" />
     <ClInclude Include="TitleDefault.h" />
@@ -337,6 +341,7 @@
     <ClCompile Include="badgerKing.cpp" />
     <ClCompile Include="bandit_lord.cpp" />
     <ClCompile Include="bee.cpp" />
+    <ClCompile Include="block.cpp" />
     <ClCompile Include="boastful_spellsword.cpp" />
     <ClCompile Include="Book_Icon.cpp" />
     <ClCompile Include="boss.cpp" />
@@ -374,6 +379,7 @@
     <ClCompile Include="hawk_knight.cpp" />
     <ClCompile Include="head_honcho.cpp" />
     <ClCompile Include="healer_enemy.cpp" />
+    <ClCompile Include="heart.cpp" />
     <ClCompile Include="hermit_crab_bomb.cpp" />
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Jewelry01.cpp" />
@@ -394,6 +400,7 @@
     <ClCompile Include="Map_Player_icon.cpp" />
     <ClCompile Include="McIcon.cpp" />
     <ClCompile Include="MC_Info.cpp" />
+    <ClCompile Include="newenergy.cpp" />
     <ClCompile Include="Option_Icon.cpp" />
     <ClCompile Include="Potion01.cpp" />
     <ClCompile Include="Potion02.cpp" />
@@ -418,6 +425,7 @@
     <ClCompile Include="Shield05.cpp" />
     <ClCompile Include="Stats_Icon.cpp" />
     <ClCompile Include="Sword.cpp" />
+    <ClCompile Include="target.cpp" />
     <ClCompile Include="TestButton.cpp" />
     <ClCompile Include="UIItem.cpp" />
     <ClCompile Include="TitleDefault.cpp" />

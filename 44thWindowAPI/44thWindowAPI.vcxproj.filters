@@ -137,6 +137,9 @@
     <Filter Include="Engine\GameObject\UI\PlaySceneUI\Mid_Status_Bar\Map">
       <UniqueIdentifier>{16863a61-df3c-4cb6-be82-ce0bfced9edf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar">
+      <UniqueIdentifier>{d6ca7ef9-b597-4909-a3df-81802df3e5e4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="44thWindowAPI.h">
@@ -667,6 +670,18 @@
     <ClInclude Include="Map_Player_icon.h">
       <Filter>Engine\GameObject\UI\PlaySceneUI\Mid_Status_Bar\Map</Filter>
     </ClInclude>
+    <ClInclude Include="heart.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClInclude>
+    <ClInclude Include="block.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClInclude>
+    <ClInclude Include="newenergy.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClInclude>
+    <ClInclude Include="target.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="44thWindowAPI.rc">
@@ -1188,6 +1203,18 @@
     </ClCompile>
     <ClCompile Include="Map_Player_icon.cpp">
       <Filter>Engine\GameObject\UI\PlaySceneUI\Mid_Status_Bar\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="heart.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClCompile>
+    <ClCompile Include="block.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClCompile>
+    <ClCompile Include="newenergy.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClCompile>
+    <ClCompile Include="target.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

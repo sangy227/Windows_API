@@ -1,6 +1,8 @@
 #include "yaGameObject.h"
 #include "yaTime.h"
 namespace ya {
+	ya::GameObject::BgStatus GameObject::mBgStatus = BgStatus::DEFALUT;
+
 	GameObject::GameObject()
 		: mPos({ 0.0f, 0.0f })
 		, mScale{ 1.0f, 1.0f }

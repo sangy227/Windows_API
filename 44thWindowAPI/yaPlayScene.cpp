@@ -26,9 +26,15 @@ namespace ya {
 	{
 		BgImageObject* bg2 = new BgImageObject();
 		bg2->SetImage(L"PlayBG2", L"bg2.bmp");
-		bg2->Initialize();
+		//bg2->Initialize();
 		AddGameObject(bg2, eColliderLayer::BackGround);
 
+		BgImageObject* bg3 = new BgImageObject();
+		bg3->SetImage(L"PlayBG3", L"bg2.bmp");
+		bg3->Initialize();
+		AddGameObject(bg3, eColliderLayer::BackGround);
+
+		//GameObject::mBgStatus = ya::GameObject::BgStatus::MOVE
 		//임시방편
 		//Player* player = ya::object::Instantiate<Player>(eColliderLayer::Player);
 
@@ -84,6 +90,12 @@ namespace ya {
 		UIManager::Push(eUIType::Map_Icon);
 		UIManager::Push(eUIType::Back_Icon);
 		UIManager::Push(eUIType::Inventory2);
+
+		UIManager::Push(eUIType::heart01);
+		UIManager::Push(eUIType::heart02);
+		UIManager::Push(eUIType::heart03);
+		UIManager::Push(eUIType::heart04);
+		UIManager::Push(eUIType::newenergy);
 
 		/*UIManager::Push(eUIType::TestButton);
 		UIManager::Push(eUIType::TestSword);*/

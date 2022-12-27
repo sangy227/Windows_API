@@ -7,7 +7,7 @@
 namespace ya {
 	UINT UIBase::LevelUp_Inventory_Count = 3;
 	UIBase* UIBase::Player_icon=nullptr;
-	ya::UIBase::Player_Icon_Move UIBase::mIconState = Player_Icon_Move::DEFALUT;
+	//ya::UIBase::Player_Icon_Move UIBase::mIconState = Player_Icon_Move::DEFALUT;
 	
 
 	UIBase::UIBase(eUIType type)

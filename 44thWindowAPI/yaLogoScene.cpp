@@ -25,7 +25,7 @@ namespace ya {
 	{
 		BgImageObject* bg = new BgImageObject();
 		bg->SetImage(L"LogoBG", L"bg1.bmp");
-		bg->Initialize();
+		//bg->Initialize();
 		AddGameObject(bg, eColliderLayer::BackGround);
 
 		Logo* logo = new Logo();

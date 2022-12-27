@@ -45,8 +45,8 @@ namespace ya {
 
 		mPos = Camera::CalculatePos(GetPos());
 
-		Rectangle(hdc, (mPos.x - mScale.x / 2.0f), (mPos.y - mScale.y / 2.0f)
-			, (mPos.x + mScale.x / 2.0f), (mPos.y + mScale.y / 2.0f));
+		/*Rectangle(hdc, (mPos.x - mScale.x / 2.0f), (mPos.y - mScale.y / 2.0f)
+			, (mPos.x + mScale.x / 2.0f), (mPos.y + mScale.y / 2.0f));*/
 
 		SelectObject(hdc, oldPen);
 		DeleteObject(redPen);

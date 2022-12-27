@@ -18,10 +18,21 @@ namespace ya {
 		virtual void OnClear() override;
 
 		virtual void Click();
+
+
+		UINT SetPrevPos(UINT pos) { return mPrevpos = pos; }
+		int SetEnemiePos(int pos) { return mEnemiepos = pos; }
+		UINT SetDistancePos(UINT init) { return mDistance = init; }
+
+
+		void Distance(Vector2 mPrevpos, Vector2 mPos, UINT mDistance);
 	private:
 		Event mOnClick;
 		bool mbMouseOn;
 
-		UINT zero100;
+		UINT mPrevpos;
+		int mEnemiepos;
+		UINT mDistance;
+
 	};
 }

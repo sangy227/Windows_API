@@ -70,6 +70,13 @@ namespace ya {
 
 		void DeathLoop();
 
+		enum class BgStatus
+		{
+			DEFALUT,
+			MOVE
+		};
+		static BgStatus mBgStatus;
+
 	protected:
 
 

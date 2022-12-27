@@ -5,6 +5,7 @@ namespace ya {
 	class GameObject;
 	class AniMator;
 	class Image;
+	
 	class UIBase : public Entity
 	{
 	public:
@@ -59,7 +60,7 @@ namespace ya {
 		
 		//내가 추가한것
 		bool ExitChild() { return (mbEnable = false); }
-		enum class Player_Icon_Move
+		/*enum class Player_Icon_Move
 		{
 			DEFALUT,
 			LEFT,
@@ -67,8 +68,10 @@ namespace ya {
 			UP,
 			DOWN,
 		};
-		static Player_Icon_Move mIconState;
+		static Player_Icon_Move mIconState;*/
+
 		bool mRectEnable = true;
+		
 	protected:
 		UIBase* mParent;
 		Image* mImage;
