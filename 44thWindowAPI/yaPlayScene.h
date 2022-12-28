@@ -1,10 +1,12 @@
 #pragma once
 #include "yaScene.h"
 #include "Monster_include.h"
+#include "yaPlayer.h"
 
 namespace ya {
 	//class chicken;
 	//class Monster;
+	class Player;
 	class PlayScene : public Scene
 	{
 	public:
@@ -19,6 +21,7 @@ namespace ya {
 		virtual void Enter();
 		virtual void Exit();
 
+		
 	private:
 		Monster* mons1;
 		Monster* mons2;

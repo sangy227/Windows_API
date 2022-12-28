@@ -677,53 +677,53 @@ namespace ya {
 
 		Shield01* shield01 = new Shield01(eUIType::Shield01);
 		mUIs.insert(std::make_pair(eUIType::Shield01, shield01));
-		shield01->SetPos(Vector2(10.0f, 10.0f));
+		shield01->SetPos(Vector2(770.0f, 250.0f));
 		shield01->ImageLoad(L"shield01", L"..\\Resources\\Image\\item\\Shield\\Shield01.bmp");
 
 		Shield02* shield02 = new Shield02(eUIType::Shield02);
 		mUIs.insert(std::make_pair(eUIType::Shield02, shield02));
-		shield02->SetPos(Vector2(10.0f, 10.0f));
+		shield02->SetPos(Vector2(770.0f, 90.0f));
 		shield02->ImageLoad(L"shield02", L"..\\Resources\\Image\\item\\Shield\\Shield02.bmp");
 
 		Shield03* shield03 = new Shield03(eUIType::Shield03);
 		mUIs.insert(std::make_pair(eUIType::Shield03, shield03));
-		shield03->SetPos(Vector2(10.0f, 10.0f));
+		shield03->SetPos(Vector2(770.0f, 140.0f));
 		shield03->ImageLoad(L"shield03", L"..\\Resources\\Image\\item\\Shield\\Shield03.bmp");
 
 		Shield04* shield04 = new Shield04(eUIType::Shield04);
 		mUIs.insert(std::make_pair(eUIType::Shield04, shield04));
-		shield04->SetPos(Vector2(10.0f, 10.0f));
+		shield04->SetPos(Vector2(770.0f, 40.0f));
 		shield04->ImageLoad(L"shield04", L"..\\Resources\\Image\\item\\Shield\\Shield04.bmp");
 
 		Shield05* shield05 = new Shield05(eUIType::Shield05);
 		mUIs.insert(std::make_pair(eUIType::Shield05, shield05));
-		shield05->SetPos(Vector2(10.0f, 10.0f));
+		shield05->SetPos(Vector2(950.0f, 250.0f));
 		shield05->ImageLoad(L"shield05", L"..\\Resources\\Image\\item\\Shield\\Shield05.bmp");
 
 	
 		Potion01* potion01 = new Potion01(eUIType::Potion01);
 		mUIs.insert(std::make_pair(eUIType::Potion01, potion01));
-		potion01->SetPos(Vector2(10.0f, 80.0f));
+		potion01->SetPos(Vector2(170.0f, 220.0f));
 		potion01->ImageLoad(L"potion01", L"..\\Resources\\Image\\item\\Potion\\Potion01.bmp");
 
 		Potion02* potion02 = new Potion02(eUIType::Potion02);
 		mUIs.insert(std::make_pair(eUIType::Potion02, potion02));
-		potion02->SetPos(Vector2(10.0f, 80.0f));
+		potion02->SetPos(Vector2(170.0f, 70.0f));
 		potion02->ImageLoad(L"potion02", L"..\\Resources\\Image\\item\\Potion\\Potion02.bmp");
 
 		Potion03* potion03 = new Potion03(eUIType::Potion03);
 		mUIs.insert(std::make_pair(eUIType::Potion03, potion03));
-		potion03->SetPos(Vector2(10.0f, 80.0f));
+		potion03->SetPos(Vector2(170.0f, 120.0f));
 		potion03->ImageLoad(L"potion03", L"..\\Resources\\Image\\item\\Potion\\Potion03.bmp");
 
 		Potion04* potion04 = new Potion04(eUIType::Potion04);
 		mUIs.insert(std::make_pair(eUIType::Potion04, potion04));
-		potion04->SetPos(Vector2(10.0f, 80.0f));
+		potion04->SetPos(Vector2(170.0f, 170.0f));
 		potion04->ImageLoad(L"potion04", L"..\\Resources\\Image\\item\\Potion\\Potion04.bmp");
 
 		Potion05* potion05 = new Potion05(eUIType::Potion05);
 		mUIs.insert(std::make_pair(eUIType::Potion05, potion05));
-		potion05->SetPos(Vector2(10.0f, 80.0f));
+		potion05->SetPos(Vector2(10.0f, 20.0f));
 		potion05->ImageLoad(L"potion05", L"..\\Resources\\Image\\item\\Potion\\Potion05.bmp");
 
 		Potion06* potion06 = new Potion06(eUIType::Potion06);
@@ -733,49 +733,49 @@ namespace ya {
 
 		Potion07* potion07 = new Potion07(eUIType::Potion07);
 		mUIs.insert(std::make_pair(eUIType::Potion07, potion07));
-		potion07->SetPos(Vector2(10.0f, 80.0f));
+		potion07->SetPos(Vector2(10.0f, 130.0f));
 		potion07->ImageLoad(L"potion07", L"..\\Resources\\Image\\item\\Potion\\Potion07.bmp");
 
 		Potion08* potion08 = new Potion08(eUIType::Potion08);
 		mUIs.insert(std::make_pair(eUIType::Potion08, potion08));
-		potion08->SetPos(Vector2(10.0f, 80.0f));
+		potion08->SetPos(Vector2(10.0f, 180.0f));
 		potion08->ImageLoad(L"potion08", L"..\\Resources\\Image\\item\\Potion\\Potion08.bmp");
 
 		Potion09* potion09 = new Potion09(eUIType::Potion09);
 		mUIs.insert(std::make_pair(eUIType::Potion09, potion09));
-		potion09->SetPos(Vector2(10.0f, 80.0f));
+		potion09->SetPos(Vector2(900.0f, 50.0f));
 		potion09->ImageLoad(L"potion09", L"..\\Resources\\Image\\item\\Potion\\Potion09.bmp");
 
 		Potion10* potion10 = new Potion10(eUIType::Potion10);
 		mUIs.insert(std::make_pair(eUIType::Potion10, potion10));
-		potion10->SetPos(Vector2(10.0f, 80.0f));
+		potion10->SetPos(Vector2(950.0f, 50.0f));
 		potion10->ImageLoad(L"potion10", L"..\\Resources\\Image\\item\\Potion\\Potion10.bmp");
 
 		Potion11* potion11 = new Potion11(eUIType::Potion11);
 		mUIs.insert(std::make_pair(eUIType::Potion11, potion11));
-		potion11->SetPos(Vector2(10.0f, 80.0f));
+		potion11->SetPos(Vector2(1000.0f, 50.0f));
 		potion11->ImageLoad(L"potion11", L"..\\Resources\\Image\\item\\Potion\\Potion11.bmp");
 
 		Potion12* potion12 = new Potion12(eUIType::Potion12);
 		mUIs.insert(std::make_pair(eUIType::Potion12, potion12));
-		potion12->SetPos(Vector2(10.0f, 80.0f));
+		potion12->SetPos(Vector2(1050.0f, 50.0f));
 		potion12->ImageLoad(L"potion12", L"..\\Resources\\Image\\item\\Potion\\Potion12.bmp");
 
 
 
 		Jewelry01* jewelry01 = new Jewelry01(eUIType::Jewelry01);
 		mUIs.insert(std::make_pair(eUIType::Jewelry01, jewelry01));
-		jewelry01->SetPos(Vector2(10.0f, 150.0f));
+		jewelry01->SetPos(Vector2(60.0f, 220.0f));
 		jewelry01->ImageLoad(L"jewelry01", L"..\\Resources\\Image\\item\\Jewelry\\Jewelry01.bmp");
 
 		Jewelry02* jewelry02 = new Jewelry02(eUIType::Jewelry02);
 		mUIs.insert(std::make_pair(eUIType::Jewelry02, jewelry02));
-		jewelry02->SetPos(Vector2(10.0f, 150.0f));
+		jewelry02->SetPos(Vector2(60.0f, 270.0f));
 		jewelry02->ImageLoad(L"jewelry02", L"..\\Resources\\Image\\item\\Jewelry\\Jewelry02.bmp");
 
 		Jewelry03* jewelry03 = new Jewelry03(eUIType::Jewelry03);
 		mUIs.insert(std::make_pair(eUIType::Jewelry03, jewelry03));
-		jewelry03->SetPos(Vector2(10.0f, 150.0f));
+		jewelry03->SetPos(Vector2(60.0f, 320.0f));
 		jewelry03->ImageLoad(L"jewelry03", L"..\\Resources\\Image\\item\\Jewelry\\Jewelry03.bmp");
 
 
@@ -787,86 +787,86 @@ namespace ya {
 
 		Dagger02* dagger02 = new Dagger02(eUIType::Dagger02);
 		mUIs.insert(std::make_pair(eUIType::Dagger02, dagger02));
-		dagger02->SetPos(Vector2(10.0f, 220.0f));
+		dagger02->SetPos(Vector2(10.0f, 270.0f));
 		dagger02->ImageLoad(L"dagger02", L"..\\Resources\\Image\\item\\Dagger\\Dagger02.bmp");
 
 		Dagger03* dagger03 = new Dagger03(eUIType::Dagger03);
 		mUIs.insert(std::make_pair(eUIType::Dagger03, dagger03));
-		dagger03->SetPos(Vector2(10.0f, 220.0f));
+		dagger03->SetPos(Vector2(10.0f, 320.0f));
 		dagger03->ImageLoad(L"dagger03", L"..\\Resources\\Image\\item\\Dagger\\Dagger03.bmp");
 
 		Dagger04* dagger04 = new Dagger04(eUIType::Dagger04);
 		mUIs.insert(std::make_pair(eUIType::Dagger04, dagger04));
-		dagger04->SetPos(Vector2(10.0f, 220.0f));
+		dagger04->SetPos(Vector2(10.0f, 370.0f));
 		dagger04->ImageLoad(L"dagger04", L"..\\Resources\\Image\\item\\Dagger\\Dagger04.bmp");
 
 		Dagger05* dagger05 = new Dagger05(eUIType::Dagger05);
 		mUIs.insert(std::make_pair(eUIType::Dagger05, dagger05));
-		dagger05->SetPos(Vector2(10.0f, 220.0f));
+		dagger05->SetPos(Vector2(10.0f, 420.0f));
 		dagger05->ImageLoad(L"dagger05", L"..\\Resources\\Image\\item\\Dagger\\Dagger05.bmp");
 
 
 		//Bow01
 		Bow01* bow01 = new Bow01(eUIType::Bow01);
 		mUIs.insert(std::make_pair(eUIType::Bow01, bow01));
-		bow01->SetPos(Vector2(300.0f, 80.0f));
+		bow01->SetPos(Vector2(170.0f, 10.0f));
 		bow01->ImageLoad(L"bow01", L"..\\Resources\\Image\\item\\Bow_Arrow\\Bow01.bmp");
 
 		Bow02* bow02 = new Bow02(eUIType::Bow02);
 		mUIs.insert(std::make_pair(eUIType::Bow02, bow02));
-		bow02->SetPos(Vector2(300.0f, 80.0f));
+		bow02->SetPos(Vector2(250.0f, 10.0f));
 		bow02->ImageLoad(L"bow02", L"..\\Resources\\Image\\item\\Bow_Arrow\\Bow02.bmp");
 
 		Bow03* bow03 = new Bow03(eUIType::Bow03);
 		mUIs.insert(std::make_pair(eUIType::Bow03, bow03));
-		bow03->SetPos(Vector2(300.0f, 80.0f));
+		bow03->SetPos(Vector2(330.0f, 10.0f));
 		bow03->ImageLoad(L"bow03", L"..\\Resources\\Image\\item\\Bow_Arrow\\Bow03.bmp");
 
 		//Arrow01
 		Arrow01* arrow01 = new Arrow01(eUIType::Arrow01);
 		mUIs.insert(std::make_pair(eUIType::Arrow01, arrow01));
-		arrow01->SetPos(Vector2(300.0f, 80.0f));
+		arrow01->SetPos(Vector2(340.0f, 10.0f));
 		arrow01->ImageLoad(L"arrow01", L"..\\Resources\\Image\\item\\Bow_Arrow\\Arrow01.bmp");
 
 		Arrow02* arrow02 = new Arrow02(eUIType::Arrow02);
 		mUIs.insert(std::make_pair(eUIType::Arrow02, arrow02));
-		arrow02->SetPos(Vector2(300.0f, 80.0f));
+		arrow02->SetPos(Vector2(380.0f, 10.0f));
 		arrow02->ImageLoad(L"arrow02", L"..\\Resources\\Image\\item\\Bow_Arrow\\Arrow02.bmp");
 
 		Arrow03* arrow03 = new Arrow03(eUIType::Arrow03);
 		mUIs.insert(std::make_pair(eUIType::Arrow03, arrow03));
-		arrow03->SetPos(Vector2(300.0f, 80.0f));
+		arrow03->SetPos(Vector2(420.0f, 10.0f));
 		arrow03->ImageLoad(L"arrow03", L"..\\Resources\\Image\\item\\Bow_Arrow\\Arrow03.bmp");
 
 		//Armor01
 		Armor01* armor01 = new Armor01(eUIType::Armor01);
 		mUIs.insert(std::make_pair(eUIType::Armor01, armor01));
-		armor01->SetPos(Vector2(400.0f, 80.0f));
+		armor01->SetPos(Vector2(200.0f, 480.0f));
 		armor01->ImageLoad(L"armor01", L"..\\Resources\\Image\\item\\Armor\\Armor01.bmp");
 
 		Armor02* armor02 = new Armor02(eUIType::Armor02);
 		mUIs.insert(std::make_pair(eUIType::Armor02, armor02));
-		armor02->SetPos(Vector2(400.0f, 80.0f));
+		armor02->SetPos(Vector2(350.0f, 480.0f));
 		armor02->ImageLoad(L"armor02", L"..\\Resources\\Image\\item\\Armor\\Armor02.bmp");
 
 		Armor03* armor03 = new Armor03(eUIType::Armor03);
 		mUIs.insert(std::make_pair(eUIType::Armor03, armor03));
-		armor03->SetPos(Vector2(400.0f, 80.0f));
+		armor03->SetPos(Vector2(500.0f, 480.0f));
 		armor03->ImageLoad(L"armor03", L"..\\Resources\\Image\\item\\Armor\\Armor03.bmp");
 
 		Armor04* armor04 = new Armor04(eUIType::Armor04);
 		mUIs.insert(std::make_pair(eUIType::Armor04, armor04));
-		armor04->SetPos(Vector2(400.0f, 80.0f));
+		armor04->SetPos(Vector2(650.0f, 480.0f));
 		armor04->ImageLoad(L"armor04", L"..\\Resources\\Image\\item\\Armor\\Armor04.bmp");
 
 		Armor05* armor05 = new Armor05(eUIType::Armor05);
 		mUIs.insert(std::make_pair(eUIType::Armor05, armor05));
-		armor05->SetPos(Vector2(400.0f, 80.0f));
+		armor05->SetPos(Vector2(800.0f, 480.0f));
 		armor05->ImageLoad(L"armor05", L"..\\Resources\\Image\\item\\Armor\\Armor05.bmp");
 
 		Armor06* armor06 = new Armor06(eUIType::Armor06);
 		mUIs.insert(std::make_pair(eUIType::Armor06, armor06));
-		armor06->SetPos(Vector2(400.0f, 80.0f));
+		armor06->SetPos(Vector2(950.0f, 480.0f));
 		armor06->ImageLoad(L"armor06", L"..\\Resources\\Image\\item\\Armor\\Armor06.bmp");
 
 

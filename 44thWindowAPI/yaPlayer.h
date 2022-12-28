@@ -31,6 +31,16 @@ namespace ya {
 		int GetHp() { return mHp; }
 
 		void Player_Move(); 
+		void Player_Idel(); 
+		void Player_Attack();
+		void Player_BowAttack();
+		void Player_SearchPack();
+		void Player_Map();
+		void Player_hurt();
+		void Player_winsmall();
+		void Player_die();
+		void Player_useitem();
+		void Player_block();
 	private:
 		eState mState;
 		float mCoff;

@@ -3,6 +3,8 @@
 #include "yaImage.h"
 #include "yaUIManager.h"
 #include "yaCamera.h"
+#include "yaPlayer.h"
+#include "yaScene.h"
 
 namespace ya {
 	Weapon02::Weapon02(eUIType type)
@@ -52,12 +54,21 @@ namespace ya {
 			thisVariable = this;
 			//UIItem::InventorieArr();
 
+			if (Ani_Enable) {
+				Player* miniPlayer = Scene::player;
+				miniPlayer->Player_Attack();
+			}
+
 		}
 
 		if (KEY_PREESE(eKeyCode::LBTN) && mbMouseOn)
 		{
 			if (thisVariable == this)
 				mOnClick();
+			if (Ani_Enable) {
+				Player* miniPlayer = Scene::player;
+				miniPlayer->Player_Attack();
+			}
 
 		}
 

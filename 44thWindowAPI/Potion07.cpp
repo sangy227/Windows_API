@@ -3,6 +3,8 @@
 #include "yaImage.h"
 #include "yaUIManager.h"
 #include "yaCamera.h"
+#include "yaPlayer.h"
+#include "yaScene.h"
 ya::Potion07::Potion07(eUIType type)
 	: UIItem(type)
 {
@@ -52,6 +54,10 @@ void ya::Potion07::OnTick()
 		thisVariable = this;
 		//UIItem::InventorieArr();
 
+		if (Ani_Enable) {
+			Player* miniPlayer = Scene::player;
+			miniPlayer->Player_useitem();
+		}
 	}
 
 	if (KEY_PREESE(eKeyCode::LBTN) && mbMouseOn)

@@ -478,4 +478,75 @@ namespace ya
 	{
 		mAnimator->Play(L"Walk", true);
 	}
+
+	void Player::Player_Idel()
+	{
+		mAnimator->Play(L"Idle", true);
+	}
+
+	void Player::Player_Attack()
+	{
+		if (mAttackCount == 0)
+		{
+			Vector2 pos = GetPos();
+			pos.x += 120.0f;
+			SetPos(pos);
+
+			mAnimator->Play(L"attack", true);
+			mAnimator->GetCompleteEvent(L"attack") = std::bind(&Player::WalkComplete, this);
+
+			mAttackCount++;
+		}
+	}
+
+	void Player::Player_BowAttack()
+	{
+		mAnimator->Play(L"BowAttack", true);
+		mAnimator->GetCompleteEvent(L"BowAttack") = std::bind(&Player::WalkComplete, this);
+	}
+
+	void Player::Player_SearchPack()
+	{
+		mAnimator->Play(L"SearchPack", true);
+	}
+
+	void Player::Player_Map()
+	{
+		mAnimator->Play(L"Map", true);
+	}
+
+	void Player::Player_hurt()
+	{
+		if (mDamageCount == 0) {
+			Vector2 pos = GetPos();
+			pos.x -= 100.0f;
+			SetPos(pos);
+
+			mAnimator->Play(L"hurt", true);
+			mAnimator->GetCompleteEvent(L"hurt") = std::bind(&Player::WalkComplete, this);
+			mDamageCount++;
+		}
+	}
+
+	void Player::Player_winsmall()
+	{
+		mAnimator->Play(L"winsmall", true);
+	}
+
+	void Player::Player_die()
+	{
+		mAnimator->Play(L"die", true);
+	}
+
+	void Player::Player_useitem()
+	{
+		mAnimator->Play(L"useitem", true);
+		mAnimator->GetCompleteEvent(L"useitem") = std::bind(&Player::WalkComplete, this);
+	}
+
+	void Player::Player_block()
+	{
+		mAnimator->Play(L"block", true);
+	}
+
 }

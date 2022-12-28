@@ -26,6 +26,8 @@ namespace ya {
 
 
 		void Distance(Vector2 mPrevpos, Vector2 mPos, UINT mDistance);
+
+		static int map_ani_count;
 	private:
 		Event mOnClick;
 		bool mbMouseOn;

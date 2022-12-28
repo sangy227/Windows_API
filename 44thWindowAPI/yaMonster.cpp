@@ -75,6 +75,22 @@ namespace ya {
 
 		SetPos(pos);
 
+		Vector2 mousePos = Input::GetMousePos();
+		Vector2 size = GetSize();
+
+		//??
+		/*if (mScreenPos.x <= mousePos.x && mousePos.x < mScreenPos.x + size.x *3.5f
+			&& mScreenPos.y <= mousePos.y && mousePos.y < mScreenPos.y + size.y*3.5f)
+		{
+			if (KEY_DOWN(eKeyCode::LBTN))
+			{
+				int a = 0;
+			}
+		}*/
+		
+
+		
+
 		/*mTime += Time::DeltaTime();
 
 		if (mTime > 5.0f)

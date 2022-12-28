@@ -3,7 +3,8 @@
 #include "yaImage.h"
 #include "yaUIManager.h"
 #include "yaCamera.h"
-
+#include "yaScene.h"
+#include "yaPlayer.h"
 
 namespace ya {
 	Sword::Sword(eUIType type)
@@ -53,6 +54,11 @@ namespace ya {
 
 				thisVariable = this;
 				//UIItem::InventorieArr();
+
+				if (Ani_Enable) {
+					Player* miniPlayer = Scene::player;
+					miniPlayer->Player_Attack();
+				}
 				
 			}
 

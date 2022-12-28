@@ -3,6 +3,7 @@
 #include "yaSceneManager.h"
 #include "yaCollisionManager.h"
 namespace ya {
+	Player* Scene::player = nullptr;
 
 
 	Scene::Scene()

@@ -14,6 +14,7 @@
 #include "yaButton.h"
 
 namespace ya {
+	
 	PlayScene::PlayScene()
 	{
 	}
@@ -109,7 +110,9 @@ namespace ya {
 
 		//HUD* hud = UIManager::GetUiInstant<HUD>(eUIType::MP);
 		//임시방편 실험용
-		Player* player = ya::object::Instantiate<Player>(eColliderLayer::Player);
+
+		//이친구를 전역변수로 만들어서 쓰기 player가 주솟값
+		player = ya::object::Instantiate<Player>(eColliderLayer::Player);
 		//hud->SetTarget(player);
 
 		

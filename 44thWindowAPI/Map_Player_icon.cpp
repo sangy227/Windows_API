@@ -4,6 +4,17 @@
 #include "yaUIManager.h"
 #include "yaTime.h"
 #include "yaPlayer.h"
+#include "Enemie_icon01.h"
+#include "Enemie_icon02.h"
+#include "Enemie_icon03.h"
+#include "Enemie_icon04.h"
+#include "Enemie_icon05.h"
+#include "yaScene.h"
+namespace ya {
+
+int Map_Player_icon::map_ani_count = 0;
+
+}
 
 ya::Map_Player_icon::Map_Player_icon(eUIType type)
 	:UIBase(type)
@@ -90,7 +101,36 @@ void ya::Map_Player_icon::OnTick()
 				GameObject::mBgStatus = ya::GameObject::BgStatus::DEFALUT;
 				mIconState = Player_Icon_Move::DEFALUT;
 				mEnemiepos = 0;
-				UIManager::Pop(eUIType::Enemie_icon01); //pop이 걸렷는데 사라지지 않는이유?
+				//UIManager::Pop(eUIType::Enemie_icon01); //pop이 걸렷는데 사라지지 않는이유?
+
+				Enemie_icon01* enemie_icon01 = UIManager::GetUiInstant<Enemie_icon01>(eUIType::Enemie_icon01);
+				enemie_icon01->InActive();
+
+
+				Player* miniPlayer = Scene::player;
+				miniPlayer->Player_Idel();
+			}
+		}
+			break;
+
+		case ya::Entity::Player_Icon_Move::DOWN2:
+		{
+			Vector2 pos = GetPos();
+			pos.y += speed * Time::DeltaTime();
+			SetPos(pos);
+			if (mEnemiepos - GetPos().y < 25)
+			{
+				GameObject::mBgStatus = ya::GameObject::BgStatus::DEFALUT;
+				mIconState = Player_Icon_Move::DEFALUT;
+				mEnemiepos = 0;
+				//UIManager::Pop(eUIType::Enemie_icon01); //pop이 걸렷는데 사라지지 않는이유?
+
+				
+				Enemie_icon05* enemie_icon05 = UIManager::GetUiInstant<Enemie_icon05>(eUIType::Enemie_icon05);
+				//enemie_icon05->InActive();
+				
+				Player* miniPlayer = Scene::player;
+				miniPlayer->Player_Idel();
 			}
 		}
 			break;
@@ -104,6 +144,12 @@ void ya::Map_Player_icon::OnTick()
 				GameObject::mBgStatus = ya::GameObject::BgStatus::DEFALUT;
 				mIconState = Player_Icon_Move::DEFALUT;
 				mEnemiepos = 0;
+
+				Enemie_icon03* enemie_icon03 = UIManager::GetUiInstant<Enemie_icon03>(eUIType::Enemie_icon03);
+				enemie_icon03->InActive();
+
+				Player* miniPlayer = Scene::player;
+				miniPlayer->Player_Idel();
 			}
 		}
 			break;
@@ -117,6 +163,12 @@ void ya::Map_Player_icon::OnTick()
 				GameObject::mBgStatus = ya::GameObject::BgStatus::DEFALUT;
 				mIconState = Player_Icon_Move::DEFALUT;
 				mEnemiepos = 0;
+
+				Enemie_icon02* enemie_icon02 = UIManager::GetUiInstant<Enemie_icon02>(eUIType::Enemie_icon02);
+				enemie_icon02->InActive();
+
+				Player* miniPlayer = Scene::player;
+				miniPlayer->Player_Idel();
 			}
 		}
 			break;
@@ -130,6 +182,12 @@ void ya::Map_Player_icon::OnTick()
 				GameObject::mBgStatus = ya::GameObject::BgStatus::DEFALUT;
 				mIconState = Player_Icon_Move::DEFALUT;
 				mEnemiepos = 0;
+
+				Enemie_icon04* enemie_icon04 = UIManager::GetUiInstant<Enemie_icon04>(eUIType::Enemie_icon04);
+				enemie_icon04->InActive();
+
+				Player* miniPlayer = Scene::player;
+				miniPlayer->Player_Idel();
 			}
 		}
 		break;

@@ -17,6 +17,9 @@
 #include "def.h"
 #include "Maths.h"
 
+//내가 추가
+
+
 //그리는 라이브러리
 #pragma comment(lib,"Msimg32.lib")
 

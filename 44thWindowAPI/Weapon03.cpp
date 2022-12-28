@@ -3,6 +3,8 @@
 #include "yaImage.h"
 #include "yaUIManager.h"
 #include "yaCamera.h"
+#include "yaPlayer.h"
+#include "yaScene.h"
 
 ya::Weapon03::Weapon03(eUIType type)
 	: UIItem(type)
@@ -52,6 +54,11 @@ void ya::Weapon03::OnTick()
 
 		thisVariable = this;
 		//UIItem::InventorieArr();
+
+		if (Ani_Enable) {
+			Player* miniPlayer = Scene::player;
+			miniPlayer->Player_Attack();
+		}
 
 	}
 

@@ -22,6 +22,8 @@ namespace ya {
 		virtual void OnCollisionStay(Collider* other);
 		virtual void OnCollisionExit(Collider* other);
 
+
+
 		void SetPos(Vector2 pos) { mPos = pos; }
 		Vector2 GetPos() { return mPos; }
 		void SetScale(Vector2 scale) { mScale = scale; }
@@ -77,8 +79,14 @@ namespace ya {
 		};
 		static BgStatus mBgStatus;
 
-	protected:
+		Vector2 GetScreenPos() { return mScreenPos; }
 
+		void SetSize(Vector2 size) { mSize = size; }
+		Vector2 GetSize() { return mSize; }
+
+	protected:
+		Vector2 mSize;
+		Vector2 mScreenPos;
 
 	private:
 		std::vector<Component*> mComponents;

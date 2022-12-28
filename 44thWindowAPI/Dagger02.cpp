@@ -3,6 +3,8 @@
 #include "yaImage.h"
 #include "yaUIManager.h"
 #include "yaCamera.h"
+#include "yaPlayer.h"
+#include "yaScene.h"
 ya::Dagger02::Dagger02(eUIType type)
 	: UIItem(type)
 {
@@ -51,7 +53,10 @@ void ya::Dagger02::OnTick()
 
 		thisVariable = this;
 		//UIItem::InventorieArr();
-
+		if (Ani_Enable) {
+			Player* miniPlayer = Scene::player;
+			miniPlayer->Player_Attack();
+		}
 	}
 
 	if (KEY_PREESE(eKeyCode::LBTN) && mbMouseOn)

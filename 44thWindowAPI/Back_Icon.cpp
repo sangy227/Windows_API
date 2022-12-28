@@ -2,6 +2,8 @@
 #include "yaInput.h"
 #include "yaImage.h"
 #include "yaUIManager.h"
+#include "yaPlayer.h"
+#include "yaScene.h"
 
 namespace ya {
 	Back_Icon::Back_Icon(eUIType type)
@@ -56,5 +58,9 @@ namespace ya {
 		UIManager::Pop(eUIType::Map_bg);
 		UIManager::Pop(eUIType::Inventory2);
 		UIManager::Push(eUIType::Inventory2);
+
+		Player* miniPlayer = Scene::player;
+		miniPlayer->Player_Idel();
+
 	}
 }

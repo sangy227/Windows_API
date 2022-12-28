@@ -69,6 +69,16 @@ namespace ya {
 			mRectEnable = true;
 		}
 
+		if (KEY_PREESE(eKeyCode::C))
+		{
+			Ani_Enable = true;
+		}
+
+		if (KEY_PREESE(eKeyCode::V))
+		{
+			Ani_Enable = false;
+		}
+
 		if (mbEnable == false)
 			return;
 

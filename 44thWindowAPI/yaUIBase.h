@@ -52,8 +52,8 @@ namespace ya {
 		void SetScreenPos(Vector2 pos) { mScreenPos = pos; }
 		void SetPos(Vector2 pos) { mPos = pos; }
 
-		Vector2 GetScreenPos() { return mScreenPos; }
 		Vector2 GetPos() { return mPos; }
+		Vector2 GetScreenPos() { return mScreenPos; }
 
 		void SetSize(Vector2 size) { mSize = size; }
 		Vector2 GetSize() { return mSize; }
@@ -70,7 +70,8 @@ namespace ya {
 		};
 		static Player_Icon_Move mIconState;*/
 
-		bool mRectEnable = true;
+		bool mRectEnable = false;
+		bool Ani_Enable = false;
 		
 	protected:
 		UIBase* mParent;

@@ -3,6 +3,9 @@
 #include "yaImage.h"
 #include "yaUIManager.h"
 #include "yaCamera.h"
+#include "yaPlayer.h"
+#include "yaScene.h"
+
 ya::Bow02::Bow02(eUIType type)
 	: UIItem(type)
 {
@@ -51,7 +54,10 @@ void ya::Bow02::OnTick()
 
 		thisVariable = this;
 		//UIItem::InventorieArr();
-
+		if (Ani_Enable) {
+			Player* miniPlayer = Scene::player;
+			miniPlayer->Player_BowAttack();
+		}
 	}
 
 	if (KEY_PREESE(eKeyCode::LBTN) && mbMouseOn)

@@ -6,7 +6,7 @@
 #include "yaTime.h"
 #include "yaGameObject.h"
 #include "yaPlayer.h"
-
+#include "yaScene.h"
 ya::Enemie_icon01::Enemie_icon01(eUIType type)
 	:UIBase(type)
 {
@@ -67,8 +67,8 @@ void ya::Enemie_icon01::Click()
 	Map_Player_icon* playerUi = UIManager::GetUiInstant<Map_Player_icon>(eUIType::Map_Player_icon);
 
 	
-	/*Player* miniPlayer;
-	miniPlayer->Player_Move();*/
+	Player* miniPlayer = Scene::player;
+	miniPlayer->Player_Move();
 
 	//Vector2 player_icon = playerUi->GetPos();
 	Vector2 enemie_icon = GetPos();
