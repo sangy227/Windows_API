@@ -7,6 +7,9 @@
 #include "yaGameObject.h"
 #include "yaPlayer.h"
 #include "yaScene.h"
+#include "Monster_include.h"
+#include "yaObject.h"
+
 ya::Enemie_icon01::Enemie_icon01(eUIType type)
 	:UIBase(type)
 {
@@ -65,11 +68,11 @@ void ya::Enemie_icon01::OnClear()
 void ya::Enemie_icon01::Click()
 {
 	Map_Player_icon* playerUi = UIManager::GetUiInstant<Map_Player_icon>(eUIType::Map_Player_icon);
-
+	
 	
 	Player* miniPlayer = Scene::player;
 	miniPlayer->Player_Move();
-
+	
 	//Vector2 player_icon = playerUi->GetPos();
 	Vector2 enemie_icon = GetPos();
 	//UINT deff = enemie_icon.y - player_icon.y;
@@ -80,6 +83,8 @@ void ya::Enemie_icon01::Click()
 
 	mIconState = Player_Icon_Move::DOWN;
 	GameObject::mBgStatus = ya::GameObject::BgStatus::MOVE;
-	KEY_DOWN(eKeyCode::E);
+	
+
+	
 
 }

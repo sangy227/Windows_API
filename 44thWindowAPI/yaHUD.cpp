@@ -43,6 +43,7 @@ namespace ya {
 		if (mTarget == nullptr)
 			return;
 
+
 		Player* playerObj = dynamic_cast<Player*>(mTarget);
 		int hp = playerObj->GetHp();
 		float xRatio = (hp / 100.0f);

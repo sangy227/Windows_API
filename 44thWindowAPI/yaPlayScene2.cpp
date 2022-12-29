@@ -65,6 +65,8 @@ namespace ya {
 	{
 		CollisionManager::SetLayer(eColliderLayer::Player, eColliderLayer::Monster, true);
 		CollisionManager::SetLayer(eColliderLayer::Monster, eColliderLayer::Player_Projecttile, true);
+		//ya::object::Instantiate<Monster>(eColliderLayer::Monster);
+		
 	}
 	void PlayScene2::Exit()
 	{

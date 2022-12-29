@@ -48,9 +48,7 @@ namespace ya {
 
 
 
-		mons1 = ya::object::Instantiate<Monster>(eColliderLayer::Monster);
-		mons2 = ya::object::Instantiate<Monster>(Vector2{ 1250.0f, 770.0f }, eColliderLayer::Monster);
-		mons3 = ya::object::Instantiate<chicken>(Vector2{ 1430.0f, 770.0f }, eColliderLayer::Monster);
+	
 		//mons4 = ya::object::Instantiate<axeman>(Vector2{ 1430.0f, 590.0f }, eColliderLayer::Monster);
 
 		//UIManager::Push(eUIType::INVENTORY);
@@ -100,6 +98,10 @@ namespace ya {
 
 		/*UIManager::Push(eUIType::TestButton);
 		UIManager::Push(eUIType::TestSword);*/
+
+		/*mons1 = ya::object::Instantiate<Monster>(eColliderLayer::Monster);
+		mons2 = ya::object::Instantiate<Monster>(Vector2{ 1250.0f, 770.0f }, eColliderLayer::Monster);
+		mons3 = ya::object::Instantiate<chicken>(Vector2{ 1430.0f, 770.0f }, eColliderLayer::Monster);*/
 
 
 		CollisionManager::SetLayer(eColliderLayer::Player, eColliderLayer::Monster, true);

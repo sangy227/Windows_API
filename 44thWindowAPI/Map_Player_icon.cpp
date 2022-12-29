@@ -10,6 +10,9 @@
 #include "Enemie_icon04.h"
 #include "Enemie_icon05.h"
 #include "yaScene.h"
+#include "Monster_include.h"
+#include "yaObject.h"
+
 namespace ya {
 
 int Map_Player_icon::map_ani_count = 0;
@@ -109,6 +112,11 @@ void ya::Map_Player_icon::OnTick()
 
 				Player* miniPlayer = Scene::player;
 				miniPlayer->Player_Idel();
+
+
+				mons1 = ya::object::Instantiate<Monster>(eColliderLayer::Monster);
+				mons2 = ya::object::Instantiate<Monster>(Vector2{ 1250.0f, 770.0f }, eColliderLayer::Monster);
+				mons3 = ya::object::Instantiate<chicken>(Vector2{ 1430.0f, 770.0f }, eColliderLayer::Monster);
 			}
 		}
 			break;
@@ -131,6 +139,15 @@ void ya::Map_Player_icon::OnTick()
 				
 				Player* miniPlayer = Scene::player;
 				miniPlayer->Player_Idel();
+
+				mons10->Death();
+				mons11->Death();
+				mons12->Death();
+
+				//mons1->Death();
+				mons13 = ya::object::Instantiate<Feral_Badger>(eColliderLayer::Monster);
+				mons14 = ya::object::Instantiate<fire_cobra>(Vector2{ 1250.0f, 770.0f }, eColliderLayer::Monster);
+				mons15 = ya::object::Instantiate<head_honcho>(Vector2{ 1430.0f, 770.0f }, eColliderLayer::Monster);
 			}
 		}
 			break;
@@ -150,6 +167,14 @@ void ya::Map_Player_icon::OnTick()
 
 				Player* miniPlayer = Scene::player;
 				miniPlayer->Player_Idel();
+
+				mons4->Death();
+				mons5->Death();
+				mons6->Death();
+
+				mons7 = ya::object::Instantiate<frog_2>(eColliderLayer::Monster);
+				mons8 = ya::object::Instantiate<crossbowman>(Vector2{ 1250.0f, 770.0f }, eColliderLayer::Monster);
+				mons9 = ya::object::Instantiate<cultist>(Vector2{ 1430.0f, 770.0f }, eColliderLayer::Monster);
 			}
 		}
 			break;
@@ -169,6 +194,15 @@ void ya::Map_Player_icon::OnTick()
 
 				Player* miniPlayer = Scene::player;
 				miniPlayer->Player_Idel();
+
+				mons1->Death();
+				mons2->Death();
+				mons3->Death();
+
+				//mons1->Death();
+				mons4 = ya::object::Instantiate<Gerbil_Ruffian>(eColliderLayer::Monster);
+				mons5 = ya::object::Instantiate<cultist_blade>(Vector2{ 1250.0f, 770.0f }, eColliderLayer::Monster);
+				mons6 = ya::object::Instantiate<hawk_knight>(Vector2{ 1430.0f, 770.0f }, eColliderLayer::Monster);
 			}
 		}
 			break;
@@ -188,6 +222,14 @@ void ya::Map_Player_icon::OnTick()
 
 				Player* miniPlayer = Scene::player;
 				miniPlayer->Player_Idel();
+
+				mons7->Death();
+				mons8->Death();
+				mons9->Death();
+
+				mons10 = ya::object::Instantiate<bandit_lord>(eColliderLayer::Monster);
+				mons11 = ya::object::Instantiate<legman>(Vector2{ 1250.0f, 770.0f }, eColliderLayer::Monster);
+				mons12 = ya::object::Instantiate<Hare_Defender>(Vector2{ 1430.0f, 770.0f }, eColliderLayer::Monster);
 			}
 		}
 		break;
