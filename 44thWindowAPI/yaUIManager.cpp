@@ -72,6 +72,17 @@
 #include "heart.h"
 #include "newenergy.h"
 #include "target.h"
+#include "HPbar.h"
+#include "Number_0.h"
+#include "Number_1.h"
+#include "Number_2.h"
+#include "Number_3.h"
+#include "Number_4.h"
+#include "Number_5.h"
+#include "Number_6.h"
+#include "Number_7.h"
+#include "Number_8.h"
+#include "Number_9.h"
 /*天天天天天天天天天天天天天天天*/
 
 
@@ -81,6 +92,7 @@ namespace ya {
 	std::queue<eUIType> UIManager::mRequestUIQueue;
 	std::stack<UIBase*> UIManager::mUIBases;
 	UIBase* UIManager::mCurrentData = nullptr;
+	newenergy* UIManager::mNewenergy = nullptr;
 	
 
 
@@ -944,6 +956,11 @@ namespace ya {
 		player_heart->SetPos(Vector2(475.0f, 845.0f));
 		player_heart->ImageLoad(L"player_heart", L"..\\Resources\\Image\\Object\\heart.bmp");
 
+		HPbar* hpbar = new HPbar(eUIType::HPbar);
+		mUIs.insert(std::make_pair(eUIType::HPbar, hpbar));
+		hpbar->SetPos(Vector2(490.0f, 850.0f));
+		hpbar->ImageLoad(L"hpbar", L"..\\Resources\\Image\\Object\\HP.bmp");
+
 		heart* monster_heart01 = new heart(eUIType::heart02);
 		mUIs.insert(std::make_pair(eUIType::heart02, monster_heart01));
 		monster_heart01->SetPos(Vector2(1020.0f, 845.0f));
@@ -959,11 +976,63 @@ namespace ya {
 		monster_heart03->SetPos(Vector2(1380.0f, 845.0f));
 		monster_heart03->ImageLoad(L"monster_heart03", L"..\\Resources\\Image\\Object\\heart.bmp");
 
-		newenergy* player_newenergy = new newenergy(eUIType::newenergy);
-		mUIs.insert(std::make_pair(eUIType::newenergy, player_newenergy));
-		player_newenergy->SetPos(Vector2(455.0f, 685.0f));
-		player_newenergy->ImageLoad(L"player_newenergy", L"..\\Resources\\Image\\Object\\newenergy.bmp");
+		newenergy* mNewenergy = new newenergy(eUIType::newenergy);
+		mUIs.insert(std::make_pair(eUIType::newenergy, mNewenergy));
+		mNewenergy->SetPos(Vector2(455.0f, 685.0f));
+		mNewenergy->ImageLoad(L"mNewenergy", L"..\\Resources\\Image\\Object\\newenergy.bmp");
 
+
+
+
+		Number_0* number_0 = new Number_0(eUIType::Number_0);
+		mUIs.insert(std::make_pair(eUIType::Number_0, number_0));
+		number_0->SetPos(Vector2(464.0f, 693.0f));
+		number_0->ImageLoad(L"number_0", L"..\\Resources\\Image\\Object\\Number_0.bmp");
+
+		Number_1* number_1 = new Number_1(eUIType::Number_1);
+		mUIs.insert(std::make_pair(eUIType::Number_1, number_1));
+		number_1->SetPos(Vector2(470.0f, 693.0f));
+		number_1->ImageLoad(L"number_1", L"..\\Resources\\Image\\Object\\Number_1.bmp");
+
+		Number_2* number_2 = new Number_2(eUIType::Number_2);
+		mUIs.insert(std::make_pair(eUIType::Number_2, number_2));
+		number_2->SetPos(Vector2(466.0f, 693.0f));
+		number_2->ImageLoad(L"number_2", L"..\\Resources\\Image\\Object\\Number_2.bmp");
+
+		Number_3* number_3 = new Number_3(eUIType::Number_3);
+		mUIs.insert(std::make_pair(eUIType::Number_3, number_3));
+		number_3->SetPos(Vector2(466.0f, 693.0f));
+		number_3->ImageLoad(L"number_3", L"..\\Resources\\Image\\Object\\Number_3.bmp");
+
+		Number_4* number_4 = new Number_4(eUIType::Number_4);
+		mUIs.insert(std::make_pair(eUIType::Number_4, number_4));
+		number_4->SetPos(Vector2(464.0f, 693.0f));
+		number_4->ImageLoad(L"number_4", L"..\\Resources\\Image\\Object\\Number_4.bmp");
+
+		Number_5* number_5 = new Number_5(eUIType::Number_5);
+		mUIs.insert(std::make_pair(eUIType::Number_5, number_5));
+		number_5->SetPos(Vector2(466.0f, 693.0f));
+		number_5->ImageLoad(L"number_5", L"..\\Resources\\Image\\Object\\Number_5.bmp");
+
+		Number_6* number_6 = new Number_6(eUIType::Number_6);
+		mUIs.insert(std::make_pair(eUIType::Number_6, number_6));
+		number_6->SetPos(Vector2(466.0f, 693.0f));
+		number_6->ImageLoad(L"number_6", L"..\\Resources\\Image\\Object\\Number_6.bmp");
+
+		Number_7* number_7 = new Number_7(eUIType::Number_7);
+		mUIs.insert(std::make_pair(eUIType::Number_7, number_7));
+		number_7->SetPos(Vector2(465.0f, 693.0f));
+		number_7->ImageLoad(L"number_7", L"..\\Resources\\Image\\Object\\Number_7.bmp");
+
+		Number_8* number_8 = new Number_8(eUIType::Number_8);
+		mUIs.insert(std::make_pair(eUIType::Number_8, number_8));
+		number_8->SetPos(Vector2(466.0f, 693.0f));
+		number_8->ImageLoad(L"number_8", L"..\\Resources\\Image\\Object\\Number_8.bmp");
+
+		Number_9* number_9 = new Number_9(eUIType::Number_9);
+		mUIs.insert(std::make_pair(eUIType::Number_9, number_9));
+		number_9->SetPos(Vector2(466.0f, 693.0f));
+		number_9->ImageLoad(L"number_9", L"..\\Resources\\Image\\Object\\Number_9.bmp");
 	}
 
 	

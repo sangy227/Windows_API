@@ -53,6 +53,19 @@ namespace ya {
 				thisVariable = this;
 				//UIItem::InventorieArr();
 
+				if (Ani_Enable) {
+					Player* miniPlayer = Scene::player;
+					miniPlayer->Player_Attack();
+
+					mmNumber_count--;
+					if (mmNumber_count <= 0) {
+						mmNumber_count = 0;
+						Ani_Enable = false;
+					}
+
+					newenergy* mEnergy = dynamic_cast<newenergy*>(mEnergyTarget);
+					mEnergy->Number_chenge();
+				}
 			}
 
 			if (KEY_PREESE(eKeyCode::LBTN) && mbMouseOn)
@@ -60,10 +73,7 @@ namespace ya {
 				if (thisVariable == this)
 					mOnClick();
 
-				if (Ani_Enable) {
-					Player* miniPlayer = Scene::player;
-					miniPlayer->Player_Attack();
-				}
+				
 
 			}
 

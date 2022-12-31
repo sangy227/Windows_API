@@ -4,6 +4,8 @@
 #include "yaUIManager.h"
 #include "yaCamera.h"
 
+#include "yaPlayer.h"
+#include "yaScene.h"
 ya::Shield05::Shield05(eUIType type)
 	: UIItem(type)
 {
@@ -53,6 +55,19 @@ void ya::Shield05::OnTick()
 		thisVariable = this;
 		//UIItem::InventorieArr();
 
+		if (Ani_Enable) {
+			Player* miniPlayer = Scene::player;
+			miniPlayer->Player_block();
+
+			mmNumber_count--;
+			if (mmNumber_count <= 0) {
+				mmNumber_count = 0;
+				Ani_Enable = false;
+			}
+
+			newenergy* mEnergy = dynamic_cast<newenergy*>(mEnergyTarget);
+			mEnergy->Number_chenge();
+		}
 	}
 
 	if (KEY_PREESE(eKeyCode::LBTN) && mbMouseOn)

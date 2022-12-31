@@ -113,6 +113,9 @@ void ya::Map_Player_icon::OnTick()
 				Player* miniPlayer = Scene::player;
 				miniPlayer->Player_Idel();
 
+				UIManager::Push(eUIType::heart02);
+				UIManager::Push(eUIType::heart03);
+				UIManager::Push(eUIType::heart04);
 
 				mons1 = ya::object::Instantiate<Monster>(eColliderLayer::Monster);
 				mons2 = ya::object::Instantiate<Monster>(Vector2{ 1250.0f, 770.0f }, eColliderLayer::Monster);

@@ -71,8 +71,9 @@ namespace ya {
 		static Player_Icon_Move mIconState;*/
 
 		bool mRectEnable = false;
-		bool Ani_Enable = false;
+		static bool Ani_Enable;
 		
+		static int mmNumber_count;
 	protected:
 		UIBase* mParent;
 		Image* mImage;

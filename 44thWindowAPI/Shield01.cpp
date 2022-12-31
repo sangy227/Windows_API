@@ -3,7 +3,8 @@
 #include "yaImage.h"
 #include "yaUIManager.h"
 #include "yaCamera.h"
-
+#include "yaPlayer.h"
+#include "yaScene.h"
 ya::Shield01::Shield01(eUIType type)
 	: UIItem(type)
 {
@@ -52,6 +53,20 @@ void ya::Shield01::OnTick()
 
 		thisVariable = this;
 		//UIItem::InventorieArr();
+
+		if (Ani_Enable) {
+			Player* miniPlayer = Scene::player;
+			miniPlayer->Player_block();
+
+			mmNumber_count--;
+			if (mmNumber_count <= 0) {
+				mmNumber_count = 0;
+				Ani_Enable = false;
+			}
+
+			newenergy* mEnergy = dynamic_cast<newenergy*>(mEnergyTarget);
+			mEnergy->Number_chenge();
+		}
 
 	}
 

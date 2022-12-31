@@ -90,11 +90,11 @@ namespace ya {
 		UIManager::Push(eUIType::Back_Icon);
 		UIManager::Push(eUIType::Inventory2);
 
+		UIManager::Push(eUIType::HPbar);
 		UIManager::Push(eUIType::heart01);
-		UIManager::Push(eUIType::heart02);
-		UIManager::Push(eUIType::heart03);
-		UIManager::Push(eUIType::heart04);
+		
 		UIManager::Push(eUIType::newenergy);
+		UIManager::Push(eUIType::Number_3);
 
 		/*UIManager::Push(eUIType::TestButton);
 		UIManager::Push(eUIType::TestSword);*/

@@ -2,6 +2,7 @@
 #include "yaUIBase.h"
 
 namespace ya {
+	class newenergy;
 	class GameObject;
 	class UIItem : public UIBase
 	{
@@ -26,13 +27,19 @@ namespace ya {
 
 		void SetTarget(GameObject* target) { mTarget = target; }
 
+		
+
 	protected:
 		GameObject* mTarget;
+		newenergy* mEnergyTarget;
+
 		Vector2 CalculateIndex(Vector2 pos);
 		Vector2 CalculateIndexPos(Vector2 Index);
 
 		UINT mXarrIndex;
 		UINT mYarrIndex;
+
+		
 
 		Event mOnClick;
 		bool mbMouseOn;
@@ -43,5 +50,8 @@ namespace ya {
 		const UINT row = 5;
 		const UINT coulmn = 11;
 		Vector2 mPrevIndex;
+
+		
+
 	};
 }

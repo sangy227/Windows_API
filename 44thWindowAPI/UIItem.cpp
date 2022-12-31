@@ -4,14 +4,17 @@
 #include "yaUIManager.h"
 #include "yaCamera.h"
 #include "Common.h"
+#include "newenergy.h"
 
 namespace ya {
 	std::vector<std::vector<UIItem*>> UIItem::mInventories;
 	UINT UIItem::mOverlap;
 	UIItem* UIItem::thisVariable;
+	
 
 	UIItem::UIItem(eUIType type)
 		:UIBase(type)
+		//, count(0)
 	{
 		//mOnClick = std::bind(&UIItem::Click, this);
 		//mPrevPos = GetScreenPos();
@@ -19,13 +22,17 @@ namespace ya {
 		mInventories.resize(row);
 		for (size_t i = 0; i < row; i++)
 			mInventories[i].resize(coulmn);
+
+		//count = newenergy::GetNumber_Count();
+		
+
 	}
 	UIItem::~UIItem()
 	{
 	}
 	void UIItem::OnInit()
 	{
-
+		
 	}
 	void UIItem::OnActive()
 	{
@@ -46,7 +53,7 @@ namespace ya {
 	}
 	void UIItem::Click()
 	{
-		
+
 	}
 
 	void UIItem::InventorieArr(Vector2 mPos, Vector2 mPrevClickPos)
@@ -107,15 +114,9 @@ namespace ya {
 			}
 		}
 
-		
-			
-		
-		
-		
-
-
-		
 	}
+
+	
 
 	Vector2 UIItem::CalculateIndex(Vector2 pos)
 	{

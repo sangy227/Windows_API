@@ -140,6 +140,9 @@
     <Filter Include="Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar">
       <UniqueIdentifier>{d6ca7ef9-b597-4909-a3df-81802df3e5e4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar\Number">
+      <UniqueIdentifier>{1347efab-56c6-47ad-9c9b-e4f5e670a230}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="44thWindowAPI.h">
@@ -682,6 +685,39 @@
     <ClInclude Include="target.h">
       <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
     </ClInclude>
+    <ClInclude Include="Number_9.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar\Number</Filter>
+    </ClInclude>
+    <ClInclude Include="Number_0.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar\Number</Filter>
+    </ClInclude>
+    <ClInclude Include="Number_1.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar\Number</Filter>
+    </ClInclude>
+    <ClInclude Include="Number_2.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar\Number</Filter>
+    </ClInclude>
+    <ClInclude Include="Number_3.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar\Number</Filter>
+    </ClInclude>
+    <ClInclude Include="Number_4.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar\Number</Filter>
+    </ClInclude>
+    <ClInclude Include="Number_5.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar\Number</Filter>
+    </ClInclude>
+    <ClInclude Include="Number_6.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar\Number</Filter>
+    </ClInclude>
+    <ClInclude Include="Number_7.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar\Number</Filter>
+    </ClInclude>
+    <ClInclude Include="Number_8.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar\Number</Filter>
+    </ClInclude>
+    <ClInclude Include="HPbar.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="44thWindowAPI.rc">
@@ -1214,6 +1250,39 @@
       <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
     </ClCompile>
     <ClCompile Include="target.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClCompile>
+    <ClCompile Include="Number_0.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar\Number</Filter>
+    </ClCompile>
+    <ClCompile Include="Number_1.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar\Number</Filter>
+    </ClCompile>
+    <ClCompile Include="Number_2.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar\Number</Filter>
+    </ClCompile>
+    <ClCompile Include="Number_3.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar\Number</Filter>
+    </ClCompile>
+    <ClCompile Include="Number_4.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar\Number</Filter>
+    </ClCompile>
+    <ClCompile Include="Number_5.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar\Number</Filter>
+    </ClCompile>
+    <ClCompile Include="Number_6.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar\Number</Filter>
+    </ClCompile>
+    <ClCompile Include="Number_7.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar\Number</Filter>
+    </ClCompile>
+    <ClCompile Include="Number_8.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar\Number</Filter>
+    </ClCompile>
+    <ClCompile Include="Number_9.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar\Number</Filter>
+    </ClCompile>
+    <ClCompile Include="HPbar.cpp">
       <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
     </ClCompile>
   </ItemGroup>

@@ -7,6 +7,8 @@
 namespace ya {
 	UINT UIBase::LevelUp_Inventory_Count = 3;
 	UIBase* UIBase::Player_icon=nullptr;
+	int UIBase::mmNumber_count = 3;
+	bool UIBase::Ani_Enable = false;
 	//ya::UIBase::Player_Icon_Move UIBase::mIconState = Player_Icon_Move::DEFALUT;
 	
 

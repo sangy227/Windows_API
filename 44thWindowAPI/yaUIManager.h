@@ -1,8 +1,9 @@
 #pragma once
 #include "Common.h"
 #include "yaUIBase.h"
-
+#include "newenergy.h"
 namespace ya {
+	class newenergy;
 	class UIManager
 	{
 	public:
@@ -37,12 +38,12 @@ namespace ya {
 		static void Player_HUD();
 
 		
+		static newenergy* mNewenergy;
 	private:
 		static std::unordered_map <eUIType, UIBase*> mUIs;
 		static std::queue<eUIType> mRequestUIQueue;
 		static std::stack<UIBase*> mUIBases;
 		static UIBase* mCurrentData;
-
 		
 	};
 }

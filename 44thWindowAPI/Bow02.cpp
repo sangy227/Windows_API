@@ -57,6 +57,15 @@ void ya::Bow02::OnTick()
 		if (Ani_Enable) {
 			Player* miniPlayer = Scene::player;
 			miniPlayer->Player_BowAttack();
+
+			mmNumber_count--;
+			if (mmNumber_count <= 0) {
+				mmNumber_count = 0;
+				Ani_Enable = false;
+			}
+
+			newenergy* mEnergy = dynamic_cast<newenergy*>(mEnergyTarget);
+			mEnergy->Number_chenge();
 		}
 	}
 

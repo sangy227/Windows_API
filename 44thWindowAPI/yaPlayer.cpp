@@ -263,14 +263,15 @@ namespace ya
 		}
 		if (KEY_DOWN(eKeyCode::Y))
 		{
+
 			if (mDamageCount == 0) {
 				Vector2 pos = GetPos();
 				pos.x -= 100.0f;
 				SetPos(pos);
 
+				mDamageCount++;
 				mAnimator->Play(L"hurt", true);
 				mAnimator->GetCompleteEvent(L"hurt") = std::bind(&Player::WalkComplete, this);
-				mDamageCount++;
 			}
 		}
 		if (KEY_DOWN(eKeyCode::A))
@@ -521,10 +522,10 @@ namespace ya
 			Vector2 pos = GetPos();
 			pos.x -= 100.0f;
 			SetPos(pos);
+			mDamageCount++;
 
 			mAnimator->Play(L"hurt", true);
 			mAnimator->GetCompleteEvent(L"hurt") = std::bind(&Player::WalkComplete, this);
-			mDamageCount++;
 		}
 	}
 
@@ -547,6 +548,7 @@ namespace ya
 	void Player::Player_block()
 	{
 		mAnimator->Play(L"block", true);
+		mAnimator->GetCompleteEvent(L"block") = std::bind(&Player::WalkComplete, this);
 	}
 
 }

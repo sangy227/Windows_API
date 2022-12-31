@@ -5,6 +5,7 @@
 #include "yaCamera.h"
 #include "yaScene.h"
 #include "yaPlayer.h"
+#include "newenergy.h"
 
 namespace ya {
 	Sword::Sword(eUIType type)
@@ -32,7 +33,7 @@ namespace ya {
 		Vector2 mousePos = Input::GetMousePos();
 		Vector2 size = GetSize();
 
-
+		
 
 		if (mScreenPos.x <= mousePos.x && mousePos.x < mScreenPos.x + size.x * 4.0f
 			&& mScreenPos.y <= mousePos.y && mousePos.y < mScreenPos.y + size.y * 3.5f)
@@ -44,7 +45,7 @@ namespace ya {
 			mbMouseOn = false;
 		}
 
-		if (KEY_DOWN(eKeyCode::LBTN) && mbMouseOn)
+		if (KEY_DOWN(eKeyCode::LBTN) && mbMouseOn )
 			{
 				
 				mPrevClickPos = GetScreenPos();
@@ -58,18 +59,27 @@ namespace ya {
 				if (Ani_Enable) {
 					Player* miniPlayer = Scene::player;
 					miniPlayer->Player_Attack();
+
+					mmNumber_count--;
+					if (mmNumber_count <= 0) {
+						mmNumber_count = 0;
+						Ani_Enable = false;
+					}
+						
+					newenergy* mEnergy = dynamic_cast<newenergy*>(mEnergyTarget);
+					mEnergy->Number_chenge();
 				}
 				
 			}
 
-			if (KEY_PREESE(eKeyCode::LBTN) && mbMouseOn)
+			if (KEY_PREESE(eKeyCode::LBTN) && mbMouseOn )
 			{
 				if(thisVariable == this)
 					mOnClick();
 
 			}
 
-			if (KEY_UP(eKeyCode::LBTN) && mbMouseOn)
+			if (KEY_UP(eKeyCode::LBTN) && mbMouseOn )
 			{
 				thisVariable = NULL;
 

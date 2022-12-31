@@ -27,7 +27,7 @@ void ya::heart::OnInActive()
 
 void ya::heart::OnTick()
 {
-
+	
 }
 
 void ya::heart::OnRender(HDC hdc)
@@ -35,8 +35,8 @@ void ya::heart::OnRender(HDC hdc)
 	if (mImage == nullptr)
 		return;
 
-	if (mTarget == nullptr)
-		return;
+	/*if (mTarget == nullptr)
+		return;*/
 
 	Player* playerObj = dynamic_cast<Player*>(mTarget);
 
