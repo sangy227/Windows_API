@@ -2,6 +2,7 @@
 #include "yaGameObject.h"
 
 namespace ya {
+	
 	class AniMator;
 	class Image;
 	class Player : public GameObject

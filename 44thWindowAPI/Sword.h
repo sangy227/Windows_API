@@ -3,7 +3,7 @@
 #include "UIItem.h"
 
 namespace ya {
-	class newenergy;
+	
 	class Sword : public UIItem
 	{
 	public:
@@ -19,7 +19,9 @@ namespace ya {
 
 		virtual void Click();
 
+		void ReSerch();
+		
 	private:
-		newenergy* nTarget;
+		
 	};
 }

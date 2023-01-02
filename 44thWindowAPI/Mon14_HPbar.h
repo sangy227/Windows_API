@@ -1,15 +1,14 @@
 
-
 #pragma once
-
-#include "UIItem.h"
+#include "yaUIBase.h"
+#include "yaGameObject.h"
 namespace ya {
-	class Sword;
-	class Enter_Button : public UIItem
+	class GameObject;
+	class Mon14_HPbar : public UIBase
 	{
 	public:
-		Enter_Button(eUIType type);
-		~Enter_Button();
+		Mon14_HPbar(eUIType type);
+		~Mon14_HPbar();
 
 		virtual void OnInit() override;
 		virtual void OnActive() override;
@@ -18,11 +17,8 @@ namespace ya {
 		virtual void OnRender(HDC hdc) override;
 		virtual void OnClear() override;
 
-		virtual void Click();
-		
+		void SetTarget(GameObject* target) { mTarget = target; }
 	private:
-		Event mOnClick;
-		bool mbMouseOn;
-		Sword* abcTarget;
+		GameObject* mTarget;
 	};
 }

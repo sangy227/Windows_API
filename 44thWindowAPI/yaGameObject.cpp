@@ -9,6 +9,8 @@ namespace ya {
 		, mDead(false)
 		, mDeathTime(-100.0f)
 		, mDeathTimeOn(false)
+		, mHpHUD(nullptr)
+		
 	{
 	}
 	GameObject::GameObject(Vector2 position)
@@ -17,7 +19,7 @@ namespace ya {
 		, mDead(false)
 		, mDeathTime(-100.0f)
 		, mDeathTimeOn(false)
-
+		
 
 	{
 

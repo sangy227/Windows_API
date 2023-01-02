@@ -73,6 +73,24 @@
 #include "newenergy.h"
 #include "target.h"
 #include "HPbar.h"
+
+#include "Mon1_HPbar.h"
+#include "Mon2_HPbar.h"
+#include "Mon3_HPbar.h"
+#include "Mon4_HPbar.h"
+#include "Mon5_HPbar.h"
+#include "Mon6_HPbar.h"
+#include "Mon7_HPbar.h"
+#include "Mon8_HPbar.h"
+#include "Mon9_HPbar.h"
+#include "Mon10_HPbar.h"
+#include "Mon11_HPbar.h"
+#include "Mon12_HPbar.h"
+#include "Mon13_HPbar.h"
+#include "Mon14_HPbar.h"
+#include "Mon15_HPbar.h"
+
+
 #include "Number_0.h"
 #include "Number_1.h"
 #include "Number_2.h"
@@ -92,7 +110,7 @@ namespace ya {
 	std::queue<eUIType> UIManager::mRequestUIQueue;
 	std::stack<UIBase*> UIManager::mUIBases;
 	UIBase* UIManager::mCurrentData = nullptr;
-	newenergy* UIManager::mNewenergy = nullptr;
+	
 	
 
 
@@ -582,7 +600,7 @@ namespace ya {
 		enemie_icon04->ImageLoad(L"enemie_icon04", L"..\\Resources\\Image\\Object\\Enemie_icon.bmp");
 
 		Enemie_icon05* enemie_icon05 = new Enemie_icon05(eUIType::Enemie_icon05);
-		mUIs.insert(std::make_pair(eUIType::Enemie_icon01, enemie_icon05));
+		mUIs.insert(std::make_pair(eUIType::Enemie_icon05, enemie_icon05));
 		enemie_icon05->SetPos(Vector2(710.0f, 315.0f)); //5
 		enemie_icon05->ImageLoad(L"enemie_icon05", L"..\\Resources\\Image\\Object\\Enemie_icon.bmp");
 
@@ -956,10 +974,90 @@ namespace ya {
 		player_heart->SetPos(Vector2(475.0f, 845.0f));
 		player_heart->ImageLoad(L"player_heart", L"..\\Resources\\Image\\Object\\heart.bmp");
 
+		block* player_block = new block(eUIType::block01);
+		mUIs.insert(std::make_pair(eUIType::block01, player_block));
+		player_block->SetPos(Vector2(453.0f, 845.0f));
+		player_block->ImageLoad(L"player_block", L"..\\Resources\\Image\\Object\\block.bmp");
+
 		HPbar* hpbar = new HPbar(eUIType::HPbar);
 		mUIs.insert(std::make_pair(eUIType::HPbar, hpbar));
 		hpbar->SetPos(Vector2(490.0f, 850.0f));
 		hpbar->ImageLoad(L"hpbar", L"..\\Resources\\Image\\Object\\HP.bmp");
+
+		Mon1_HPbar* mon1_hpbar = new Mon1_HPbar(eUIType::Mon1_HPbar);
+		mUIs.insert(std::make_pair(eUIType::Mon1_HPbar, mon1_hpbar));
+		mon1_hpbar->SetPos(Vector2(1040.0f, 850.0f));
+		mon1_hpbar->ImageLoad(L"mon1_hpbar", L"..\\Resources\\Image\\Object\\HP.bmp");
+
+		Mon2_HPbar* mon2_hpbar = new Mon2_HPbar(eUIType::Mon2_HPbar);
+		mUIs.insert(std::make_pair(eUIType::Mon2_HPbar, mon2_hpbar));
+		mon2_hpbar->SetPos(Vector2(1220.0f, 850.0f));
+		mon2_hpbar->ImageLoad(L"mon2_hpbar", L"..\\Resources\\Image\\Object\\HP.bmp");
+
+		Mon3_HPbar* mon3_hpbar = new Mon3_HPbar(eUIType::Mon3_HPbar);
+		mUIs.insert(std::make_pair(eUIType::Mon3_HPbar, mon3_hpbar));
+		mon3_hpbar->SetPos(Vector2(1400.0f, 850.0f));
+		mon3_hpbar->ImageLoad(L"mon3_hpbar", L"..\\Resources\\Image\\Object\\HP.bmp");
+
+		Mon4_HPbar* mon4_hpbar = new Mon4_HPbar(eUIType::Mon4_HPbar);
+		mUIs.insert(std::make_pair(eUIType::Mon4_HPbar, mon4_hpbar));
+		mon4_hpbar->SetPos(Vector2(1040.0f, 850.0f));
+		mon4_hpbar->ImageLoad(L"mon4_hpbar", L"..\\Resources\\Image\\Object\\HP.bmp");
+
+		Mon5_HPbar* mon5_hpbar = new Mon5_HPbar(eUIType::Mon5_HPbar);
+		mUIs.insert(std::make_pair(eUIType::Mon5_HPbar, mon5_hpbar));
+		mon5_hpbar->SetPos(Vector2(1220.0f, 850.0f));
+		mon5_hpbar->ImageLoad(L"mon2_hpbar", L"..\\Resources\\Image\\Object\\HP.bmp");
+
+		Mon6_HPbar* mon6_hpbar = new Mon6_HPbar(eUIType::Mon6_HPbar);
+		mUIs.insert(std::make_pair(eUIType::Mon6_HPbar, mon6_hpbar));
+		mon6_hpbar->SetPos(Vector2(1400.0f, 850.0f));
+		mon6_hpbar->ImageLoad(L"mon6_hpbar", L"..\\Resources\\Image\\Object\\HP.bmp");
+
+		Mon7_HPbar* mon7_hpbar = new Mon7_HPbar(eUIType::Mon7_HPbar);
+		mUIs.insert(std::make_pair(eUIType::Mon7_HPbar, mon7_hpbar));
+		mon7_hpbar->SetPos(Vector2(1040.0f, 850.0f));
+		mon7_hpbar->ImageLoad(L"mon7_hpbar", L"..\\Resources\\Image\\Object\\HP.bmp");
+
+		Mon8_HPbar* mon8_hpbar = new Mon8_HPbar(eUIType::Mon8_HPbar);
+		mUIs.insert(std::make_pair(eUIType::Mon8_HPbar, mon8_hpbar));
+		mon8_hpbar->SetPos(Vector2(1220.0f, 850.0f));
+		mon8_hpbar->ImageLoad(L"mon8_hpbar", L"..\\Resources\\Image\\Object\\HP.bmp");
+
+		Mon9_HPbar* mon9_hpbar = new Mon9_HPbar(eUIType::Mon9_HPbar);
+		mUIs.insert(std::make_pair(eUIType::Mon9_HPbar, mon9_hpbar));
+		mon9_hpbar->SetPos(Vector2(1400.0f, 850.0f));
+		mon9_hpbar->ImageLoad(L"mon9_hpbar", L"..\\Resources\\Image\\Object\\HP.bmp");
+
+		Mon10_HPbar* mon10_hpbar = new Mon10_HPbar(eUIType::Mon10_HPbar);
+		mUIs.insert(std::make_pair(eUIType::Mon10_HPbar, mon10_hpbar));
+		mon10_hpbar->SetPos(Vector2(1040.0f, 850.0f));
+		mon10_hpbar->ImageLoad(L"mon10_hpbar", L"..\\Resources\\Image\\Object\\HP.bmp");
+
+		Mon11_HPbar* mon11_hpbar = new Mon11_HPbar(eUIType::Mon11_HPbar);
+		mUIs.insert(std::make_pair(eUIType::Mon11_HPbar, mon11_hpbar));
+		mon11_hpbar->SetPos(Vector2(1220.0f, 850.0f));
+		mon11_hpbar->ImageLoad(L"mon11_hpbar", L"..\\Resources\\Image\\Object\\HP.bmp");
+
+		Mon12_HPbar* mon12_hpbar = new Mon12_HPbar(eUIType::Mon12_HPbar);
+		mUIs.insert(std::make_pair(eUIType::Mon12_HPbar, mon12_hpbar));
+		mon12_hpbar->SetPos(Vector2(1400.0f, 850.0f));
+		mon12_hpbar->ImageLoad(L"mon12_hpbar", L"..\\Resources\\Image\\Object\\HP.bmp");
+
+		Mon13_HPbar* mon13_hpbar = new Mon13_HPbar(eUIType::Mon13_HPbar);
+		mUIs.insert(std::make_pair(eUIType::Mon13_HPbar, mon13_hpbar));
+		mon13_hpbar->SetPos(Vector2(1040.0f, 850.0f));
+		mon13_hpbar->ImageLoad(L"mon13_hpbar", L"..\\Resources\\Image\\Object\\HP.bmp");
+
+		Mon14_HPbar* mon14_hpbar = new Mon14_HPbar(eUIType::Mon14_HPbar);
+		mUIs.insert(std::make_pair(eUIType::Mon14_HPbar, mon14_hpbar));
+		mon14_hpbar->SetPos(Vector2(1220.0f, 850.0f));
+		mon14_hpbar->ImageLoad(L"mon14_hpbar", L"..\\Resources\\Image\\Object\\HP.bmp");
+
+		Mon15_HPbar* mon15_hpbar = new Mon15_HPbar(eUIType::Mon15_HPbar);
+		mUIs.insert(std::make_pair(eUIType::Mon15_HPbar, mon15_hpbar));
+		mon15_hpbar->SetPos(Vector2(1400.0f, 850.0f));
+		mon15_hpbar->ImageLoad(L"mon15_hpbar", L"..\\Resources\\Image\\Object\\HP.bmp");
 
 		heart* monster_heart01 = new heart(eUIType::heart02);
 		mUIs.insert(std::make_pair(eUIType::heart02, monster_heart01));
@@ -975,6 +1073,8 @@ namespace ya {
 		mUIs.insert(std::make_pair(eUIType::heart04, monster_heart03));
 		monster_heart03->SetPos(Vector2(1380.0f, 845.0f));
 		monster_heart03->ImageLoad(L"monster_heart03", L"..\\Resources\\Image\\Object\\heart.bmp");
+
+
 
 		newenergy* mNewenergy = new newenergy(eUIType::newenergy);
 		mUIs.insert(std::make_pair(eUIType::newenergy, mNewenergy));

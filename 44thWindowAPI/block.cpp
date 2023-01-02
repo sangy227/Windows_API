@@ -35,14 +35,14 @@ void ya::block::OnRender(HDC hdc)
 	if (mImage == nullptr)
 		return;
 
-	if (mTarget == nullptr)
-		return;
+	//if (mTarget == nullptr)
+		//return;
 
-	Player* playerObj = dynamic_cast<Player*>(mTarget);
+	//Player* playerObj = dynamic_cast<Player*>(mTarget);
 
 
 	TransparentBlt(hdc, (int)mScreenPos.x, (int)mScreenPos.y,
-		mImage->GetWidth(), mImage->GetHeight(),
+		mImage->GetWidth() * 1.5f, mImage->GetHeight() * 1.5f,
 		mImage->GetDC(), 0, 0, mImage->GetWidth(), mImage->GetHeight()
 		, RGB(255, 255, 255));
 }

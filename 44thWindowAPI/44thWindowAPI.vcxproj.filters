@@ -718,6 +718,51 @@
     <ClInclude Include="HPbar.h">
       <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
     </ClInclude>
+    <ClInclude Include="Mon1_HPbar.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClInclude>
+    <ClInclude Include="Mon2_HPbar.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClInclude>
+    <ClInclude Include="Mon3_HPbar.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClInclude>
+    <ClInclude Include="Mon4_HPbar.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClInclude>
+    <ClInclude Include="Mon5_HPbar.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClInclude>
+    <ClInclude Include="Mon6_HPbar.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClInclude>
+    <ClInclude Include="Mon7_HPbar.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClInclude>
+    <ClInclude Include="Mon8_HPbar.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClInclude>
+    <ClInclude Include="Mon9_HPbar.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClInclude>
+    <ClInclude Include="Mon10_HPbar.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClInclude>
+    <ClInclude Include="Mon11_HPbar.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClInclude>
+    <ClInclude Include="Mon12_HPbar.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClInclude>
+    <ClInclude Include="Mon13_HPbar.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClInclude>
+    <ClInclude Include="Mon14_HPbar.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClInclude>
+    <ClInclude Include="Mon15_HPbar.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="44thWindowAPI.rc">
@@ -1283,6 +1328,51 @@
       <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar\Number</Filter>
     </ClCompile>
     <ClCompile Include="HPbar.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClCompile>
+    <ClCompile Include="Mon1_HPbar.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClCompile>
+    <ClCompile Include="Mon2_HPbar.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClCompile>
+    <ClCompile Include="Mon3_HPbar.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClCompile>
+    <ClCompile Include="Mon4_HPbar.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClCompile>
+    <ClCompile Include="Mon5_HPbar.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClCompile>
+    <ClCompile Include="Mon6_HPbar.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClCompile>
+    <ClCompile Include="Mon7_HPbar.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClCompile>
+    <ClCompile Include="Mon8_HPbar.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClCompile>
+    <ClCompile Include="Mon9_HPbar.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClCompile>
+    <ClCompile Include="Mon10_HPbar.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClCompile>
+    <ClCompile Include="Mon11_HPbar.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClCompile>
+    <ClCompile Include="Mon12_HPbar.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClCompile>
+    <ClCompile Include="Mon13_HPbar.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClCompile>
+    <ClCompile Include="Mon14_HPbar.cpp">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClCompile>
+    <ClCompile Include="Mon15_HPbar.cpp">
       <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
     </ClCompile>
   </ItemGroup>

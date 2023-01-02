@@ -15,7 +15,7 @@ namespace ya {
 	UIBase::UIBase(eUIType type)
 		: mType(type)
 		, mbFullScreen(false)
-		, mbEnable(false)
+		, mbEnable(true)
 		, mParent(nullptr)
 		, mPos(Vector2::Zero)
 		, mSize(Vector2::Zero)

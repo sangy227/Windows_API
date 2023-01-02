@@ -7,6 +7,7 @@
 
 namespace ya {
 	chicken::chicken()
+		:mHP(100)
 	{
 		SetName(L"chicken");
 		SetPos({ 1070.0f, 770.0f });
@@ -28,6 +29,7 @@ namespace ya {
 		AddComponent(new Collider());
 	}
 	chicken::chicken(Vector2 position)
+		:mHP(100)
 	{
 		SetName(L"chicken");
 		SetPos(position);

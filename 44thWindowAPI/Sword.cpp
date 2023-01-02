@@ -113,10 +113,12 @@ namespace ya {
 	}
 	void Sword::OnRender(HDC hdc)
 	{
-		TransparentBlt(hdc, (int)mScreenPos.x, (int)mScreenPos.y,
-			mImage->GetWidth() * 4.0f, mImage->GetHeight() * 3.5f,
-			mImage->GetDC(), 0, 0, mImage->GetWidth(), mImage->GetHeight()
-			, RGB(255, 255, 255));
+		
+			TransparentBlt(hdc, (int)mScreenPos.x, (int)mScreenPos.y,
+				mImage->GetWidth() * 4.0f, mImage->GetHeight() * 3.5f,
+				mImage->GetDC(), 0, 0, mImage->GetWidth(), mImage->GetHeight()
+				, RGB(255, 255, 255));
+		
 
 		HBRUSH oldBrush = (HBRUSH)GetStockObject(HOLLOW_BRUSH);
 		HPEN bluePen = CreatePen(PS_SOLID, 3, RGB(0, 0, 255));
@@ -156,5 +158,12 @@ namespace ya {
 		}
 
 		mPrevMousePos = mousePos;
+	}
+	void Sword::ReSerch()
+	{
+		if (mbinstail == false) {
+			UIManager::Pop(eUIType::TestSword);
+			//mbEnable = false;
+		}
 	}
 }

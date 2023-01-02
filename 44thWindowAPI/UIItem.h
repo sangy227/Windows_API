@@ -4,6 +4,7 @@
 namespace ya {
 	class newenergy;
 	class GameObject;
+	class Sword;
 	class UIItem : public UIBase
 	{
 	public:
@@ -30,6 +31,12 @@ namespace ya {
 		
 
 	protected:
+		template<typename T>
+		static T* NewTarget;
+
+	protected:
+		
+
 		GameObject* mTarget;
 		newenergy* mEnergyTarget;
 
@@ -43,6 +50,8 @@ namespace ya {
 
 		Event mOnClick;
 		bool mbMouseOn;
+		bool mbinstail;
+
 		Vector2 mPrevMousePos;
 		Vector2 mPrevClickPos;
 

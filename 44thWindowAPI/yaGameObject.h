@@ -5,6 +5,7 @@
 #include "yaComponent.h"
 
 namespace ya {
+	class heart;
 	class Collider;
 	class GameObject : public Entity
 	{
@@ -87,6 +88,8 @@ namespace ya {
 	protected:
 		Vector2 mSize;
 		Vector2 mScreenPos;
+		heart* mHpHUD;
+	
 
 	private:
 		std::vector<Component*> mComponents;

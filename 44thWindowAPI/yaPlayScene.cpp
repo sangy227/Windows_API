@@ -92,6 +92,7 @@ namespace ya {
 
 		UIManager::Push(eUIType::HPbar);
 		UIManager::Push(eUIType::heart01);
+		UIManager::Push(eUIType::block01);
 		
 		UIManager::Push(eUIType::newenergy);
 		UIManager::Push(eUIType::Number_3);

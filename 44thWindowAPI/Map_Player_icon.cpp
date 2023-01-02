@@ -104,7 +104,7 @@ void ya::Map_Player_icon::OnTick()
 				GameObject::mBgStatus = ya::GameObject::BgStatus::DEFALUT;
 				mIconState = Player_Icon_Move::DEFALUT;
 				mEnemiepos = 0;
-				//UIManager::Pop(eUIType::Enemie_icon01); //pop이 걸렷는데 사라지지 않는이유?
+				
 
 				Enemie_icon01* enemie_icon01 = UIManager::GetUiInstant<Enemie_icon01>(eUIType::Enemie_icon01);
 				enemie_icon01->InActive();
@@ -113,13 +113,20 @@ void ya::Map_Player_icon::OnTick()
 				Player* miniPlayer = Scene::player;
 				miniPlayer->Player_Idel();
 
+				mons1 = ya::object::Instantiate<Monster>(eColliderLayer::Monster);
+				mons2 = ya::object::Instantiate<Monster>(Vector2{ 1250.0f, 770.0f }, eColliderLayer::Monster);
+				mons3 = ya::object::Instantiate<chicken>(Vector2{ 1430.0f, 770.0f }, eColliderLayer::Monster);
+
+				UIManager::Push(eUIType::Mon3_HPbar);
+				UIManager::Push(eUIType::Mon2_HPbar);
+				UIManager::Push(eUIType::Mon1_HPbar);
+
 				UIManager::Push(eUIType::heart02);
 				UIManager::Push(eUIType::heart03);
 				UIManager::Push(eUIType::heart04);
 
-				mons1 = ya::object::Instantiate<Monster>(eColliderLayer::Monster);
-				mons2 = ya::object::Instantiate<Monster>(Vector2{ 1250.0f, 770.0f }, eColliderLayer::Monster);
-				mons3 = ya::object::Instantiate<chicken>(Vector2{ 1430.0f, 770.0f }, eColliderLayer::Monster);
+
+
 			}
 		}
 			break;
@@ -134,11 +141,11 @@ void ya::Map_Player_icon::OnTick()
 				GameObject::mBgStatus = ya::GameObject::BgStatus::DEFALUT;
 				mIconState = Player_Icon_Move::DEFALUT;
 				mEnemiepos = 0;
-				//UIManager::Pop(eUIType::Enemie_icon01); //pop이 걸렷는데 사라지지 않는이유?
+				
 
 				
 				Enemie_icon05* enemie_icon05 = UIManager::GetUiInstant<Enemie_icon05>(eUIType::Enemie_icon05);
-				//enemie_icon05->InActive();
+				enemie_icon05->InActive();
 				
 				Player* miniPlayer = Scene::player;
 				miniPlayer->Player_Idel();
@@ -147,10 +154,26 @@ void ya::Map_Player_icon::OnTick()
 				mons11->Death();
 				mons12->Death();
 
+				UIManager::Pop(eUIType::Mon10_HPbar);
+				UIManager::Pop(eUIType::Mon11_HPbar);
+				UIManager::Pop(eUIType::Mon12_HPbar);
+
+				UIManager::Pop(eUIType::heart02);
+				UIManager::Pop(eUIType::heart03);
+				UIManager::Pop(eUIType::heart04);
+
 				//mons1->Death();
 				mons13 = ya::object::Instantiate<Feral_Badger>(eColliderLayer::Monster);
 				mons14 = ya::object::Instantiate<fire_cobra>(Vector2{ 1250.0f, 770.0f }, eColliderLayer::Monster);
 				mons15 = ya::object::Instantiate<head_honcho>(Vector2{ 1430.0f, 770.0f }, eColliderLayer::Monster);
+
+				UIManager::Push(eUIType::Mon13_HPbar);
+				UIManager::Push(eUIType::Mon14_HPbar);
+				UIManager::Push(eUIType::Mon15_HPbar);
+
+				UIManager::Push(eUIType::heart02);
+				UIManager::Push(eUIType::heart03);
+				UIManager::Push(eUIType::heart04);
 			}
 		}
 			break;
@@ -175,9 +198,25 @@ void ya::Map_Player_icon::OnTick()
 				mons5->Death();
 				mons6->Death();
 
+				UIManager::Pop(eUIType::Mon4_HPbar);
+				UIManager::Pop(eUIType::Mon5_HPbar);
+				UIManager::Pop(eUIType::Mon6_HPbar);
+
+				UIManager::Pop(eUIType::heart02);
+				UIManager::Pop(eUIType::heart03);
+				UIManager::Pop(eUIType::heart04);
+
 				mons7 = ya::object::Instantiate<frog_2>(eColliderLayer::Monster);
 				mons8 = ya::object::Instantiate<crossbowman>(Vector2{ 1250.0f, 770.0f }, eColliderLayer::Monster);
 				mons9 = ya::object::Instantiate<cultist>(Vector2{ 1430.0f, 770.0f }, eColliderLayer::Monster);
+
+				UIManager::Push(eUIType::Mon7_HPbar);
+				UIManager::Push(eUIType::Mon8_HPbar);
+				UIManager::Push(eUIType::Mon9_HPbar);
+
+				UIManager::Push(eUIType::heart02);
+				UIManager::Push(eUIType::heart03);
+				UIManager::Push(eUIType::heart04);
 			}
 		}
 			break;
@@ -202,10 +241,26 @@ void ya::Map_Player_icon::OnTick()
 				mons2->Death();
 				mons3->Death();
 
+				UIManager::Pop(eUIType::Mon1_HPbar);
+				UIManager::Pop(eUIType::Mon2_HPbar);
+				UIManager::Pop(eUIType::Mon3_HPbar);
+
+				UIManager::Pop(eUIType::heart02);
+				UIManager::Pop(eUIType::heart03);
+				UIManager::Pop(eUIType::heart04);
+
 				//mons1->Death();
 				mons4 = ya::object::Instantiate<Gerbil_Ruffian>(eColliderLayer::Monster);
 				mons5 = ya::object::Instantiate<cultist_blade>(Vector2{ 1250.0f, 770.0f }, eColliderLayer::Monster);
 				mons6 = ya::object::Instantiate<hawk_knight>(Vector2{ 1430.0f, 770.0f }, eColliderLayer::Monster);
+
+				UIManager::Push(eUIType::Mon4_HPbar);
+				UIManager::Push(eUIType::Mon5_HPbar);
+				UIManager::Push(eUIType::Mon6_HPbar);
+
+				UIManager::Push(eUIType::heart02);
+				UIManager::Push(eUIType::heart03);
+				UIManager::Push(eUIType::heart04);
 			}
 		}
 			break;
@@ -230,9 +285,25 @@ void ya::Map_Player_icon::OnTick()
 				mons8->Death();
 				mons9->Death();
 
+				UIManager::Pop(eUIType::Mon7_HPbar);
+				UIManager::Pop(eUIType::Mon8_HPbar);
+				UIManager::Pop(eUIType::Mon9_HPbar);
+
+				UIManager::Pop(eUIType::heart02);
+				UIManager::Pop(eUIType::heart03);
+				UIManager::Pop(eUIType::heart04);
+
 				mons10 = ya::object::Instantiate<bandit_lord>(eColliderLayer::Monster);
 				mons11 = ya::object::Instantiate<legman>(Vector2{ 1250.0f, 770.0f }, eColliderLayer::Monster);
 				mons12 = ya::object::Instantiate<Hare_Defender>(Vector2{ 1430.0f, 770.0f }, eColliderLayer::Monster);
+
+				UIManager::Push(eUIType::Mon10_HPbar);
+				UIManager::Push(eUIType::Mon11_HPbar);
+				UIManager::Push(eUIType::Mon12_HPbar);
+
+				UIManager::Push(eUIType::heart02);
+				UIManager::Push(eUIType::heart03);
+				UIManager::Push(eUIType::heart04);
 			}
 		}
 		break;

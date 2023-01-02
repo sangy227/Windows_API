@@ -14,6 +14,7 @@ namespace ya {
 
 	UIItem::UIItem(eUIType type)
 		:UIBase(type)
+		,mbinstail(false)
 		//, count(0)
 	{
 		//mOnClick = std::bind(&UIItem::Click, this);
@@ -110,6 +111,9 @@ namespace ya {
 						return;
 					}*/
 					mInventories[Index.y + y][Index.x + x] = this;
+					this->mbinstail = true;
+
+					//아이템 bool변수를 만들어서 왓다 갔다 해버리기
 				}
 			}
 		}
