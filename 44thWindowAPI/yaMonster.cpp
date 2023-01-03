@@ -15,7 +15,7 @@
 namespace ya {
 	Monster::Monster()
 		: mTime(0.0f)
-
+		, mHP(5)
 	{
 		SetName(L"Monster");
 		SetPos({ 1070.0f, 770.0f });
@@ -41,7 +41,7 @@ namespace ya {
 	}
 	Monster::Monster(Vector2 position)
 		: mTime(0.0f)
-
+		, mHP(5)
 	{
 		SetName(L"Monster");
 		SetPos(position);

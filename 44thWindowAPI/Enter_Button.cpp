@@ -55,9 +55,9 @@ namespace ya {
 	void Enter_Button::Click()
 	{
 		
-		//Sword* mSword = UIManager::GetUiInstant<Sword>(eUIType::TestSword);
+		Sword* mSword = UIManager::GetUiInstant<Sword>(eUIType::TestSword);
 		//Sword* mSword = 
-		//mSword->ReSerch();
+		mSword->ReSerch();
 	}
 	
 }

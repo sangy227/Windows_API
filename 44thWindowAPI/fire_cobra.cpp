@@ -6,6 +6,7 @@
 
 namespace ya {
 	fire_cobra::fire_cobra()
+		:mHP(5)
 	{
 		SetName(L"fire_cobra");
 		SetPos({ 1070.0f, 770.0f });
@@ -27,6 +28,7 @@ namespace ya {
 		AddComponent(new Collider());
 	}
 	fire_cobra::fire_cobra(Vector2 position)
+		:mHP(5)
 	{
 		SetName(L"fire_cobra");
 		SetPos(position);

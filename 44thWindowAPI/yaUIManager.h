@@ -37,8 +37,9 @@ namespace ya {
 		static void Inventoty_Pull();
 		static void Player_HUD();
 
-		
-		
+		//다른 클래스에서 mUIs 를 인서트 넣을때 쓰는것
+		static void SetInsert(eUIType a, UIItem* b);
+			
 	private:
 		static std::unordered_map <eUIType, UIBase*> mUIs;
 		static std::queue<eUIType> mRequestUIQueue;

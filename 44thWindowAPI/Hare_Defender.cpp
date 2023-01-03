@@ -6,6 +6,7 @@
 
 namespace ya {
 	Hare_Defender::Hare_Defender()
+		:mHP(5)
 	{
 		SetName(L"Hare_Defender");
 		SetPos({ 1070.0f, 770.0f });
@@ -27,6 +28,7 @@ namespace ya {
 		AddComponent(new Collider());
 	}
 	Hare_Defender::Hare_Defender(Vector2 position)
+		:mHP(5)
 	{
 		SetName(L"Hare_Defender");
 		SetPos(position);

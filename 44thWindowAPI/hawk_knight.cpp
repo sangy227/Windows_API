@@ -6,6 +6,7 @@
 
 namespace ya {
 	hawk_knight::hawk_knight()
+		:mHP(5)
 	{
 		SetName(L"hawk_knight");
 		SetPos({ 1070.0f, 770.0f });
@@ -26,6 +27,7 @@ namespace ya {
 		AddComponent(new Collider());
 	}
 	hawk_knight::hawk_knight(Vector2 position)
+		:mHP(5)
 	{
 		SetName(L"hawk_knight");
 		SetPos(position);

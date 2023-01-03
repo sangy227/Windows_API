@@ -6,10 +6,12 @@
 
 namespace ya {
 	cultist_blade::cultist_blade()
+		:mHP(5)
 	{
 		SetName(L"cultist_blade");
 		SetPos({ 1070.0f, 770.0f });
 		SetScale({ 3.0f, 3.0f });
+
 
 		if (mImage == nullptr)
 		{
@@ -27,6 +29,7 @@ namespace ya {
 		AddComponent(new Collider());
 	}
 	cultist_blade::cultist_blade(Vector2 position)
+		:mHP(5)
 	{
 		SetName(L"cultist_blade");
 		SetPos(position);

@@ -7,6 +7,7 @@
 
 namespace ya {
 	Feral_Badger::Feral_Badger()
+		:mHP(5)
 	{
 		SetName(L"Feral_Badger");
 		SetPos({ 1070.0f, 770.0f });
@@ -28,6 +29,7 @@ namespace ya {
 		AddComponent(new Collider());
 	}
 	Feral_Badger::Feral_Badger(Vector2 position)
+		:mHP(5)
 	{
 		SetName(L"Feral_Badger");
 		SetPos(position);

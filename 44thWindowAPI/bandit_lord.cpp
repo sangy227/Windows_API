@@ -7,6 +7,7 @@
 
 namespace ya {
 	bandit_lord::bandit_lord()
+		:mHP(5)
 	{
 		SetName(L"bandit_lord");
 		SetPos({ 1070.0f, 770.0f });
@@ -28,6 +29,7 @@ namespace ya {
 		AddComponent(new Collider());
 	}
 	bandit_lord::bandit_lord(Vector2 position)
+		:mHP(5)
 	{
 		SetName(L"bandit_lord");
 		SetPos(position);

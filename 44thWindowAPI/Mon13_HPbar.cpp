@@ -33,12 +33,14 @@ void ya::Mon13_HPbar::OnRender(HDC hdc)
 	if (mImage == nullptr)
 		return;
 
-	/*if (mTarget == nullptr)
-		return;*/
+
+
+	if (mTarget == nullptr)
+		return;
 
 	Feral_Badger* mFeral_Badger = dynamic_cast<Feral_Badger*>(mTarget);
-	//int hp = mchicken->GetHp();
-	float xRatio = (/*hp*/100 / 100.0f);
+	int hp = mFeral_Badger->GetHp();
+	float xRatio = (hp / 5.0f);
 
 	TransparentBlt(hdc, (int)mScreenPos.x, (int)mScreenPos.y,
 		mImage->GetWidth() * 0.8f * xRatio, mImage->GetHeight() * 0.7f,

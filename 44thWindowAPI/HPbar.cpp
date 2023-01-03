@@ -7,6 +7,7 @@
 ya::HPbar::HPbar(eUIType type)
 	:UIBase(type)
 {
+
 }
 
 ya::HPbar::~HPbar()
@@ -37,9 +38,9 @@ void ya::HPbar::OnRender(HDC hdc)
 	/*if (mTarget == nullptr)
 		return;*/
 
-	//Player* playerObj = dynamic_cast<Player*>(mTarget);
-	//int hp = playerObj->GetHp();
-	//float xRatio = (hp / 100.0f);
+	Player* playerObj = dynamic_cast<Player*>(mTarget);
+	int hp = playerObj->GetHp();
+	float xRatio = (hp / 100.0f);
 
 	TransparentBlt(hdc, (int)mScreenPos.x, (int)mScreenPos.y,
 		mImage->GetWidth() * 0.8f/* * xRatio */, mImage->GetHeight() * 0.7f,

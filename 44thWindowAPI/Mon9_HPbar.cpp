@@ -33,12 +33,13 @@ void ya::Mon9_HPbar::OnRender(HDC hdc)
 	if (mImage == nullptr)
 		return;
 
-	/*if (mTarget == nullptr)
-		return;*/
+	
+	if (mTarget == nullptr)
+		return;
 
 	cultist* mcultist = dynamic_cast<cultist*>(mTarget);
-	//int hp = mchicken->GetHp();
-	float xRatio = (/*hp*/100 / 100.0f);
+	int hp = mcultist->GetHp();
+	float xRatio = (hp / 5.0f);
 
 	TransparentBlt(hdc, (int)mScreenPos.x, (int)mScreenPos.y,
 		mImage->GetWidth() * 0.8f * xRatio, mImage->GetHeight() * 0.7f,

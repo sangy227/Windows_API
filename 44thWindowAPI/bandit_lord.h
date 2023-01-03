@@ -18,7 +18,9 @@ namespace ya {
 		virtual void OnCollisionStay(Collider* other) override;
 		virtual void OnCollisionExit(Collider* other) override;
 
+		int GetHp() { return mHP; }
 	private:
+		int mHP;
 		Image* mImage;
 		AniMator* mAnimator;
 	};

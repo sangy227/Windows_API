@@ -23,8 +23,8 @@ namespace ya {
 
 		Time::Initialize();
 		Input::Initialize();
-		UIManager::Initialize();
 		SceneManager::Initialize();
+		UIManager::Initialize();
 		Camera::Initialize();
 		SoundManager::Initialize();
 

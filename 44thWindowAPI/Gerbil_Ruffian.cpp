@@ -6,6 +6,7 @@
 
 namespace ya {
 	Gerbil_Ruffian::Gerbil_Ruffian()
+		:mHP(5)
 	{
 		SetName(L"Gerbil_Ruffian");
 		SetPos({ 1070.0f, 770.0f });
@@ -27,6 +28,7 @@ namespace ya {
 		AddComponent(new Collider());
 	}
 	Gerbil_Ruffian::Gerbil_Ruffian(Vector2 position)
+		:mHP(5)
 	{
 		SetName(L"Gerbil_Ruffian");
 		SetPos(position);

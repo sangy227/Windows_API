@@ -161,9 +161,10 @@ namespace ya {
 	}
 	void Sword::ReSerch()
 	{
-		if (mbinstail == false) {
-			UIManager::Pop(eUIType::TestSword);
-			//mbEnable = false;
+		if (mbIn_inventory == true) {
+			//UIManager::Pop(eUIType::TestSword);
+			
+			mbEnable = false;
 		}
 	}
 }

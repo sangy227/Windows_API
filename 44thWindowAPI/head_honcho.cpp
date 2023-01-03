@@ -7,6 +7,7 @@
 
 namespace ya {
 	head_honcho::head_honcho()
+		:mHP(5)
 	{
 		SetName(L"head_honcho");
 		SetPos({ 1070.0f, 770.0f });
@@ -28,6 +29,7 @@ namespace ya {
 		AddComponent(new Collider());
 	}
 	head_honcho::head_honcho(Vector2 position)
+		:mHP(5)
 	{
 		SetName(L"head_honcho");
 		SetPos(position);

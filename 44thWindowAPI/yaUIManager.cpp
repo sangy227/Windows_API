@@ -4,6 +4,7 @@
 #include "yaPanel.h"
 #include "yaPlayer.h"
 #include "yaUIGameObject.h"
+#include "yaScene.h"
 /*天天天天天天天∪煎堅壁天天天天天天天天*/
 #include "LogoButton1.h"
 #include "LogoButton2.h"
@@ -983,6 +984,7 @@ namespace ya {
 		mUIs.insert(std::make_pair(eUIType::HPbar, hpbar));
 		hpbar->SetPos(Vector2(490.0f, 850.0f));
 		hpbar->ImageLoad(L"hpbar", L"..\\Resources\\Image\\Object\\HP.bmp");
+		hpbar->SetTarget(Scene::player);
 
 		Mon1_HPbar* mon1_hpbar = new Mon1_HPbar(eUIType::Mon1_HPbar);
 		mUIs.insert(std::make_pair(eUIType::Mon1_HPbar, mon1_hpbar));
@@ -1133,6 +1135,11 @@ namespace ya {
 		mUIs.insert(std::make_pair(eUIType::Number_9, number_9));
 		number_9->SetPos(Vector2(466.0f, 693.0f));
 		number_9->ImageLoad(L"number_9", L"..\\Resources\\Image\\Object\\Number_9.bmp");
+	}
+
+	void UIManager::SetInsert(eUIType a , UIItem* b)
+	{
+		mUIs.insert(std::make_pair(a, b));
 	}
 
 	

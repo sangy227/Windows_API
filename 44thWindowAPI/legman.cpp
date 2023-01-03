@@ -6,6 +6,7 @@
 
 namespace ya {
 	legman::legman()
+		:mHP(5)
 	{
 		SetName(L"legman");
 		SetPos({ 1070.0f, 770.0f });
@@ -27,6 +28,7 @@ namespace ya {
 		AddComponent(new Collider());
 	}
 	legman::legman(Vector2 position)
+		:mHP(5)
 	{
 		SetName(L"legman");
 		SetPos(position);

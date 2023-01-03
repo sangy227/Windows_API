@@ -33,12 +33,13 @@ void ya::Mon12_HPbar::OnRender(HDC hdc)
 	if (mImage == nullptr)
 		return;
 
-	/*if (mTarget == nullptr)
-		return;*/
+	
+	if (mTarget == nullptr)
+		return;
 
 	Hare_Defender* mHare_Defender = dynamic_cast<Hare_Defender*>(mTarget);
-	//int hp = mchicken->GetHp();
-	float xRatio = (/*hp*/100 / 100.0f);
+	int hp = mHare_Defender->GetHp();
+	float xRatio = (hp / 5.0f);
 
 	TransparentBlt(hdc, (int)mScreenPos.x, (int)mScreenPos.y,
 		mImage->GetWidth() * 0.8f * xRatio, mImage->GetHeight() * 0.7f,

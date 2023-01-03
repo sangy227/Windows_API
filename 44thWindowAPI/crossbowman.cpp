@@ -6,6 +6,7 @@
 
 namespace ya {
 	crossbowman::crossbowman()
+		:mHP(5)
 	{
 		SetName(L"crossbowman");
 		SetPos({ 1070.0f, 770.0f });
@@ -27,6 +28,7 @@ namespace ya {
 		AddComponent(new Collider());
 	}
 	crossbowman::crossbowman(Vector2 position)
+		:mHP(5)
 	{
 		SetName(L"crossbowman");
 		SetPos(position);

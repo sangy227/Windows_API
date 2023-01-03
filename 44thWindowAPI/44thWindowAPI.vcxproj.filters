@@ -763,6 +763,9 @@
     <ClInclude Include="Mon15_HPbar.h">
       <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
     </ClInclude>
+    <ClInclude Include="HPbar_Include.h">
+      <Filter>Engine\GameObject\UI\PlaySceneUI\bottom_Status_Bar</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="44thWindowAPI.rc">

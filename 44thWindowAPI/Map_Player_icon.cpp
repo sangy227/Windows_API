@@ -12,6 +12,7 @@
 #include "yaScene.h"
 #include "Monster_include.h"
 #include "yaObject.h"
+#include "HPbar_Include.h"
 
 namespace ya {
 
@@ -117,6 +118,15 @@ void ya::Map_Player_icon::OnTick()
 				mons2 = ya::object::Instantiate<Monster>(Vector2{ 1250.0f, 770.0f }, eColliderLayer::Monster);
 				mons3 = ya::object::Instantiate<chicken>(Vector2{ 1430.0f, 770.0f }, eColliderLayer::Monster);
 
+				Mon1_HPbar* mMon1_HPbar = UIManager::GetUiInstant<Mon1_HPbar>(eUIType::Mon1_HPbar);
+				mMon1_HPbar->SetTarget(mons1);
+
+				Mon2_HPbar* mMon2_HPbar = UIManager::GetUiInstant<Mon2_HPbar>(eUIType::Mon2_HPbar);
+				mMon2_HPbar->SetTarget(mons2);
+
+				Mon3_HPbar* mMon3_HPbar = UIManager::GetUiInstant<Mon3_HPbar>(eUIType::Mon3_HPbar);
+				mMon3_HPbar->SetTarget(mons3);
+
 				UIManager::Push(eUIType::Mon3_HPbar);
 				UIManager::Push(eUIType::Mon2_HPbar);
 				UIManager::Push(eUIType::Mon1_HPbar);
@@ -142,8 +152,6 @@ void ya::Map_Player_icon::OnTick()
 				mIconState = Player_Icon_Move::DEFALUT;
 				mEnemiepos = 0;
 				
-
-				
 				Enemie_icon05* enemie_icon05 = UIManager::GetUiInstant<Enemie_icon05>(eUIType::Enemie_icon05);
 				enemie_icon05->InActive();
 				
@@ -166,6 +174,16 @@ void ya::Map_Player_icon::OnTick()
 				mons13 = ya::object::Instantiate<Feral_Badger>(eColliderLayer::Monster);
 				mons14 = ya::object::Instantiate<fire_cobra>(Vector2{ 1250.0f, 770.0f }, eColliderLayer::Monster);
 				mons15 = ya::object::Instantiate<head_honcho>(Vector2{ 1430.0f, 770.0f }, eColliderLayer::Monster);
+
+
+				Mon13_HPbar* mMon13_HPbar = UIManager::GetUiInstant<Mon13_HPbar>(eUIType::Mon13_HPbar);
+				mMon13_HPbar->SetTarget(mons13);
+
+				Mon14_HPbar* mMon14_HPbar = UIManager::GetUiInstant<Mon14_HPbar>(eUIType::Mon14_HPbar);
+				mMon14_HPbar->SetTarget(mons14);
+
+				Mon15_HPbar* mMon15_HPbar = UIManager::GetUiInstant<Mon15_HPbar>(eUIType::Mon15_HPbar);
+				mMon15_HPbar->SetTarget(mons15);
 
 				UIManager::Push(eUIType::Mon13_HPbar);
 				UIManager::Push(eUIType::Mon14_HPbar);
@@ -209,6 +227,15 @@ void ya::Map_Player_icon::OnTick()
 				mons7 = ya::object::Instantiate<frog_2>(eColliderLayer::Monster);
 				mons8 = ya::object::Instantiate<crossbowman>(Vector2{ 1250.0f, 770.0f }, eColliderLayer::Monster);
 				mons9 = ya::object::Instantiate<cultist>(Vector2{ 1430.0f, 770.0f }, eColliderLayer::Monster);
+
+				Mon7_HPbar* mMon7_HPbar = UIManager::GetUiInstant<Mon7_HPbar>(eUIType::Mon7_HPbar);
+				mMon7_HPbar->SetTarget(mons7);
+
+				Mon8_HPbar* mMon8_HPbar = UIManager::GetUiInstant<Mon8_HPbar>(eUIType::Mon8_HPbar);
+				mMon8_HPbar->SetTarget(mons8);
+
+				Mon9_HPbar* mMon9_HPbar = UIManager::GetUiInstant<Mon9_HPbar>(eUIType::Mon9_HPbar);
+				mMon9_HPbar->SetTarget(mons9);
 
 				UIManager::Push(eUIType::Mon7_HPbar);
 				UIManager::Push(eUIType::Mon8_HPbar);
@@ -254,6 +281,15 @@ void ya::Map_Player_icon::OnTick()
 				mons5 = ya::object::Instantiate<cultist_blade>(Vector2{ 1250.0f, 770.0f }, eColliderLayer::Monster);
 				mons6 = ya::object::Instantiate<hawk_knight>(Vector2{ 1430.0f, 770.0f }, eColliderLayer::Monster);
 
+				Mon4_HPbar* mMon4_HPbar = UIManager::GetUiInstant<Mon4_HPbar>(eUIType::Mon4_HPbar);
+				mMon4_HPbar->SetTarget(mons4);
+
+				Mon5_HPbar* mMon5_HPbar = UIManager::GetUiInstant<Mon5_HPbar>(eUIType::Mon5_HPbar);
+				mMon5_HPbar->SetTarget(mons5);
+
+				Mon6_HPbar* mMon6_HPbar = UIManager::GetUiInstant<Mon6_HPbar>(eUIType::Mon6_HPbar);
+				mMon6_HPbar->SetTarget(mons6);
+
 				UIManager::Push(eUIType::Mon4_HPbar);
 				UIManager::Push(eUIType::Mon5_HPbar);
 				UIManager::Push(eUIType::Mon6_HPbar);
@@ -296,6 +332,15 @@ void ya::Map_Player_icon::OnTick()
 				mons10 = ya::object::Instantiate<bandit_lord>(eColliderLayer::Monster);
 				mons11 = ya::object::Instantiate<legman>(Vector2{ 1250.0f, 770.0f }, eColliderLayer::Monster);
 				mons12 = ya::object::Instantiate<Hare_Defender>(Vector2{ 1430.0f, 770.0f }, eColliderLayer::Monster);
+
+				Mon10_HPbar* mMon10_HPbar = UIManager::GetUiInstant<Mon10_HPbar>(eUIType::Mon10_HPbar);
+				mMon10_HPbar->SetTarget(mons10);
+
+				Mon11_HPbar* mMon11_HPbar = UIManager::GetUiInstant<Mon11_HPbar>(eUIType::Mon11_HPbar);
+				mMon11_HPbar->SetTarget(mons11);
+
+				Mon12_HPbar* mMon12_HPbar = UIManager::GetUiInstant<Mon12_HPbar>(eUIType::Mon12_HPbar);
+				mMon12_HPbar->SetTarget(mons12);
 
 				UIManager::Push(eUIType::Mon10_HPbar);
 				UIManager::Push(eUIType::Mon11_HPbar);

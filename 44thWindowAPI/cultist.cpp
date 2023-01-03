@@ -7,6 +7,7 @@
 
 namespace ya {
 	cultist::cultist()
+		:mHP(5)
 	{
 		SetName(L"cultist");
 		SetPos({ 1070.0f, 770.0f });
@@ -28,6 +29,7 @@ namespace ya {
 		AddComponent(new Collider());
 	}
 	cultist::cultist(Vector2 position)
+		:mHP(5)
 	{
 		SetName(L"cultist");
 		SetPos(position);

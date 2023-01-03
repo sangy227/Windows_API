@@ -204,6 +204,7 @@
     <ClInclude Include="heart.h" />
     <ClInclude Include="hermit_crab_bomb.h" />
     <ClInclude Include="HPbar.h" />
+    <ClInclude Include="HPbar_Include.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item_include.h" />
     <ClInclude Include="Jewelry01.h" />

@@ -50,7 +50,7 @@ namespace ya {
 
 		Event mOnClick;
 		bool mbMouseOn;
-		bool mbinstail;
+		bool mbIn_inventory;
 
 		Vector2 mPrevMousePos;
 		Vector2 mPrevClickPos;
