@@ -18,5 +18,8 @@ namespace ya {
 		virtual void OnClear() override;
 
 		virtual void Click();
+
+		void Select_Monster_Target();
+
 	};
 }

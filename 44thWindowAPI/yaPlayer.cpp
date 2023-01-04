@@ -20,7 +20,7 @@ namespace ya
 		: mSpeed(1.0f)
 		, mTime(0.0f)
 		, mMisiileDir(Vector2::Zero)
-		, mHp(100)
+		, mHp(5)
 		, mState(eState::Attack)
 		, mAttackCount(0)
 		, mDamageCount(0)

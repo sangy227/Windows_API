@@ -57,6 +57,8 @@
 #include "Enemie_icon03.h"
 #include "Enemie_icon04.h"
 #include "Enemie_icon05.h"
+#include "Enemie_icon_Boss.h"
+#include "Ending_icon.h"
 #include "Map_Player_icon.h"
 #include "Book_Icon.h"
 #include "Back_Icon.h"
@@ -74,6 +76,7 @@
 #include "newenergy.h"
 #include "target.h"
 #include "HPbar.h"
+#include "Ending_Cheese.h"
 
 #include "Mon1_HPbar.h"
 #include "Mon2_HPbar.h"
@@ -90,6 +93,7 @@
 #include "Mon13_HPbar.h"
 #include "Mon14_HPbar.h"
 #include "Mon15_HPbar.h"
+#include "Mon_BOSS_HPbar.h"
 
 
 #include "Number_0.h"
@@ -119,10 +123,10 @@ namespace ya {
 	{
 		// 여기에서 ui 메모리에 할당하면 된다.
 		
-		Sword* sword = new Sword(eUIType::TestSword);
+		/*Sword* sword = new Sword(eUIType::TestSword);
 		mUIs.insert(std::make_pair(eUIType::TestSword, sword));
 		sword->SetPos(Vector2(542.0f, 90.0f));
-		sword->ImageLoad(L"sword", L"..\\Resources\\Image\\Sword_of_Venom.bmp");
+		sword->ImageLoad(L"sword", L"..\\Resources\\Image\\Sword_of_Venom.bmp");*/
 
 		/*로고버튼 모음*/
 		LogoButtonFull();
@@ -140,6 +144,10 @@ namespace ya {
 		PlaySceneUI();
 		Player_HUD();
 
+		Ending_Cheese* mEnding_Cheese = new Ending_Cheese(eUIType::Ending_Cheese);
+		mUIs.insert(std::make_pair(eUIType::Ending_Cheese, mEnding_Cheese));
+		mEnding_Cheese->SetPos(Vector2(1150.0f, 700.0f));
+		mEnding_Cheese->ImageLoad(L"mEnding_Cheese", L"..\\Resources\\Image\\Object\\Ending.bmp");
 
 		//인벤토리 Panel 자식들로 내림
 		/*TestButton* testbutton = new TestButton(eUIType::TestButton);
@@ -605,6 +613,18 @@ namespace ya {
 		enemie_icon05->SetPos(Vector2(710.0f, 315.0f)); //5
 		enemie_icon05->ImageLoad(L"enemie_icon05", L"..\\Resources\\Image\\Object\\Enemie_icon.bmp");
 
+		//Enemie_icon_Boss
+		Enemie_icon_Boss* enemie_icon_boss = new Enemie_icon_Boss(eUIType::Enemie_icon_Boss);
+		mUIs.insert(std::make_pair(eUIType::Enemie_icon_Boss, enemie_icon_boss));
+		enemie_icon_boss->SetPos(Vector2(550.0f, 320.0f)); //Boss
+		enemie_icon_boss->ImageLoad(L"enemie_icon_boss", L"..\\Resources\\Image\\Object\\Enemies_Boss_icon.bmp");
+
+		//Ending_icon
+		Ending_icon* ending_icon = new Ending_icon(eUIType::Ending_icon);
+		mUIs.insert(std::make_pair(eUIType::Ending_icon, ending_icon));
+		ending_icon->SetPos(Vector2(550.0f, 160.0f)); //Boss
+		ending_icon->ImageLoad(L"ending_icon", L"..\\Resources\\Image\\Object\\Ending_icon.bmp");
+
 		//Map_Player_icon
 		Map_Player_icon* map_player_icon = new Map_Player_icon(eUIType::Map_Player_icon);
 		mUIs.insert(std::make_pair(eUIType::Map_Player_icon, map_player_icon));
@@ -628,8 +648,12 @@ namespace ya {
 		map_bg->AddChild(enemie_icon03);
 		map_bg->AddChild(enemie_icon04);
 		map_bg->AddChild(enemie_icon05);
+		map_bg->AddChild(enemie_icon_boss);
+		map_bg->AddChild(ending_icon);
 		map_bg->AddChild(map_player_icon);
 		//△패널 && 버튼
+
+		
 	}
 
 	void UIManager::Inventoty_Pull()
@@ -913,58 +937,58 @@ namespace ya {
 		inventory->AddChild(weapon01);
 		inventory->AddChild(weapon02);
 		inventory->AddChild(weapon03);
-		inventory->AddChild(weapon04);
-		inventory->AddChild(weapon05);
+		//inventory->AddChild(weapon04);
+		//inventory->AddChild(weapon05);
 
 		inventory->AddChild(shield01);
 		inventory->AddChild(shield02);
-		inventory->AddChild(shield03);
-		inventory->AddChild(shield04);
-		inventory->AddChild(shield05);
+		//inventory->AddChild(shield03);
+		//inventory->AddChild(shield04);
+		//inventory->AddChild(shield05);
 
 		inventory->AddChild(potion01);
 		inventory->AddChild(potion02);
 		inventory->AddChild(potion03);
-		inventory->AddChild(potion04);
+		//inventory->AddChild(potion04);
 		inventory->AddChild(potion05);
-		inventory->AddChild(potion06);
+		//inventory->AddChild(potion06);
 		inventory->AddChild(potion07);
-		inventory->AddChild(potion08);
+		//inventory->AddChild(potion08);
 		inventory->AddChild(potion09);
-		inventory->AddChild(potion10);
-		inventory->AddChild(potion11);
-		inventory->AddChild(potion12);
+		//inventory->AddChild(potion10);
+		//inventory->AddChild(potion11);
+		//inventory->AddChild(potion12);
 
-		inventory->AddChild(jewelry01);
-		inventory->AddChild(jewelry02);
-		inventory->AddChild(jewelry03);
+		//inventory->AddChild(jewelry01);
+		//inventory->AddChild(jewelry02);
+		//inventory->AddChild(jewelry03);
 		
 		inventory->AddChild(dagger01);
 		inventory->AddChild(dagger02);
-		inventory->AddChild(dagger03);
-		inventory->AddChild(dagger04);
-		inventory->AddChild(dagger05);
+		//inventory->AddChild(dagger03);
+		//inventory->AddChild(dagger04);
+		//inventory->AddChild(dagger05);
 
 		inventory->AddChild(bow01);
-		inventory->AddChild(bow02);
-		inventory->AddChild(bow03);
+		//inventory->AddChild(bow02);
+		//inventory->AddChild(bow03);
 
-		inventory->AddChild(arrow01);
-		inventory->AddChild(arrow02);
+		//inventory->AddChild(arrow01);
+		//inventory->AddChild(arrow02);
 		inventory->AddChild(arrow03);
 
 
 		inventory->AddChild(armor01);
-		inventory->AddChild(armor02);
+		//inventory->AddChild(armor02);
 		inventory->AddChild(armor03);
-		inventory->AddChild(armor04);
-		inventory->AddChild(armor05);
+		//inventory->AddChild(armor04);
+		//inventory->AddChild(armor05);
 		inventory->AddChild(armor06);
 
 
 
 		
-		inventory->AddChild(sword);
+		//inventory->AddChild(sword);
 		inventory->AddChild(enter_button);
 	}
 
@@ -1060,6 +1084,11 @@ namespace ya {
 		mUIs.insert(std::make_pair(eUIType::Mon15_HPbar, mon15_hpbar));
 		mon15_hpbar->SetPos(Vector2(1400.0f, 850.0f));
 		mon15_hpbar->ImageLoad(L"mon15_hpbar", L"..\\Resources\\Image\\Object\\HP.bmp");
+
+		Mon_BOSS_HPbar* mMon_BOSS_HPbar = new Mon_BOSS_HPbar(eUIType::Mon_BOSS_HPbar);
+		mUIs.insert(std::make_pair(eUIType::Mon_BOSS_HPbar, mMon_BOSS_HPbar));
+		mMon_BOSS_HPbar->SetPos(Vector2(1220.0f, 850.0f));
+		mMon_BOSS_HPbar->ImageLoad(L"mMon_BOSS_HPbar", L"..\\Resources\\Image\\Object\\HP.bmp");
 
 		heart* monster_heart01 = new heart(eUIType::heart02);
 		mUIs.insert(std::make_pair(eUIType::heart02, monster_heart01));

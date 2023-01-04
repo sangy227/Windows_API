@@ -3,8 +3,10 @@
 #include "yaAniMator.h"
 #include "yaCollider.h"
 #include "yaImage.h"
+#include "yaUIManager.h"
 namespace ya {
 	Glory_Knight::Glory_Knight()
+		:mHP(5)
 	{
 		SetName(L"Glory_Knight");
 		SetPos({ 1070.0f, 770.0f });
@@ -26,6 +28,7 @@ namespace ya {
 		AddComponent(new Collider());
 	}
 	Glory_Knight::Glory_Knight(Vector2 position)
+		:mHP(5)
 	{
 		SetName(L"Glory_Knight");
 		SetPos(position);
@@ -45,6 +48,11 @@ namespace ya {
 
 		AddComponent(mAnimator);
 		AddComponent(new Collider());
+
+		if (mHP < 0) {
+			Death();
+			UIManager::Pop(eUIType::heart03);
+		}
 	}
 	Glory_Knight::~Glory_Knight()
 	{
@@ -56,6 +64,11 @@ namespace ya {
 		Vector2 pos = GetPos();
 
 		SetPos(pos);
+
+		if (mHP < 0) {
+			Death();
+			UIManager::Pop(eUIType::heart03);
+		}
 	}
 	void Glory_Knight::Render(HDC hdc)
 	{

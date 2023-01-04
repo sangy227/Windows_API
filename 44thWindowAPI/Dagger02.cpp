@@ -5,6 +5,8 @@
 #include "yaCamera.h"
 #include "yaPlayer.h"
 #include "yaScene.h"
+#include "Monster_include.h"
+#include "Map_Player_icon.h"
 ya::Dagger02::Dagger02(eUIType type)
 	: UIItem(type)
 {
@@ -54,6 +56,8 @@ void ya::Dagger02::OnTick()
 		thisVariable = this;
 		//UIItem::InventorieArr();
 		if (Ani_Enable) {
+			Select_Monster_Target();
+
 			Player* miniPlayer = Scene::player;
 			miniPlayer->Player_Attack();
 
@@ -148,4 +152,125 @@ void ya::Dagger02::Click()
 	}
 
 	mPrevMousePos = mousePos;
+}
+
+void ya::Dagger02::Select_Monster_Target()
+{
+	switch (mMons_target_int)
+	{
+	case 1: {
+		Monster* mMonster = Map_Player_icon::mons1;
+		int hp = mMonster->GetHp();
+		hp -= 2;
+		mMonster->SetHp(hp);
+
+		Monster* mMonster2 = Map_Player_icon::mons2;
+		int hp2 = mMonster2->GetHp();
+		hp2 -= 2;
+		mMonster2->SetHp(hp2);
+	}
+		  break;
+
+	case 2: {
+		chicken* mMonster = Map_Player_icon::mons3;
+		int hp = mMonster->GetHp();
+		hp -= 2;
+		mMonster->SetHp(hp);
+	}
+		  break;
+	case 3: {
+		Gerbil_Ruffian* mMonster = Map_Player_icon::mons4;
+		int hp = mMonster->GetHp();
+		hp -= 2;
+		mMonster->SetHp(hp);
+	}
+		  break;
+	case 4: {
+		cultist_blade* mMonster = Map_Player_icon::mons5;
+		int hp = mMonster->GetHp();
+		hp -= 2;
+		mMonster->SetHp(hp);
+	}
+		  break;
+	case 5: {
+		hawk_knight* mMonster = Map_Player_icon::mons6;
+		int hp = mMonster->GetHp();
+		hp -= 2;
+		mMonster->SetHp(hp);
+	}
+		  break;
+	case 6: {
+		frog_2* mMonster = Map_Player_icon::mons7;
+		int hp = mMonster->GetHp();
+		hp -= 2;
+		mMonster->SetHp(hp);
+	}
+		  break;
+	case 7: {
+		crossbowman* mMonster = Map_Player_icon::mons8;
+		int hp = mMonster->GetHp();
+		hp -= 2;
+		mMonster->SetHp(hp);
+	}
+		  break;
+	case 8: {
+		cultist* mMonster = Map_Player_icon::mons9;
+		int hp = mMonster->GetHp();
+		hp -= 2;
+		mMonster->SetHp(hp);
+	}
+		  break;
+	case 9: {
+		bandit_lord* mMonster = Map_Player_icon::mons10;
+		int hp = mMonster->GetHp();
+		hp -= 2;
+		mMonster->SetHp(hp);
+	}
+		  break;
+	case 10: {
+		legman* mMonster = Map_Player_icon::mons11;
+		int hp = mMonster->GetHp();
+		hp -= 2;
+		mMonster->SetHp(hp);
+	}
+		   break;
+	case 11: {
+		Hare_Defender* mMonster = Map_Player_icon::mons12;
+		int hp = mMonster->GetHp();
+		hp -= 2;
+		mMonster->SetHp(hp);
+	}
+		   break;
+	case 12: {
+		Feral_Badger* mMonster = Map_Player_icon::mons13;
+		int hp = mMonster->GetHp();
+		hp -= 2;
+		mMonster->SetHp(hp);
+	}
+		   break;
+	case 13: {
+		fire_cobra* mMonster = Map_Player_icon::mons14;
+		int hp = mMonster->GetHp();
+		hp -= 2;
+		mMonster->SetHp(hp);
+	}
+		   break;
+	case 14: {
+		head_honcho* mMonster = Map_Player_icon::mons15;
+		int hp = mMonster->GetHp();
+		hp -= 2;
+		mMonster->SetHp(hp);
+	}
+		   break;
+	case 15: {
+		Glory_Knight* mMonster = Map_Player_icon::monsBOSS;
+		int hp = mMonster->GetHp();
+		hp -= 2;
+		mMonster->SetHp(hp);
+	}
+		   break;
+	default:
+		break;
+	}
+
 }

@@ -3,6 +3,7 @@
 #include "Monster_include.h"
 #include "yaAniMator.h"
 #include "yaResources.h"
+
 ya::Mon2_HPbar::Mon2_HPbar(eUIType type)
 	:UIBase(type)
 {

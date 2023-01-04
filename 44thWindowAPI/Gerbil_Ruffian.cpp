@@ -3,6 +3,7 @@
 #include "yaAniMator.h"
 #include "yaCollider.h"
 #include "yaImage.h"
+#include "yaUIManager.h"
 
 namespace ya {
 	Gerbil_Ruffian::Gerbil_Ruffian()
@@ -59,6 +60,13 @@ namespace ya {
 		Vector2 pos = GetPos();
 
 		SetPos(pos);
+
+		if (mHP < 0) {
+			Death();
+			UIManager::Pop(eUIType::heart02);
+
+			UIBase::mMons_target_int++;
+		}
 	}
 	void Gerbil_Ruffian::Render(HDC hdc)
 	{

@@ -40,10 +40,10 @@ void ya::HPbar::OnRender(HDC hdc)
 
 	Player* playerObj = dynamic_cast<Player*>(mTarget);
 	int hp = playerObj->GetHp();
-	float xRatio = (hp / 100.0f);
+	float xRatio = (hp / 5.0f);
 
 	TransparentBlt(hdc, (int)mScreenPos.x, (int)mScreenPos.y,
-		mImage->GetWidth() * 0.8f/* * xRatio */, mImage->GetHeight() * 0.7f,
+		mImage->GetWidth() * 0.8f * xRatio, mImage->GetHeight() * 0.7f,
 		mImage->GetDC(), 0, 0, mImage->GetWidth(), mImage->GetHeight()
 		, RGB(255, 255, 255));
 }

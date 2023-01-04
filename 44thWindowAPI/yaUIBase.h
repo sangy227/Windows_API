@@ -4,6 +4,7 @@
 namespace ya {
 	class GameObject;
 	class AniMator;
+	class newenergy;
 	class Image;
 	
 	class UIBase : public Entity
@@ -74,6 +75,7 @@ namespace ya {
 		static bool Ani_Enable;
 		
 		static int mmNumber_count;
+		static int mMons_target_int;
 	protected:
 		UIBase* mParent;
 		Image* mImage;
@@ -81,6 +83,8 @@ namespace ya {
 		Vector2 mPos;
 		Vector2 mSize;
 		Vector2 mScreenPos;
+
+		newenergy* mEnergyTarget;
 
 		AniMator* mAniMator;
 		//렌더링 보이기 안보이기

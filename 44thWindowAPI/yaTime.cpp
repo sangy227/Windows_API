@@ -1,5 +1,6 @@
 #include "yaTime.h"
 #include "yaApplication.h"
+
 namespace ya {
 	 LARGE_INTEGER Time::mCpuFrequency;
 	 LARGE_INTEGER Time::mPrevFrequency;

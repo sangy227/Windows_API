@@ -3,9 +3,11 @@
 #pragma once
 
 #include "UIItem.h"
+#include "Map_Player_icon.h"
+
 namespace ya {
-	class Sword;
-	class Enter_Button : public UIItem
+	
+	class Enter_Button : public Map_Player_icon
 	{
 	public:
 		Enter_Button(eUIType type);
@@ -23,6 +25,6 @@ namespace ya {
 	private:
 		Event mOnClick;
 		bool mbMouseOn;
-		Sword* abcTarget;
+		
 	};
 }

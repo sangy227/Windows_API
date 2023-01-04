@@ -4,7 +4,7 @@
 #include "yaAniMator.h"
 #include "yaCollider.h"
 #include "yaImage.h"
-
+#include "yaUIManager.h"
 namespace ya {
 	head_honcho::head_honcho()
 		:mHP(5)
@@ -60,6 +60,14 @@ namespace ya {
 		Vector2 pos = GetPos();
 
 		SetPos(pos);
+
+		if (mHP < 0) {
+			Death();
+			UIManager::Pop(eUIType::heart04);
+
+			UIBase::mMons_target_int++;
+
+		}
 	}
 	void head_honcho::Render(HDC hdc)
 	{

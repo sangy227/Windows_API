@@ -57,9 +57,9 @@ void ya::Potion02::OnTick()
 			Player* miniPlayer = Scene::player;
 			miniPlayer->Player_useitem();
 
-			mmNumber_count--;
-			if (mmNumber_count <= 0) {
-				mmNumber_count = 0;
+			mmNumber_count++;
+			if (mmNumber_count > 9) {
+				mmNumber_count = 9;
 				Ani_Enable = false;
 			}
 

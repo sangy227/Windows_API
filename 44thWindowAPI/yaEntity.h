@@ -22,7 +22,8 @@ namespace ya
 			UP,
 			DOWN,
 			DOWN2,
-
+			LEFT2,
+			UP2,
 		};
 		static Player_Icon_Move mIconState;
 	private:

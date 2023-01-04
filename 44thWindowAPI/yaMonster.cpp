@@ -12,6 +12,7 @@
 #include "yaCamera.h"
 #include "yaAniMator.h"
 #include "yaUIManager.h"
+#include "yaUIBase.h"
 namespace ya {
 	Monster::Monster()
 		: mTime(0.0f)
@@ -78,6 +79,14 @@ namespace ya {
 		Vector2 mousePos = Input::GetMousePos();
 		Vector2 size = GetSize();
 
+		if (mHP < 0) {
+			Death();
+			UIManager::Pop(eUIType::heart02);
+			UIManager::Pop(eUIType::heart03);
+
+			UIBase::mMons_target_int = 2;
+		}
+
 		//??
 		/*if (mScreenPos.x <= mousePos.x && mousePos.x < mScreenPos.x + size.x *3.5f
 			&& mScreenPos.y <= mousePos.y && mousePos.y < mScreenPos.y + size.y*3.5f)
@@ -131,5 +140,11 @@ namespace ya {
 	}
 	void Monster::OnCollisionExit(Collider* other)
 	{
+	}
+	void Monster::Mon_Attack()
+	{
+		Vector2 pos = GetPos();
+		pos.x -= 120.0f;
+		SetPos(pos);
 	}
 }

@@ -3,7 +3,7 @@
 #include "yaAniMator.h"
 #include "yaCollider.h"
 #include "yaImage.h"
-
+#include "yaUIManager.h"
 namespace ya {
 	Hare_Defender::Hare_Defender()
 		:mHP(5)
@@ -59,6 +59,13 @@ namespace ya {
 		Vector2 pos = GetPos();
 
 		SetPos(pos);
+
+		if (mHP < 0) {
+			Death();
+			UIManager::Pop(eUIType::heart04);
+
+			UIBase::mMons_target_int++;
+		}
 	}
 	void Hare_Defender::Render(HDC hdc)
 	{

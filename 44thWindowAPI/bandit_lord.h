@@ -19,6 +19,7 @@ namespace ya {
 		virtual void OnCollisionExit(Collider* other) override;
 
 		int GetHp() { return mHP; }
+		void SetHp(int id) { mHP = id; }
 	private:
 		int mHP;
 		Image* mImage;

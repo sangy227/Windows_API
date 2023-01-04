@@ -2,7 +2,7 @@
 #include "yaUIBase.h"
 
 namespace ya {
-	class newenergy;
+	//class newenergy;
 	class GameObject;
 	class Sword;
 	class UIItem : public UIBase
@@ -28,8 +28,27 @@ namespace ya {
 
 		void SetTarget(GameObject* target) { mTarget = target; }
 
+		enum class MONS_TARGET
+		{
+			monster1,
+			monster2,
+			monster3,
+			monster4,
+			monster5,
+			monster6,
+			monster7,
+			monster8,
+			monster9,
+			monster10,
+			monster11,
+			monster12,
+			monster13,
+			monster14,
+			monster15,
+			monster16,
+		};
 		
-
+		static MONS_TARGET mMons_target;
 	protected:
 		template<typename T>
 		static T* NewTarget;
@@ -38,7 +57,7 @@ namespace ya {
 		
 
 		GameObject* mTarget;
-		newenergy* mEnergyTarget;
+		//newenergy* mEnergyTarget;
 
 		Vector2 CalculateIndex(Vector2 pos);
 		Vector2 CalculateIndexPos(Vector2 Index);

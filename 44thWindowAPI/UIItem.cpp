@@ -10,6 +10,7 @@ namespace ya {
 	std::vector<std::vector<UIItem*>> UIItem::mInventories;
 	UINT UIItem::mOverlap;
 	UIItem* UIItem::thisVariable;
+	ya::UIItem::MONS_TARGET UIItem::mMons_target = MONS_TARGET::monster1;
 	
 
 	UIItem::UIItem(eUIType type)

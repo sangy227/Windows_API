@@ -10,7 +10,7 @@ namespace ya {
 	int UIBase::mmNumber_count = 3;
 	bool UIBase::Ani_Enable = false;
 	//ya::UIBase::Player_Icon_Move UIBase::mIconState = Player_Icon_Move::DEFALUT;
-	
+	int UIBase::mMons_target_int = 1;
 
 	UIBase::UIBase(eUIType type)
 		: mType(type)
@@ -80,6 +80,9 @@ namespace ya {
 		{
 			Ani_Enable = false;
 		}
+
+		
+
 
 		if (mbEnable == false)
 			return;

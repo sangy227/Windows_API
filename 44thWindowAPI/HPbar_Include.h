@@ -14,3 +14,4 @@
 #include "Mon13_HPbar.h"
 #include "Mon14_HPbar.h"
 #include "Mon15_HPbar.h"
+#include "Mon_BOSS_HPbar.h"

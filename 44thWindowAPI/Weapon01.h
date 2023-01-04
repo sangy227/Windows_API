@@ -18,6 +18,7 @@ namespace ya {
 
 		virtual void Click();
 
+		void Select_Monster_Target();
 	
 	};
 }

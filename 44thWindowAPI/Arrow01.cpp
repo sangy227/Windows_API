@@ -3,6 +3,8 @@
 #include "yaImage.h"
 #include "yaUIManager.h"
 #include "yaCamera.h"
+#include "Monster_include.h"
+#include "Map_Player_icon.h"
 ya::Arrow01::Arrow01(eUIType type)
 	: UIItem(type)
 {

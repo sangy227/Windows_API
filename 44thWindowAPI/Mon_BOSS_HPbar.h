@@ -1,13 +1,14 @@
 
 #pragma once
-#include "UIItem.h"
-
+#include "yaUIBase.h"
+#include "yaGameObject.h"
 namespace ya {
-	class Dagger01 : public UIItem
+	class GameObject;
+	class Mon_BOSS_HPbar : public UIBase
 	{
 	public:
-		Dagger01(eUIType type);
-		~Dagger01();
+		Mon_BOSS_HPbar(eUIType type);
+		~Mon_BOSS_HPbar();
 
 		virtual void OnInit() override;
 		virtual void OnActive() override;
@@ -16,9 +17,8 @@ namespace ya {
 		virtual void OnRender(HDC hdc) override;
 		virtual void OnClear() override;
 
-		virtual void Click();
-
-		void Select_Monster_Target();
-
+		void SetTarget(GameObject* target) { mTarget = target; }
+	private:
+		GameObject* mTarget;
 	};
 }

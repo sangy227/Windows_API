@@ -12,7 +12,7 @@
 #include "yaUIManager.h"
 #include "yaHUD.h"
 #include "yaButton.h"
-
+#include "yaUIBase.h"
 
 namespace ya {
 	
@@ -80,10 +80,14 @@ namespace ya {
 	{
 		Scene::Render(hdc);
 
+		int mcount = UIBase::mMons_target_int;
 		wchar_t szFloat[50] = {};
-		swprintf_s(szFloat, 50, L"Q,W,E,R,T,Y,  A,S,D,F");
+		swprintf_s(szFloat, 50, L"%f",mcount);
 		int strLen = wcsnlen_s(szFloat, 50);
-		TextOut(hdc, 200, 700, szFloat, strLen);
+		TextOut(hdc, 100, 100, szFloat, strLen);
+
+		
+
 	}
 	void PlayScene::Enter()
 	{
@@ -98,6 +102,8 @@ namespace ya {
 		
 		UIManager::Push(eUIType::newenergy);
 		UIManager::Push(eUIType::Number_3);
+
+		//UIManager::Push(eUIType::Ending_Cheese);
 
 		/*UIManager::Push(eUIType::TestButton);
 		UIManager::Push(eUIType::TestSword);*/

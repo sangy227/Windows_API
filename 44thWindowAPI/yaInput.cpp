@@ -104,10 +104,10 @@ namespace ya {
 
 	void Input::Render(HDC hdc)
 	{
-		const std::wstring str = L"x : " + std::to_wstring((UINT)mMousePos.x) 
+		/*const std::wstring str = L"x : " + std::to_wstring((UINT)mMousePos.x) 
 			+ L" y : " + std::to_wstring((UINT)mMousePos.y);
 
-		TextOut(hdc, 10, 100, str.c_str(), str.length());
+		TextOut(hdc, 10, 100, str.c_str(), str.length());*/
 	}
 
 	eKeyState Input::GetKeyState(eKeyCode keycode)

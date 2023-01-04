@@ -30,7 +30,7 @@ namespace ya {
 		void SetScale(Vector2 scale) { mScale = scale; }
 		Vector2 GetScale() { return mScale; }
 
-		void Death() { mDead = true; }
+		void Death() {	mDead = true; }
 		bool IsDeath() { return mDead; }
 		void SetDeathTime(float time) {
 			if (mDeathTime <= 0.0f)

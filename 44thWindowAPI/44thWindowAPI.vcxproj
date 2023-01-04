@@ -183,11 +183,14 @@
     <ClInclude Include="dealmaker.h" />
     <ClInclude Include="def.h" />
     <ClInclude Include="Elder_Mage.h" />
+    <ClInclude Include="Ending_Cheese.h" />
+    <ClInclude Include="Ending_icon.h" />
     <ClInclude Include="Enemie_icon01.h" />
     <ClInclude Include="Enemie_icon02.h" />
     <ClInclude Include="Enemie_icon03.h" />
     <ClInclude Include="Enemie_icon04.h" />
     <ClInclude Include="Enemie_icon05.h" />
+    <ClInclude Include="Enemie_icon_Boss.h" />
     <ClInclude Include="Enter_Button.h" />
     <ClInclude Include="Feral_Badger.h" />
     <ClInclude Include="fire_cobra.h" />
@@ -241,6 +244,7 @@
     <ClInclude Include="Mon8_HPbar.h" />
     <ClInclude Include="Mon9_HPbar.h" />
     <ClInclude Include="Monster_include.h" />
+    <ClInclude Include="Mon_BOSS_HPbar.h" />
     <ClInclude Include="newenergy.h" />
     <ClInclude Include="Number_0.h" />
     <ClInclude Include="Number_1.h" />
@@ -389,11 +393,14 @@
     <ClCompile Include="Dagger05.cpp" />
     <ClCompile Include="dealmaker.cpp" />
     <ClCompile Include="Elder_Mage.cpp" />
+    <ClCompile Include="Ending_Cheese.cpp" />
+    <ClCompile Include="Ending_icon.cpp" />
     <ClCompile Include="Enemie_icon01.cpp" />
     <ClCompile Include="Enemie_icon02.cpp" />
     <ClCompile Include="Enemie_icon03.cpp" />
     <ClCompile Include="Enemie_icon04.cpp" />
     <ClCompile Include="Enemie_icon05.cpp" />
+    <ClCompile Include="Enemie_icon_Boss.cpp" />
     <ClCompile Include="Enter_Button.cpp" />
     <ClCompile Include="Feral_Badger.cpp" />
     <ClCompile Include="fire_cobra.cpp" />
@@ -443,6 +450,7 @@
     <ClCompile Include="Mon7_HPbar.cpp" />
     <ClCompile Include="Mon8_HPbar.cpp" />
     <ClCompile Include="Mon9_HPbar.cpp" />
+    <ClCompile Include="Mon_BOSS_HPbar.cpp" />
     <ClCompile Include="newenergy.cpp" />
     <ClCompile Include="Number_0.cpp" />
     <ClCompile Include="Number_1.cpp" />

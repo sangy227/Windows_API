@@ -147,6 +147,8 @@
 		Enemie_icon08,
 		Enemie_icon09,
 		Enemie_icon10,
+		Enemie_icon_Boss,
+		Ending_icon,
 		Map_Player_icon,
 		Enter_Button,
 
@@ -214,6 +216,9 @@
 		block02,
 		block03,
 		block04,
+
+
+		Ending_Cheese,
 		
 
 		newenergy,
@@ -235,6 +240,7 @@
 		Mon13_HPbar,
 		Mon14_HPbar,
 		Mon15_HPbar,
+		Mon_BOSS_HPbar,
 
 		Number_0,
 		Number_1,

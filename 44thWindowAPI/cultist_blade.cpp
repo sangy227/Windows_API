@@ -3,7 +3,7 @@
 #include "yaAniMator.h"
 #include "yaCollider.h"
 #include "yaImage.h"
-
+#include "yaUIManager.h"
 namespace ya {
 	cultist_blade::cultist_blade()
 		:mHP(5)
@@ -60,6 +60,13 @@ namespace ya {
 		Vector2 pos = GetPos();
 
 		SetPos(pos);
+
+		if (mHP < 0) {
+			Death();
+			UIManager::Pop(eUIType::heart03);
+
+			UIBase::mMons_target_int++;
+		}
 	}
 	void cultist_blade::Render(HDC hdc)
 	{

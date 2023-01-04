@@ -6,7 +6,7 @@
 
 namespace ya {
 	Enter_Button::Enter_Button(eUIType type)
-		:UIItem(type)
+		:Map_Player_icon(type)
 	{
 		mOnClick = std::bind(&Enter_Button::Click, this);
 	}
@@ -55,9 +55,7 @@ namespace ya {
 	void Enter_Button::Click()
 	{
 		
-		Sword* mSword = UIManager::GetUiInstant<Sword>(eUIType::TestSword);
-		//Sword* mSword = 
-		mSword->ReSerch();
+		
 	}
 	
 }

@@ -29,6 +29,24 @@ namespace ya {
 		void Distance(Vector2 mPrevpos, Vector2 mPos, UINT mDistance);
 
 		static int map_ani_count;
+		static Monster* mons1;
+		static Monster* mons2;
+		static chicken* mons3;
+		static Gerbil_Ruffian* mons4;
+		static cultist_blade* mons5;
+		static hawk_knight* mons6;
+		static frog_2* mons7;
+		static crossbowman* mons8;
+		static cultist* mons9;
+		static bandit_lord* mons10;
+		static legman* mons11;
+		static Hare_Defender* mons12;
+		static Feral_Badger* mons13;
+		static fire_cobra* mons14;
+		static head_honcho* mons15;
+		static Glory_Knight* monsBOSS;
+	protected:
+
 	private:
 		Event mOnClick;
 		bool mbMouseOn;
@@ -38,20 +56,5 @@ namespace ya {
 		UINT mDistance;
 
 
-		Monster* mons1;
-		Monster* mons2;
-		chicken* mons3;
-		Gerbil_Ruffian* mons4;
-		cultist_blade* mons5;
-		hawk_knight* mons6;
-		frog_2* mons7;
-		crossbowman* mons8;
-		cultist* mons9;
-		bandit_lord* mons10;
-		legman* mons11;
-		Hare_Defender* mons12;
-		Feral_Badger* mons13;
-		fire_cobra* mons14;
-		head_honcho* mons15;
 	};
 }

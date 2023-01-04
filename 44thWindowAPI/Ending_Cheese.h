@@ -1,13 +1,15 @@
 
+
 #pragma once
-#include "UIItem.h"
+#include "yaUIBase.h"
 
 namespace ya {
-	class Dagger01 : public UIItem
+
+	class Ending_Cheese : public UIBase
 	{
 	public:
-		Dagger01(eUIType type);
-		~Dagger01();
+		Ending_Cheese(eUIType type);
+		~Ending_Cheese();
 
 		virtual void OnInit() override;
 		virtual void OnActive() override;
@@ -15,10 +17,5 @@ namespace ya {
 		virtual void OnTick() override;
 		virtual void OnRender(HDC hdc) override;
 		virtual void OnClear() override;
-
-		virtual void Click();
-
-		void Select_Monster_Target();
-
 	};
 }

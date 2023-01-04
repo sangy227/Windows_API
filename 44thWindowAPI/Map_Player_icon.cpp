@@ -9,12 +9,31 @@
 #include "Enemie_icon03.h"
 #include "Enemie_icon04.h"
 #include "Enemie_icon05.h"
+#include "Enemie_icon_Boss.h"
+#include "Ending_icon.h"
 #include "yaScene.h"
 #include "Monster_include.h"
 #include "yaObject.h"
 #include "HPbar_Include.h"
+#include "newenergy.h"
 
 namespace ya {
+	Monster* Map_Player_icon::mons1 = nullptr;
+	Monster* Map_Player_icon::mons2 = nullptr;
+	chicken* Map_Player_icon::mons3 = nullptr;
+	Gerbil_Ruffian* Map_Player_icon::mons4 = nullptr;
+	cultist_blade* Map_Player_icon::mons5 = nullptr;
+	hawk_knight* Map_Player_icon::mons6 = nullptr;
+	frog_2* Map_Player_icon::mons7 = nullptr;
+	crossbowman* Map_Player_icon::mons8 = nullptr;
+	cultist* Map_Player_icon::mons9 = nullptr;
+	bandit_lord* Map_Player_icon::mons10 = nullptr;
+	legman* Map_Player_icon::mons11 = nullptr;
+	Hare_Defender* Map_Player_icon::mons12 = nullptr;
+	Feral_Badger* Map_Player_icon::mons13 = nullptr;
+	fire_cobra* Map_Player_icon::mons14 = nullptr;
+	head_honcho* Map_Player_icon::mons15= nullptr;
+	Glory_Knight* Map_Player_icon::monsBOSS = nullptr;
 
 int Map_Player_icon::map_ani_count = 0;
 
@@ -35,6 +54,19 @@ ya::Map_Player_icon::~Map_Player_icon()
 
 void ya::Map_Player_icon::OnInit()
 {
+	mons4 = ya::object::Instantiate<Gerbil_Ruffian>(Vector2{ 2250.0f, 770.0f }, eColliderLayer::Monster);
+	mons5 = ya::object::Instantiate<cultist_blade>(Vector2{ 2250.0f, 770.0f }, eColliderLayer::Monster);
+	mons6 = ya::object::Instantiate<hawk_knight>(Vector2{ 2430.0f, 770.0f }, eColliderLayer::Monster);
+	mons7 = ya::object::Instantiate<frog_2>(Vector2{ 2250.0f, 770.0f }, eColliderLayer::Monster);
+	mons8 = ya::object::Instantiate<crossbowman>(Vector2{ 2250.0f, 770.0f }, eColliderLayer::Monster);
+	mons9 = ya::object::Instantiate<cultist>(Vector2{ 2250.0f, 770.0f }, eColliderLayer::Monster);
+	mons10 = ya::object::Instantiate<bandit_lord>(Vector2{ 2250.0f, 770.0f }, eColliderLayer::Monster);
+	mons11 = ya::object::Instantiate<legman>(Vector2{ 2250.0f, 770.0f }, eColliderLayer::Monster);
+	mons12 = ya::object::Instantiate<Hare_Defender>(Vector2{ 2250.0f, 770.0f }, eColliderLayer::Monster);
+	mons13 = ya::object::Instantiate<Feral_Badger>(Vector2{ 2250.0f, 770.0f }, eColliderLayer::Monster);
+	mons14 = ya::object::Instantiate<fire_cobra>(Vector2{ 2250.0f, 770.0f }, eColliderLayer::Monster);
+	mons15 = ya::object::Instantiate<head_honcho>(Vector2{ 2250.0f, 770.0f }, eColliderLayer::Monster);
+	monsBOSS = ya::object::Instantiate<Glory_Knight>(Vector2{ 2250.0f, 770.0f }, eColliderLayer::Monster);
 }
 
 void ya::Map_Player_icon::OnActive()
@@ -102,6 +134,11 @@ void ya::Map_Player_icon::OnTick()
 			SetPos(pos);
 			if (mEnemiepos - GetPos().y < 25)
 			{
+				mmNumber_count = 3;
+				
+				newenergy* mEnergy = dynamic_cast<newenergy*>(mEnergyTarget);
+				mEnergy->Number_chenge();
+
 				GameObject::mBgStatus = ya::GameObject::BgStatus::DEFALUT;
 				mIconState = Player_Icon_Move::DEFALUT;
 				mEnemiepos = 0;
@@ -148,6 +185,10 @@ void ya::Map_Player_icon::OnTick()
 			SetPos(pos);
 			if (mEnemiepos - GetPos().y < 25)
 			{
+				mmNumber_count = 3;
+				newenergy* mEnergy = dynamic_cast<newenergy*>(mEnergyTarget);
+				mEnergy->Number_chenge();
+
 				GameObject::mBgStatus = ya::GameObject::BgStatus::DEFALUT;
 				mIconState = Player_Icon_Move::DEFALUT;
 				mEnemiepos = 0;
@@ -171,9 +212,12 @@ void ya::Map_Player_icon::OnTick()
 				UIManager::Pop(eUIType::heart04);
 
 				//mons1->Death();
-				mons13 = ya::object::Instantiate<Feral_Badger>(eColliderLayer::Monster);
+				/*mons13 = ya::object::Instantiate<Feral_Badger>(eColliderLayer::Monster);
 				mons14 = ya::object::Instantiate<fire_cobra>(Vector2{ 1250.0f, 770.0f }, eColliderLayer::Monster);
-				mons15 = ya::object::Instantiate<head_honcho>(Vector2{ 1430.0f, 770.0f }, eColliderLayer::Monster);
+				mons15 = ya::object::Instantiate<head_honcho>(Vector2{ 1430.0f, 770.0f }, eColliderLayer::Monster);*/
+				mons13->SetPos(Vector2{ 1070.0f, 770.0f });
+				mons14->SetPos(Vector2{ 1250.0f, 770.0f });
+				mons15->SetPos(Vector2{ 1430.0f, 770.0f });
 
 
 				Mon13_HPbar* mMon13_HPbar = UIManager::GetUiInstant<Mon13_HPbar>(eUIType::Mon13_HPbar);
@@ -202,6 +246,10 @@ void ya::Map_Player_icon::OnTick()
 			SetPos(pos);
 			if (mEnemiepos - GetPos().y > 25)
 			{
+				mmNumber_count = 3;
+				newenergy* mEnergy = dynamic_cast<newenergy*>(mEnergyTarget);
+				mEnergy->Number_chenge();
+
 				GameObject::mBgStatus = ya::GameObject::BgStatus::DEFALUT;
 				mIconState = Player_Icon_Move::DEFALUT;
 				mEnemiepos = 0;
@@ -224,9 +272,12 @@ void ya::Map_Player_icon::OnTick()
 				UIManager::Pop(eUIType::heart03);
 				UIManager::Pop(eUIType::heart04);
 
-				mons7 = ya::object::Instantiate<frog_2>(eColliderLayer::Monster);
+				/*mons7 = ya::object::Instantiate<frog_2>(eColliderLayer::Monster);
 				mons8 = ya::object::Instantiate<crossbowman>(Vector2{ 1250.0f, 770.0f }, eColliderLayer::Monster);
-				mons9 = ya::object::Instantiate<cultist>(Vector2{ 1430.0f, 770.0f }, eColliderLayer::Monster);
+				mons9 = ya::object::Instantiate<cultist>(Vector2{ 1430.0f, 770.0f }, eColliderLayer::Monster);*/
+				mons7->SetPos(Vector2{ 1070.0f, 770.0f });
+				mons8->SetPos(Vector2{ 1250.0f, 770.0f });
+				mons9->SetPos(Vector2{ 1430.0f, 770.0f });
 
 				Mon7_HPbar* mMon7_HPbar = UIManager::GetUiInstant<Mon7_HPbar>(eUIType::Mon7_HPbar);
 				mMon7_HPbar->SetTarget(mons7);
@@ -247,6 +298,39 @@ void ya::Map_Player_icon::OnTick()
 			}
 		}
 			break;
+		case ya::Entity::Player_Icon_Move::UP2:
+		{
+			Vector2 pos = GetPos();
+			pos.y -= speed * Time::DeltaTime();
+			SetPos(pos);
+			if (mEnemiepos - GetPos().y > 25)
+			{
+				mmNumber_count = 3;
+				newenergy* mEnergy = dynamic_cast<newenergy*>(mEnergyTarget);
+				mEnergy->Number_chenge();
+
+				GameObject::mBgStatus = ya::GameObject::BgStatus::DEFALUT;
+				mIconState = Player_Icon_Move::DEFALUT;
+				mEnemiepos = 0;
+
+				Enemie_icon_Boss* mEnemie_icon_Boss = UIManager::GetUiInstant<Enemie_icon_Boss>(eUIType::Enemie_icon_Boss);
+				mEnemie_icon_Boss->InActive();
+
+				Player* miniPlayer = Scene::player;
+				miniPlayer->Player_winsmall();
+
+				monsBOSS->Death();
+
+				UIManager::Pop(eUIType::Mon_BOSS_HPbar);
+
+				UIManager::Pop(eUIType::heart03);
+
+				UIManager::Push(eUIType::Ending_Cheese);
+
+
+			}
+		}
+		break;
 		case ya::Entity::Player_Icon_Move::LEFT:
 		{
 			Vector2 pos = GetPos();
@@ -254,6 +338,12 @@ void ya::Map_Player_icon::OnTick()
 			SetPos(pos);
 			if (mEnemiepos - GetPos().x > 25)
 			{
+				mmNumber_count = 3;
+				//newenergy::Number_chenge();
+
+				newenergy* mEnergy = dynamic_cast<newenergy*>(mEnergyTarget);
+				mEnergy->Number_chenge();
+
 				GameObject::mBgStatus = ya::GameObject::BgStatus::DEFALUT;
 				mIconState = Player_Icon_Move::DEFALUT;
 				mEnemiepos = 0;
@@ -277,9 +367,12 @@ void ya::Map_Player_icon::OnTick()
 				UIManager::Pop(eUIType::heart04);
 
 				//mons1->Death();
-				mons4 = ya::object::Instantiate<Gerbil_Ruffian>(eColliderLayer::Monster);
+				/*mons4 = ya::object::Instantiate<Gerbil_Ruffian>(eColliderLayer::Monster);
 				mons5 = ya::object::Instantiate<cultist_blade>(Vector2{ 1250.0f, 770.0f }, eColliderLayer::Monster);
-				mons6 = ya::object::Instantiate<hawk_knight>(Vector2{ 1430.0f, 770.0f }, eColliderLayer::Monster);
+				mons6 = ya::object::Instantiate<hawk_knight>(Vector2{ 1430.0f, 770.0f }, eColliderLayer::Monster);*/
+				mons4->SetPos(Vector2{ 1070.0f, 770.0f });
+				mons5->SetPos(Vector2{ 1250.0f, 770.0f });
+				mons6->SetPos(Vector2{ 1430.0f, 770.0f });
 
 				Mon4_HPbar* mMon4_HPbar = UIManager::GetUiInstant<Mon4_HPbar>(eUIType::Mon4_HPbar);
 				mMon4_HPbar->SetTarget(mons4);
@@ -300,6 +393,55 @@ void ya::Map_Player_icon::OnTick()
 			}
 		}
 			break;
+		case ya::Entity::Player_Icon_Move::LEFT2:
+		{
+			Vector2 pos = GetPos();
+			pos.x -= speed * Time::DeltaTime();
+			SetPos(pos);
+			if (mEnemiepos - GetPos().x > 25)
+			{
+
+				mmNumber_count = 3;
+				newenergy* mEnergy = dynamic_cast<newenergy*>(mEnergyTarget);
+				mEnergy->Number_chenge();
+
+				GameObject::mBgStatus = ya::GameObject::BgStatus::DEFALUT;
+				mIconState = Player_Icon_Move::DEFALUT;
+				mEnemiepos = 0;
+
+				Enemie_icon_Boss* mEnemie_icon_Boss = UIManager::GetUiInstant<Enemie_icon_Boss>(eUIType::Enemie_icon_Boss);
+				mEnemie_icon_Boss->InActive();
+
+				Player* miniPlayer = Scene::player;
+				miniPlayer->Player_Idel();
+
+				mons13->Death();
+				mons14->Death();
+				mons15->Death();
+
+				UIManager::Pop(eUIType::Mon13_HPbar);
+				UIManager::Pop(eUIType::Mon14_HPbar);
+				UIManager::Pop(eUIType::Mon15_HPbar);
+
+				UIManager::Pop(eUIType::heart02);
+				UIManager::Pop(eUIType::heart03);
+				UIManager::Pop(eUIType::heart04);
+
+				//mons1->Death();
+				//monsBOSS = ya::object::Instantiate<Glory_Knight>(Vector2{ 1250.0f, 770.0f }, eColliderLayer::Monster);
+				monsBOSS->SetPos(Vector2{ 1250.0f, 770.0f });
+				
+				Mon_BOSS_HPbar* mon_boss_HPbar = UIManager::GetUiInstant<Mon_BOSS_HPbar>(eUIType::Mon_BOSS_HPbar);
+				mon_boss_HPbar->SetTarget(monsBOSS);
+
+			
+				UIManager::Push(eUIType::Mon_BOSS_HPbar);
+
+				UIManager::Push(eUIType::heart03);
+				
+			}
+		}
+		break;
 		case ya::Entity::Player_Icon_Move::RIGHT:
 		{
 			Vector2 pos = GetPos();
@@ -307,6 +449,11 @@ void ya::Map_Player_icon::OnTick()
 			SetPos(pos);
 			if (mEnemiepos - GetPos().x < 25)
 			{
+				mmNumber_count = 3;
+				newenergy* mEnergy = dynamic_cast<newenergy*>(mEnergyTarget);
+				mEnergy->Number_chenge();
+
+
 				GameObject::mBgStatus = ya::GameObject::BgStatus::DEFALUT;
 				mIconState = Player_Icon_Move::DEFALUT;
 				mEnemiepos = 0;
@@ -329,9 +476,12 @@ void ya::Map_Player_icon::OnTick()
 				UIManager::Pop(eUIType::heart03);
 				UIManager::Pop(eUIType::heart04);
 
-				mons10 = ya::object::Instantiate<bandit_lord>(eColliderLayer::Monster);
+				/*mons10 = ya::object::Instantiate<bandit_lord>(eColliderLayer::Monster);
 				mons11 = ya::object::Instantiate<legman>(Vector2{ 1250.0f, 770.0f }, eColliderLayer::Monster);
-				mons12 = ya::object::Instantiate<Hare_Defender>(Vector2{ 1430.0f, 770.0f }, eColliderLayer::Monster);
+				mons12 = ya::object::Instantiate<Hare_Defender>(Vector2{ 1430.0f, 770.0f }, eColliderLayer::Monster);*/
+				mons10->SetPos(Vector2{ 1070.0f, 770.0f });
+				mons11->SetPos(Vector2{ 1250.0f, 770.0f });
+				mons12->SetPos(Vector2{ 1430.0f, 770.0f });
 
 				Mon10_HPbar* mMon10_HPbar = UIManager::GetUiInstant<Mon10_HPbar>(eUIType::Mon10_HPbar);
 				mMon10_HPbar->SetTarget(mons10);
