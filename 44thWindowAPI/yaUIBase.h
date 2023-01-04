@@ -76,6 +76,7 @@ namespace ya {
 		
 		static int mmNumber_count;
 		static int mMons_target_int;
+		static int Mons_Remaining;
 	protected:
 		UIBase* mParent;
 		Image* mImage;

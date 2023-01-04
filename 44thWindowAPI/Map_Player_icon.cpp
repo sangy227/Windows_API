@@ -16,7 +16,7 @@
 #include "yaObject.h"
 #include "HPbar_Include.h"
 #include "newenergy.h"
-
+#include "yaUIBase.h"
 namespace ya {
 	Monster* Map_Player_icon::mons1 = nullptr;
 	Monster* Map_Player_icon::mons2 = nullptr;
@@ -134,6 +134,7 @@ void ya::Map_Player_icon::OnTick()
 			SetPos(pos);
 			if (mEnemiepos - GetPos().y < 25)
 			{
+				UIBase::Mons_Remaining = 3;
 				mmNumber_count = 3;
 				
 				newenergy* mEnergy = dynamic_cast<newenergy*>(mEnergyTarget);
@@ -185,6 +186,8 @@ void ya::Map_Player_icon::OnTick()
 			SetPos(pos);
 			if (mEnemiepos - GetPos().y < 25)
 			{
+				UIBase::Mons_Remaining = 3;
+
 				mmNumber_count = 3;
 				newenergy* mEnergy = dynamic_cast<newenergy*>(mEnergyTarget);
 				mEnergy->Number_chenge();
@@ -246,6 +249,7 @@ void ya::Map_Player_icon::OnTick()
 			SetPos(pos);
 			if (mEnemiepos - GetPos().y > 25)
 			{
+				UIBase::Mons_Remaining = 3;
 				mmNumber_count = 3;
 				newenergy* mEnergy = dynamic_cast<newenergy*>(mEnergyTarget);
 				mEnergy->Number_chenge();
@@ -305,6 +309,7 @@ void ya::Map_Player_icon::OnTick()
 			SetPos(pos);
 			if (mEnemiepos - GetPos().y > 25)
 			{
+				UIBase::Mons_Remaining = 3;
 				mmNumber_count = 3;
 				newenergy* mEnergy = dynamic_cast<newenergy*>(mEnergyTarget);
 				mEnergy->Number_chenge();
@@ -338,6 +343,7 @@ void ya::Map_Player_icon::OnTick()
 			SetPos(pos);
 			if (mEnemiepos - GetPos().x > 25)
 			{
+				UIBase::Mons_Remaining = 3;
 				mmNumber_count = 3;
 				//newenergy::Number_chenge();
 
@@ -400,7 +406,7 @@ void ya::Map_Player_icon::OnTick()
 			SetPos(pos);
 			if (mEnemiepos - GetPos().x > 25)
 			{
-
+				UIBase::Mons_Remaining = 3;
 				mmNumber_count = 3;
 				newenergy* mEnergy = dynamic_cast<newenergy*>(mEnergyTarget);
 				mEnergy->Number_chenge();
@@ -449,7 +455,10 @@ void ya::Map_Player_icon::OnTick()
 			SetPos(pos);
 			if (mEnemiepos - GetPos().x < 25)
 			{
+				UIBase::Mons_Remaining = 3;
+
 				mmNumber_count = 3;
+
 				newenergy* mEnergy = dynamic_cast<newenergy*>(mEnergyTarget);
 				mEnergy->Number_chenge();
 

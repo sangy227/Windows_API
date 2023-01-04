@@ -65,6 +65,8 @@ namespace ya {
 			UIManager::Pop(eUIType::heart03);
 
 			UIBase::mMons_target_int++;
+			UIBase::Mons_Remaining -= 1;
+
 		}
 	}
 	void legman::Render(HDC hdc)

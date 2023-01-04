@@ -52,6 +52,8 @@ namespace ya {
 		if (mHP < 0) {
 			Death();
 			UIManager::Pop(eUIType::heart03);
+			UIBase::Mons_Remaining -= 3;
+
 		}
 	}
 	Glory_Knight::~Glory_Knight()

@@ -3,7 +3,7 @@
 #include "yaInput.h"
 #include "yaUIManager.h"
 #include "Item_include.h"
-
+#include "yaScene.h"
 namespace ya {
 	Enter_Button::Enter_Button(eUIType type)
 		:Map_Player_icon(type)
@@ -54,8 +54,15 @@ namespace ya {
 	}
 	void Enter_Button::Click()
 	{
-		
-		
+		mPlayer = Scene::player;
+		int hp = mPlayer->GetHp();
+		hp -= Mons_Remaining;
+		mPlayer->SetHp(hp);
+
+		mmNumber_count = 3;
+
+		newenergy* mEnergy = dynamic_cast<newenergy*>(mEnergyTarget);
+		mEnergy->Number_chenge();
 	}
 	
 }

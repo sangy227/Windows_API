@@ -11,6 +11,7 @@ namespace ya {
 	bool UIBase::Ani_Enable = false;
 	//ya::UIBase::Player_Icon_Move UIBase::mIconState = Player_Icon_Move::DEFALUT;
 	int UIBase::mMons_target_int = 1;
+	int  UIBase::Mons_Remaining = 3;
 
 	UIBase::UIBase(eUIType type)
 		: mType(type)

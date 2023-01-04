@@ -6,7 +6,7 @@
 #include "Map_Player_icon.h"
 
 namespace ya {
-	
+	class Player;
 	class Enter_Button : public Map_Player_icon
 	{
 	public:
@@ -26,5 +26,6 @@ namespace ya {
 		Event mOnClick;
 		bool mbMouseOn;
 		
+		Player* mPlayer;
 	};
 }

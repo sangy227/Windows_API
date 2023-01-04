@@ -66,6 +66,12 @@ void ya::Potion07::OnTick()
 
 			newenergy* mEnergy = dynamic_cast<newenergy*>(mEnergyTarget);
 			mEnergy->Number_chenge();
+
+			int hp = miniPlayer->GetHp();
+			hp++;
+			if (hp >= 6)
+				hp = 5;
+			miniPlayer->SetHp(hp);
 		}
 	}
 

@@ -66,6 +66,8 @@ namespace ya {
 			UIManager::Pop(eUIType::heart02);
 
 			UIBase::mMons_target_int++;
+			UIBase::Mons_Remaining -= 1;
+
 		}
 	}
 	void Gerbil_Ruffian::Render(HDC hdc)

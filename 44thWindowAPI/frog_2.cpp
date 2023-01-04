@@ -67,6 +67,8 @@ namespace ya {
 			UIManager::Pop(eUIType::heart02);
 
 			UIBase::mMons_target_int++;
+			UIBase::Mons_Remaining -= 1;
+
 		}
 	}
 	void frog_2::Render(HDC hdc)

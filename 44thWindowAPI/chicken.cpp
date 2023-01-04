@@ -66,6 +66,8 @@ namespace ya {
 			Death();
 			UIManager::Pop(eUIType::heart04);
 			UIBase::mMons_target_int++;
+			UIBase::Mons_Remaining -= 1;
+
 		}
 	}
 	void chicken::Render(HDC hdc)

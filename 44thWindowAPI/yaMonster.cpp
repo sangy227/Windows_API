@@ -85,6 +85,7 @@ namespace ya {
 			UIManager::Pop(eUIType::heart03);
 
 			UIBase::mMons_target_int = 2;
+			UIBase::Mons_Remaining -= 1;
 		}
 
 		//??

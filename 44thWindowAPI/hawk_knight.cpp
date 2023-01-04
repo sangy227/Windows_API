@@ -64,6 +64,8 @@ namespace ya {
 			UIManager::Pop(eUIType::heart04);
 
 			UIBase::mMons_target_int++;
+			UIBase::Mons_Remaining -= 1;
+
 		}
 	}
 	void hawk_knight::Render(HDC hdc)

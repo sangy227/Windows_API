@@ -7,6 +7,7 @@
 #include "yaPlayer.h"
 #include "Monster_include.h"
 #include "Map_Player_icon.h"
+
 namespace ya {
 	Weapon01::Weapon01(eUIType type)
 		: UIItem(type)
@@ -97,9 +98,6 @@ namespace ya {
 			{
 				if (thisVariable == this)
 					mOnClick();
-
-				
-
 			}
 
 			if (KEY_UP(eKeyCode::LBTN) && mbMouseOn)
