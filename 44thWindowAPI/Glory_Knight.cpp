@@ -4,9 +4,13 @@
 #include "yaCollider.h"
 #include "yaImage.h"
 #include "yaUIManager.h"
+#include "yaSound.h"
+#include "yaSoundManager.h"
+#include "yaScene.h"
+
 namespace ya {
 	Glory_Knight::Glory_Knight()
-		:mHP(5)
+		:mHP(10)
 	{
 		SetName(L"Glory_Knight");
 		SetPos({ 1070.0f, 770.0f });
@@ -28,7 +32,7 @@ namespace ya {
 		AddComponent(new Collider());
 	}
 	Glory_Knight::Glory_Knight(Vector2 position)
-		:mHP(5)
+		:mHP(10)
 	{
 		SetName(L"Glory_Knight");
 		SetPos(position);
@@ -50,10 +54,17 @@ namespace ya {
 		AddComponent(new Collider());
 
 		if (mHP < 0) {
+			Sound* mbSound = Scene::mSound[9];
+			mbSound->Play(false);
 			Death();
 			UIManager::Pop(eUIType::heart03);
 			UIBase::Mons_Remaining -= 3;
 
+			Sound* mbSound12 = Scene::mSound[13];
+			mbSound12->Stop(false);
+
+			Sound* mbSound2 = Scene::mSound[2];
+			mbSound2->Play(true);
 		}
 	}
 	Glory_Knight::~Glory_Knight()

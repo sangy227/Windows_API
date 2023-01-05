@@ -5,9 +5,13 @@
 #include "yaCollider.h"
 #include "yaImage.h"
 #include "yaUIManager.h"
+#include "yaSound.h"
+#include "yaSoundManager.h"
+#include "yaScene.h"
+
 namespace ya {
 	bandit_lord::bandit_lord()
-		:mHP(5)
+		:mHP(6)
 	{
 		SetName(L"bandit_lord");
 		SetPos({ 1070.0f, 770.0f });
@@ -29,7 +33,7 @@ namespace ya {
 		AddComponent(new Collider());
 	}
 	bandit_lord::bandit_lord(Vector2 position)
-		:mHP(5)
+		:mHP(6)
 	{
 		SetName(L"bandit_lord");
 		SetPos(position);
@@ -62,6 +66,8 @@ namespace ya {
 		SetPos(pos);
 
 		if (mHP < 0) {
+			Sound* mbSound = Scene::mSound[9];
+			mbSound->Play(false);
 			Death();
 			UIManager::Pop(eUIType::heart02);
 

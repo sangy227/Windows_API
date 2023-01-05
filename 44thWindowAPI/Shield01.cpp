@@ -5,6 +5,9 @@
 #include "yaCamera.h"
 #include "yaPlayer.h"
 #include "yaScene.h"
+#include "yaSound.h"
+#include "yaSoundManager.h"
+#include "yaScene.h"
 ya::Shield01::Shield01(eUIType type)
 	: UIItem(type)
 {
@@ -46,6 +49,10 @@ void ya::Shield01::OnTick()
 
 	if (KEY_DOWN(eKeyCode::LBTN) && mbMouseOn)
 	{
+		Sound* mbSound = Scene::mSound[3];
+		if (Ani_Enable == false)
+			mbSound->Play(false);
+
 		mPrevClickPos = GetScreenPos();
 
 		Vector2 mousePos = Input::GetMousePos();
@@ -79,6 +86,10 @@ void ya::Shield01::OnTick()
 
 	if (KEY_UP(eKeyCode::LBTN) && mbMouseOn)
 	{
+		Sound* mbSound = Scene::mSound[3];
+		if (Ani_Enable == false)
+			mbSound->Play(false);
+
 		thisVariable = NULL;
 		Vector2 pos = GetScreenPos();
 

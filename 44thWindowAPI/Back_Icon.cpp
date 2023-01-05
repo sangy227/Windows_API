@@ -4,6 +4,9 @@
 #include "yaUIManager.h"
 #include "yaPlayer.h"
 #include "yaScene.h"
+#include "yaSound.h"
+#include "yaSoundManager.h"
+#include "yaScene.h"
 
 namespace ya {
 	Back_Icon::Back_Icon(eUIType type)
@@ -55,6 +58,8 @@ namespace ya {
 	}
 	void Back_Icon::Click()
 	{
+		Sound* mbSound = Scene::mSound[1];
+		mbSound->Play(false);
 		UIManager::Pop(eUIType::Map_bg);
 		UIManager::Pop(eUIType::Inventory2);
 		UIManager::Push(eUIType::Inventory2);

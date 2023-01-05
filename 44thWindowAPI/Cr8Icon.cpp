@@ -2,6 +2,9 @@
 #include "yaImage.h"
 #include "yaInput.h"
 #include "yaUIManager.h"
+#include "yaSound.h"
+#include "yaSoundManager.h"
+#include "yaScene.h"
 
 namespace ya {
 	Cr8Icon::Cr8Icon(eUIType type)
@@ -53,6 +56,8 @@ namespace ya {
 	}
 	void Cr8Icon::Click()
 	{
+		Sound* mbSound = Scene::mSound[1];
+		mbSound->Play(false);
 		//UIManager::Push(eUIType::Cr8_Info);
 		UIManager::Pop(eUIType::Tote_Info);
 		UIManager::Pop(eUIType::Mc_Info);

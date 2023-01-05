@@ -4,6 +4,9 @@
 #include "yaUIManager.h"
 #include "yaPlayer.h"
 #include "yaScene.h"
+#include "yaSound.h"
+#include "yaSoundManager.h"
+#include "yaScene.h"
 namespace ya {
 	Map_Icon::Map_Icon(eUIType type)
 		:UIBase(type)
@@ -54,6 +57,8 @@ namespace ya {
 	}
 	void Map_Icon::Click()
 	{
+		Sound* mbSound = Scene::mSound[1];
+		mbSound->Play(false);
 		UIManager::Pop(eUIType::Inventory2);
 		UIManager::Pop(eUIType::Map_bg);
 		UIManager::Push(eUIType::Map_bg);

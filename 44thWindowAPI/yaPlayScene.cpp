@@ -80,11 +80,11 @@ namespace ya {
 	{
 		Scene::Render(hdc);
 
-		int mcount = UIBase::mMons_target_int;
+		/*int mcount = UIBase::mMons_target_int;
 		wchar_t szFloat[50] = {};
 		swprintf_s(szFloat, 50, L"%f",mcount);
 		int strLen = wcsnlen_s(szFloat, 50);
-		TextOut(hdc, 100, 100, szFloat, strLen);
+		TextOut(hdc, 100, 100, szFloat, strLen);*/
 
 		
 

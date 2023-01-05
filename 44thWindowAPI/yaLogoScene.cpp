@@ -10,6 +10,8 @@
 #include "LogoPlayerObject.h"
 #include "yaToolScene.h"
 #include "yaUIManager.h"
+#include "yaSound.h"
+#include "yaSoundManager.h"
 
 namespace ya {
 	
@@ -42,6 +44,9 @@ namespace ya {
 		UIManager::Push(eUIType::LogoButton5);
 		UIManager::Push(eUIType::LogoButton6);
 		//UIManager::Push(eUIType::INVENTORY);
+		//SetVolume(50.f);
+		mSound[0]->SetVolume(10.0f);
+		mSound[0]->Play(true);
 
 		//여기에 미리 불러온 툴씬 넣기
 		/*ya::Scene* scene = ya::SceneManager::GetScene(eSceneType::Tool);

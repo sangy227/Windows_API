@@ -5,9 +5,13 @@
 #include "yaCollider.h"
 #include "yaImage.h"
 #include "yaUIManager.h"
+#include "yaSound.h"
+#include "yaSoundManager.h"
+#include "yaScene.h"
+
 namespace ya {
 	cultist::cultist()
-		:mHP(5)
+		:mHP(7)
 	{
 		SetName(L"cultist");
 		SetPos({ 1070.0f, 770.0f });
@@ -29,7 +33,7 @@ namespace ya {
 		AddComponent(new Collider());
 	}
 	cultist::cultist(Vector2 position)
-		:mHP(5)
+		:mHP(7)
 	{
 		SetName(L"cultist");
 		SetPos(position);
@@ -62,12 +66,19 @@ namespace ya {
 		SetPos(pos);
 
 		if (mHP < 0) {
+			Sound* mbSound = Scene::mSound[9];
+			mbSound->Play(false);
 			Death();
 			UIManager::Pop(eUIType::heart04);
 
 			UIBase::mMons_target_int++;
 			UIBase::Mons_Remaining -= 1;
 
+			Sound* mbSound12 = Scene::mSound[12];
+			mbSound12->Stop(false);
+
+			Sound* mbSound2 = Scene::mSound[2];
+			mbSound2->Play(true);
 		}
 	}
 	void cultist::Render(HDC hdc)

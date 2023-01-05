@@ -4,9 +4,13 @@
 #include "yaCollider.h"
 #include "yaImage.h"
 #include "yaUIManager.h"
+#include "yaSound.h"
+#include "yaSoundManager.h"
+#include "yaScene.h"
+
 namespace ya {
 	legman::legman()
-		:mHP(5)
+		:mHP(6)
 	{
 		SetName(L"legman");
 		SetPos({ 1070.0f, 770.0f });
@@ -28,7 +32,7 @@ namespace ya {
 		AddComponent(new Collider());
 	}
 	legman::legman(Vector2 position)
-		:mHP(5)
+		:mHP(6)
 	{
 		SetName(L"legman");
 		SetPos(position);
@@ -61,6 +65,8 @@ namespace ya {
 		SetPos(pos);
 
 		if (mHP < 0) {
+			Sound* mbSound = Scene::mSound[9];
+			mbSound->Play(false);
 			Death();
 			UIManager::Pop(eUIType::heart03);
 

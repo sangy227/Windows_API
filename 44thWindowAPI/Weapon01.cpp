@@ -7,6 +7,9 @@
 #include "yaPlayer.h"
 #include "Monster_include.h"
 #include "Map_Player_icon.h"
+#include "yaSound.h"
+#include "yaSoundManager.h"
+#include "yaScene.h"
 
 namespace ya {
 	Weapon01::Weapon01(eUIType type)
@@ -48,6 +51,10 @@ namespace ya {
 
 			if (KEY_DOWN(eKeyCode::LBTN) && mbMouseOn)
 			{
+				Sound* mbSound = Scene::mSound[3];
+				if (Ani_Enable == false)
+					mbSound->Play(false);
+
 				mPrevClickPos = GetScreenPos();
 
 				Vector2 mousePos = Input::GetMousePos();
@@ -58,6 +65,8 @@ namespace ya {
 
 				if (Ani_Enable) {
 					Select_Monster_Target();
+
+					
 
 					Player* miniPlayer = Scene::player;
 					miniPlayer->Player_Attack();
@@ -102,6 +111,10 @@ namespace ya {
 
 			if (KEY_UP(eKeyCode::LBTN) && mbMouseOn)
 			{
+				Sound* mbSound = Scene::mSound[3];
+				if (Ani_Enable == false)
+					mbSound->Play(false);
+
 				thisVariable = NULL;
 				Vector2 pos = GetScreenPos();
 
@@ -174,6 +187,9 @@ namespace ya {
 	}
 	void Weapon01::Select_Monster_Target()
 	{
+		Sound* mbSound = Scene::mSound[5];
+		mbSound->Play(false);
+
 		switch (mMons_target_int)
 		{
 		case 1: {

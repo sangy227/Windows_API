@@ -7,6 +7,7 @@
 #include "yaScene.h"
 #include "Monster_include.h"
 #include "Map_Player_icon.h"
+
 namespace ya {
 	Weapon02::Weapon02(eUIType type)
 		: UIItem(type)
@@ -47,6 +48,10 @@ namespace ya {
 
 		if (KEY_DOWN(eKeyCode::LBTN) && mbMouseOn)
 		{
+			Sound* mbSound = Scene::mSound[3];
+			if (Ani_Enable == false)
+				mbSound->Play(false);
+
 			mPrevClickPos = GetScreenPos();
 
 			Vector2 mousePos = Input::GetMousePos();
@@ -84,6 +89,10 @@ namespace ya {
 
 		if (KEY_UP(eKeyCode::LBTN) && mbMouseOn)
 		{
+			Sound* mbSound = Scene::mSound[3];
+			if (Ani_Enable == false)
+				mbSound->Play(false);
+
 			thisVariable = NULL;
 			Vector2 pos = GetScreenPos();
 
@@ -156,6 +165,8 @@ namespace ya {
 	}
 	void Weapon02::Select_Monster_Target()
 	{
+		Sound* mbSound = Scene::mSound[5];
+		mbSound->Play(false);
 		switch (mMons_target_int)
 		{
 		case 1: {

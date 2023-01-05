@@ -88,7 +88,7 @@ namespace ya
 		mmioClose(hFile, 0);
 
 		// 초기 음량 절반으로 설정
-		SetVolume(50.f);
+		SetVolume(60.f);
 
 		return true;
 	}

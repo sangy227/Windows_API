@@ -5,6 +5,10 @@
 #include "yaCollider.h"
 #include "yaImage.h"
 #include "yaUIManager.h"
+#include "yaSound.h"
+#include "yaSoundManager.h"
+#include "yaScene.h"
+
 namespace ya {
 	Feral_Badger::Feral_Badger()
 		:mHP(5)
@@ -62,11 +66,14 @@ namespace ya {
 		SetPos(pos);
 
 		if (mHP < 0) {
+			Sound* mbSound = Scene::mSound[9];
+			mbSound->Play(false);
 			Death();
 			UIManager::Pop(eUIType::heart02);
 
 			UIBase::mMons_target_int++;
 			UIBase::Mons_Remaining -= 1;
+
 
 
 		}

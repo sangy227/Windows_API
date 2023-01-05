@@ -5,7 +5,10 @@
 #include "Map_Player_icon.h"
 #include "yaGameObject.h"
 #include "yaPlayer.h"
+#include "yaSound.h"
+#include "yaSoundManager.h"
 #include "yaScene.h"
+
 ya::Ending_icon::Ending_icon(eUIType type)
 	:UIBase(type)
 {
@@ -64,6 +67,7 @@ void ya::Ending_icon::OnClear()
 
 void ya::Ending_icon::Click()
 {
+	
 	Map_Player_icon* playerUi = UIManager::GetUiInstant<Map_Player_icon>(eUIType::Map_Player_icon);
 
 

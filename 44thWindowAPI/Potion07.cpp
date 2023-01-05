@@ -5,6 +5,9 @@
 #include "yaCamera.h"
 #include "yaPlayer.h"
 #include "yaScene.h"
+#include "yaSound.h"
+#include "yaSoundManager.h"
+#include "yaScene.h"
 ya::Potion07::Potion07(eUIType type)
 	: UIItem(type)
 {
@@ -46,6 +49,10 @@ void ya::Potion07::OnTick()
 
 	if (KEY_DOWN(eKeyCode::LBTN) && mbMouseOn)
 	{
+		Sound* mbSound = Scene::mSound[3];
+		if (Ani_Enable == false)
+			mbSound->Play(false);
+
 		mPrevClickPos = GetScreenPos();
 
 		Vector2 mousePos = Input::GetMousePos();
@@ -84,6 +91,10 @@ void ya::Potion07::OnTick()
 
 	if (KEY_UP(eKeyCode::LBTN) && mbMouseOn)
 	{
+		Sound* mbSound = Scene::mSound[3];
+		if (Ani_Enable == false)
+			mbSound->Play(false);
+
 		thisVariable = NULL;
 		Vector2 pos = GetScreenPos();
 

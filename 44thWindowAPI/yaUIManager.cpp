@@ -954,7 +954,7 @@ namespace ya {
 		//inventory->AddChild(potion06);
 		inventory->AddChild(potion07);
 		//inventory->AddChild(potion08);
-		inventory->AddChild(potion09);
+		//inventory->AddChild(potion09);
 		//inventory->AddChild(potion10);
 		//inventory->AddChild(potion11);
 		//inventory->AddChild(potion12);
@@ -973,9 +973,9 @@ namespace ya {
 		//inventory->AddChild(bow02);
 		//inventory->AddChild(bow03);
 
-		//inventory->AddChild(arrow01);
+		inventory->AddChild(arrow01);
 		//inventory->AddChild(arrow02);
-		inventory->AddChild(arrow03);
+		//inventory->AddChild(arrow03);
 
 
 		inventory->AddChild(armor01);

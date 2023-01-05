@@ -21,12 +21,12 @@ namespace ya {
 	{
 		InitializeWindow(data);
 
+		SoundManager::Initialize();
 		Time::Initialize();
 		Input::Initialize();
 		SceneManager::Initialize();
 		UIManager::Initialize();
 		Camera::Initialize();
-		SoundManager::Initialize();
 
 	}
 

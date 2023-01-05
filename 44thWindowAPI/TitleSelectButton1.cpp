@@ -3,6 +3,9 @@
 #include "yaInput.h"
 #include "yaSceneManager.h"
 #include "yaUIManager.h"
+#include "yaSound.h"
+#include "yaSoundManager.h"
+#include "yaScene.h"
 
 namespace ya {
 	TitleSelectButton1::TitleSelectButton1(eUIType type)
@@ -54,6 +57,15 @@ namespace ya {
 	}
 	void TitleSelectButton1::Click()
 	{
+		Sound* mbSound = Scene::mSound[1];
+		mbSound->Play(false);
+
+		Sound* mbSound0 = Scene::mSound[0];
+		mbSound0->Stop(false);
+
+		Sound* mbSound2 = Scene::mSound[2];
+		mbSound2->Play(true);
+
 
 		UIManager::Pop(eUIType::Mc_Info);
 		UIManager::Pop(eUIType::Tote_Info);

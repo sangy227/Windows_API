@@ -4,9 +4,13 @@
 #include "yaCollider.h"
 #include "yaImage.h"
 #include "yaUIManager.h"
+#include "yaSound.h"
+#include "yaSoundManager.h"
+#include "yaScene.h"
+
 namespace ya {
 	frog_2::frog_2()
-		:mHP(5)
+		:mHP(7)
 	{
 		SetName(L"frog_2");
 		SetPos({ 1070.0f, 770.0f });
@@ -28,7 +32,7 @@ namespace ya {
 		AddComponent(new Collider());
 	}
 	frog_2::frog_2(Vector2 position)
-		:mHP(5)
+		:mHP(7)
 	{
 		SetName(L"frog_2");
 		SetPos(position);
@@ -63,6 +67,8 @@ namespace ya {
 		SetPos(pos);
 
 		if (mHP < 0) {
+			Sound* mbSound = Scene::mSound[9];
+			mbSound->Play(false);
 			Death();
 			UIManager::Pop(eUIType::heart02);
 

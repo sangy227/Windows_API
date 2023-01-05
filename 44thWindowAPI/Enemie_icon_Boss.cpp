@@ -5,6 +5,9 @@
 #include "Map_Player_icon.h"
 #include "yaGameObject.h"
 #include "yaPlayer.h"
+
+#include "yaSound.h"
+#include "yaSoundManager.h"
 #include "yaScene.h"
 
 ya::Enemie_icon_Boss::Enemie_icon_Boss(eUIType type)
@@ -64,6 +67,7 @@ void ya::Enemie_icon_Boss::OnClear()
 
 void ya::Enemie_icon_Boss::Click()
 {
+	
 	Map_Player_icon* playerUi = UIManager::GetUiInstant<Map_Player_icon>(eUIType::Map_Player_icon);
 
 

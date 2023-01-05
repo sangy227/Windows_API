@@ -27,3 +27,6 @@
 #include "salamander.h"
 #include "yaMonster.h"
 
+#include "yaSound.h"
+#include "yaSoundManager.h"
+#include "yaScene.h"

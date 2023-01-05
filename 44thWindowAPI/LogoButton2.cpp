@@ -2,7 +2,9 @@
 #include "yaImage.h"
 #include "yaInput.h"
 #include "yaUIManager.h"
-
+#include "yaSound.h"
+#include "yaSoundManager.h"
+#include "yaScene.h"
 namespace ya {
 	LogoButton2::LogoButton2(eUIType type)
 		:UIBase(type)
@@ -53,6 +55,8 @@ namespace ya {
 	}
 	void LogoButton2::Click()
 	{
+		Sound* mbSound = Scene::mSound[1];
+		mbSound->Play(false);
 
 		UIManager::Pop(eUIType::LogoButton1);
 		UIManager::Pop(eUIType::LogoButton2);

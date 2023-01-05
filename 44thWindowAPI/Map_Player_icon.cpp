@@ -11,12 +11,17 @@
 #include "Enemie_icon05.h"
 #include "Enemie_icon_Boss.h"
 #include "Ending_icon.h"
-#include "yaScene.h"
+
 #include "Monster_include.h"
 #include "yaObject.h"
 #include "HPbar_Include.h"
 #include "newenergy.h"
 #include "yaUIBase.h"
+
+#include "yaSound.h"
+#include "yaSoundManager.h"
+#include "yaScene.h"
+
 namespace ya {
 	Monster* Map_Player_icon::mons1 = nullptr;
 	Monster* Map_Player_icon::mons2 = nullptr;
@@ -134,6 +139,8 @@ void ya::Map_Player_icon::OnTick()
 			SetPos(pos);
 			if (mEnemiepos - GetPos().y < 25)
 			{
+				Battle_bgm();
+
 				UIBase::Mons_Remaining = 3;
 				mmNumber_count = 3;
 				
@@ -186,6 +193,7 @@ void ya::Map_Player_icon::OnTick()
 			SetPos(pos);
 			if (mEnemiepos - GetPos().y < 25)
 			{
+				Battle_bgm();
 				UIBase::Mons_Remaining = 3;
 
 				mmNumber_count = 3;
@@ -249,6 +257,8 @@ void ya::Map_Player_icon::OnTick()
 			SetPos(pos);
 			if (mEnemiepos - GetPos().y > 25)
 			{
+				Battle_bgm();
+
 				UIBase::Mons_Remaining = 3;
 				mmNumber_count = 3;
 				newenergy* mEnergy = dynamic_cast<newenergy*>(mEnergyTarget);
@@ -309,6 +319,12 @@ void ya::Map_Player_icon::OnTick()
 			SetPos(pos);
 			if (mEnemiepos - GetPos().y > 25)
 			{
+				Sound* mbSound2 = Scene::mSound[2];
+				mbSound2->Stop(false);
+
+				Sound* mbSound14 = Scene::mSound[14];
+				mbSound14->Play(false);
+
 				UIBase::Mons_Remaining = 3;
 				mmNumber_count = 3;
 				newenergy* mEnergy = dynamic_cast<newenergy*>(mEnergyTarget);
@@ -343,6 +359,8 @@ void ya::Map_Player_icon::OnTick()
 			SetPos(pos);
 			if (mEnemiepos - GetPos().x > 25)
 			{
+				Battle_bgm();
+
 				UIBase::Mons_Remaining = 3;
 				mmNumber_count = 3;
 				//newenergy::Number_chenge();
@@ -401,6 +419,15 @@ void ya::Map_Player_icon::OnTick()
 			break;
 		case ya::Entity::Player_Icon_Move::LEFT2:
 		{
+			Sound* mbSound2 = Scene::mSound[2];
+			mbSound2->Stop(false);
+
+			Sound* mbSound11 = Scene::mSound[11];
+			mbSound11->Play(false);
+
+			Sound* mbSound13 = Scene::mSound[13];
+			mbSound13->Play(true);
+
 			Vector2 pos = GetPos();
 			pos.x -= speed * Time::DeltaTime();
 			SetPos(pos);
@@ -455,6 +482,8 @@ void ya::Map_Player_icon::OnTick()
 			SetPos(pos);
 			if (mEnemiepos - GetPos().x < 25)
 			{
+				Battle_bgm();
+
 				UIBase::Mons_Remaining = 3;
 
 				mmNumber_count = 3;
@@ -531,6 +560,27 @@ void ya::Map_Player_icon::OnClear()
 void ya::Map_Player_icon::Click()
 {
 	int a = 0;
+}
+
+void ya::Map_Player_icon::Battle_bgm()
+{
+	Sound* mbSound2 = Scene::mSound[2];
+	mbSound2->Stop(false);
+
+	Sound* mbSound11 = Scene::mSound[11];
+	mbSound11->Play(false);
+
+	Sound* mbSound12 = Scene::mSound[12];
+	mbSound12->Play(true);
+}
+
+void ya::Map_Player_icon::end_battle()
+{
+	Sound* mbSound12 = Scene::mSound[12];
+	mbSound12->Stop(false);
+
+	Sound* mbSound2 = Scene::mSound[2];
+	mbSound2->Play(true);
 }
 
 void ya::Map_Player_icon::Distance(Vector2 mPrevpos, Vector2 mPos, UINT mDistance)

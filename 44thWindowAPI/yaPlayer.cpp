@@ -13,6 +13,9 @@
 #include "yaRigidbody.h"
 #include "yaUIManager.h"
 #include "yaUIBase.h"
+#include "yaSound.h"
+#include "yaSoundManager.h"
+
 
 namespace ya 
 {
@@ -477,6 +480,8 @@ namespace ya
 	}
 	void Player::Player_Move()
 	{
+		Sound* mbSound = Scene::mSound[10];
+		mbSound->Play(false);
 		mAnimator->Play(L"Walk", true);
 	}
 
@@ -489,6 +494,9 @@ namespace ya
 	{
 		if (mAttackCount == 0)
 		{
+			Sound* mbSound = Scene::mSound[4];
+			mbSound->Play(false);
+
 			Vector2 pos = GetPos();
 			pos.x += 120.0f;
 			SetPos(pos);
@@ -519,6 +527,9 @@ namespace ya
 	void Player::Player_hurt()
 	{
 		if (mDamageCount == 0) {
+			Sound* mbSound = Scene::mSound[8];
+			mbSound->Play(false);
+
 			Vector2 pos = GetPos();
 			pos.x -= 100.0f;
 			SetPos(pos);
@@ -541,12 +552,16 @@ namespace ya
 
 	void Player::Player_useitem()
 	{
+		Sound* mbSound = Scene::mSound[7];
+		mbSound->Play(false);
 		mAnimator->Play(L"useitem", true);
 		mAnimator->GetCompleteEvent(L"useitem") = std::bind(&Player::WalkComplete, this);
 	}
 
 	void Player::Player_block()
 	{
+		Sound* mbSound = Scene::mSound[6];
+		mbSound->Play(false);
 		mAnimator->Play(L"block", true);
 		mAnimator->GetCompleteEvent(L"block") = std::bind(&Player::WalkComplete, this);
 	}

@@ -2,7 +2,9 @@
 #include "yaImage.h"
 #include "yaInput.h"
 #include "yaSceneManager.h"
-
+#include "yaSound.h"
+#include "yaSoundManager.h"
+#include "yaScene.h"
 namespace ya
 {
 	LogoButton1::LogoButton1(eUIType type)

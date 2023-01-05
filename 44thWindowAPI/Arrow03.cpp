@@ -3,6 +3,11 @@
 #include "yaImage.h"
 #include "yaUIManager.h"
 #include "yaCamera.h"
+
+#include "yaSound.h"
+#include "yaSoundManager.h"
+#include "yaScene.h"
+
 ya::Arrow03::Arrow03(eUIType type)
 	: UIItem(type)
 {

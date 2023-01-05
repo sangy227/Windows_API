@@ -13,6 +13,10 @@
 #include "yaAniMator.h"
 #include "yaUIManager.h"
 #include "yaUIBase.h"
+#include "yaSound.h"
+#include "yaSoundManager.h"
+#include "yaScene.h"
+
 namespace ya {
 	Monster::Monster()
 		: mTime(0.0f)
@@ -80,6 +84,8 @@ namespace ya {
 		Vector2 size = GetSize();
 
 		if (mHP < 0) {
+			Sound* mbSound = Scene::mSound[9];
+			mbSound->Play(false);
 			Death();
 			UIManager::Pop(eUIType::heart02);
 			UIManager::Pop(eUIType::heart03);

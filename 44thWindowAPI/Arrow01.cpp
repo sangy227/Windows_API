@@ -46,6 +46,10 @@ void ya::Arrow01::OnTick()
 
 	if (KEY_DOWN(eKeyCode::LBTN) && mbMouseOn)
 	{
+		Sound* mbSound = Scene::mSound[3];
+		if (Ani_Enable == false)
+			mbSound->Play(false);
+
 		mPrevClickPos = GetScreenPos();
 
 		Vector2 mousePos = Input::GetMousePos();
@@ -65,6 +69,10 @@ void ya::Arrow01::OnTick()
 
 	if (KEY_UP(eKeyCode::LBTN) && mbMouseOn)
 	{
+		Sound* mbSound = Scene::mSound[3];
+		if (Ani_Enable == false)
+			mbSound->Play(false);
+
 		thisVariable = NULL;
 		Vector2 pos = GetScreenPos();
 

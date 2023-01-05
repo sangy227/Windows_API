@@ -25,6 +25,8 @@ namespace ya {
 		int SetEnemiePos(int pos) { return mEnemiepos = pos; }
 		UINT SetDistancePos(UINT init) { return mDistance = init; }
 
+		void Battle_bgm();
+		void end_battle();
 
 		void Distance(Vector2 mPrevpos, Vector2 mPos, UINT mDistance);
 

@@ -2,8 +2,10 @@
 #include "Common.h"
 #include "yaEntity.h"
 #include "yaPlayer.h"
+#include "yaSound.h"
 
 namespace ya {
+	class Sound;
 	class Player;
 	class GameObject;
 	class Scene : public Entity
@@ -27,7 +29,7 @@ namespace ya {
 
 
 		static Player* player;
-
+		static Sound* mSound[20];
 	private:
 		//std::vector<GameObject*> mObject;
 		std::vector<std::vector<GameObject*>> mObjects;

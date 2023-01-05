@@ -48,6 +48,10 @@ void ya::Dagger02::OnTick()
 
 	if (KEY_DOWN(eKeyCode::LBTN) && mbMouseOn)
 	{
+		Sound* mbSound = Scene::mSound[3];
+		if (Ani_Enable == false)
+			mbSound->Play(false);
+
 		mPrevClickPos = GetScreenPos();
 
 		Vector2 mousePos = Input::GetMousePos();
@@ -81,6 +85,10 @@ void ya::Dagger02::OnTick()
 
 	if (KEY_UP(eKeyCode::LBTN) && mbMouseOn)
 	{
+		Sound* mbSound = Scene::mSound[3];
+		if (Ani_Enable == false)
+			mbSound->Play(false);
+
 		thisVariable = NULL;
 		Vector2 pos = GetScreenPos();
 
@@ -156,6 +164,8 @@ void ya::Dagger02::Click()
 
 void ya::Dagger02::Select_Monster_Target()
 {
+	Sound* mbSound = Scene::mSound[5];
+	mbSound->Play(false);
 	switch (mMons_target_int)
 	{
 	case 1: {
