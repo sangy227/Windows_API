@@ -419,20 +419,20 @@ void ya::Map_Player_icon::OnTick()
 			break;
 		case ya::Entity::Player_Icon_Move::LEFT2:
 		{
-			Sound* mbSound2 = Scene::mSound[2];
-			mbSound2->Stop(false);
-
-			Sound* mbSound11 = Scene::mSound[11];
-			mbSound11->Play(false);
-
-			Sound* mbSound13 = Scene::mSound[13];
-			mbSound13->Play(true);
-
 			Vector2 pos = GetPos();
 			pos.x -= speed * Time::DeltaTime();
 			SetPos(pos);
 			if (mEnemiepos - GetPos().x > 25)
 			{
+				Sound* mbSound2 = Scene::mSound[2];
+				mbSound2->Stop(false);
+
+				Sound* mbSound11 = Scene::mSound[11];
+				mbSound11->Play(false);
+
+				Sound* mbSound13 = Scene::mSound[13];
+				mbSound13->Play(true);
+
 				UIBase::Mons_Remaining = 3;
 				mmNumber_count = 3;
 				newenergy* mEnergy = dynamic_cast<newenergy*>(mEnergyTarget);

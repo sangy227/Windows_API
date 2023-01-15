@@ -68,7 +68,7 @@ namespace ya {
 		if (mHP < 0) {
 			Sound* mbSound = Scene::mSound[9];
 			mbSound->Play(false);
-			Death();
+			this->Death();
 			UIManager::Pop(eUIType::heart02);
 
 			UIBase::mMons_target_int++;
